@@ -1,0 +1,6266 @@
+[
+  {
+    "id": "das_jubilaeum_die_jubilaeen",
+    "german": "das Jubiläum, die Jubiläen",
+    "czech": "jubileum",
+    "audio": "audio/das_jubilaeum_die_jubilaeen.mp3"
+  },
+  {
+    "id": "die_europameisterschaft_die_europameisterschaften",
+    "german": "die Europameisterschaft, die Europameisterschaften",
+    "czech": "mistrovství Evropy",
+    "audio": "audio/die_europameisterschaft_die_europameisterschaften.mp3"
+  },
+  {
+    "id": "das_finale_die_finale",
+    "german": "das Finale, die Finale",
+    "czech": "finále",
+    "audio": "audio/das_finale_die_finale.mp3"
+  },
+  {
+    "id": "der_neffe_die_neffen",
+    "german": "der Neffe, die Neffen",
+    "czech": "synovec",
+    "audio": "audio/der_neffe_die_neffen.mp3"
+  },
+  {
+    "id": "die_nichte_die_nichten",
+    "german": "die Nichte, die Nichten",
+    "czech": "neteř",
+    "audio": "audio/die_nichte_die_nichten.mp3"
+  },
+  {
+    "id": "der_preis_die_preise",
+    "german": "der Preis, die Preise",
+    "czech": "cena",
+    "audio": "audio/der_preis_die_preise.mp3"
+  },
+  {
+    "id": "probieren",
+    "german": "probieren",
+    "czech": "vyzkoušet",
+    "audio": "audio/probieren.mp3"
+  },
+  {
+    "id": "verkaufen",
+    "german": "verkaufen",
+    "czech": "prodávat",
+    "audio": "audio/verkaufen.mp3"
+  },
+  {
+    "id": "behalten",
+    "german": "behalten",
+    "czech": "ponechat si",
+    "audio": "audio/behalten.mp3"
+  },
+  {
+    "id": "draussen_uebernachten",
+    "german": "draußen übernachten",
+    "czech": "přenocovat venku",
+    "audio": "audio/draussen_uebernachten.mp3"
+  },
+  {
+    "id": "auf_baeume_klettern",
+    "german": "auf Bäume klettern",
+    "czech": "lézt na stromy",
+    "audio": "audio/auf_baeume_klettern.mp3"
+  },
+  {
+    "id": "fussballbilder_sammeln",
+    "german": "Fußballbilder sammeln",
+    "czech": "sbírat fotbalové kartičky",
+    "audio": "audio/fussballbilder_sammeln.mp3"
+  },
+  {
+    "id": "skateboard_fahren",
+    "german": "Skateboard fahren",
+    "czech": "jezdit na skateboardu",
+    "audio": "audio/skateboard_fahren.mp3"
+  },
+  {
+    "id": "comics_lesen",
+    "german": "Comics lesen",
+    "czech": "číst komiksy",
+    "audio": "audio/comics_lesen.mp3"
+  },
+  {
+    "id": "zeichnen",
+    "german": "zeichnen",
+    "czech": "kreslit",
+    "audio": "audio/zeichnen.mp3"
+  },
+  {
+    "id": "suessigkeiten_essen",
+    "german": "Süßigkeiten essen",
+    "czech": "jíst sladkosti",
+    "audio": "audio/suessigkeiten_essen.mp3"
+  },
+  {
+    "id": "seil_springen",
+    "german": "Seil springen",
+    "czech": "skákat přes švihadlo",
+    "audio": "audio/seil_springen.mp3"
+  },
+  {
+    "id": "basteln",
+    "german": "basteln",
+    "czech": "rukodělně něco vyrábět",
+    "audio": "audio/basteln.mp3"
+  },
+  {
+    "id": "tagebuch_schreiben",
+    "german": "Tagebuch schreiben",
+    "czech": "psát si deník",
+    "audio": "audio/tagebuch_schreiben.mp3"
+  },
+  {
+    "id": "schneemaenner_bauen",
+    "german": "Schneemänner bauen",
+    "czech": "stavět sněhuláky",
+    "audio": "audio/schneemaenner_bauen.mp3"
+  },
+  {
+    "id": "frueher",
+    "german": "früher",
+    "czech": "dříve",
+    "audio": "audio/frueher.mp3"
+  },
+  {
+    "id": "die_kindheit",
+    "german": "die Kindheit",
+    "czech": "dětství",
+    "audio": "audio/die_kindheit.mp3"
+  },
+  {
+    "id": "die_geschichte_die_geschichten",
+    "german": "die Geschichte, die Geschichten",
+    "czech": "příběh, historie",
+    "audio": "audio/die_geschichte_die_geschichten.mp3"
+  },
+  {
+    "id": "aufpassen",
+    "german": "aufpassen",
+    "czech": "dávat pozor",
+    "audio": "audio/aufpassen.mp3"
+  },
+  {
+    "id": "das_erste_mal_die_ersten_male",
+    "german": "das erste Mal, die ersten Male",
+    "czech": "poprvé",
+    "audio": "audio/das_erste_mal_die_ersten_male.mp3"
+  },
+  {
+    "id": "die_sorte_die_sorten",
+    "german": "die Sorte, die Sorten",
+    "czech": "druh",
+    "audio": "audio/die_sorte_die_sorten.mp3"
+  },
+  {
+    "id": "jed",
+    "german": "jed-",
+    "czech": "každý",
+    "audio": "audio/jed.mp3"
+  },
+  {
+    "id": "letzt",
+    "german": "letzt-",
+    "czech": "poslední",
+    "audio": "audio/letzt.mp3"
+  },
+  {
+    "id": "naechst",
+    "german": "nächst-",
+    "czech": "příští",
+    "audio": "audio/naechst.mp3"
+  },
+  {
+    "id": "sich_etwas_vorstellen",
+    "german": "sich etwas vorstellen",
+    "czech": "představit si (něco)",
+    "audio": "audio/sich_etwas_vorstellen.mp3"
+  },
+  {
+    "id": "die_mensa_die_mensas",
+    "german": "die Mensa, die Mensas",
+    "czech": "menza, školní jídelna",
+    "audio": "audio/die_mensa_die_mensas.mp3"
+  },
+  {
+    "id": "das_treppenhaus_die_treppenhaeuser",
+    "german": "das Treppenhaus, die Treppenhäuser",
+    "czech": "schodiště",
+    "audio": "audio/das_treppenhaus_die_treppenhaeuser.mp3"
+  },
+  {
+    "id": "die_universitaet_die_universitaeten",
+    "german": "die Universität, die Universitäten",
+    "czech": "univerzita",
+    "audio": "audio/die_universitaet_die_universitaeten.mp3"
+  },
+  {
+    "id": "der_post_die_posts",
+    "german": "der Post, die Posts",
+    "czech": "zde: zpráva na sociálních sítích (post)",
+    "audio": "audio/der_post_die_posts.mp3"
+  },
+  {
+    "id": "der_sport",
+    "german": "der Sport",
+    "czech": "sport",
+    "audio": "audio/der_sport.mp3"
+  },
+  {
+    "id": "die_panne_die_pannen",
+    "german": "die Panne, die Pannen",
+    "czech": "nehoda (porucha)",
+    "audio": "audio/die_panne_die_pannen.mp3"
+  },
+  {
+    "id": "die_pannenhilfe_die_pannenhilfen",
+    "german": "die Pannenhilfe, die Pannenhilfen",
+    "czech": "pomoc při nehodě",
+    "audio": "audio/die_pannenhilfe_die_pannenhilfen.mp3"
+  },
+  {
+    "id": "der_wagen_die_wagen",
+    "german": "der Wagen, die Wagen",
+    "czech": "vůz",
+    "audio": "audio/der_wagen_die_wagen.mp3"
+  },
+  {
+    "id": "die_werkstatt_die_werkstaetten",
+    "german": "die Werkstatt, die Werkstätten",
+    "czech": "autodílna",
+    "audio": "audio/die_werkstatt_die_werkstaetten.mp3"
+  },
+  {
+    "id": "der_pannenhelfer_die_pannenhelfer",
+    "german": "der Pannenhelfer, die Pannenhelfer",
+    "czech": "technik asistenční služby",
+    "audio": "audio/der_pannenhelfer_die_pannenhelfer.mp3"
+  },
+  {
+    "id": "die_messe_die_messen",
+    "german": "die Messe, die Messen",
+    "czech": "výstaviště",
+    "audio": "audio/die_messe_die_messen.mp3"
+  },
+  {
+    "id": "der_held_die_helden",
+    "german": "der Held, die Helden",
+    "czech": "hrdina",
+    "audio": "audio/der_held_die_helden.mp3"
+  },
+  {
+    "id": "die_heldin_die_heldinnen",
+    "german": "die Heldin, die Heldinnen",
+    "czech": "hrdinka",
+    "audio": "audio/die_heldin_die_heldinnen.mp3"
+  },
+  {
+    "id": "der_alltag",
+    "german": "der Alltag",
+    "czech": "všední den",
+    "audio": "audio/der_alltag.mp3"
+  },
+  {
+    "id": "aufgeregt",
+    "german": "aufgeregt",
+    "czech": "rozčilený",
+    "audio": "audio/aufgeregt.mp3"
+  },
+  {
+    "id": "ausmachen",
+    "german": "ausmachen",
+    "czech": "zde: vadit",
+    "audio": "audio/ausmachen.mp3"
+  },
+  {
+    "id": "die_batterie_die_batterien",
+    "german": "die Batterie, die Batterien",
+    "czech": "baterie",
+    "audio": "audio/die_batterie_die_batterien.mp3"
+  },
+  {
+    "id": "die_eile",
+    "german": "die Eile",
+    "czech": "spěch",
+    "audio": "audio/die_eile.mp3"
+  },
+  {
+    "id": "der_erfolg_die_erfolge",
+    "german": "der Erfolg, die Erfolge",
+    "czech": "úspěch",
+    "audio": "audio/der_erfolg_die_erfolge.mp3"
+  },
+  {
+    "id": "erleben",
+    "german": "erleben",
+    "czech": "zažít",
+    "audio": "audio/erleben.mp3"
+  },
+  {
+    "id": "die_ferien",
+    "german": "die Ferien",
+    "czech": "prázdniny",
+    "audio": "audio/die_ferien.mp3"
+  },
+  {
+    "id": "die_freikarte_die_freikarten",
+    "german": "die Freikarte, die Freikarten",
+    "czech": "volná vstupenka",
+    "audio": "audio/die_freikarte_die_freikarten.mp3"
+  },
+  {
+    "id": "furchtbar",
+    "german": "furchtbar",
+    "czech": "strašný",
+    "audio": "audio/furchtbar.mp3"
+  },
+  {
+    "id": "hart",
+    "german": "hart",
+    "czech": "tvrdý",
+    "audio": "audio/hart.mp3"
+  },
+  {
+    "id": "die_kaelte",
+    "german": "die Kälte",
+    "czech": "zima, chlad",
+    "audio": "audio/die_kaelte.mp3"
+  },
+  {
+    "id": "leicht",
+    "german": "leicht",
+    "czech": "lehký",
+    "audio": "audio/leicht.mp3"
+  },
+  {
+    "id": "die_oper_die_opern",
+    "german": "die Oper, die Opern",
+    "czech": "opera",
+    "audio": "audio/die_oper_die_opern.mp3"
+  },
+  {
+    "id": "der_reifen_die_reifen",
+    "german": "der Reifen, die Reifen",
+    "czech": "pneumatika",
+    "audio": "audio/der_reifen_die_reifen.mp3"
+  },
+  {
+    "id": "die_rolle_die_rollen",
+    "german": "die Rolle, die Rollen",
+    "czech": "role",
+    "audio": "audio/die_rolle_die_rollen.mp3"
+  },
+  {
+    "id": "stressig",
+    "german": "stressig",
+    "czech": "stresující",
+    "audio": "audio/stressig.mp3"
+  },
+  {
+    "id": "verzweifelt",
+    "german": "verzweifelt",
+    "czech": "zoufalý",
+    "audio": "audio/verzweifelt.mp3"
+  },
+  {
+    "id": "der_vorteil_die_vorteile",
+    "german": "der Vorteil, die Vorteile",
+    "czech": "výhoda",
+    "audio": "audio/der_vorteil_die_vorteile.mp3"
+  },
+  {
+    "id": "der_nachteil_die_nachteile",
+    "german": "der Nachteil, die Nachteile",
+    "czech": "nevýhoda",
+    "audio": "audio/der_nachteil_die_nachteile.mp3"
+  },
+  {
+    "id": "wechseln",
+    "german": "wechseln",
+    "czech": "vyměnit",
+    "audio": "audio/wechseln.mp3"
+  },
+  {
+    "id": "weil",
+    "german": "weil",
+    "czech": "protože",
+    "audio": "audio/weil.mp3"
+  },
+  {
+    "id": "im_freien_arbeiten",
+    "german": "im Freien arbeiten",
+    "czech": "pracovat venku",
+    "audio": "audio/im_freien_arbeiten.mp3"
+  },
+  {
+    "id": "draussen_arbeiten",
+    "german": "draußen arbeiten",
+    "czech": "pracovat venku",
+    "audio": "audio/draussen_arbeiten.mp3"
+  },
+  {
+    "id": "drinnen_arbeiten",
+    "german": "drinnen arbeiten",
+    "czech": "pracovat uvnitř",
+    "audio": "audio/drinnen_arbeiten.mp3"
+  },
+  {
+    "id": "schicht_arbeiten",
+    "german": "Schicht arbeiten",
+    "czech": "pracovat ve směnách",
+    "audio": "audio/schicht_arbeiten.mp3"
+  },
+  {
+    "id": "ueberstunden_machen",
+    "german": "Überstunden machen",
+    "czech": "dělat přesčasy",
+    "audio": "audio/ueberstunden_machen.mp3"
+  },
+  {
+    "id": "gut_verdienen",
+    "german": "gut verdienen",
+    "czech": "vydělávat (dobře/špatně/hodně)",
+    "audio": "audio/gut_verdienen.mp3"
+  },
+  {
+    "id": "schlecht_verdienen",
+    "german": "schlecht verdienen",
+    "czech": "vydělávat (dobře/špatně/hodně)",
+    "audio": "audio/schlecht_verdienen.mp3"
+  },
+  {
+    "id": "viel_verdienen",
+    "german": "viel verdienen",
+    "czech": "vydělávat (dobře/špatně/hodně)",
+    "audio": "audio/viel_verdienen.mp3"
+  },
+  {
+    "id": "feste_arbeitszeiten_haben",
+    "german": "feste Arbeitszeiten haben",
+    "czech": "mít přesně stanovenou pracovní dobu",
+    "audio": "audio/feste_arbeitszeiten_haben.mp3"
+  },
+  {
+    "id": "flexible_arbeitszeiten_haben",
+    "german": "flexible Arbeitszeiten haben",
+    "czech": "mít flexibilní pracovní dobu",
+    "audio": "audio/flexible_arbeitszeiten_haben.mp3"
+  },
+  {
+    "id": "der_mitbewohner_die_mitbewohner",
+    "german": "der Mitbewohner, die Mitbewohner",
+    "czech": "spolubydlící (muž)",
+    "audio": "audio/der_mitbewohner_die_mitbewohner.mp3"
+  },
+  {
+    "id": "die_mitbewohnerin_die_mitbewohnerinnen",
+    "german": "die Mitbewohnerin, die Mitbewohnerinnen",
+    "czech": "spolubydlící (žena)",
+    "audio": "audio/die_mitbewohnerin_die_mitbewohnerinnen.mp3"
+  },
+  {
+    "id": "der_stress",
+    "german": "der Stress",
+    "czech": "stres",
+    "audio": "audio/der_stress.mp3"
+  },
+  {
+    "id": "aufbauen",
+    "german": "aufbauen",
+    "czech": "postavit",
+    "audio": "audio/aufbauen.mp3"
+  },
+  {
+    "id": "anstrengend",
+    "german": "anstrengend",
+    "czech": "náročný, vyčerpávající",
+    "audio": "audio/anstrengend.mp3"
+  },
+  {
+    "id": "aufregend",
+    "german": "aufregend",
+    "czech": "vzrušující",
+    "audio": "audio/aufregend.mp3"
+  },
+  {
+    "id": "ausziehen",
+    "german": "ausziehen",
+    "czech": "zde: vystěhovat se",
+    "audio": "audio/ausziehen.mp3"
+  },
+  {
+    "id": "spannend",
+    "german": "spannend",
+    "czech": "napínavý",
+    "audio": "audio/spannend.mp3"
+  },
+  {
+    "id": "vermissen",
+    "german": "vermissen",
+    "czech": "postrádat",
+    "audio": "audio/vermissen.mp3"
+  },
+  {
+    "id": "vorbeikommen",
+    "german": "vorbeikommen",
+    "czech": "zastavit se",
+    "audio": "audio/vorbeikommen.mp3"
+  },
+  {
+    "id": "das_ufer_die_ufer",
+    "german": "das Ufer, die Ufer",
+    "czech": "břeh",
+    "audio": "audio/das_ufer_die_ufer.mp3"
+  },
+  {
+    "id": "die_landschaft_die_landschaften",
+    "german": "die Landschaft, die Landschaften",
+    "czech": "krajina",
+    "audio": "audio/die_landschaft_die_landschaften.mp3"
+  },
+  {
+    "id": "der_huegel_die_huegel",
+    "german": "der Hügel, die Hügel",
+    "czech": "kopec",
+    "audio": "audio/der_huegel_die_huegel.mp3"
+  },
+  {
+    "id": "das_dorf_die_doerfer",
+    "german": "das Dorf, die Dörfer",
+    "czech": "vesnice",
+    "audio": "audio/das_dorf_die_doerfer.mp3"
+  },
+  {
+    "id": "das_tal_die_taeler",
+    "german": "das Tal, die Täler",
+    "czech": "údolí",
+    "audio": "audio/das_tal_die_taeler.mp3"
+  },
+  {
+    "id": "das_feld_die_felder",
+    "german": "das Feld, die Felder",
+    "czech": "pole",
+    "audio": "audio/das_feld_die_felder.mp3"
+  },
+  {
+    "id": "die_alternative_die_alternativen",
+    "german": "die Alternative, die Alternativen",
+    "czech": "alternativa",
+    "audio": "audio/die_alternative_die_alternativen.mp3"
+  },
+  {
+    "id": "beobachten",
+    "german": "beobachten",
+    "czech": "pozorovat",
+    "audio": "audio/beobachten.mp3"
+  },
+  {
+    "id": "der_sand",
+    "german": "der Sand",
+    "czech": "písek",
+    "audio": "audio/der_sand.mp3"
+  },
+  {
+    "id": "der_fan_die_fans",
+    "german": "der Fan, die Fans",
+    "czech": "fanoušek",
+    "audio": "audio/der_fan_die_fans.mp3"
+  },
+  {
+    "id": "joggen",
+    "german": "joggen",
+    "czech": "běhat",
+    "audio": "audio/joggen.mp3"
+  },
+  {
+    "id": "das_bier_die_biere",
+    "german": "das Bier, die Biere",
+    "czech": "pivo",
+    "audio": "audio/das_bier_die_biere.mp3"
+  },
+  {
+    "id": "die_limonade_die_limonaden",
+    "german": "die Limonade, die Limonaden",
+    "czech": "limonáda",
+    "audio": "audio/die_limonade_die_limonaden.mp3"
+  },
+  {
+    "id": "das_mountainbike_die_mountainbikes",
+    "german": "das Mountainbike, die Mountainbikes",
+    "czech": "horské kolo",
+    "audio": "audio/das_mountainbike_die_mountainbikes.mp3"
+  },
+  {
+    "id": "selten",
+    "german": "selten",
+    "czech": "zřídka",
+    "audio": "audio/selten.mp3"
+  },
+  {
+    "id": "aktiv",
+    "german": "aktiv",
+    "czech": "aktivní",
+    "audio": "audio/aktiv.mp3"
+  },
+  {
+    "id": "sportlich",
+    "german": "sportlich",
+    "czech": "sportovně založený",
+    "audio": "audio/sportlich.mp3"
+  },
+  {
+    "id": "uebrigens",
+    "german": "übrigens",
+    "czech": "mimochodem",
+    "audio": "audio/uebrigens.mp3"
+  },
+  {
+    "id": "die_umgebung_die_umgebungen",
+    "german": "die Umgebung, die Umgebungen",
+    "czech": "okolí",
+    "audio": "audio/die_umgebung_die_umgebungen.mp3"
+  },
+  {
+    "id": "wunderschoen",
+    "german": "wunderschön",
+    "czech": "nádherný",
+    "audio": "audio/wunderschoen.mp3"
+  },
+  {
+    "id": "der_norden",
+    "german": "der Norden",
+    "czech": "sever",
+    "audio": "audio/der_norden.mp3"
+  },
+  {
+    "id": "der_sueden",
+    "german": "der Süden",
+    "czech": "jih",
+    "audio": "audio/der_sueden.mp3"
+  },
+  {
+    "id": "der_westen",
+    "german": "der Westen",
+    "czech": "západ",
+    "audio": "audio/der_westen.mp3"
+  },
+  {
+    "id": "der_osten",
+    "german": "der Osten",
+    "czech": "východ",
+    "audio": "audio/der_osten.mp3"
+  },
+  {
+    "id": "die_biene_die_bienen",
+    "german": "die Biene, die Bienen",
+    "czech": "včela",
+    "audio": "audio/die_biene_die_bienen.mp3"
+  },
+  {
+    "id": "der_frosch_die_froesche",
+    "german": "der Frosch, die Frösche",
+    "czech": "žába",
+    "audio": "audio/der_frosch_die_froesche.mp3"
+  },
+  {
+    "id": "die_kuh_die_kuehe",
+    "german": "die Kuh, die Kühe",
+    "czech": "kráva",
+    "audio": "audio/die_kuh_die_kuehe.mp3"
+  },
+  {
+    "id": "das_pferd_die_pferde",
+    "german": "das Pferd, die Pferde",
+    "czech": "kůň",
+    "audio": "audio/das_pferd_die_pferde.mp3"
+  },
+  {
+    "id": "das_schaf_die_schafe",
+    "german": "das Schaf, die Schafe",
+    "czech": "ovce",
+    "audio": "audio/das_schaf_die_schafe.mp3"
+  },
+  {
+    "id": "der_unterschied_die_unterschiede",
+    "german": "der Unterschied, die Unterschiede",
+    "czech": "rozdíl",
+    "audio": "audio/der_unterschied_die_unterschiede.mp3"
+  },
+  {
+    "id": "der_kanal_die_kanaele",
+    "german": "der Kanal, die Kanäle",
+    "czech": "kanál",
+    "audio": "audio/der_kanal_die_kanaele.mp3"
+  },
+  {
+    "id": "die_nordsee",
+    "german": "die Nordsee",
+    "czech": "Severní moře",
+    "audio": "audio/die_nordsee.mp3"
+  },
+  {
+    "id": "die_ostsee",
+    "german": "die Ostsee",
+    "czech": "Baltské moře",
+    "audio": "audio/die_ostsee.mp3"
+  },
+  {
+    "id": "ausserdem_gibt_es",
+    "german": "außerdem gibt es",
+    "czech": "kromě toho existuje",
+    "audio": "audio/ausserdem_gibt_es.mp3"
+  },
+  {
+    "id": "auf_keinen_fall",
+    "german": "auf keinen Fall",
+    "czech": "v žádném případě",
+    "audio": "audio/auf_keinen_fall.mp3"
+  },
+  {
+    "id": "der_bachelor",
+    "german": "der Bachelor",
+    "czech": "bakalář, bakalářský titul",
+    "audio": "audio/der_bachelor.mp3"
+  },
+  {
+    "id": "die_wirtschaft_die_wirtschaften",
+    "german": "die Wirtschaft, die Wirtschaften",
+    "czech": "ekonomika",
+    "audio": "audio/die_wirtschaft_die_wirtschaften.mp3"
+  },
+  {
+    "id": "die_umweltwirtschaft_die_umweltwirtschaften",
+    "german": "die Umweltwirtschaft, die Umweltwirtschaften",
+    "czech": "environmentální ekonomie, ekonomika životního prostředí",
+    "audio": "audio/die_umweltwirtschaft_die_umweltwirtschaften.mp3"
+  },
+  {
+    "id": "die_betriebswirtschaft_die_betriebswirtschaften",
+    "german": "die Betriebswirtschaft, die Betriebswirtschaften",
+    "czech": "podniková ekonomika",
+    "audio": "audio/die_betriebswirtschaft_die_betriebswirtschaften.mp3"
+  },
+  {
+    "id": "ziehen",
+    "german": "ziehen",
+    "czech": "táhnout",
+    "audio": "audio/ziehen.mp3"
+  },
+  {
+    "id": "die_suche_die_suchen",
+    "german": "die Suche, die Suchen",
+    "czech": "hledání",
+    "audio": "audio/die_suche_die_suchen.mp3"
+  },
+  {
+    "id": "die_arbeitssuche_die_arbeitssuchen",
+    "german": "die Arbeitssuche, die Arbeitssuchen",
+    "czech": "hledání práce",
+    "audio": "audio/die_arbeitssuche_die_arbeitssuchen.mp3"
+  },
+  {
+    "id": "die_pflanze_die_pflanzen",
+    "german": "die Pflanze, die Pflanzen",
+    "czech": "rostlina",
+    "audio": "audio/die_pflanze_die_pflanzen.mp3"
+  },
+  {
+    "id": "das_profil_die_profile",
+    "german": "das Profil, die Profile",
+    "czech": "profil",
+    "audio": "audio/das_profil_die_profile.mp3"
+  },
+  {
+    "id": "ausfuellen",
+    "german": "ausfüllen",
+    "czech": "vyplnit",
+    "audio": "audio/ausfuellen.mp3"
+  },
+  {
+    "id": "abschicken",
+    "german": "abschicken",
+    "czech": "odeslat",
+    "audio": "audio/abschicken.mp3"
+  },
+  {
+    "id": "vereinbaren",
+    "german": "vereinbaren",
+    "czech": "domluvit se",
+    "audio": "audio/vereinbaren.mp3"
+  },
+  {
+    "id": "die_theorie_die_theorien",
+    "german": "die Theorie, die Theorien",
+    "czech": "teorie",
+    "audio": "audio/die_theorie_die_theorien.mp3"
+  },
+  {
+    "id": "ueberlegen",
+    "german": "überlegen",
+    "czech": "přemýšlet",
+    "audio": "audio/ueberlegen.mp3"
+  },
+  {
+    "id": "der_stichpunkt_die_stichpunkte",
+    "german": "der Stichpunkt, die Stichpunkte",
+    "czech": "poznámka, bod",
+    "audio": "audio/der_stichpunkt_die_stichpunkte.mp3"
+  },
+  {
+    "id": "freitags",
+    "german": "freitags",
+    "czech": "(pravidelně) v pátek",
+    "audio": "audio/freitags.mp3"
+  },
+  {
+    "id": "das_homeoffice",
+    "german": "das Homeoffice",
+    "czech": "home office",
+    "audio": "audio/das_homeoffice.mp3"
+  },
+  {
+    "id": "das_onlineseminar_die_onlineseminare",
+    "german": "das Online-Seminar, die Online-Seminare",
+    "czech": "(online) seminář",
+    "audio": "audio/das_onlineseminar_die_onlineseminare.mp3"
+  },
+  {
+    "id": "das_onlinemeeting_die_onlinemeetings",
+    "german": "das Online-Meeting, die Online-Meetings",
+    "czech": "(online) porada",
+    "audio": "audio/das_onlinemeeting_die_onlinemeetings.mp3"
+  },
+  {
+    "id": "die_praesentation_die_praesentationen",
+    "german": "die Präsentation, die Präsentationen",
+    "czech": "prezentace",
+    "audio": "audio/die_praesentation_die_praesentationen.mp3"
+  },
+  {
+    "id": "gestresst",
+    "german": "gestresst",
+    "czech": "vystresovaný",
+    "audio": "audio/gestresst.mp3"
+  },
+  {
+    "id": "ausschalten",
+    "german": "ausschalten",
+    "czech": "vypnout",
+    "audio": "audio/ausschalten.mp3"
+  },
+  {
+    "id": "das_mikrofon_die_mikrofone",
+    "german": "das Mikrofon, die Mikrofone",
+    "czech": "mikrofon",
+    "audio": "audio/das_mikrofon_die_mikrofone.mp3"
+  },
+  {
+    "id": "das_mikro_die_mikros",
+    "german": "das Mikro, die Mikros",
+    "czech": "mikrofon",
+    "audio": "audio/das_mikro_die_mikros.mp3"
+  },
+  {
+    "id": "teilnehmen",
+    "german": "teilnehmen",
+    "czech": "účastnit se",
+    "audio": "audio/teilnehmen.mp3"
+  },
+  {
+    "id": "der_werbespot_die_werbespots",
+    "german": "der Werbespot, die Werbespots",
+    "czech": "reklamní spot",
+    "audio": "audio/der_werbespot_die_werbespots.mp3"
+  },
+  {
+    "id": "aufgehen",
+    "german": "aufgehen",
+    "czech": "vyjít",
+    "audio": "audio/aufgehen.mp3"
+  },
+  {
+    "id": "mittags",
+    "german": "mittags",
+    "czech": "v poledne",
+    "audio": "audio/mittags.mp3"
+  },
+  {
+    "id": "die_besprechung_die_besprechungen",
+    "german": "die Besprechung, die Besprechungen",
+    "czech": "porada",
+    "audio": "audio/die_besprechung_die_besprechungen.mp3"
+  },
+  {
+    "id": "der_vertrag_die_vertraege",
+    "german": "der Vertrag, die Verträge",
+    "czech": "smlouva",
+    "audio": "audio/der_vertrag_die_vertraege.mp3"
+  },
+  {
+    "id": "die_einladung_die_einladungen",
+    "german": "die Einladung, die Einladungen",
+    "czech": "pozvánka",
+    "audio": "audio/die_einladung_die_einladungen.mp3"
+  },
+  {
+    "id": "die_rechnung_die_rechnungen",
+    "german": "die Rechnung, die Rechnungen",
+    "czech": "faktura, účet",
+    "audio": "audio/die_rechnung_die_rechnungen.mp3"
+  },
+  {
+    "id": "die_geschaeftsreise_die_geschaeftsreisen",
+    "german": "die Geschäftsreise, die Geschäftsreisen",
+    "czech": "služební cesta",
+    "audio": "audio/die_geschaeftsreise_die_geschaeftsreisen.mp3"
+  },
+  {
+    "id": "kontaktieren",
+    "german": "kontaktieren",
+    "czech": "kontaktovat",
+    "audio": "audio/kontaktieren.mp3"
+  },
+  {
+    "id": "unterschreiben",
+    "german": "unterschreiben",
+    "czech": "podepsat",
+    "audio": "audio/unterschreiben.mp3"
+  },
+  {
+    "id": "verschicken",
+    "german": "verschicken",
+    "czech": "zaslat, rozeslat",
+    "audio": "audio/verschicken.mp3"
+  },
+  {
+    "id": "vorbereiten",
+    "german": "vorbereiten",
+    "czech": "připravit",
+    "audio": "audio/vorbereiten.mp3"
+  },
+  {
+    "id": "deshalb",
+    "german": "deshalb",
+    "czech": "proto",
+    "audio": "audio/deshalb.mp3"
+  },
+  {
+    "id": "reden",
+    "german": "reden",
+    "czech": "mluvit",
+    "audio": "audio/reden.mp3"
+  },
+  {
+    "id": "die_baeckerei_die_baeckereien",
+    "german": "die Bäckerei, die Bäckereien",
+    "czech": "pekárna",
+    "audio": "audio/die_baeckerei_die_baeckereien.mp3"
+  },
+  {
+    "id": "moeglich",
+    "german": "möglich",
+    "czech": "možný",
+    "audio": "audio/moeglich.mp3"
+  },
+  {
+    "id": "dringend",
+    "german": "dringend",
+    "czech": "naléhavý",
+    "audio": "audio/dringend.mp3"
+  },
+  {
+    "id": "der_auftrag_die_auftraege",
+    "german": "der Auftrag, die Aufträge",
+    "czech": "úkol",
+    "audio": "audio/der_auftrag_die_auftraege.mp3"
+  },
+  {
+    "id": "erteilen",
+    "german": "erteilen",
+    "czech": "udělit",
+    "audio": "audio/erteilen.mp3"
+  },
+  {
+    "id": "negativ",
+    "german": "negativ",
+    "czech": "negativní",
+    "audio": "audio/negativ.mp3"
+  },
+  {
+    "id": "positiv",
+    "german": "positiv",
+    "czech": "pozitivní",
+    "audio": "audio/positiv.mp3"
+  },
+  {
+    "id": "uebernehmen",
+    "german": "übernehmen",
+    "czech": "převzít",
+    "audio": "audio/uebernehmen.mp3"
+  },
+  {
+    "id": "erledigen",
+    "german": "erledigen",
+    "czech": "vyřídit",
+    "audio": "audio/erledigen.mp3"
+  },
+  {
+    "id": "buchen",
+    "german": "buchen",
+    "czech": "zamluvit, rezervovat",
+    "audio": "audio/buchen.mp3"
+  },
+  {
+    "id": "informieren",
+    "german": "informieren",
+    "czech": "informovat",
+    "audio": "audio/informieren.mp3"
+  },
+  {
+    "id": "reservieren",
+    "german": "reservieren",
+    "czech": "rezervovat",
+    "audio": "audio/reservieren.mp3"
+  },
+  {
+    "id": "das_eishockey",
+    "german": "das Eishockey",
+    "czech": "lední hokej",
+    "audio": "audio/das_eishockey.mp3"
+  },
+  {
+    "id": "das_stadion_die_stadien",
+    "german": "das Stadion, die Stadien",
+    "czech": "stadion",
+    "audio": "audio/das_stadion_die_stadien.mp3"
+  },
+  {
+    "id": "waehlen",
+    "german": "wählen",
+    "czech": "zvolit, vybrat",
+    "audio": "audio/waehlen.mp3"
+  },
+  {
+    "id": "die_ueberraschung_die_ueberraschungen",
+    "german": "die Überraschung, die Überraschungen",
+    "czech": "překvapení",
+    "audio": "audio/die_ueberraschung_die_ueberraschungen.mp3"
+  },
+  {
+    "id": "ueberraschen",
+    "german": "überraschen",
+    "czech": "překvapit",
+    "audio": "audio/ueberraschen.mp3"
+  },
+  {
+    "id": "das_ticket_die_tickets",
+    "german": "das Ticket, die Tickets",
+    "czech": "vstupenka",
+    "audio": "audio/das_ticket_die_tickets.mp3"
+  },
+  {
+    "id": "enttaeuscht",
+    "german": "enttäuscht",
+    "czech": "zklamaný",
+    "audio": "audio/enttaeuscht.mp3"
+  },
+  {
+    "id": "begeistert",
+    "german": "begeistert",
+    "czech": "nadšený",
+    "audio": "audio/begeistert.mp3"
+  },
+  {
+    "id": "das_theaterstueck_die_theaterstuecke",
+    "german": "das Theaterstück, die Theaterstücke",
+    "czech": "divadelní hra",
+    "audio": "audio/das_theaterstueck_die_theaterstuecke.mp3"
+  },
+  {
+    "id": "das_klavierkonzert_die_klavierkonzerte",
+    "german": "das Klavierkonzert, die Klavierkonzerte",
+    "czech": "(klavírní) koncert",
+    "audio": "audio/das_klavierkonzert_die_klavierkonzerte.mp3"
+  },
+  {
+    "id": "die_oper_die_opern_2",
+    "german": "die Oper, die Opern",
+    "czech": "opera",
+    "audio": "audio/die_oper_die_opern_2.mp3"
+  },
+  {
+    "id": "das_ballett_die_ballette",
+    "german": "das Ballett, die Ballette",
+    "czech": "balet",
+    "audio": "audio/das_ballett_die_ballette.mp3"
+  },
+  {
+    "id": "die_ausstellung_die_ausstellungen",
+    "german": "die Ausstellung, die Ausstellungen",
+    "czech": "výstava",
+    "audio": "audio/die_ausstellung_die_ausstellungen.mp3"
+  },
+  {
+    "id": "das_festival_die_festivals",
+    "german": "das Festival, die Festivals",
+    "czech": "festival",
+    "audio": "audio/das_festival_die_festivals.mp3"
+  },
+  {
+    "id": "die_lesung_die_lesungen",
+    "german": "die Lesung, die Lesungen",
+    "czech": "čtení",
+    "audio": "audio/die_lesung_die_lesungen.mp3"
+  },
+  {
+    "id": "das_musical",
+    "german": "das Musical",
+    "czech": "muzikál",
+    "audio": "audio/das_musical.mp3"
+  },
+  {
+    "id": "das_krimidinner_die_krimidinner",
+    "german": "das Krimidinner, die Krimidinner",
+    "czech": "krimi-šou s večeří",
+    "audio": "audio/das_krimidinner_die_krimidinner.mp3"
+  },
+  {
+    "id": "das_basketballspiel_die_basketballspiele",
+    "german": "das Basketballspiel, die Basketballspiele",
+    "czech": "basketbalový zápas",
+    "audio": "audio/das_basketballspiel_die_basketballspiele.mp3"
+  },
+  {
+    "id": "die_zaubershow_die_zaubershows",
+    "german": "die Zaubershow, die Zaubershows",
+    "czech": "kouzelnické vystoupení",
+    "audio": "audio/die_zaubershow_die_zaubershows.mp3"
+  },
+  {
+    "id": "das_kabarett_die_kabaretts",
+    "german": "das Kabarett, die Kabaretts",
+    "czech": "kabaret",
+    "audio": "audio/das_kabarett_die_kabaretts.mp3"
+  },
+  {
+    "id": "schenken",
+    "german": "schenken",
+    "czech": "věnovat, darovat",
+    "audio": "audio/schenken.mp3"
+  },
+  {
+    "id": "die_story_die_storys",
+    "german": "die Story, die Storys",
+    "czech": "příběh",
+    "audio": "audio/die_story_die_storys.mp3"
+  },
+  {
+    "id": "fantastisch",
+    "german": "fantastisch",
+    "czech": "fantastický",
+    "audio": "audio/fantastisch.mp3"
+  },
+  {
+    "id": "die_ahnung_die_ahnungen",
+    "german": "die Ahnung, die Ahnungen",
+    "czech": "tušení",
+    "audio": "audio/die_ahnung_die_ahnungen.mp3"
+  },
+  {
+    "id": "der_star_die_stars",
+    "german": "der Star, die Stars",
+    "czech": "hvězda",
+    "audio": "audio/der_star_die_stars.mp3"
+  },
+  {
+    "id": "das_autogramm_die_autogramme",
+    "german": "das Autogramm, die Autogramme",
+    "czech": "autogram",
+    "audio": "audio/das_autogramm_die_autogramme.mp3"
+  },
+  {
+    "id": "der_kuenstler_die_kuenstler",
+    "german": "der Künstler, die Künstler",
+    "czech": "umělec",
+    "audio": "audio/der_kuenstler_die_kuenstler.mp3"
+  },
+  {
+    "id": "die_kuenstlerin_die_kuenstlerinnen",
+    "german": "die Künstlerin, die Künstlerinnen",
+    "czech": "umělkyně",
+    "audio": "audio/die_kuenstlerin_die_kuenstlerinnen.mp3"
+  },
+  {
+    "id": "warten",
+    "german": "warten",
+    "czech": "čekat",
+    "audio": "audio/warten.mp3"
+  },
+  {
+    "id": "das_ende_die_enden",
+    "german": "das Ende, die Enden",
+    "czech": "konec",
+    "audio": "audio/das_ende_die_enden.mp3"
+  },
+  {
+    "id": "die_dauer",
+    "german": "die Dauer",
+    "czech": "délka trvání",
+    "audio": "audio/die_dauer.mp3"
+  },
+  {
+    "id": "neugierig",
+    "german": "neugierig",
+    "czech": "zvědavý",
+    "audio": "audio/neugierig.mp3"
+  },
+  {
+    "id": "klingen",
+    "german": "klingen",
+    "czech": "znít",
+    "audio": "audio/klingen.mp3"
+  },
+  {
+    "id": "die_tournee_die_tourneen",
+    "german": "die Tournee, die Tourneen",
+    "czech": "turné",
+    "audio": "audio/die_tournee_die_tourneen.mp3"
+  },
+  {
+    "id": "der_clown_die_clowns",
+    "german": "der Clown, die Clowns",
+    "czech": "klaun",
+    "audio": "audio/der_clown_die_clowns.mp3"
+  },
+  {
+    "id": "einverstanden",
+    "german": "einverstanden",
+    "czech": "dohodnuto, souhlasím",
+    "audio": "audio/einverstanden.mp3"
+  },
+  {
+    "id": "von_etwas_halten",
+    "german": "von etwas halten",
+    "czech": "mít mínění (o něčem)",
+    "audio": "audio/von_etwas_halten.mp3"
+  },
+  {
+    "id": "mitkommen",
+    "german": "mitkommen",
+    "czech": "jít s někým",
+    "audio": "audio/mitkommen.mp3"
+  },
+  {
+    "id": "zustimmen",
+    "german": "zustimmen",
+    "czech": "souhlasit",
+    "audio": "audio/zustimmen.mp3"
+  },
+  {
+    "id": "etwas_hoeflich_ablehnen",
+    "german": "etwas höflich ablehnen",
+    "czech": "zdvořile něco odmítnout",
+    "audio": "audio/etwas_hoeflich_ablehnen.mp3"
+  },
+  {
+    "id": "das_klavier_die_klaviere",
+    "german": "das Klavier, die Klaviere",
+    "czech": "klavír",
+    "audio": "audio/das_klavier_die_klaviere.mp3"
+  },
+  {
+    "id": "der_autor_die_autoren",
+    "german": "der Autor, die Autoren",
+    "czech": "autor",
+    "audio": "audio/der_autor_die_autoren.mp3"
+  },
+  {
+    "id": "die_autorin_die_autorinnen",
+    "german": "die Autorin, die Autorinnen",
+    "czech": "autorka",
+    "audio": "audio/die_autorin_die_autorinnen.mp3"
+  },
+  {
+    "id": "jemand",
+    "german": "jemand",
+    "czech": "někdo",
+    "audio": "audio/jemand.mp3"
+  },
+  {
+    "id": "ueberreden",
+    "german": "überreden",
+    "czech": "přemluvit",
+    "audio": "audio/ueberreden.mp3"
+  },
+  {
+    "id": "ueberzeugen",
+    "german": "überzeugen",
+    "czech": "přesvědčit",
+    "audio": "audio/ueberzeugen.mp3"
+  },
+  {
+    "id": "zoegernd",
+    "german": "zögernd",
+    "czech": "váhavě, zdrženlivě",
+    "audio": "audio/zoegernd.mp3"
+  },
+  {
+    "id": "bestimmt",
+    "german": "bestimmt",
+    "czech": "určitě",
+    "audio": "audio/bestimmt.mp3"
+  },
+  {
+    "id": "das_programm_die_programme",
+    "german": "das Programm, die Programme",
+    "czech": "program",
+    "audio": "audio/das_programm_die_programme.mp3"
+  },
+  {
+    "id": "bereit",
+    "german": "bereit",
+    "czech": "připravený",
+    "audio": "audio/bereit.mp3"
+  },
+  {
+    "id": "losgehen",
+    "german": "losgehen",
+    "czech": "zde: začít",
+    "audio": "audio/losgehen.mp3"
+  },
+  {
+    "id": "trainieren",
+    "german": "trainieren",
+    "czech": "trénovat",
+    "audio": "audio/trainieren.mp3"
+  },
+  {
+    "id": "abends",
+    "german": "abends",
+    "czech": "večer",
+    "audio": "audio/abends.mp3"
+  },
+  {
+    "id": "die_einheit_die_einheiten",
+    "german": "die Einheit, die Einheiten",
+    "czech": "jednotka",
+    "audio": "audio/die_einheit_die_einheiten.mp3"
+  },
+  {
+    "id": "verdoppeln",
+    "german": "verdoppeln",
+    "czech": "zdvojnásobit",
+    "audio": "audio/verdoppeln.mp3"
+  },
+  {
+    "id": "an_deiner_stelle",
+    "german": "an deiner Stelle",
+    "czech": "na tvém místě",
+    "audio": "audio/an_deiner_stelle.mp3"
+  },
+  {
+    "id": "niemand",
+    "german": "niemand",
+    "czech": "nikdo",
+    "audio": "audio/niemand.mp3"
+  },
+  {
+    "id": "haeufig",
+    "german": "häufig",
+    "czech": "často",
+    "audio": "audio/haeufig.mp3"
+  },
+  {
+    "id": "das_kilogramm_die_kilogramme",
+    "german": "das Kilogramm, die Kilogramme",
+    "czech": "kilogram",
+    "audio": "audio/das_kilogramm_die_kilogramme.mp3"
+  },
+  {
+    "id": "das_kilo_die_kilos",
+    "german": "das Kilo, die Kilos",
+    "czech": "kilo",
+    "audio": "audio/das_kilo_die_kilos.mp3"
+  },
+  {
+    "id": "wiegen",
+    "german": "wiegen",
+    "czech": "vážit",
+    "audio": "audio/wiegen.mp3"
+  },
+  {
+    "id": "die_sportart_die_sportarten",
+    "german": "die Sportart, die Sportarten",
+    "czech": "sportovní disciplína",
+    "audio": "audio/die_sportart_die_sportarten.mp3"
+  },
+  {
+    "id": "judo_machen",
+    "german": "Judo machen",
+    "czech": "(provozovat) judo",
+    "audio": "audio/judo_machen.mp3"
+  },
+  {
+    "id": "badminton_spielen",
+    "german": "Badminton spielen",
+    "czech": "(hrát) badminton",
+    "audio": "audio/badminton_spielen.mp3"
+  },
+  {
+    "id": "golf_spielen",
+    "german": "Golf spielen",
+    "czech": "(hrát) golf",
+    "audio": "audio/golf_spielen.mp3"
+  },
+  {
+    "id": "tischtennis_spielen",
+    "german": "Tischtennis spielen",
+    "czech": "(hrát) stolní tenis",
+    "audio": "audio/tischtennis_spielen.mp3"
+  },
+  {
+    "id": "das_walken",
+    "german": "das Walken",
+    "czech": "chůze",
+    "audio": "audio/das_walken.mp3"
+  },
+  {
+    "id": "aquafitness_machen",
+    "german": "Aquafitness machen",
+    "czech": "(provozovat) aquafitness",
+    "audio": "audio/aquafitness_machen.mp3"
+  },
+  {
+    "id": "das_rudern",
+    "german": "das Rudern",
+    "czech": "veslování",
+    "audio": "audio/das_rudern.mp3"
+  },
+  {
+    "id": "das_tauchen",
+    "german": "das Tauchen",
+    "czech": "potápění",
+    "audio": "audio/das_tauchen.mp3"
+  },
+  {
+    "id": "unterschiedlich",
+    "german": "unterschiedlich",
+    "czech": "rozdílný",
+    "audio": "audio/unterschiedlich.mp3"
+  },
+  {
+    "id": "die_meinung_die_meinungen",
+    "german": "die Meinung, die Meinungen",
+    "czech": "názor",
+    "audio": "audio/die_meinung_die_meinungen.mp3"
+  },
+  {
+    "id": "morgens",
+    "german": "morgens",
+    "czech": "ráno",
+    "audio": "audio/morgens.mp3"
+  },
+  {
+    "id": "direkt",
+    "german": "direkt",
+    "czech": "přímo",
+    "audio": "audio/direkt.mp3"
+  },
+  {
+    "id": "die_entspannung",
+    "german": "die Entspannung",
+    "czech": "relaxace",
+    "audio": "audio/die_entspannung.mp3"
+  },
+  {
+    "id": "kostenlos",
+    "german": "kostenlos",
+    "czech": "zdarma",
+    "audio": "audio/kostenlos.mp3"
+  },
+  {
+    "id": "der_verein_die_vereine",
+    "german": "der Verein, die Vereine",
+    "czech": "spolek, klub",
+    "audio": "audio/der_verein_die_vereine.mp3"
+  },
+  {
+    "id": "die_unterstuetzung_die_unterstuetzungen",
+    "german": "die Unterstützung, die Unterstützungen",
+    "czech": "podpora",
+    "audio": "audio/die_unterstuetzung_die_unterstuetzungen.mp3"
+  },
+  {
+    "id": "der_mitarbeiter_die_mitarbeiter",
+    "german": "der Mitarbeiter, die Mitarbeiter",
+    "czech": "zaměstnanec",
+    "audio": "audio/der_mitarbeiter_die_mitarbeiter.mp3"
+  },
+  {
+    "id": "die_mitarbeiterin_die_mitarbeiterinnen",
+    "german": "die Mitarbeiterin, die Mitarbeiterinnen",
+    "czech": "zaměstnankyně",
+    "audio": "audio/die_mitarbeiterin_die_mitarbeiterinnen.mp3"
+  },
+  {
+    "id": "die_halle_die_hallen",
+    "german": "die Halle, die Hallen",
+    "czech": "hala",
+    "audio": "audio/die_halle_die_hallen.mp3"
+  },
+  {
+    "id": "die_platte_die_platten",
+    "german": "die Platte, die Platten",
+    "czech": "deska, zde: stůl",
+    "audio": "audio/die_platte_die_platten.mp3"
+  },
+  {
+    "id": "vor_allem",
+    "german": "vor allem",
+    "czech": "především",
+    "audio": "audio/vor_allem.mp3"
+  },
+  {
+    "id": "der_wettkampf_die_wettkaempfe",
+    "german": "der Wettkampf, die Wettkämpfe",
+    "czech": "soutěž, závod",
+    "audio": "audio/der_wettkampf_die_wettkaempfe.mp3"
+  },
+  {
+    "id": "die_daten",
+    "german": "die Daten",
+    "czech": "data",
+    "audio": "audio/die_daten.mp3"
+  },
+  {
+    "id": "das_leben",
+    "german": "das Leben",
+    "czech": "život",
+    "audio": "audio/das_leben.mp3"
+  },
+  {
+    "id": "ausgehen",
+    "german": "ausgehen",
+    "czech": "jít za zábavou nebo na večeři",
+    "audio": "audio/ausgehen.mp3"
+  },
+  {
+    "id": "die_mannschaft_die_mannschaften",
+    "german": "die Mannschaft, die Mannschaften",
+    "czech": "tým, mužstvo",
+    "audio": "audio/die_mannschaft_die_mannschaften.mp3"
+  },
+  {
+    "id": "ausprobieren",
+    "german": "ausprobieren",
+    "czech": "vyzkoušet",
+    "audio": "audio/ausprobieren.mp3"
+  },
+  {
+    "id": "der_bewerber_die_bewerber",
+    "german": "der Bewerber, die Bewerber",
+    "czech": "uchazeč",
+    "audio": "audio/der_bewerber_die_bewerber.mp3"
+  },
+  {
+    "id": "die_bewerberin_die_bewerberinnen",
+    "german": "die Bewerberin, die Bewerberinnen",
+    "czech": "uchazečka",
+    "audio": "audio/die_bewerberin_die_bewerberinnen.mp3"
+  },
+  {
+    "id": "das_management_die_managements",
+    "german": "das Management, die Managements",
+    "czech": "management",
+    "audio": "audio/das_management_die_managements.mp3"
+  },
+  {
+    "id": "beziehungsweise",
+    "german": "beziehungsweise",
+    "czech": "respektive",
+    "audio": "audio/beziehungsweise.mp3"
+  },
+  {
+    "id": "zu_etwas_passen",
+    "german": "zu etwas passen",
+    "czech": "hodit se (k)",
+    "audio": "audio/zu_etwas_passen.mp3"
+  },
+  {
+    "id": "sich_bewerben",
+    "german": "sich bewerben",
+    "czech": "ucházet se (o práci)",
+    "audio": "audio/sich_bewerben.mp3"
+  },
+  {
+    "id": "die_kenntnis_die_kenntnisse",
+    "german": "die Kenntnis, die Kenntnisse",
+    "czech": "znalost",
+    "audio": "audio/die_kenntnis_die_kenntnisse.mp3"
+  },
+  {
+    "id": "das_original_die_originale",
+    "german": "das Original, die Originale",
+    "czech": "originál",
+    "audio": "audio/das_original_die_originale.mp3"
+  },
+  {
+    "id": "uebersetzen",
+    "german": "übersetzen",
+    "czech": "přeložit",
+    "audio": "audio/uebersetzen.mp3"
+  },
+  {
+    "id": "die_erklaerung_die_erklaerungen",
+    "german": "die Erklärung, die Erklärungen",
+    "czech": "vysvětlení",
+    "audio": "audio/die_erklaerung_die_erklaerungen.mp3"
+  },
+  {
+    "id": "die_berufserfahrung_die_berufserfahrungen",
+    "german": "die Berufserfahrung, die Berufserfahrungen",
+    "czech": "pracovní zkušenost",
+    "audio": "audio/die_berufserfahrung_die_berufserfahrungen.mp3"
+  },
+  {
+    "id": "na_ja",
+    "german": "na ja",
+    "czech": "no jo",
+    "audio": "audio/na_ja.mp3"
+  },
+  {
+    "id": "zustaendig",
+    "german": "zuständig",
+    "czech": "zodpovědný (za něco)",
+    "audio": "audio/zustaendig.mp3"
+  },
+  {
+    "id": "gerade",
+    "german": "gerade",
+    "czech": "právě",
+    "audio": "audio/gerade.mp3"
+  },
+  {
+    "id": "der_alkohol",
+    "german": "der Alkohol",
+    "czech": "alkohol",
+    "audio": "audio/der_alkohol.mp3"
+  },
+  {
+    "id": "geniessen",
+    "german": "genießen",
+    "czech": "vychutnat si",
+    "audio": "audio/geniessen.mp3"
+  },
+  {
+    "id": "miteinander",
+    "german": "miteinander",
+    "czech": "spolu",
+    "audio": "audio/miteinander.mp3"
+  },
+  {
+    "id": "der_humor",
+    "german": "der Humor",
+    "czech": "humor",
+    "audio": "audio/der_humor.mp3"
+  },
+  {
+    "id": "kritisch",
+    "german": "kritisch",
+    "czech": "kritický",
+    "audio": "audio/kritisch.mp3"
+  },
+  {
+    "id": "hoffen",
+    "german": "hoffen",
+    "czech": "doufat",
+    "audio": "audio/hoffen.mp3"
+  },
+  {
+    "id": "fuerchten",
+    "german": "fürchten",
+    "czech": "bát se, obávat se",
+    "audio": "audio/fuerchten.mp3"
+  },
+  {
+    "id": "das_mineralwasser_die_mineralwasser",
+    "german": "das Mineralwasser, die Mineralwasser",
+    "czech": "minerální voda",
+    "audio": "audio/das_mineralwasser_die_mineralwasser.mp3"
+  },
+  {
+    "id": "die_cola_die_colas",
+    "german": "die Cola, die Colas",
+    "czech": "cola",
+    "audio": "audio/die_cola_die_colas.mp3"
+  },
+  {
+    "id": "der_wein_die_weine",
+    "german": "der Wein, die Weine",
+    "czech": "víno",
+    "audio": "audio/der_wein_die_weine.mp3"
+  },
+  {
+    "id": "die_saftschorle_die_saftschorlen",
+    "german": "die Saftschorle, die Saftschorlen",
+    "czech": "střik se šťávou",
+    "audio": "audio/die_saftschorle_die_saftschorlen.mp3"
+  },
+  {
+    "id": "der_kakao_die_kakaos",
+    "german": "der Kakao, die Kakaos",
+    "czech": "kakao",
+    "audio": "audio/der_kakao_die_kakaos.mp3"
+  },
+  {
+    "id": "die_pizza_die_pizzen",
+    "german": "die Pizza, die Pizzen",
+    "czech": "pizza",
+    "audio": "audio/die_pizza_die_pizzen.mp3"
+  },
+  {
+    "id": "das_sandwich_die_sandwichs",
+    "german": "das Sandwich, die Sandwichs",
+    "czech": "sendvič",
+    "audio": "audio/das_sandwich_die_sandwichs.mp3"
+  },
+  {
+    "id": "die_bratwurst_die_bratwuerste",
+    "german": "die Bratwurst, die Bratwürste",
+    "czech": "klobása",
+    "audio": "audio/die_bratwurst_die_bratwuerste.mp3"
+  },
+  {
+    "id": "die_erdbeertorte_die_erdbeertorten",
+    "german": "die Erdbeertorte, die Erdbeertorten",
+    "czech": "jahodový dort",
+    "audio": "audio/die_erdbeertorte_die_erdbeertorten.mp3"
+  },
+  {
+    "id": "der_birnenkuchen_die_birnenkuchen",
+    "german": "der Birnenkuchen, die Birnenkuchen",
+    "czech": "hruškový koláč",
+    "audio": "audio/der_birnenkuchen_die_birnenkuchen.mp3"
+  },
+  {
+    "id": "der_marmorkuchen_die_marmorkuchen",
+    "german": "der Marmorkuchen, die Marmorkuchen",
+    "czech": "bábovka (s kakaem)",
+    "audio": "audio/der_marmorkuchen_die_marmorkuchen.mp3"
+  },
+  {
+    "id": "die_schlagsahne",
+    "german": "die Schlagsahne",
+    "czech": "šlehačka",
+    "audio": "audio/die_schlagsahne.mp3"
+  },
+  {
+    "id": "die_birne_die_birnen",
+    "german": "die Birne, die Birnen",
+    "czech": "hruška",
+    "audio": "audio/die_birne_die_birnen.mp3"
+  },
+  {
+    "id": "die_banane_die_bananen",
+    "german": "die Banane, die Bananen",
+    "czech": "banán",
+    "audio": "audio/die_banane_die_bananen.mp3"
+  },
+  {
+    "id": "der_imbissstand_die_imbissstaende",
+    "german": "der Imbissstand, die Imbissstände",
+    "czech": "stánek s občerstvením",
+    "audio": "audio/der_imbissstand_die_imbissstaende.mp3"
+  },
+  {
+    "id": "der_angestellte_die_angestellten",
+    "german": "der Angestellte, die Angestellten",
+    "czech": "zaměstnanec",
+    "audio": "audio/der_angestellte_die_angestellten.mp3"
+  },
+  {
+    "id": "die_angestellte_die_angestellten",
+    "german": "die Angestellte, die Angestellten",
+    "czech": "zaměstnankyně",
+    "audio": "audio/die_angestellte_die_angestellten.mp3"
+  },
+  {
+    "id": "sonst",
+    "german": "sonst",
+    "czech": "jinak (nebo)",
+    "audio": "audio/sonst.mp3"
+  },
+  {
+    "id": "zahlen",
+    "german": "zahlen",
+    "czech": "platit",
+    "audio": "audio/zahlen.mp3"
+  },
+  {
+    "id": "getrennt",
+    "german": "getrennt",
+    "czech": "zvlášť",
+    "audio": "audio/getrennt.mp3"
+  },
+  {
+    "id": "bar",
+    "german": "bar",
+    "czech": "hotovost, hotově",
+    "audio": "audio/bar.mp3"
+  },
+  {
+    "id": "die_eckarte_die_eckarten",
+    "german": "die EC-Karte, die EC-Karten",
+    "czech": "platební karta",
+    "audio": "audio/die_eckarte_die_eckarten.mp3"
+  },
+  {
+    "id": "aufnehmen",
+    "german": "aufnehmen",
+    "czech": "přijmout",
+    "audio": "audio/aufnehmen.mp3"
+  },
+  {
+    "id": "der_augenblick_die_augenblicke",
+    "german": "der Augenblick, die Augenblicke",
+    "czech": "okamžik",
+    "audio": "audio/der_augenblick_die_augenblicke.mp3"
+  },
+  {
+    "id": "kompliziert",
+    "german": "kompliziert",
+    "czech": "složitý",
+    "audio": "audio/kompliziert.mp3"
+  },
+  {
+    "id": "die_kasse_die_kassen",
+    "german": "die Kasse, die Kassen",
+    "czech": "pokladna",
+    "audio": "audio/die_kasse_die_kassen.mp3"
+  },
+  {
+    "id": "der_supermarkt_die_supermaerkte",
+    "german": "der Supermarkt, die Supermärkte",
+    "czech": "supermarket",
+    "audio": "audio/der_supermarkt_die_supermaerkte.mp3"
+  },
+  {
+    "id": "liefern",
+    "german": "liefern",
+    "czech": "dodat, doručit",
+    "audio": "audio/liefern.mp3"
+  },
+  {
+    "id": "der_lieferservice_die_lieferservices",
+    "german": "der Lieferservice, die Lieferservices",
+    "czech": "rozvoz",
+    "audio": "audio/der_lieferservice_die_lieferservices.mp3"
+  },
+  {
+    "id": "regelmaessig",
+    "german": "regelmäßig",
+    "czech": "pravidelně",
+    "audio": "audio/regelmaessig.mp3"
+  },
+  {
+    "id": "das_kochrezept_die_kochrezepte",
+    "german": "das Kochrezept, die Kochrezepte",
+    "czech": "recept",
+    "audio": "audio/das_kochrezept_die_kochrezepte.mp3"
+  },
+  {
+    "id": "der_pfannkuchen_die_pfannkuchen",
+    "german": "der Pfannkuchen, die Pfannkuchen",
+    "czech": "palačinka",
+    "audio": "audio/der_pfannkuchen_die_pfannkuchen.mp3"
+  },
+  {
+    "id": "peinlich",
+    "german": "peinlich",
+    "czech": "trapný",
+    "audio": "audio/peinlich.mp3"
+  },
+  {
+    "id": "der_raum_die_raeume",
+    "german": "der Raum, die Räume",
+    "czech": "místnost",
+    "audio": "audio/der_raum_die_raeume.mp3"
+  },
+  {
+    "id": "der_personalchef_die_personalchefs",
+    "german": "der Personalchef, die Personalchefs",
+    "czech": "personalista, ředitel HR",
+    "audio": "audio/der_personalchef_die_personalchefs.mp3"
+  },
+  {
+    "id": "die_azubi_die_azubis",
+    "german": "die Azubi, die Azubis",
+    "czech": "učeň",
+    "audio": "audio/die_azubi_die_azubis.mp3"
+  },
+  {
+    "id": "die_produktion",
+    "german": "die Produktion",
+    "czech": "výroba",
+    "audio": "audio/die_produktion.mp3"
+  },
+  {
+    "id": "die_itabteilung_die_itabteilungen",
+    "german": "die IT-Abteilung, die IT-Abteilungen",
+    "czech": "IT oddělení",
+    "audio": "audio/die_itabteilung_die_itabteilungen.mp3"
+  },
+  {
+    "id": "die_personalabteilung_die_personalabteilungen",
+    "german": "die Personalabteilung, die Personalabteilungen",
+    "czech": "personální oddělení",
+    "audio": "audio/die_personalabteilung_die_personalabteilungen.mp3"
+  },
+  {
+    "id": "das_lager_die_lager",
+    "german": "das Lager, die Lager",
+    "czech": "sklad",
+    "audio": "audio/das_lager_die_lager.mp3"
+  },
+  {
+    "id": "die_kantine_die_kantinen",
+    "german": "die Kantine, die Kantinen",
+    "czech": "jídelna",
+    "audio": "audio/die_kantine_die_kantinen.mp3"
+  },
+  {
+    "id": "der_konferenzraum_die_konferenzraeume",
+    "german": "der Konferenzraum, die Konferenzräume",
+    "czech": "zasedačka",
+    "audio": "audio/der_konferenzraum_die_konferenzraeume.mp3"
+  },
+  {
+    "id": "das_personal",
+    "german": "das Personal",
+    "czech": "personál",
+    "audio": "audio/das_personal.mp3"
+  },
+  {
+    "id": "entfernen",
+    "german": "entfernen",
+    "czech": "odstranit",
+    "audio": "audio/entfernen.mp3"
+  },
+  {
+    "id": "die_wirtschaft_die_wirtschaften_2",
+    "german": "die Wirtschaft, die Wirtschaften",
+    "czech": "hospodářství, ekonomie",
+    "audio": "audio/die_wirtschaft_die_wirtschaften_2.mp3"
+  },
+  {
+    "id": "regional",
+    "german": "regional",
+    "czech": "regionální",
+    "audio": "audio/regional.mp3"
+  },
+  {
+    "id": "dorthin",
+    "german": "dorthin",
+    "czech": "(směrem) tam",
+    "audio": "audio/dorthin.mp3"
+  },
+  {
+    "id": "das_unternehmen_die_unternehmen",
+    "german": "das Unternehmen, die Unternehmen",
+    "czech": "společnost, firma",
+    "audio": "audio/das_unternehmen_die_unternehmen.mp3"
+  },
+  {
+    "id": "einrichten",
+    "german": "einrichten",
+    "czech": "zařídit",
+    "audio": "audio/einrichten.mp3"
+  },
+  {
+    "id": "die_untersuchung_die_untersuchungen",
+    "german": "die Untersuchung, die Untersuchungen",
+    "czech": "výzkum",
+    "audio": "audio/die_untersuchung_die_untersuchungen.mp3"
+  },
+  {
+    "id": "der_arbeitnehmer_die_arbeitnehmer",
+    "german": "der Arbeitnehmer, die Arbeitnehmer",
+    "czech": "zaměstnanec",
+    "audio": "audio/der_arbeitnehmer_die_arbeitnehmer.mp3"
+  },
+  {
+    "id": "die_arbeitnehmerin_die_arbeitnehmerinnen",
+    "german": "die Arbeitnehmerin, die Arbeitnehmerinnen",
+    "czech": "zaměstnankyně",
+    "audio": "audio/die_arbeitnehmerin_die_arbeitnehmerinnen.mp3"
+  },
+  {
+    "id": "der_arbeitgeber_die_arbeitgeber",
+    "german": "der Arbeitgeber, die Arbeitgeber",
+    "czech": "zaměstnavatel",
+    "audio": "audio/der_arbeitgeber_die_arbeitgeber.mp3"
+  },
+  {
+    "id": "die_arbeitgeberin_die_arbeitgeberinnen",
+    "german": "die Arbeitgeberin, die Arbeitgeberinnen",
+    "czech": "zaměstnavatelka",
+    "audio": "audio/die_arbeitgeberin_die_arbeitgeberinnen.mp3"
+  },
+  {
+    "id": "der_betrieb_die_betriebe",
+    "german": "der Betrieb, die Betriebe",
+    "czech": "podnik, firma",
+    "audio": "audio/der_betrieb_die_betriebe.mp3"
+  },
+  {
+    "id": "das_klima",
+    "german": "das Klima",
+    "czech": "klima",
+    "audio": "audio/das_klima.mp3"
+  },
+  {
+    "id": "der_artikel_die_artikel",
+    "german": "der Artikel, die Artikel",
+    "czech": "článek",
+    "audio": "audio/der_artikel_die_artikel.mp3"
+  },
+  {
+    "id": "besprechen",
+    "german": "besprechen",
+    "czech": "projednat",
+    "audio": "audio/besprechen.mp3"
+  },
+  {
+    "id": "untersuchen",
+    "german": "untersuchen",
+    "czech": "zkoumat",
+    "audio": "audio/untersuchen.mp3"
+  },
+  {
+    "id": "seltsam",
+    "german": "seltsam",
+    "czech": "divný",
+    "audio": "audio/seltsam.mp3"
+  },
+  {
+    "id": "es_wundert_mich",
+    "german": "Es wundert mich",
+    "czech": "divím se",
+    "audio": "audio/es_wundert_mich.mp3"
+  },
+  {
+    "id": "mindestens",
+    "german": "mindestens",
+    "czech": "nejméně",
+    "audio": "audio/mindestens.mp3"
+  },
+  {
+    "id": "waehlen_2",
+    "german": "wählen",
+    "czech": "vybrat, zvolit",
+    "audio": "audio/waehlen_2.mp3"
+  },
+  {
+    "id": "an_die_wand_haengen",
+    "german": "an die Wand hängen",
+    "czech": "pověsit na zeď",
+    "audio": "audio/an_die_wand_haengen.mp3"
+  },
+  {
+    "id": "an_der_wand_haengen",
+    "german": "an der Wand hängen",
+    "czech": "viset na zdi",
+    "audio": "audio/an_der_wand_haengen.mp3"
+  },
+  {
+    "id": "hinter_den_schrank_stellen",
+    "german": "hinter den Schrank stellen",
+    "czech": "postavit za skříň",
+    "audio": "audio/hinter_den_schrank_stellen.mp3"
+  },
+  {
+    "id": "hinter_dem_schrank_stehen",
+    "german": "hinter dem Schrank stehen",
+    "czech": "stát za skříní",
+    "audio": "audio/hinter_dem_schrank_stehen.mp3"
+  },
+  {
+    "id": "unter_das_bett_legen",
+    "german": "unter das Bett legen",
+    "czech": "položit pod postel",
+    "audio": "audio/unter_das_bett_legen.mp3"
+  },
+  {
+    "id": "unter_dem_bett_liegen",
+    "german": "unter dem Bett liegen",
+    "czech": "ležet pod postelí",
+    "audio": "audio/unter_dem_bett_liegen.mp3"
+  },
+  {
+    "id": "das_kissen_die_kissen",
+    "german": "das Kissen, die Kissen",
+    "czech": "polštář",
+    "audio": "audio/das_kissen_die_kissen.mp3"
+  },
+  {
+    "id": "die_wand_die_waende",
+    "german": "die Wand, die Wände",
+    "czech": "zeď",
+    "audio": "audio/die_wand_die_waende.mp3"
+  },
+  {
+    "id": "die_garderobe_die_garderoben",
+    "german": "die Garderobe, die Garderoben",
+    "czech": "šatník",
+    "audio": "audio/die_garderobe_die_garderoben.mp3"
+  },
+  {
+    "id": "das_heft_die_hefte",
+    "german": "das Heft, die Hefte",
+    "czech": "sešit",
+    "audio": "audio/das_heft_die_hefte.mp3"
+  },
+  {
+    "id": "der_lautsprecher_die_lautsprecher",
+    "german": "der Lautsprecher, die Lautsprecher",
+    "czech": "reproduktor",
+    "audio": "audio/der_lautsprecher_die_lautsprecher.mp3"
+  },
+  {
+    "id": "die_pflanze_die_pflanzen_2",
+    "german": "die Pflanze, die Pflanzen",
+    "czech": "rostlina",
+    "audio": "audio/die_pflanze_die_pflanzen_2.mp3"
+  },
+  {
+    "id": "das_plakat_die_plakate",
+    "german": "das Plakat, die Plakate",
+    "czech": "plakát",
+    "audio": "audio/das_plakat_die_plakate.mp3"
+  },
+  {
+    "id": "das_poster_die_poster",
+    "german": "das Poster, die Poster",
+    "czech": "plakát",
+    "audio": "audio/das_poster_die_poster.mp3"
+  },
+  {
+    "id": "der_radiergummi_die_radiergummis",
+    "german": "der Radiergummi, die Radiergummis",
+    "czech": "guma (na gumování)",
+    "audio": "audio/der_radiergummi_die_radiergummis.mp3"
+  },
+  {
+    "id": "die_schachtel_die_schachteln",
+    "german": "die Schachtel, die Schachteln",
+    "czech": "krabička",
+    "audio": "audio/die_schachtel_die_schachteln.mp3"
+  },
+  {
+    "id": "der_schreibblock_die_schreibbloecke",
+    "german": "der Schreibblock, die Schreibblöcke",
+    "czech": "blok (na psaní)",
+    "audio": "audio/der_schreibblock_die_schreibbloecke.mp3"
+  },
+  {
+    "id": "der_zettel_die_zettel",
+    "german": "der Zettel, die Zettel",
+    "czech": "lístek",
+    "audio": "audio/der_zettel_die_zettel.mp3"
+  },
+  {
+    "id": "der_ordner_die_ordner",
+    "german": "der Ordner, die Ordner",
+    "czech": "šanon",
+    "audio": "audio/der_ordner_die_ordner.mp3"
+  },
+  {
+    "id": "die_schere_die_scheren",
+    "german": "die Schere, die Scheren",
+    "czech": "nůžky",
+    "audio": "audio/die_schere_die_scheren.mp3"
+  },
+  {
+    "id": "der_beitrag_die_beitraege",
+    "german": "der Beitrag, die Beiträge",
+    "czech": "příspěvek",
+    "audio": "audio/der_beitrag_die_beitraege.mp3"
+  },
+  {
+    "id": "die_gewohnheit_die_gewohnheiten",
+    "german": "die Gewohnheit, die Gewohnheiten",
+    "czech": "zvyk",
+    "audio": "audio/die_gewohnheit_die_gewohnheiten.mp3"
+  },
+  {
+    "id": "veroeffentlichen",
+    "german": "veröffentlichen",
+    "czech": "zveřejnit",
+    "audio": "audio/veroeffentlichen.mp3"
+  },
+  {
+    "id": "zaehlen",
+    "german": "zählen",
+    "czech": "počítat",
+    "audio": "audio/zaehlen.mp3"
+  },
+  {
+    "id": "die_stufe_die_stufen",
+    "german": "die Stufe, die Stufen",
+    "czech": "zde: schod",
+    "audio": "audio/die_stufe_die_stufen.mp3"
+  },
+  {
+    "id": "runter",
+    "german": "runter",
+    "czech": "dolů",
+    "audio": "audio/runter.mp3"
+  },
+  {
+    "id": "die_mathematik",
+    "german": "die Mathematik",
+    "czech": "matematika",
+    "audio": "audio/die_mathematik.mp3"
+  },
+  {
+    "id": "mathe",
+    "german": "Mathe",
+    "czech": "matika",
+    "audio": "audio/mathe.mp3"
+  },
+  {
+    "id": "gespannt",
+    "german": "gespannt",
+    "czech": "napjatý",
+    "audio": "audio/gespannt.mp3"
+  },
+  {
+    "id": "die_buchhandlung_die_buchhandlungen",
+    "german": "die Buchhandlung, die Buchhandlungen",
+    "czech": "knihkupectví",
+    "audio": "audio/die_buchhandlung_die_buchhandlungen.mp3"
+  },
+  {
+    "id": "riechen",
+    "german": "riechen",
+    "czech": "cítit (vůni)",
+    "audio": "audio/riechen.mp3"
+  },
+  {
+    "id": "gucken",
+    "german": "gucken",
+    "czech": "podívat se",
+    "audio": "audio/gucken.mp3"
+  },
+  {
+    "id": "der_haendler_die_haendler",
+    "german": "der Händler, die Händler",
+    "czech": "obchodník",
+    "audio": "audio/der_haendler_die_haendler.mp3"
+  },
+  {
+    "id": "die_haendlerin_die_haendlerinnen",
+    "german": "die Händlerin, die Händlerinnen",
+    "czech": "obchodnice",
+    "audio": "audio/die_haendlerin_die_haendlerinnen.mp3"
+  },
+  {
+    "id": "aussen",
+    "german": "außen",
+    "czech": "venku",
+    "audio": "audio/aussen.mp3"
+  },
+  {
+    "id": "innen",
+    "german": "innen",
+    "czech": "uvnitř",
+    "audio": "audio/innen.mp3"
+  },
+  {
+    "id": "abschneiden",
+    "german": "abschneiden",
+    "czech": "odkrojit, ukrojit",
+    "audio": "audio/abschneiden.mp3"
+  },
+  {
+    "id": "komplett",
+    "german": "komplett",
+    "czech": "úplně",
+    "audio": "audio/komplett.mp3"
+  },
+  {
+    "id": "verlassen",
+    "german": "verlassen",
+    "czech": "opustit",
+    "audio": "audio/verlassen.mp3"
+  },
+  {
+    "id": "kontrollieren",
+    "german": "kontrollieren",
+    "czech": "kontrolovat",
+    "audio": "audio/kontrollieren.mp3"
+  },
+  {
+    "id": "schneiden",
+    "german": "schneiden",
+    "czech": "stříhat, krájet, řezat",
+    "audio": "audio/schneiden.mp3"
+  },
+  {
+    "id": "die_briefmarke_die_briefmarken",
+    "german": "die Briefmarke, die Briefmarken",
+    "czech": "poštovní známka",
+    "audio": "audio/die_briefmarke_die_briefmarken.mp3"
+  },
+  {
+    "id": "aussuchen",
+    "german": "aussuchen",
+    "czech": "vybrat",
+    "audio": "audio/aussuchen.mp3"
+  },
+  {
+    "id": "aehnlich",
+    "german": "ähnlich",
+    "czech": "podobný",
+    "audio": "audio/aehnlich.mp3"
+  },
+  {
+    "id": "suess",
+    "german": "süß",
+    "czech": "sladký",
+    "audio": "audio/suess.mp3"
+  },
+  {
+    "id": "ungewoehnlich",
+    "german": "ungewöhnlich",
+    "czech": "neobvyklý",
+    "audio": "audio/ungewoehnlich.mp3"
+  },
+  {
+    "id": "die_fortbildung_die_fortbildungen",
+    "german": "die Fortbildung, die Fortbildungen",
+    "czech": "další vzdělávání",
+    "audio": "audio/die_fortbildung_die_fortbildungen.mp3"
+  },
+  {
+    "id": "der_patient_die_patienten",
+    "german": "der Patient, die Patienten",
+    "czech": "pacient",
+    "audio": "audio/der_patient_die_patienten.mp3"
+  },
+  {
+    "id": "die_patientin_die_patientinnen",
+    "german": "die Patientin, die Patientinnen",
+    "czech": "pacientka",
+    "audio": "audio/die_patientin_die_patientinnen.mp3"
+  },
+  {
+    "id": "pflegen",
+    "german": "pflegen",
+    "czech": "pečovat",
+    "audio": "audio/pflegen.mp3"
+  },
+  {
+    "id": "die_bueroarbeit_die_bueroarbeiten",
+    "german": "die Büroarbeit, die Büroarbeiten",
+    "czech": "kancelářská práce",
+    "audio": "audio/die_bueroarbeit_die_bueroarbeiten.mp3"
+  },
+  {
+    "id": "die_betreffzeile_die_betreffzeilen",
+    "german": "die Betreffzeile, die Betreffzeilen",
+    "czech": "předmět e-mailu",
+    "audio": "audio/die_betreffzeile_die_betreffzeilen.mp3"
+  },
+  {
+    "id": "die_pflegefachkraft_die_pflegefachkraefte",
+    "german": "die Pflegefachkraft, die Pflegefachkräfte",
+    "czech": "(kvalifikovaný) pečovatel",
+    "audio": "audio/die_pflegefachkraft_die_pflegefachkraefte.mp3"
+  },
+  {
+    "id": "die_pflegefachfrau_die_pflegefachfrauen",
+    "german": "die Pflegefachfrau, die Pflegefachfrauen",
+    "czech": "kvalifikovaná pečovatelka",
+    "audio": "audio/die_pflegefachfrau_die_pflegefachfrauen.mp3"
+  },
+  {
+    "id": "der_pflegefachmann_die_pflegefachmaenner",
+    "german": "der Pflegefachmann, die Pflegefachmänner",
+    "czech": "kvalifikovaný pečovatel",
+    "audio": "audio/der_pflegefachmann_die_pflegefachmaenner.mp3"
+  },
+  {
+    "id": "das_fortbildungsangebot_die_fortbildungsangebote",
+    "german": "das Fortbildungsangebot, die Fortbildungsangebote",
+    "czech": "nabídka dalšího vzdělávání",
+    "audio": "audio/das_fortbildungsangebot_die_fortbildungsangebote.mp3"
+  },
+  {
+    "id": "der_anhang_die_anhaenge",
+    "german": "der Anhang, die Anhänge",
+    "czech": "příloha",
+    "audio": "audio/der_anhang_die_anhaenge.mp3"
+  },
+  {
+    "id": "die_arbeitszeit_die_arbeitszeiten",
+    "german": "die Arbeitszeit, die Arbeitszeiten",
+    "czech": "pracovní doba",
+    "audio": "audio/die_arbeitszeit_die_arbeitszeiten.mp3"
+  },
+  {
+    "id": "zaehlen_als",
+    "german": "zählen als",
+    "czech": "počítat (se) jako",
+    "audio": "audio/zaehlen_als.mp3"
+  },
+  {
+    "id": "die_berufserfahrung_die_berufserfahrungen_2",
+    "german": "die Berufserfahrung, die Berufserfahrungen",
+    "czech": "pracovní zkušenost",
+    "audio": "audio/die_berufserfahrung_die_berufserfahrungen_2.mp3"
+  },
+  {
+    "id": "der_trick_die_tricks",
+    "german": "der Trick, die Tricks",
+    "czech": "trik",
+    "audio": "audio/der_trick_die_tricks.mp3"
+  },
+  {
+    "id": "die_kursdauer",
+    "german": "die Kursdauer",
+    "czech": "délka kurzu",
+    "audio": "audio/die_kursdauer.mp3"
+  },
+  {
+    "id": "vorletzt",
+    "german": "vorletzt-",
+    "czech": "předposlední",
+    "audio": "audio/vorletzt.mp3"
+  },
+  {
+    "id": "die_beschreibung_die_beschreibungen",
+    "german": "die Beschreibung, die Beschreibungen",
+    "czech": "popis",
+    "audio": "audio/die_beschreibung_die_beschreibungen.mp3"
+  },
+  {
+    "id": "das_gericht_die_gerichte",
+    "german": "das Gericht, die Gerichte",
+    "czech": "jídlo, pokrm",
+    "audio": "audio/das_gericht_die_gerichte.mp3"
+  },
+  {
+    "id": "der_trainer_die_trainer",
+    "german": "der Trainer, die Trainer",
+    "czech": "trenér",
+    "audio": "audio/der_trainer_die_trainer.mp3"
+  },
+  {
+    "id": "die_trainerin_die_trainerinnen",
+    "german": "die Trainerin, die Trainerinnen",
+    "czech": "trenérka",
+    "audio": "audio/die_trainerin_die_trainerinnen.mp3"
+  },
+  {
+    "id": "der_anfaenger_die_anfaenger",
+    "german": "der Anfänger, die Anfänger",
+    "czech": "začátečník",
+    "audio": "audio/der_anfaenger_die_anfaenger.mp3"
+  },
+  {
+    "id": "die_anfaengerin_die_anfaengerinnen",
+    "german": "die Anfängerin, die Anfängerinnen",
+    "czech": "začátečnice",
+    "audio": "audio/die_anfaengerin_die_anfaengerinnen.mp3"
+  },
+  {
+    "id": "der_erwachsene_die_erwachsenen",
+    "german": "der Erwachsene, die Erwachsenen",
+    "czech": "dospělý",
+    "audio": "audio/der_erwachsene_die_erwachsenen.mp3"
+  },
+  {
+    "id": "der_escooter_die_escooter",
+    "german": "der E-Scooter, die E-Scooter",
+    "czech": "elektrická koloběžka",
+    "audio": "audio/der_escooter_die_escooter.mp3"
+  },
+  {
+    "id": "das_mietauto_die_mietautos",
+    "german": "das Mietauto, die Mietautos",
+    "czech": "auto z půjčovny",
+    "audio": "audio/das_mietauto_die_mietautos.mp3"
+  },
+  {
+    "id": "das_leihrad_die_leihraeder",
+    "german": "das Leihrad, die Leihräder",
+    "czech": "sdílené kolo",
+    "audio": "audio/das_leihrad_die_leihraeder.mp3"
+  },
+  {
+    "id": "dafuer",
+    "german": "dafür",
+    "czech": "pro to",
+    "audio": "audio/dafuer.mp3"
+  },
+  {
+    "id": "versprechen",
+    "german": "versprechen",
+    "czech": "slíbit",
+    "audio": "audio/versprechen.mp3"
+  },
+  {
+    "id": "ablehnen",
+    "german": "ablehnen",
+    "czech": "odmítnout",
+    "audio": "audio/ablehnen.mp3"
+  },
+  {
+    "id": "definitiv",
+    "german": "definitiv",
+    "czech": "určitě",
+    "audio": "audio/definitiv.mp3"
+  },
+  {
+    "id": "gegenueber",
+    "german": "gegenüber",
+    "czech": "naproti",
+    "audio": "audio/gegenueber.mp3"
+  },
+  {
+    "id": "die_reihe_die_reihen",
+    "german": "die Reihe, die Reihen",
+    "czech": "řada",
+    "audio": "audio/die_reihe_die_reihen.mp3"
+  },
+  {
+    "id": "der_stau_die_staus",
+    "german": "der Stau, die Staus",
+    "czech": "dopravní zácpa",
+    "audio": "audio/der_stau_die_staus.mp3"
+  },
+  {
+    "id": "unternehmen",
+    "german": "unternehmen",
+    "czech": "podniknout",
+    "audio": "audio/unternehmen.mp3"
+  },
+  {
+    "id": "herrlich",
+    "german": "herrlich",
+    "czech": "zde: Krása!",
+    "audio": "audio/herrlich.mp3"
+  },
+  {
+    "id": "der_baecker_die_baecker",
+    "german": "der Bäcker, die Bäcker",
+    "czech": "pekař",
+    "audio": "audio/der_baecker_die_baecker.mp3"
+  },
+  {
+    "id": "die_baeckerin_die_baeckerinnen",
+    "german": "die Bäckerin, die Bäckerinnen",
+    "czech": "pekařka",
+    "audio": "audio/die_baeckerin_die_baeckerinnen.mp3"
+  },
+  {
+    "id": "endlich",
+    "german": "endlich",
+    "czech": "konečně",
+    "audio": "audio/endlich.mp3"
+  },
+  {
+    "id": "das_chaos",
+    "german": "das Chaos",
+    "czech": "chaos",
+    "audio": "audio/das_chaos.mp3"
+  },
+  {
+    "id": "der_zebrastreifen_die_zebrastreifen",
+    "german": "der Zebrastreifen, die Zebrastreifen",
+    "czech": "přechod pro chodce",
+    "audio": "audio/der_zebrastreifen_die_zebrastreifen.mp3"
+  },
+  {
+    "id": "der_buergersteig_die_buergersteige",
+    "german": "der Bürgersteig, die Bürgersteige",
+    "czech": "chodník",
+    "audio": "audio/der_buergersteig_die_buergersteige.mp3"
+  },
+  {
+    "id": "die_fussgaengerzone_die_fussgaengerzonen",
+    "german": "die Fußgängerzone, die Fußgängerzonen",
+    "czech": "pěší zóna",
+    "audio": "audio/die_fussgaengerzone_die_fussgaengerzonen.mp3"
+  },
+  {
+    "id": "die_fahrbahn_die_fahrbahnen",
+    "german": "die Fahrbahn, die Fahrbahnen",
+    "czech": "jízdní pruh",
+    "audio": "audio/die_fahrbahn_die_fahrbahnen.mp3"
+  },
+  {
+    "id": "die_autobahn_die_autobahnen",
+    "german": "die Autobahn, die Autobahnen",
+    "czech": "dálnice",
+    "audio": "audio/die_autobahn_die_autobahnen.mp3"
+  },
+  {
+    "id": "die_ausfahrt_die_ausfahrten",
+    "german": "die Ausfahrt, die Ausfahrten",
+    "czech": "výjezd",
+    "audio": "audio/die_ausfahrt_die_ausfahrten.mp3"
+  },
+  {
+    "id": "der_stau_die_staus_2",
+    "german": "der Stau, die Staus",
+    "czech": "dopravní zácpa",
+    "audio": "audio/der_stau_die_staus_2.mp3"
+  },
+  {
+    "id": "die_baustelle_die_baustellen",
+    "german": "die Baustelle, die Baustellen",
+    "czech": "staveniště",
+    "audio": "audio/die_baustelle_die_baustellen.mp3"
+  },
+  {
+    "id": "die_umleitung_die_umleitungen",
+    "german": "die Umleitung, die Umleitungen",
+    "czech": "objížďka",
+    "audio": "audio/die_umleitung_die_umleitungen.mp3"
+  },
+  {
+    "id": "der_unfall_die_unfaelle",
+    "german": "der Unfall, die Unfälle",
+    "czech": "nehoda",
+    "audio": "audio/der_unfall_die_unfaelle.mp3"
+  },
+  {
+    "id": "der_pkw_die_pkws",
+    "german": "der Pkw, die Pkws",
+    "czech": "osobní automobil",
+    "audio": "audio/der_pkw_die_pkws.mp3"
+  },
+  {
+    "id": "der_lkw_die_lkws",
+    "german": "der Lkw, die Lkws",
+    "czech": "nákladní automobil",
+    "audio": "audio/der_lkw_die_lkws.mp3"
+  },
+  {
+    "id": "die_nachricht_die_nachrichten",
+    "german": "die Nachricht, die Nachrichten",
+    "czech": "zpráva",
+    "audio": "audio/die_nachricht_die_nachrichten.mp3"
+  },
+  {
+    "id": "folgen",
+    "german": "folgen",
+    "czech": "následovat",
+    "audio": "audio/folgen.mp3"
+  },
+  {
+    "id": "bundes",
+    "german": "Bundes-",
+    "czech": "federální",
+    "audio": "audio/bundes.mp3"
+  },
+  {
+    "id": "vorsichtig",
+    "german": "vorsichtig",
+    "czech": "opatrný",
+    "audio": "audio/vorsichtig.mp3"
+  },
+  {
+    "id": "ueberholen",
+    "german": "überholen",
+    "czech": "předjet",
+    "audio": "audio/ueberholen.mp3"
+  },
+  {
+    "id": "die_ueberquerung_die_ueberquerungen",
+    "german": "die Überquerung, die Überquerungen",
+    "czech": "přechod",
+    "audio": "audio/die_ueberquerung_die_ueberquerungen.mp3"
+  },
+  {
+    "id": "die_aussicht",
+    "german": "die Aussicht",
+    "czech": "výhled",
+    "audio": "audio/die_aussicht.mp3"
+  },
+  {
+    "id": "das_camping",
+    "german": "das Camping",
+    "czech": "kempování",
+    "audio": "audio/das_camping.mp3"
+  },
+  {
+    "id": "die_sauna_die_saunen",
+    "german": "die Sauna, die Saunen",
+    "czech": "sauna",
+    "audio": "audio/die_sauna_die_saunen.mp3"
+  },
+  {
+    "id": "das_luxushotel_die_luxushotels",
+    "german": "das Luxushotel, die Luxushotels",
+    "czech": "luxusní hotel",
+    "audio": "audio/das_luxushotel_die_luxushotels.mp3"
+  },
+  {
+    "id": "die_zahnbuerste_die_zahnbuersten",
+    "german": "die Zahnbürste, die Zahnbürsten",
+    "czech": "zubní kartáček",
+    "audio": "audio/die_zahnbuerste_die_zahnbuersten.mp3"
+  },
+  {
+    "id": "die_zahnpasta",
+    "german": "die Zahnpasta",
+    "czech": "zubní pasta",
+    "audio": "audio/die_zahnpasta.mp3"
+  },
+  {
+    "id": "die_sonnencreme_die_sonnencremes",
+    "german": "die Sonnencreme, die Sonnencremes",
+    "czech": "opalovací krém",
+    "audio": "audio/die_sonnencreme_die_sonnencremes.mp3"
+  },
+  {
+    "id": "der_sonnenhut_die_sonnenhuete",
+    "german": "der Sonnenhut, die Sonnenhüte",
+    "czech": "sluneční klobouk",
+    "audio": "audio/der_sonnenhut_die_sonnenhuete.mp3"
+  },
+  {
+    "id": "das_pflaster_die_pflaster",
+    "german": "das Pflaster, die Pflaster",
+    "czech": "náplast",
+    "audio": "audio/das_pflaster_die_pflaster.mp3"
+  },
+  {
+    "id": "das_handtuch_die_handtuecher",
+    "german": "das Handtuch, die Handtücher",
+    "czech": "ručník",
+    "audio": "audio/das_handtuch_die_handtuecher.mp3"
+  },
+  {
+    "id": "der_schlafsack_die_schlafsaecke",
+    "german": "der Schlafsack, die Schlafsäcke",
+    "czech": "spacák",
+    "audio": "audio/der_schlafsack_die_schlafsaecke.mp3"
+  },
+  {
+    "id": "die_wolldecke_die_wolldecken",
+    "german": "die Wolldecke, die Wolldecken",
+    "czech": "vlněná deka",
+    "audio": "audio/die_wolldecke_die_wolldecken.mp3"
+  },
+  {
+    "id": "das_ladegeraet_die_ladegeraete",
+    "german": "das Ladegerät, die Ladegeräte",
+    "czech": "nabíječka",
+    "audio": "audio/das_ladegeraet_die_ladegeraete.mp3"
+  },
+  {
+    "id": "das_taschenmesser_die_taschenmesser",
+    "german": "das Taschenmesser, die Taschenmesser",
+    "czech": "kapesní nůž",
+    "audio": "audio/das_taschenmesser_die_taschenmesser.mp3"
+  },
+  {
+    "id": "die_taschenlampe_die_taschenlampen",
+    "german": "die Taschenlampe, die Taschenlampen",
+    "czech": "svítilna",
+    "audio": "audio/die_taschenlampe_die_taschenlampen.mp3"
+  },
+  {
+    "id": "die_trinkflasche_die_trinkflaschen",
+    "german": "die Trinkflasche, die Trinkflaschen",
+    "czech": "láhev na vodu",
+    "audio": "audio/die_trinkflasche_die_trinkflaschen.mp3"
+  },
+  {
+    "id": "die_wanderung_die_wanderungen",
+    "german": "die Wanderung, die Wanderungen",
+    "czech": "pěší túra",
+    "audio": "audio/die_wanderung_die_wanderungen.mp3"
+  },
+  {
+    "id": "der_bergfuehrer_die_bergfuehrer",
+    "german": "der Bergführer, die Bergführer",
+    "czech": "horský průvodce",
+    "audio": "audio/der_bergfuehrer_die_bergfuehrer.mp3"
+  },
+  {
+    "id": "die_bergfuehrerin_die_bergfuehrerinnen",
+    "german": "die Bergführerin, die Bergführerinnen",
+    "czech": "horská průvodkyně",
+    "audio": "audio/die_bergfuehrerin_die_bergfuehrerinnen.mp3"
+  },
+  {
+    "id": "erreichen",
+    "german": "erreichen",
+    "czech": "dosáhnout",
+    "audio": "audio/erreichen.mp3"
+  },
+  {
+    "id": "ueberqueren",
+    "german": "überqueren",
+    "czech": "přejít",
+    "audio": "audio/ueberqueren.mp3"
+  },
+  {
+    "id": "leer",
+    "german": "leer",
+    "czech": "prázdný",
+    "audio": "audio/leer.mp3"
+  },
+  {
+    "id": "traeumen",
+    "german": "träumen",
+    "czech": "snít",
+    "audio": "audio/traeumen.mp3"
+  },
+  {
+    "id": "die_chance_die_chancen",
+    "german": "die Chance, die Chancen",
+    "czech": "šance",
+    "audio": "audio/die_chance_die_chancen.mp3"
+  },
+  {
+    "id": "der_berg_die_berge",
+    "german": "der Berg, die Berge",
+    "czech": "hora",
+    "audio": "audio/der_berg_die_berge.mp3"
+  },
+  {
+    "id": "die_berge",
+    "german": "die Berge",
+    "czech": "hory",
+    "audio": "audio/die_berge.mp3"
+  },
+  {
+    "id": "der_knochen_die_knochen",
+    "german": "der Knochen, die Knochen",
+    "czech": "kost",
+    "audio": "audio/der_knochen_die_knochen.mp3"
+  },
+  {
+    "id": "der_muskel_die_muskeln",
+    "german": "der Muskel, die Muskeln",
+    "czech": "sval",
+    "audio": "audio/der_muskel_die_muskeln.mp3"
+  },
+  {
+    "id": "ploetzlich",
+    "german": "plötzlich",
+    "czech": "najednou",
+    "audio": "audio/ploetzlich.mp3"
+  },
+  {
+    "id": "der_stein_die_steine",
+    "german": "der Stein, die Steine",
+    "czech": "kámen",
+    "audio": "audio/der_stein_die_steine.mp3"
+  },
+  {
+    "id": "vorher",
+    "german": "vorher",
+    "czech": "předtím",
+    "audio": "audio/vorher.mp3"
+  },
+  {
+    "id": "der_zucker",
+    "german": "der Zucker",
+    "czech": "cukr",
+    "audio": "audio/der_zucker.mp3"
+  },
+  {
+    "id": "die_kreuzfahrt_die_kreuzfahrten",
+    "german": "die Kreuzfahrt, die Kreuzfahrten",
+    "czech": "plavba výletní lodí",
+    "audio": "audio/die_kreuzfahrt_die_kreuzfahrten.mp3"
+  },
+  {
+    "id": "das_kajak_die_kajaks",
+    "german": "das Kajak, die Kajaks",
+    "czech": "kajak",
+    "audio": "audio/das_kajak_die_kajaks.mp3"
+  },
+  {
+    "id": "reduzieren",
+    "german": "reduzieren",
+    "czech": "snížit, redukovat",
+    "audio": "audio/reduzieren.mp3"
+  },
+  {
+    "id": "das_prozent_die_prozente",
+    "german": "das Prozent, die Prozente",
+    "czech": "procento",
+    "audio": "audio/das_prozent_die_prozente.mp3"
+  },
+  {
+    "id": "die_meisten",
+    "german": "die meisten",
+    "czech": "většina",
+    "audio": "audio/die_meisten.mp3"
+  },
+  {
+    "id": "die_haelfte_die_haelften",
+    "german": "die Hälfte, die Hälften",
+    "czech": "polovina",
+    "audio": "audio/die_haelfte_die_haelften.mp3"
+  },
+  {
+    "id": "das_viertel_die_viertel",
+    "german": "das Viertel, die Viertel",
+    "czech": "čtvrtina",
+    "audio": "audio/das_viertel_die_viertel.mp3"
+  },
+  {
+    "id": "einige",
+    "german": "einige",
+    "czech": "někteří",
+    "audio": "audio/einige.mp3"
+  },
+  {
+    "id": "das_wellness",
+    "german": "das Wellness",
+    "czech": "wellness",
+    "audio": "audio/das_wellness.mp3"
+  },
+  {
+    "id": "das_abenteuer_die_abenteuer",
+    "german": "das Abenteuer, die Abenteuer",
+    "czech": "dobrodružství",
+    "audio": "audio/das_abenteuer_die_abenteuer.mp3"
+  },
+  {
+    "id": "anschauen",
+    "german": "anschauen",
+    "czech": "podívat se (na něco)",
+    "audio": "audio/anschauen.mp3"
+  },
+  {
+    "id": "rufen",
+    "german": "rufen",
+    "czech": "volat",
+    "audio": "audio/rufen.mp3"
+  },
+  {
+    "id": "das_visum_die_visa",
+    "german": "das Visum, die Visa",
+    "czech": "vízum",
+    "audio": "audio/das_visum_die_visa.mp3"
+  },
+  {
+    "id": "der_reisepass_die_reisepaesse",
+    "german": "der Reisepass, die Reisepässe",
+    "czech": "(cestovní) pas",
+    "audio": "audio/der_reisepass_die_reisepaesse.mp3"
+  },
+  {
+    "id": "der_personalausweis_die_personalausweise",
+    "german": "der Personalausweis, die Personalausweise",
+    "czech": "občanský průkaz",
+    "audio": "audio/der_personalausweis_die_personalausweise.mp3"
+  },
+  {
+    "id": "das_zeugnis_die_zeugnisse",
+    "german": "das Zeugnis, die Zeugnisse",
+    "czech": "vysvědčení",
+    "audio": "audio/das_zeugnis_die_zeugnisse.mp3"
+  },
+  {
+    "id": "der_lebenslauf_die_lebenslaeufe",
+    "german": "der Lebenslauf, die Lebensläufe",
+    "czech": "životopis",
+    "audio": "audio/der_lebenslauf_die_lebenslaeufe.mp3"
+  },
+  {
+    "id": "die_bewerbung_die_bewerbungen",
+    "german": "die Bewerbung, die Bewerbungen",
+    "czech": "žádost o místo",
+    "audio": "audio/die_bewerbung_die_bewerbungen.mp3"
+  },
+  {
+    "id": "die_gesundheitskarte_die_gesundheitskarten",
+    "german": "die Gesundheitskarte, die Gesundheitskarten",
+    "czech": "zdravotní průkaz – pojištěnce",
+    "audio": "audio/die_gesundheitskarte_die_gesundheitskarten.mp3"
+  },
+  {
+    "id": "die_impfung_die_impfungen",
+    "german": "die Impfung, die Impfungen",
+    "czech": "očkování",
+    "audio": "audio/die_impfung_die_impfungen.mp3"
+  },
+  {
+    "id": "freiwillig",
+    "german": "freiwillig",
+    "czech": "dobrovolný",
+    "audio": "audio/freiwillig.mp3"
+  },
+  {
+    "id": "erfahren",
+    "german": "erfahren",
+    "czech": "zjistit, dozvědět se",
+    "audio": "audio/erfahren.mp3"
+  },
+  {
+    "id": "zu_etwas_passen_2",
+    "german": "zu etwas passen",
+    "czech": "hodit se (k)",
+    "audio": "audio/zu_etwas_passen_2.mp3"
+  },
+  {
+    "id": "der_freiwillige_die_freiwilligen",
+    "german": "der Freiwillige, die Freiwilligen",
+    "czech": "dobrovolník, dobrovolnice",
+    "audio": "audio/der_freiwillige_die_freiwilligen.mp3"
+  },
+  {
+    "id": "die_betreuung_die_betreuungen",
+    "german": "die Betreuung, die Betreuungen",
+    "czech": "péče",
+    "audio": "audio/die_betreuung_die_betreuungen.mp3"
+  },
+  {
+    "id": "gleichzeitig",
+    "german": "gleichzeitig",
+    "czech": "současný",
+    "audio": "audio/gleichzeitig.mp3"
+  },
+  {
+    "id": "bereits",
+    "german": "bereits",
+    "czech": "již, už",
+    "audio": "audio/bereits.mp3"
+  },
+  {
+    "id": "die_voraussetzung_die_voraussetzungen",
+    "german": "die Voraussetzung, die Voraussetzungen",
+    "czech": "předpoklad",
+    "audio": "audio/die_voraussetzung_die_voraussetzungen.mp3"
+  },
+  {
+    "id": "die_kenntnis_die_kenntnisse_2",
+    "german": "die Kenntnis, die Kenntnisse",
+    "czech": "znalost",
+    "audio": "audio/die_kenntnis_die_kenntnisse_2.mp3"
+  },
+  {
+    "id": "gueltig",
+    "german": "gültig",
+    "czech": "platný",
+    "audio": "audio/gueltig.mp3"
+  },
+  {
+    "id": "eventuell",
+    "german": "eventuell",
+    "czech": "případně",
+    "audio": "audio/eventuell.mp3"
+  },
+  {
+    "id": "die_ausnahme_die_ausnahmen",
+    "german": "die Ausnahme, die Ausnahmen",
+    "czech": "výjimka",
+    "audio": "audio/die_ausnahme_die_ausnahmen.mp3"
+  },
+  {
+    "id": "die_oeffnungszeit_die_oeffnungszeiten",
+    "german": "die Öffnungszeit, die Öffnungszeiten",
+    "czech": "otevírací doba",
+    "audio": "audio/die_oeffnungszeit_die_oeffnungszeiten.mp3"
+  },
+  {
+    "id": "die_demonstration_die_demonstrationen",
+    "german": "die Demonstration, die Demonstrationen",
+    "czech": "demonstrace",
+    "audio": "audio/die_demonstration_die_demonstrationen.mp3"
+  },
+  {
+    "id": "die_anmeldung_die_anmeldungen",
+    "german": "die Anmeldung, die Anmeldungen",
+    "czech": "registrace",
+    "audio": "audio/die_anmeldung_die_anmeldungen.mp3"
+  },
+  {
+    "id": "historisch",
+    "german": "historisch",
+    "czech": "historický",
+    "audio": "audio/historisch.mp3"
+  },
+  {
+    "id": "die_tankstelle_die_tankstellen",
+    "german": "die Tankstelle, die Tankstellen",
+    "czech": "čerpací stanice",
+    "audio": "audio/die_tankstelle_die_tankstellen.mp3"
+  },
+  {
+    "id": "der_zugang_die_zugaenge",
+    "german": "der Zugang, die Zugänge",
+    "czech": "přístup",
+    "audio": "audio/der_zugang_die_zugaenge.mp3"
+  },
+  {
+    "id": "der_saal_die_saele",
+    "german": "der Saal, die Säle",
+    "czech": "sál",
+    "audio": "audio/der_saal_die_saele.mp3"
+  },
+  {
+    "id": "ausleihen",
+    "german": "ausleihen",
+    "czech": "půjčit si",
+    "audio": "audio/ausleihen.mp3"
+  },
+  {
+    "id": "der_eintritt_die_eintritte",
+    "german": "der Eintritt, die Eintritte",
+    "czech": "vstup",
+    "audio": "audio/der_eintritt_die_eintritte.mp3"
+  },
+  {
+    "id": "oeffentlich",
+    "german": "öffentlich",
+    "czech": "veřejný",
+    "audio": "audio/oeffentlich.mp3"
+  },
+  {
+    "id": "die_linie_die_linien",
+    "german": "die Linie, die Linien",
+    "czech": "linka",
+    "audio": "audio/die_linie_die_linien.mp3"
+  },
+  {
+    "id": "die_gefahr_die_gefahren",
+    "german": "die Gefahr, die Gefahren",
+    "czech": "nebezpečí",
+    "audio": "audio/die_gefahr_die_gefahren.mp3"
+  },
+  {
+    "id": "die_innenstadt_die_innenstaedte",
+    "german": "die Innenstadt, die Innenstädte",
+    "czech": "centrum města",
+    "audio": "audio/die_innenstadt_die_innenstaedte.mp3"
+  },
+  {
+    "id": "kopieren",
+    "german": "kopieren",
+    "czech": "kopírovat",
+    "audio": "audio/kopieren.mp3"
+  },
+  {
+    "id": "ehrlich",
+    "german": "ehrlich",
+    "czech": "upřímný",
+    "audio": "audio/ehrlich.mp3"
+  },
+  {
+    "id": "sich_ueberlegen",
+    "german": "sich überlegen",
+    "czech": "přemýšlet (promyslet si)",
+    "audio": "audio/sich_ueberlegen.mp3"
+  },
+  {
+    "id": "die_erfahrung_die_erfahrungen",
+    "german": "die Erfahrung, die Erfahrungen",
+    "czech": "zkušenost",
+    "audio": "audio/die_erfahrung_die_erfahrungen.mp3"
+  },
+  {
+    "id": "die_leitung_die_leitungen",
+    "german": "die Leitung, die Leitungen",
+    "czech": "vedení",
+    "audio": "audio/die_leitung_die_leitungen.mp3"
+  },
+  {
+    "id": "unterstuetzen",
+    "german": "unterstützen",
+    "czech": "podpořit",
+    "audio": "audio/unterstuetzen.mp3"
+  },
+  {
+    "id": "leiten",
+    "german": "leiten",
+    "czech": "vést",
+    "audio": "audio/leiten.mp3"
+  },
+  {
+    "id": "die_geduld",
+    "german": "die Geduld",
+    "czech": "trpělivost",
+    "audio": "audio/die_geduld.mp3"
+  },
+  {
+    "id": "eben",
+    "german": "eben",
+    "czech": "právě",
+    "audio": "audio/eben.mp3"
+  },
+  {
+    "id": "die_enttaeuschung_die_enttaeuschungen",
+    "german": "die Enttäuschung, die Enttäuschungen",
+    "czech": "zklamání",
+    "audio": "audio/die_enttaeuschung_die_enttaeuschungen.mp3"
+  },
+  {
+    "id": "die_grafik_die_grafiken",
+    "german": "die Grafik, die Grafiken",
+    "czech": "zde: graf",
+    "audio": "audio/die_grafik_die_grafiken.mp3"
+  },
+  {
+    "id": "die_software",
+    "german": "die Software",
+    "czech": "software",
+    "audio": "audio/die_software.mp3"
+  },
+  {
+    "id": "die_umfrage_die_umfragen",
+    "german": "die Umfrage, die Umfragen",
+    "czech": "průzkum, anketa",
+    "audio": "audio/die_umfrage_die_umfragen.mp3"
+  },
+  {
+    "id": "das_jobticket_die_jobtickets",
+    "german": "das Jobticket, die Jobtickets",
+    "czech": "zvýhodněná zaměstnanecká měsíční jízdenka",
+    "audio": "audio/das_jobticket_die_jobtickets.mp3"
+  },
+  {
+    "id": "das_monatsticket_die_monatstickets",
+    "german": "das Monatsticket, die Monatstickets",
+    "czech": "měsíční jízdenka",
+    "audio": "audio/das_monatsticket_die_monatstickets.mp3"
+  },
+  {
+    "id": "die_praesentation_halten",
+    "german": "die Präsentation halten",
+    "czech": "mít prezentaci",
+    "audio": "audio/die_praesentation_halten.mp3"
+  },
+  {
+    "id": "das_drittel_die_drittel",
+    "german": "das Drittel, die Drittel",
+    "czech": "třetina",
+    "audio": "audio/das_drittel_die_drittel.mp3"
+  },
+  {
+    "id": "das_diagramm_die_diagramme",
+    "german": "das Diagramm, die Diagramme",
+    "czech": "diagram",
+    "audio": "audio/das_diagramm_die_diagramme.mp3"
+  },
+  {
+    "id": "das_saeulendiagramm_die_saeulendiagramme",
+    "german": "das Säulendiagramm, die Säulendiagramme",
+    "czech": "sloupcový diagram (svisle)",
+    "audio": "audio/das_saeulendiagramm_die_saeulendiagramme.mp3"
+  },
+  {
+    "id": "das_tortendiagramm_die_tortendiagramme",
+    "german": "das Tortendiagramm, die Tortendiagramme",
+    "czech": "koláčový diagram",
+    "audio": "audio/das_tortendiagramm_die_tortendiagramme.mp3"
+  },
+  {
+    "id": "das_balkendiagramm_die_balkendiagramme",
+    "german": "das Balkendiagramm, die Balkendiagramme",
+    "czech": "sloupcový diagram (podélně)",
+    "audio": "audio/das_balkendiagramm_die_balkendiagramme.mp3"
+  },
+  {
+    "id": "das_ergebnis_die_ergebnisse",
+    "german": "das Ergebnis, die Ergebnisse",
+    "czech": "výsledek",
+    "audio": "audio/das_ergebnis_die_ergebnisse.mp3"
+  },
+  {
+    "id": "praesentieren",
+    "german": "präsentieren",
+    "czech": "prezentovat",
+    "audio": "audio/praesentieren.mp3"
+  },
+  {
+    "id": "eine_umfrage_machen",
+    "german": "eine Umfrage machen",
+    "czech": "udělat průzkum / anketu",
+    "audio": "audio/eine_umfrage_machen.mp3"
+  },
+  {
+    "id": "die_grafik_vorbereiten",
+    "german": "die Grafik vorbereiten",
+    "czech": "připravit graf",
+    "audio": "audio/die_grafik_vorbereiten.mp3"
+  },
+  {
+    "id": "typisch",
+    "german": "typisch",
+    "czech": "typický",
+    "audio": "audio/typisch.mp3"
+  },
+  {
+    "id": "der_abschied_die_abschiede",
+    "german": "der Abschied, die Abschiede",
+    "czech": "rozloučení",
+    "audio": "audio/der_abschied_die_abschiede.mp3"
+  },
+  {
+    "id": "scharf",
+    "german": "scharf",
+    "czech": "ostrý",
+    "audio": "audio/scharf.mp3"
+  },
+  {
+    "id": "das_verhalten",
+    "german": "das Verhalten",
+    "czech": "chování",
+    "audio": "audio/das_verhalten.mp3"
+  },
+  {
+    "id": "unmoeglich",
+    "german": "unmöglich",
+    "czech": "nemožný",
+    "audio": "audio/unmoeglich.mp3"
+  },
+  {
+    "id": "der_durst",
+    "german": "der Durst",
+    "czech": "žízeň",
+    "audio": "audio/der_durst.mp3"
+  },
+  {
+    "id": "wegraeumen",
+    "german": "wegräumen",
+    "czech": "uklidit, odklidit",
+    "audio": "audio/wegraeumen.mp3"
+  },
+  {
+    "id": "bemerken",
+    "german": "bemerken",
+    "czech": "všimnout si",
+    "audio": "audio/bemerken.mp3"
+  },
+  {
+    "id": "geben",
+    "german": "geben",
+    "czech": "dát",
+    "audio": "audio/geben.mp3"
+  },
+  {
+    "id": "mailen",
+    "german": "mailen",
+    "czech": "poslat e-mail",
+    "audio": "audio/mailen.mp3"
+  },
+  {
+    "id": "das_geschirr",
+    "german": "das Geschirr",
+    "czech": "nádobí",
+    "audio": "audio/das_geschirr.mp3"
+  },
+  {
+    "id": "der_teller_die_teller",
+    "german": "der Teller, die Teller",
+    "czech": "talíř",
+    "audio": "audio/der_teller_die_teller.mp3"
+  },
+  {
+    "id": "das_glas_die_glaeser",
+    "german": "das Glas, die Gläser",
+    "czech": "sklenice",
+    "audio": "audio/das_glas_die_glaeser.mp3"
+  },
+  {
+    "id": "die_tasse_die_tassen",
+    "german": "die Tasse, die Tassen",
+    "czech": "šálek, hrnek",
+    "audio": "audio/die_tasse_die_tassen.mp3"
+  },
+  {
+    "id": "das_messer_die_messer",
+    "german": "das Messer, die Messer",
+    "czech": "nůž",
+    "audio": "audio/das_messer_die_messer.mp3"
+  },
+  {
+    "id": "die_gabel_die_gabeln",
+    "german": "die Gabel, die Gabeln",
+    "czech": "vidlička",
+    "audio": "audio/die_gabel_die_gabeln.mp3"
+  },
+  {
+    "id": "der_loeffel_die_loeffel",
+    "german": "der Löffel, die Löffel",
+    "czech": "lžíce",
+    "audio": "audio/der_loeffel_die_loeffel.mp3"
+  },
+  {
+    "id": "das_salz",
+    "german": "das Salz",
+    "czech": "sůl",
+    "audio": "audio/das_salz.mp3"
+  },
+  {
+    "id": "die_karaffe_die_karaffen",
+    "german": "die Karaffe, die Karaffen",
+    "czech": "karafa",
+    "audio": "audio/die_karaffe_die_karaffen.mp3"
+  },
+  {
+    "id": "die_schuessel_die_schuesseln",
+    "german": "die Schüssel, die Schüsseln",
+    "czech": "mísa",
+    "audio": "audio/die_schuessel_die_schuesseln.mp3"
+  },
+  {
+    "id": "der_topf_die_toepfe",
+    "german": "der Topf, die Töpfe",
+    "czech": "hrnec",
+    "audio": "audio/der_topf_die_toepfe.mp3"
+  },
+  {
+    "id": "das_besteck_die_bestecke",
+    "german": "das Besteck, die Bestecke",
+    "czech": "příbor",
+    "audio": "audio/das_besteck_die_bestecke.mp3"
+  },
+  {
+    "id": "der_pfeffer",
+    "german": "der Pfeffer",
+    "czech": "pepř",
+    "audio": "audio/der_pfeffer.mp3"
+  },
+  {
+    "id": "der_zucker_2",
+    "german": "der Zucker",
+    "czech": "cukr",
+    "audio": "audio/der_zucker_2.mp3"
+  },
+  {
+    "id": "der_essig",
+    "german": "der Essig",
+    "czech": "ocet",
+    "audio": "audio/der_essig.mp3"
+  },
+  {
+    "id": "das_oel",
+    "german": "das Öl",
+    "czech": "olej",
+    "audio": "audio/das_oel.mp3"
+  },
+  {
+    "id": "die_praline_die_pralinen",
+    "german": "die Praline, die Pralinen",
+    "czech": "pralinka",
+    "audio": "audio/die_praline_die_pralinen.mp3"
+  },
+  {
+    "id": "fett",
+    "german": "fett",
+    "czech": "tučný",
+    "audio": "audio/fett.mp3"
+  },
+  {
+    "id": "bitter",
+    "german": "bitter",
+    "czech": "hořký",
+    "audio": "audio/bitter.mp3"
+  },
+  {
+    "id": "salzig",
+    "german": "salzig",
+    "czech": "slaný",
+    "audio": "audio/salzig.mp3"
+  },
+  {
+    "id": "willkommen",
+    "german": "willkommen",
+    "czech": "vítejte",
+    "audio": "audio/willkommen.mp3"
+  },
+  {
+    "id": "satt",
+    "german": "satt",
+    "czech": "sytý",
+    "audio": "audio/satt.mp3"
+  },
+  {
+    "id": "sich_verabschieden",
+    "german": "sich verabschieden",
+    "czech": "rozloučit se",
+    "audio": "audio/sich_verabschieden.mp3"
+  },
+  {
+    "id": "herunter",
+    "german": "herunter",
+    "czech": "dolů",
+    "audio": "audio/herunter.mp3"
+  },
+  {
+    "id": "runter_2",
+    "german": "runter",
+    "czech": "dolů",
+    "audio": "audio/runter_2.mp3"
+  },
+  {
+    "id": "schimpfen",
+    "german": "schimpfen",
+    "czech": "nadávat",
+    "audio": "audio/schimpfen.mp3"
+  },
+  {
+    "id": "ueben",
+    "german": "üben",
+    "czech": "cvičit",
+    "audio": "audio/ueben.mp3"
+  },
+  {
+    "id": "lassen",
+    "german": "lassen",
+    "czech": "nechat",
+    "audio": "audio/lassen.mp3"
+  },
+  {
+    "id": "der_dienst_die_dienste",
+    "german": "der Dienst, die Dienste",
+    "czech": "služba",
+    "audio": "audio/der_dienst_die_dienste.mp3"
+  },
+  {
+    "id": "schwer",
+    "german": "schwer",
+    "czech": "těžký",
+    "audio": "audio/schwer.mp3"
+  },
+  {
+    "id": "der_umzug_die_umzuege",
+    "german": "der Umzug, die Umzüge",
+    "czech": "stěhování",
+    "audio": "audio/der_umzug_die_umzuege.mp3"
+  },
+  {
+    "id": "das_dach_die_daecher",
+    "german": "das Dach, die Dächer",
+    "czech": "střecha",
+    "audio": "audio/das_dach_die_daecher.mp3"
+  },
+  {
+    "id": "der_stock_die_stoecke",
+    "german": "der Stock, die Stöcke",
+    "czech": "patro",
+    "audio": "audio/der_stock_die_stoecke.mp3"
+  },
+  {
+    "id": "das_stockwerk_die_stockwerke",
+    "german": "das Stockwerk, die Stockwerke",
+    "czech": "patro",
+    "audio": "audio/das_stockwerk_die_stockwerke.mp3"
+  },
+  {
+    "id": "der_eingang_die_eingaenge",
+    "german": "der Eingang, die Eingänge",
+    "czech": "vchod",
+    "audio": "audio/der_eingang_die_eingaenge.mp3"
+  },
+  {
+    "id": "das_treppenhaus_die_treppenhaeuser_2",
+    "german": "das Treppenhaus, die Treppenhäuser",
+    "czech": "schodiště",
+    "audio": "audio/das_treppenhaus_die_treppenhaeuser_2.mp3"
+  },
+  {
+    "id": "die_wohnungstuer_die_wohnungstueren",
+    "german": "die Wohnungstür, die Wohnungstüren",
+    "czech": "dveře bytu",
+    "audio": "audio/die_wohnungstuer_die_wohnungstueren.mp3"
+  },
+  {
+    "id": "die_garage_die_garagen",
+    "german": "die Garage, die Garagen",
+    "czech": "garáž",
+    "audio": "audio/die_garage_die_garagen.mp3"
+  },
+  {
+    "id": "der_fahrradkeller_die_fahrradkeller",
+    "german": "der Fahrradkeller, die Fahrradkeller",
+    "czech": "kolárna",
+    "audio": "audio/der_fahrradkeller_die_fahrradkeller.mp3"
+  },
+  {
+    "id": "der_hof_die_hoefe",
+    "german": "der Hof, die Höfe",
+    "czech": "dvůr",
+    "audio": "audio/der_hof_die_hoefe.mp3"
+  },
+  {
+    "id": "die_muelltonne_die_muelltonnen",
+    "german": "die Mülltonne, die Mülltonnen",
+    "czech": "popelnice",
+    "audio": "audio/die_muelltonne_die_muelltonnen.mp3"
+  },
+  {
+    "id": "der_briefkasten_die_briefkaesten",
+    "german": "der Briefkasten, die Briefkästen",
+    "czech": "poštovní schránka",
+    "audio": "audio/der_briefkasten_die_briefkaesten.mp3"
+  },
+  {
+    "id": "die_hausnummer_die_hausnummern",
+    "german": "die Hausnummer, die Hausnummern",
+    "czech": "číslo domu",
+    "audio": "audio/die_hausnummer_die_hausnummern.mp3"
+  },
+  {
+    "id": "die_nachbarschaft",
+    "german": "die Nachbarschaft",
+    "czech": "sousedství",
+    "audio": "audio/die_nachbarschaft.mp3"
+  },
+  {
+    "id": "sich_aussuchen",
+    "german": "sich aussuchen",
+    "czech": "vybrat si",
+    "audio": "audio/sich_aussuchen.mp3"
+  },
+  {
+    "id": "der_ton_die_toene",
+    "german": "der Ton, die Töne",
+    "czech": "tón",
+    "audio": "audio/der_ton_die_toene.mp3"
+  },
+  {
+    "id": "der_bewohner_die_bewohner",
+    "german": "der Bewohner, die Bewohner",
+    "czech": "obyvatel",
+    "audio": "audio/der_bewohner_die_bewohner.mp3"
+  },
+  {
+    "id": "die_bewohnerin_die_bewohnerinnen",
+    "german": "die Bewohnerin, die Bewohnerinnen",
+    "czech": "obyvatelka",
+    "audio": "audio/die_bewohnerin_die_bewohnerinnen.mp3"
+  },
+  {
+    "id": "die_unterhaltung_die_unterhaltungen",
+    "german": "die Unterhaltung, die Unterhaltungen",
+    "czech": "rozhovor",
+    "audio": "audio/die_unterhaltung_die_unterhaltungen.mp3"
+  },
+  {
+    "id": "spontan",
+    "german": "spontan",
+    "czech": "spontánní",
+    "audio": "audio/spontan.mp3"
+  },
+  {
+    "id": "hilfsbereit",
+    "german": "hilfsbereit",
+    "czech": "ochotný pomoci",
+    "audio": "audio/hilfsbereit.mp3"
+  },
+  {
+    "id": "damals",
+    "german": "damals",
+    "czech": "tehdy",
+    "audio": "audio/damals.mp3"
+  },
+  {
+    "id": "die_kraeuter",
+    "german": "die Kräuter",
+    "czech": "bylinky",
+    "audio": "audio/die_kraeuter.mp3"
+  },
+  {
+    "id": "der_hinterhof_die_hinterhoefe",
+    "german": "der Hinterhof, die Hinterhöfe",
+    "czech": "zadní dvůr",
+    "audio": "audio/der_hinterhof_die_hinterhoefe.mp3"
+  },
+  {
+    "id": "der_einkauf_die_einkaeufe",
+    "german": "der Einkauf, die Einkäufe",
+    "czech": "nákup",
+    "audio": "audio/der_einkauf_die_einkaeufe.mp3"
+  },
+  {
+    "id": "rauf",
+    "german": "rauf",
+    "czech": "nahoru",
+    "audio": "audio/rauf.mp3"
+  },
+  {
+    "id": "loesen",
+    "german": "lösen",
+    "czech": "řešit",
+    "audio": "audio/loesen.mp3"
+  },
+  {
+    "id": "ansprechen",
+    "german": "ansprechen",
+    "czech": "oslovit",
+    "audio": "audio/ansprechen.mp3"
+  },
+  {
+    "id": "persoenlich",
+    "german": "persönlich",
+    "czech": "osobní",
+    "audio": "audio/persoenlich.mp3"
+  },
+  {
+    "id": "hell",
+    "german": "hell",
+    "czech": "světlý",
+    "audio": "audio/hell.mp3"
+  },
+  {
+    "id": "der_song_die_songs",
+    "german": "der Song, die Songs",
+    "czech": "píseň",
+    "audio": "audio/der_song_die_songs.mp3"
+  },
+  {
+    "id": "genial",
+    "german": "genial",
+    "czech": "geniální",
+    "audio": "audio/genial.mp3"
+  },
+  {
+    "id": "der_radfahrer_die_radfahrer",
+    "german": "der Radfahrer, die Radfahrer",
+    "czech": "cyklista",
+    "audio": "audio/der_radfahrer_die_radfahrer.mp3"
+  },
+  {
+    "id": "die_radfahrerin_die_radfahrerinnen",
+    "german": "die Radfahrerin, die Radfahrerinnen",
+    "czech": "cyklistka",
+    "audio": "audio/die_radfahrerin_die_radfahrerinnen.mp3"
+  },
+  {
+    "id": "beruehmt",
+    "german": "berühmt",
+    "czech": "slavný",
+    "audio": "audio/beruehmt.mp3"
+  },
+  {
+    "id": "der_arbeitstag_die_arbeitstage",
+    "german": "der Arbeitstag, die Arbeitstage",
+    "czech": "pracovní den",
+    "audio": "audio/der_arbeitstag_die_arbeitstage.mp3"
+  },
+  {
+    "id": "jemandem_etwas_raten",
+    "german": "jemandem etwas raten",
+    "czech": "radit (někomu něco)",
+    "audio": "audio/jemandem_etwas_raten.mp3"
+  },
+  {
+    "id": "die_krawatte_die_krawatten",
+    "german": "die Krawatte, die Krawatten",
+    "czech": "kravata",
+    "audio": "audio/die_krawatte_die_krawatten.mp3"
+  },
+  {
+    "id": "die_party_die_partys",
+    "german": "die Party, die Partys",
+    "czech": "párty",
+    "audio": "audio/die_party_die_partys.mp3"
+  },
+  {
+    "id": "das_date_die_dates",
+    "german": "das Date, die Dates",
+    "czech": "rande",
+    "audio": "audio/das_date_die_dates.mp3"
+  },
+  {
+    "id": "elegant",
+    "german": "elegant",
+    "czech": "elegantní",
+    "audio": "audio/elegant.mp3"
+  },
+  {
+    "id": "gelten",
+    "german": "gelten",
+    "czech": "platit",
+    "audio": "audio/gelten.mp3"
+  },
+  {
+    "id": "schick",
+    "german": "schick",
+    "czech": "vkusný",
+    "audio": "audio/schick.mp3"
+  },
+  {
+    "id": "das_experiment_die_experimente",
+    "german": "das Experiment, die Experimente",
+    "czech": "experiment",
+    "audio": "audio/das_experiment_die_experimente.mp3"
+  },
+  {
+    "id": "huebsch",
+    "german": "hübsch",
+    "czech": "hezký",
+    "audio": "audio/huebsch.mp3"
+  },
+  {
+    "id": "das_laecheln",
+    "german": "das Lächeln",
+    "czech": "úsměv",
+    "audio": "audio/das_laecheln.mp3"
+  },
+  {
+    "id": "die_regel_die_regeln",
+    "german": "die Regel, die Regeln",
+    "czech": "pravidlo",
+    "audio": "audio/die_regel_die_regeln.mp3"
+  },
+  {
+    "id": "das_ritual_die_rituale",
+    "german": "das Ritual, die Rituale",
+    "czech": "rituál",
+    "audio": "audio/das_ritual_die_rituale.mp3"
+  },
+  {
+    "id": "duzen",
+    "german": "duzen",
+    "czech": "tykat",
+    "audio": "audio/duzen.mp3"
+  },
+  {
+    "id": "das_gegenteil_die_gegenteile",
+    "german": "das Gegenteil, die Gegenteile",
+    "czech": "opak",
+    "audio": "audio/das_gegenteil_die_gegenteile.mp3"
+  },
+  {
+    "id": "jeder_jedes_jede",
+    "german": "jeder, jedes, jede",
+    "czech": "každý, každé, každá",
+    "audio": "audio/jeder_jedes_jede.mp3"
+  },
+  {
+    "id": "das_interesse_die_interessen",
+    "german": "das Interesse, die Interessen",
+    "czech": "zájem",
+    "audio": "audio/das_interesse_die_interessen.mp3"
+  },
+  {
+    "id": "der_parkplatz_die_parkplaetze",
+    "german": "der Parkplatz, die Parkplätze",
+    "czech": "parkoviště",
+    "audio": "audio/der_parkplatz_die_parkplaetze.mp3"
+  },
+  {
+    "id": "der_kopierer_die_kopierer",
+    "german": "der Kopierer, die Kopierer",
+    "czech": "kopírka",
+    "audio": "audio/der_kopierer_die_kopierer.mp3"
+  },
+  {
+    "id": "der_lift_die_lifte",
+    "german": "der Lift, die Lifte",
+    "czech": "výtah",
+    "audio": "audio/der_lift_die_lifte.mp3"
+  },
+  {
+    "id": "der_aufzug_die_aufzuege",
+    "german": "der Aufzug, die Aufzüge",
+    "czech": "výtah",
+    "audio": "audio/der_aufzug_die_aufzuege.mp3"
+  },
+  {
+    "id": "die_rezeption_die_rezeptionen",
+    "german": "die Rezeption, die Rezeptionen",
+    "czech": "recepce",
+    "audio": "audio/die_rezeption_die_rezeptionen.mp3"
+  },
+  {
+    "id": "der_empfang",
+    "german": "der Empfang",
+    "czech": "recepce",
+    "audio": "audio/der_empfang.mp3"
+  },
+  {
+    "id": "das_sekretariat_die_sekretariate",
+    "german": "das Sekretariat, die Sekretariate",
+    "czech": "sekretariát",
+    "audio": "audio/das_sekretariat_die_sekretariate.mp3"
+  },
+  {
+    "id": "der_sekretaer_die_sekretaere",
+    "german": "der Sekretär, die Sekretäre",
+    "czech": "sekretář",
+    "audio": "audio/der_sekretaer_die_sekretaere.mp3"
+  },
+  {
+    "id": "die_sekretaerin_die_sekretaerinnen",
+    "german": "die Sekretärin, die Sekretärinnen",
+    "czech": "sekretářka",
+    "audio": "audio/die_sekretaerin_die_sekretaerinnen.mp3"
+  },
+  {
+    "id": "der_hausmeister_die_hausmeister",
+    "german": "der Hausmeister, die Hausmeister",
+    "czech": "domovník",
+    "audio": "audio/der_hausmeister_die_hausmeister.mp3"
+  },
+  {
+    "id": "die_hausmeisterin_die_hausmeisterinnen",
+    "german": "die Hausmeisterin, die Hausmeisterinnen",
+    "czech": "domovnice",
+    "audio": "audio/die_hausmeisterin_die_hausmeisterinnen.mp3"
+  },
+  {
+    "id": "der_lohn_die_loehne",
+    "german": "der Lohn, die Löhne",
+    "czech": "mzda",
+    "audio": "audio/der_lohn_die_loehne.mp3"
+  },
+  {
+    "id": "das_gehalt_die_gehaelter",
+    "german": "das Gehalt, die Gehälter",
+    "czech": "plat",
+    "audio": "audio/das_gehalt_die_gehaelter.mp3"
+  },
+  {
+    "id": "der_feierabend_die_feierabende",
+    "german": "der Feierabend, die Feierabende",
+    "czech": "padla, konec práce",
+    "audio": "audio/der_feierabend_die_feierabende.mp3"
+  },
+  {
+    "id": "der_urlaub_die_urlaube",
+    "german": "der Urlaub, die Urlaube",
+    "czech": "dovolená",
+    "audio": "audio/der_urlaub_die_urlaube.mp3"
+  },
+  {
+    "id": "vollzeit_arbeiten",
+    "german": "Vollzeit arbeiten",
+    "czech": "pracovat na plný úvazek",
+    "audio": "audio/vollzeit_arbeiten.mp3"
+  },
+  {
+    "id": "teilzeit_arbeiten",
+    "german": "Teilzeit arbeiten",
+    "czech": "pracovat na částečný úvazek",
+    "audio": "audio/teilzeit_arbeiten.mp3"
+  },
+  {
+    "id": "chaotisch",
+    "german": "chaotisch",
+    "czech": "chaotický",
+    "audio": "audio/chaotisch.mp3"
+  },
+  {
+    "id": "niedrig",
+    "german": "niedrig",
+    "czech": "nízký",
+    "audio": "audio/niedrig.mp3"
+  },
+  {
+    "id": "verliebt",
+    "german": "verliebt",
+    "czech": "zamilovaný",
+    "audio": "audio/verliebt.mp3"
+  },
+  {
+    "id": "das_gesicht_die_gesichter",
+    "german": "das Gesicht, die Gesichter",
+    "czech": "obličej",
+    "audio": "audio/das_gesicht_die_gesichter.mp3"
+  },
+  {
+    "id": "reich",
+    "german": "reich",
+    "czech": "bohatý",
+    "audio": "audio/reich.mp3"
+  },
+  {
+    "id": "schief",
+    "german": "schief",
+    "czech": "šikmý, nahnutý",
+    "audio": "audio/schief.mp3"
+  },
+  {
+    "id": "schiefgehen",
+    "german": "schiefgehen",
+    "czech": "pokazit se, nepovést se",
+    "audio": "audio/schiefgehen.mp3"
+  },
+  {
+    "id": "druecken",
+    "german": "drücken",
+    "czech": "zde: držet (palce)",
+    "audio": "audio/druecken.mp3"
+  },
+  {
+    "id": "der_rat",
+    "german": "der Rat",
+    "czech": "rada",
+    "audio": "audio/der_rat.mp3"
+  },
+  {
+    "id": "die_stellenanzeige_die_stellenanzeigen",
+    "german": "die Stellenanzeige, die Stellenanzeigen",
+    "czech": "inzerát na volnou pozici",
+    "audio": "audio/die_stellenanzeige_die_stellenanzeigen.mp3"
+  },
+  {
+    "id": "der_austausch",
+    "german": "der Austausch",
+    "czech": "výměna",
+    "audio": "audio/der_austausch.mp3"
+  },
+  {
+    "id": "das_intranet_die_intranets",
+    "german": "das Intranet, die Intranets",
+    "czech": "intranet",
+    "audio": "audio/das_intranet_die_intranets.mp3"
+  },
+  {
+    "id": "die_gleitzeit_die_gleitzeiten",
+    "german": "die Gleitzeit, die Gleitzeiten",
+    "czech": "flexibilní pracovní doba",
+    "audio": "audio/die_gleitzeit_die_gleitzeiten.mp3"
+  },
+  {
+    "id": "die_kernzeit_die_kernzeiten",
+    "german": "die Kernzeit, die Kernzeiten",
+    "czech": "jádrová pracovní doba",
+    "audio": "audio/die_kernzeit_die_kernzeiten.mp3"
+  },
+  {
+    "id": "die_videokonferenz_die_videokonferenzen",
+    "german": "die Videokonferenz, die Videokonferenzen",
+    "czech": "videokonference",
+    "audio": "audio/die_videokonferenz_die_videokonferenzen.mp3"
+  },
+  {
+    "id": "die_zusammenarbeit",
+    "german": "die Zusammenarbeit",
+    "czech": "spolupráce",
+    "audio": "audio/die_zusammenarbeit.mp3"
+  },
+  {
+    "id": "die_stimmung_die_stimmungen",
+    "german": "die Stimmung, die Stimmungen",
+    "czech": "nálada",
+    "audio": "audio/die_stimmung_die_stimmungen.mp3"
+  },
+  {
+    "id": "wiedersehen",
+    "german": "wiedersehen",
+    "czech": "zase se vidět, shledat se",
+    "audio": "audio/wiedersehen.mp3"
+  },
+  {
+    "id": "die_laune_die_launen",
+    "german": "die Laune, die Launen",
+    "czech": "nálada",
+    "audio": "audio/die_laune_die_launen.mp3"
+  },
+  {
+    "id": "einschlafen",
+    "german": "einschlafen",
+    "czech": "usnout",
+    "audio": "audio/einschlafen.mp3"
+  },
+  {
+    "id": "das_videospiel_die_videospiele",
+    "german": "das Videospiel, die Videospiele",
+    "czech": "videohra",
+    "audio": "audio/das_videospiel_die_videospiele.mp3"
+  },
+  {
+    "id": "der_podcast_die_podcasts",
+    "german": "der Podcast, die Podcasts",
+    "czech": "podcast",
+    "audio": "audio/der_podcast_die_podcasts.mp3"
+  },
+  {
+    "id": "die_zeitschrift_die_zeitschriften",
+    "german": "die Zeitschrift, die Zeitschriften",
+    "czech": "časopis",
+    "audio": "audio/die_zeitschrift_die_zeitschriften.mp3"
+  },
+  {
+    "id": "die_talkshow_die_talkshows",
+    "german": "die Talkshow, die Talkshows",
+    "czech": "talkshow",
+    "audio": "audio/die_talkshow_die_talkshows.mp3"
+  },
+  {
+    "id": "der_krimi_die_krimis",
+    "german": "der Krimi, die Krimis",
+    "czech": "kriminálka, detektivka",
+    "audio": "audio/der_krimi_die_krimis.mp3"
+  },
+  {
+    "id": "die_nachrichten",
+    "german": "die Nachrichten",
+    "czech": "zprávy",
+    "audio": "audio/die_nachrichten.mp3"
+  },
+  {
+    "id": "die_doku_die_dokus",
+    "german": "die Doku, die Dokus",
+    "czech": "dokument",
+    "audio": "audio/die_doku_die_dokus.mp3"
+  },
+  {
+    "id": "die_comedyserie_die_comedyserien",
+    "german": "die Comedy-Serie, die Comedy-Serien",
+    "czech": "(komediální) seriál",
+    "audio": "audio/die_comedyserie_die_comedyserien.mp3"
+  },
+  {
+    "id": "das_hoerbuch_die_hoerbuecher",
+    "german": "das Hörbuch, die Hörbücher",
+    "czech": "audiokniha",
+    "audio": "audio/das_hoerbuch_die_hoerbuecher.mp3"
+  },
+  {
+    "id": "das_tutorial_die_tutorials",
+    "german": "das Tutorial, die Tutorials",
+    "czech": "tutoriál",
+    "audio": "audio/das_tutorial_die_tutorials.mp3"
+  },
+  {
+    "id": "sich_streiten",
+    "german": "sich streiten",
+    "czech": "hádat se",
+    "audio": "audio/sich_streiten.mp3"
+  },
+  {
+    "id": "weggehen",
+    "german": "weggehen",
+    "czech": "odejít",
+    "audio": "audio/weggehen.mp3"
+  },
+  {
+    "id": "sich_verlieben",
+    "german": "sich verlieben",
+    "czech": "zamilovat se",
+    "audio": "audio/sich_verlieben.mp3"
+  },
+  {
+    "id": "verbringen",
+    "german": "verbringen",
+    "czech": "strávit (čas)",
+    "audio": "audio/verbringen.mp3"
+  },
+  {
+    "id": "sich_verstehen",
+    "german": "sich verstehen",
+    "czech": "rozumět si",
+    "audio": "audio/sich_verstehen.mp3"
+  },
+  {
+    "id": "sich_entschuldigen",
+    "german": "sich entschuldigen",
+    "czech": "omluvit se",
+    "audio": "audio/sich_entschuldigen.mp3"
+  },
+  {
+    "id": "die_sorge_die_sorgen",
+    "german": "die Sorge, die Sorgen",
+    "czech": "starost",
+    "audio": "audio/die_sorge_die_sorgen.mp3"
+  },
+  {
+    "id": "staendig",
+    "german": "ständig",
+    "czech": "neustále",
+    "audio": "audio/staendig.mp3"
+  },
+  {
+    "id": "sich_treffen",
+    "german": "sich treffen",
+    "czech": "setkat se",
+    "audio": "audio/sich_treffen.mp3"
+  },
+  {
+    "id": "sich_aergern",
+    "german": "sich ärgern",
+    "czech": "zlobit se",
+    "audio": "audio/sich_aergern.mp3"
+  },
+  {
+    "id": "sich_fuehlen",
+    "german": "sich fühlen",
+    "czech": "cítit se",
+    "audio": "audio/sich_fuehlen.mp3"
+  },
+  {
+    "id": "sich_unterhalten",
+    "german": "sich unterhalten",
+    "czech": "bavit se",
+    "audio": "audio/sich_unterhalten.mp3"
+  },
+  {
+    "id": "sich_beeilen",
+    "german": "sich beeilen",
+    "czech": "pospíšit si",
+    "audio": "audio/sich_beeilen.mp3"
+  },
+  {
+    "id": "sich_beschweren",
+    "german": "sich beschweren",
+    "czech": "stěžovat si",
+    "audio": "audio/sich_beschweren.mp3"
+  },
+  {
+    "id": "kriminal",
+    "german": "Kriminal-",
+    "czech": "kriminální",
+    "audio": "audio/kriminal.mp3"
+  },
+  {
+    "id": "der_kommissar_die_kommissare",
+    "german": "der Kommissar, die Kommissare",
+    "czech": "komisař",
+    "audio": "audio/der_kommissar_die_kommissare.mp3"
+  },
+  {
+    "id": "die_kommissarin_die_kommissarinnen",
+    "german": "die Kommissarin, die Kommissarinnen",
+    "czech": "komisařka",
+    "audio": "audio/die_kommissarin_die_kommissarinnen.mp3"
+  },
+  {
+    "id": "die_figur_die_figuren",
+    "german": "die Figur, die Figuren",
+    "czech": "postava",
+    "audio": "audio/die_figur_die_figuren.mp3"
+  },
+  {
+    "id": "der_mord_die_morde",
+    "german": "der Mord, die Morde",
+    "czech": "vražda",
+    "audio": "audio/der_mord_die_morde.mp3"
+  },
+  {
+    "id": "aktuell",
+    "german": "aktuell",
+    "czech": "aktuální",
+    "audio": "audio/aktuell.mp3"
+  },
+  {
+    "id": "die_folge_die_folgen",
+    "german": "die Folge, die Folgen",
+    "czech": "epizoda, díl",
+    "audio": "audio/die_folge_die_folgen.mp3"
+  },
+  {
+    "id": "tot",
+    "german": "tot",
+    "czech": "mrtvý",
+    "audio": "audio/tot.mp3"
+  },
+  {
+    "id": "die_band_die_bands",
+    "german": "die Band, die Bands",
+    "czech": "kapela",
+    "audio": "audio/die_band_die_bands.mp3"
+  },
+  {
+    "id": "die_huette_die_huetten",
+    "german": "die Hütte, die Hütten",
+    "czech": "chata",
+    "audio": "audio/die_huette_die_huetten.mp3"
+  },
+  {
+    "id": "nervig",
+    "german": "nervig",
+    "czech": "otravný",
+    "audio": "audio/nervig.mp3"
+  },
+  {
+    "id": "logisch",
+    "german": "logisch",
+    "czech": "logický",
+    "audio": "audio/logisch.mp3"
+  },
+  {
+    "id": "insgesamt",
+    "german": "insgesamt",
+    "czech": "celkově",
+    "audio": "audio/insgesamt.mp3"
+  },
+  {
+    "id": "privat",
+    "german": "privat",
+    "czech": "soukromý",
+    "audio": "audio/privat.mp3"
+  },
+  {
+    "id": "der_patient_die_patienten_2",
+    "german": "der Patient, die Patienten",
+    "czech": "pacient",
+    "audio": "audio/der_patient_die_patienten_2.mp3"
+  },
+  {
+    "id": "die_patientin_die_patientinnen_2",
+    "german": "die Patientin, die Patientinnen",
+    "czech": "pacientka",
+    "audio": "audio/die_patientin_die_patientinnen_2.mp3"
+  },
+  {
+    "id": "sich_nerven",
+    "german": "sich nerven",
+    "czech": "jít (si) na nervy",
+    "audio": "audio/sich_nerven.mp3"
+  },
+  {
+    "id": "sich_erinnern",
+    "german": "sich erinnern",
+    "czech": "vzpomenout si",
+    "audio": "audio/sich_erinnern.mp3"
+  },
+  {
+    "id": "der_streit_die_streits",
+    "german": "der Streit, die Streits",
+    "czech": "hádka",
+    "audio": "audio/der_streit_die_streits.mp3"
+  },
+  {
+    "id": "romantisch",
+    "german": "romantisch",
+    "czech": "romantický",
+    "audio": "audio/romantisch.mp3"
+  },
+  {
+    "id": "genervt_sein",
+    "german": "genervt sein",
+    "czech": "být otrávený",
+    "audio": "audio/genervt_sein.mp3"
+  },
+  {
+    "id": "gut_gelaunt_sein",
+    "german": "gut gelaunt sein",
+    "czech": "mít dobrou / špatnou náladu",
+    "audio": "audio/gut_gelaunt_sein.mp3"
+  },
+  {
+    "id": "schlecht_gelaunt_sein",
+    "german": "schlecht gelaunt sein",
+    "czech": "mít dobrou / špatnou náladu",
+    "audio": "audio/schlecht_gelaunt_sein.mp3"
+  },
+  {
+    "id": "hoeflich",
+    "german": "höflich",
+    "czech": "zdvořilý",
+    "audio": "audio/hoeflich.mp3"
+  },
+  {
+    "id": "kooperativ",
+    "german": "kooperativ",
+    "czech": "spolupracující",
+    "audio": "audio/kooperativ.mp3"
+  },
+  {
+    "id": "unkooperativ",
+    "german": "unkooperativ",
+    "czech": "nespolupracující",
+    "audio": "audio/unkooperativ.mp3"
+  },
+  {
+    "id": "unsicher_sein",
+    "german": "unsicher sein",
+    "czech": "být nejistý",
+    "audio": "audio/unsicher_sein.mp3"
+  },
+  {
+    "id": "vorwaerts",
+    "german": "vorwärts",
+    "czech": "dopředu",
+    "audio": "audio/vorwaerts.mp3"
+  },
+  {
+    "id": "auf_etwas_achten",
+    "german": "auf etwas achten",
+    "czech": "dávat pozor (na)",
+    "audio": "audio/auf_etwas_achten.mp3"
+  },
+  {
+    "id": "die_zusammenarbeit_2",
+    "german": "die Zusammenarbeit",
+    "czech": "spolupráce",
+    "audio": "audio/die_zusammenarbeit_2.mp3"
+  },
+  {
+    "id": "produktiv",
+    "german": "produktiv",
+    "czech": "produktivní",
+    "audio": "audio/produktiv.mp3"
+  },
+  {
+    "id": "unproduktiv",
+    "german": "unproduktiv",
+    "czech": "neproduktivní",
+    "audio": "audio/unproduktiv.mp3"
+  },
+  {
+    "id": "sich_interessieren",
+    "german": "sich interessieren",
+    "czech": "zajímat se",
+    "audio": "audio/sich_interessieren.mp3"
+  },
+  {
+    "id": "das_wissen",
+    "german": "das Wissen",
+    "czech": "znalost, vědění",
+    "audio": "audio/das_wissen.mp3"
+  },
+  {
+    "id": "gegenseitig",
+    "german": "gegenseitig",
+    "czech": "vzájemný",
+    "audio": "audio/gegenseitig.mp3"
+  },
+  {
+    "id": "das_ergebnis_die_ergebnisse_2",
+    "german": "das Ergebnis, die Ergebnisse",
+    "czech": "výsledek",
+    "audio": "audio/das_ergebnis_die_ergebnisse_2.mp3"
+  },
+  {
+    "id": "frustriert_sein",
+    "german": "frustriert sein",
+    "czech": "být frustrovaný",
+    "audio": "audio/frustriert_sein.mp3"
+  },
+  {
+    "id": "ideal",
+    "german": "ideal",
+    "czech": "ideální",
+    "audio": "audio/ideal.mp3"
+  },
+  {
+    "id": "tolerant_sein",
+    "german": "tolerant sein",
+    "czech": "být tolerantní",
+    "audio": "audio/tolerant_sein.mp3"
+  },
+  {
+    "id": "sich_kuemmern",
+    "german": "sich kümmern",
+    "czech": "starat se",
+    "audio": "audio/sich_kuemmern.mp3"
+  },
+  {
+    "id": "bunt",
+    "german": "bunt",
+    "czech": "barevný",
+    "audio": "audio/bunt.mp3"
+  },
+  {
+    "id": "das_ziel_die_ziele",
+    "german": "das Ziel, die Ziele",
+    "czech": "cíl",
+    "audio": "audio/das_ziel_die_ziele.mp3"
+  },
+  {
+    "id": "die_kooperation",
+    "german": "die Kooperation",
+    "czech": "spolupráce",
+    "audio": "audio/die_kooperation.mp3"
+  },
+  {
+    "id": "die_interaktion",
+    "german": "die Interaktion",
+    "czech": "interakce",
+    "audio": "audio/die_interaktion.mp3"
+  },
+  {
+    "id": "sich_um_etwas_kuemmern",
+    "german": "sich um etwas kümmern",
+    "czech": "starat se o",
+    "audio": "audio/sich_um_etwas_kuemmern.mp3"
+  },
+  {
+    "id": "sich_auf_etwas_freuen",
+    "german": "sich auf etwas freuen",
+    "czech": "těšit se na",
+    "audio": "audio/sich_auf_etwas_freuen.mp3"
+  },
+  {
+    "id": "sich_ueber_etwas_freuen",
+    "german": "sich über etwas freuen",
+    "czech": "těšit se nad",
+    "audio": "audio/sich_ueber_etwas_freuen.mp3"
+  },
+  {
+    "id": "sich_fuer_etwas_interessieren",
+    "german": "sich für etwas interessieren",
+    "czech": "zajímat se o",
+    "audio": "audio/sich_fuer_etwas_interessieren.mp3"
+  },
+  {
+    "id": "sich_ueber_etwas_aergern",
+    "german": "sich über etwas ärgern",
+    "czech": "zlobit se kvůli",
+    "audio": "audio/sich_ueber_etwas_aergern.mp3"
+  },
+  {
+    "id": "von_etwas_erzaehlen",
+    "german": "von etwas erzählen",
+    "czech": "vyprávět o",
+    "audio": "audio/von_etwas_erzaehlen.mp3"
+  },
+  {
+    "id": "von_etwas_traeumen",
+    "german": "von etwas träumen",
+    "czech": "snít o",
+    "audio": "audio/von_etwas_traeumen.mp3"
+  },
+  {
+    "id": "auf_etwas_achten_2",
+    "german": "auf etwas achten",
+    "czech": "dávat pozor na",
+    "audio": "audio/auf_etwas_achten_2.mp3"
+  },
+  {
+    "id": "sich_auf_etwas_konzentrieren",
+    "german": "sich auf etwas konzentrieren",
+    "czech": "soustředit se na",
+    "audio": "audio/sich_auf_etwas_konzentrieren.mp3"
+  },
+  {
+    "id": "sich_an_etwas_erinnern",
+    "german": "sich an etwas erinnern",
+    "czech": "vzpomenout si na",
+    "audio": "audio/sich_an_etwas_erinnern.mp3"
+  },
+  {
+    "id": "auf_jemanden_warten",
+    "german": "auf jemanden warten",
+    "czech": "čekat na někoho",
+    "audio": "audio/auf_jemanden_warten.mp3"
+  },
+  {
+    "id": "auf_etwas_warten",
+    "german": "auf etwas warten",
+    "czech": "čekat na něco",
+    "audio": "audio/auf_etwas_warten.mp3"
+  },
+  {
+    "id": "mit_jemandem_sprechen",
+    "german": "mit jemandem sprechen",
+    "czech": "mluvit s někým",
+    "audio": "audio/mit_jemandem_sprechen.mp3"
+  },
+  {
+    "id": "ueber_etwas_sprechen",
+    "german": "über etwas sprechen",
+    "czech": "mluvit o něčem",
+    "audio": "audio/ueber_etwas_sprechen.mp3"
+  },
+  {
+    "id": "mit_etwas_zufrieden_sein",
+    "german": "mit etwas zufrieden sein",
+    "czech": "být spokojený s",
+    "audio": "audio/mit_etwas_zufrieden_sein.mp3"
+  },
+  {
+    "id": "von_etwas_enttaeuscht_sein",
+    "german": "von etwas enttäuscht sein",
+    "czech": "být zklamaný z",
+    "audio": "audio/von_etwas_enttaeuscht_sein.mp3"
+  },
+  {
+    "id": "angst_haben_vor",
+    "german": "Angst haben vor",
+    "czech": "mít strach z",
+    "audio": "audio/angst_haben_vor.mp3"
+  },
+  {
+    "id": "lust_haben_auf",
+    "german": "Lust haben auf",
+    "czech": "mít chuť na",
+    "audio": "audio/lust_haben_auf.mp3"
+  },
+  {
+    "id": "die_schlange_die_schlangen",
+    "german": "die Schlange, die Schlangen",
+    "czech": "had",
+    "audio": "audio/die_schlange_die_schlangen.mp3"
+  },
+  {
+    "id": "die_politik",
+    "german": "die Politik",
+    "czech": "politika",
+    "audio": "audio/die_politik.mp3"
+  },
+  {
+    "id": "der_geschaeftsfuehrer_die_geschaeftsfuehrer",
+    "german": "der Geschäftsführer, die Geschäftsführer",
+    "czech": "ředitel, jednatel",
+    "audio": "audio/der_geschaeftsfuehrer_die_geschaeftsfuehrer.mp3"
+  },
+  {
+    "id": "die_geschaeftsfuehrerin_die_geschaeftsfuehrerinnen",
+    "german": "die Geschäftsführerin, die Geschäftsführerinnen",
+    "czech": "ředitelka, jednatelka",
+    "audio": "audio/die_geschaeftsfuehrerin_die_geschaeftsfuehrerinnen.mp3"
+  },
+  {
+    "id": "die_aufgabe_die_aufgaben",
+    "german": "die Aufgabe, die Aufgaben",
+    "czech": "úkol",
+    "audio": "audio/die_aufgabe_die_aufgaben.mp3"
+  },
+  {
+    "id": "absolut",
+    "german": "absolut",
+    "czech": "naprosto",
+    "audio": "audio/absolut.mp3"
+  },
+  {
+    "id": "der_auftritt_die_auftritte",
+    "german": "der Auftritt, die Auftritte",
+    "czech": "vystoupení",
+    "audio": "audio/der_auftritt_die_auftritte.mp3"
+  },
+  {
+    "id": "entscheiden",
+    "german": "entscheiden",
+    "czech": "rozhodnout se",
+    "audio": "audio/entscheiden.mp3"
+  },
+  {
+    "id": "der_wunsch_die_wuensche",
+    "german": "der Wunsch, die Wünsche",
+    "czech": "přání",
+    "audio": "audio/der_wunsch_die_wuensche.mp3"
+  },
+  {
+    "id": "der_text_die_texte",
+    "german": "der Text, die Texte",
+    "czech": "text",
+    "audio": "audio/der_text_die_texte.mp3"
+  },
+  {
+    "id": "die_geschaeftsfuehrung",
+    "german": "die Geschäftsführung",
+    "czech": "management (obchodu, firmy)",
+    "audio": "audio/die_geschaeftsfuehrung.mp3"
+  },
+  {
+    "id": "der_snack_die_snacks",
+    "german": "der Snack, die Snacks",
+    "czech": "svačina",
+    "audio": "audio/der_snack_die_snacks.mp3"
+  },
+  {
+    "id": "aufteilen",
+    "german": "aufteilen",
+    "czech": "rozdělit",
+    "audio": "audio/aufteilen.mp3"
+  },
+  {
+    "id": "sich_einigen",
+    "german": "sich einigen",
+    "czech": "shodnout se, dohodnout se",
+    "audio": "audio/sich_einigen.mp3"
+  },
+  {
+    "id": "der_leiter_die_leiter",
+    "german": "der Leiter, die Leiter",
+    "czech": "vedoucí (muž)",
+    "audio": "audio/der_leiter_die_leiter.mp3"
+  },
+  {
+    "id": "die_leiterin_die_leiterinnen",
+    "german": "die Leiterin, die Leiterinnen",
+    "czech": "vedoucí (žena)",
+    "audio": "audio/die_leiterin_die_leiterinnen.mp3"
+  },
+  {
+    "id": "verteilen",
+    "german": "verteilen",
+    "czech": "rozdělit",
+    "audio": "audio/verteilen.mp3"
+  },
+  {
+    "id": "entdecken",
+    "german": "entdecken",
+    "czech": "objevit",
+    "audio": "audio/entdecken.mp3"
+  },
+  {
+    "id": "der_qrcode_die_qrcodes",
+    "german": "der QR-Code, die QR-Codes",
+    "czech": "QR kód",
+    "audio": "audio/der_qrcode_die_qrcodes.mp3"
+  },
+  {
+    "id": "die_datei_die_dateien",
+    "german": "die Datei, die Dateien",
+    "czech": "soubor",
+    "audio": "audio/die_datei_die_dateien.mp3"
+  },
+  {
+    "id": "der_link_die_links",
+    "german": "der Link, die Links",
+    "czech": "odkaz",
+    "audio": "audio/der_link_die_links.mp3"
+  },
+  {
+    "id": "aufladen",
+    "german": "aufladen",
+    "czech": "nahrát, nabít",
+    "audio": "audio/aufladen.mp3"
+  },
+  {
+    "id": "bearbeiten",
+    "german": "bearbeiten",
+    "czech": "upravit",
+    "audio": "audio/bearbeiten.mp3"
+  },
+  {
+    "id": "chatten",
+    "german": "chatten",
+    "czech": "chatovat",
+    "audio": "audio/chatten.mp3"
+  },
+  {
+    "id": "herunterladen",
+    "german": "herunterladen",
+    "czech": "stáhnout",
+    "audio": "audio/herunterladen.mp3"
+  },
+  {
+    "id": "hochladen",
+    "german": "hochladen",
+    "czech": "nahrát",
+    "audio": "audio/hochladen.mp3"
+  },
+  {
+    "id": "installieren",
+    "german": "installieren",
+    "czech": "nainstalovat",
+    "audio": "audio/installieren.mp3"
+  },
+  {
+    "id": "liken",
+    "german": "liken",
+    "czech": "lajkovat",
+    "audio": "audio/liken.mp3"
+  },
+  {
+    "id": "mailen_2",
+    "german": "mailen",
+    "czech": "poslat e-mail",
+    "audio": "audio/mailen_2.mp3"
+  },
+  {
+    "id": "posten",
+    "german": "posten",
+    "czech": "nahodit příspěvek na soc. sítě",
+    "audio": "audio/posten.mp3"
+  },
+  {
+    "id": "recherchieren",
+    "german": "recherchieren",
+    "czech": "vyhledávat informace",
+    "audio": "audio/recherchieren.mp3"
+  },
+  {
+    "id": "scannen",
+    "german": "scannen",
+    "czech": "naskenovat",
+    "audio": "audio/scannen.mp3"
+  },
+  {
+    "id": "surfen",
+    "german": "surfen",
+    "czech": "surfovat",
+    "audio": "audio/surfen.mp3"
+  },
+  {
+    "id": "weiterleiten",
+    "german": "weiterleiten",
+    "czech": "přeposlat",
+    "audio": "audio/weiterleiten.mp3"
+  },
+  {
+    "id": "heben",
+    "german": "heben",
+    "czech": "zvednout",
+    "audio": "audio/heben.mp3"
+  },
+  {
+    "id": "trotzdem",
+    "german": "trotzdem",
+    "czech": "přesto",
+    "audio": "audio/trotzdem.mp3"
+  },
+  {
+    "id": "bequem",
+    "german": "bequem",
+    "czech": "pohodlný",
+    "audio": "audio/bequem.mp3"
+  },
+  {
+    "id": "aufhoeren",
+    "german": "aufhören",
+    "czech": "přestat",
+    "audio": "audio/aufhoeren.mp3"
+  },
+  {
+    "id": "anklicken",
+    "german": "anklicken",
+    "czech": "kliknout na",
+    "audio": "audio/anklicken.mp3"
+  },
+  {
+    "id": "checken",
+    "german": "checken",
+    "czech": "zkontrolovat",
+    "audio": "audio/checken.mp3"
+  },
+  {
+    "id": "ueberweisen",
+    "german": "überweisen",
+    "czech": "převést",
+    "audio": "audio/ueberweisen.mp3"
+  },
+  {
+    "id": "einchecken",
+    "german": "einchecken",
+    "czech": "odbavit se",
+    "audio": "audio/einchecken.mp3"
+  },
+  {
+    "id": "tippen",
+    "german": "tippen",
+    "czech": "vyťukat",
+    "audio": "audio/tippen.mp3"
+  },
+  {
+    "id": "die_suchmaschine_die_suchmaschinen",
+    "german": "die Suchmaschine, die Suchmaschinen",
+    "czech": "vyhledávač",
+    "audio": "audio/die_suchmaschine_die_suchmaschinen.mp3"
+  },
+  {
+    "id": "das_resultat_die_resultate",
+    "german": "das Resultat, die Resultate",
+    "czech": "výsledek",
+    "audio": "audio/das_resultat_die_resultate.mp3"
+  },
+  {
+    "id": "wenigstens",
+    "german": "wenigstens",
+    "czech": "alespoň",
+    "audio": "audio/wenigstens.mp3"
+  },
+  {
+    "id": "die_plattform_die_plattformen",
+    "german": "die Plattform, die Plattformen",
+    "czech": "platforma",
+    "audio": "audio/die_plattform_die_plattformen.mp3"
+  },
+  {
+    "id": "die_community_die_communitys",
+    "german": "die Community, die Communitys",
+    "czech": "komunita",
+    "audio": "audio/die_community_die_communitys.mp3"
+  },
+  {
+    "id": "digital",
+    "german": "digital",
+    "czech": "digitální",
+    "audio": "audio/digital.mp3"
+  },
+  {
+    "id": "die_diaet_die_diaeten",
+    "german": "die Diät, die Diäten",
+    "czech": "dieta",
+    "audio": "audio/die_diaet_die_diaeten.mp3"
+  },
+  {
+    "id": "die_sucht_die_suechte",
+    "german": "die Sucht, die Süchte",
+    "czech": "závislost",
+    "audio": "audio/die_sucht_die_suechte.mp3"
+  },
+  {
+    "id": "das_thema_die_themen",
+    "german": "das Thema, die Themen",
+    "czech": "téma",
+    "audio": "audio/das_thema_die_themen.mp3"
+  },
+  {
+    "id": "einschalten",
+    "german": "einschalten",
+    "czech": "zapnout",
+    "audio": "audio/einschalten.mp3"
+  },
+  {
+    "id": "der_hersteller_die_hersteller",
+    "german": "der Hersteller, die Hersteller",
+    "czech": "výrobce",
+    "audio": "audio/der_hersteller_die_hersteller.mp3"
+  },
+  {
+    "id": "die_herstellerin_die_herstellerinnen",
+    "german": "die Herstellerin, die Herstellerinnen",
+    "czech": "výrobkyně",
+    "audio": "audio/die_herstellerin_die_herstellerinnen.mp3"
+  },
+  {
+    "id": "die_beschwerde_die_beschwerden",
+    "german": "die Beschwerde, die Beschwerden",
+    "czech": "stížnost",
+    "audio": "audio/die_beschwerde_die_beschwerden.mp3"
+  },
+  {
+    "id": "die_reklamation_die_reklamationen",
+    "german": "die Reklamation, die Reklamationen",
+    "czech": "reklamace",
+    "audio": "audio/die_reklamation_die_reklamationen.mp3"
+  },
+  {
+    "id": "bestaetigen",
+    "german": "bestätigen",
+    "czech": "potvrdit",
+    "audio": "audio/bestaetigen.mp3"
+  },
+  {
+    "id": "aergerlich",
+    "german": "ärgerlich",
+    "czech": "mrzutý",
+    "audio": "audio/aergerlich.mp3"
+  },
+  {
+    "id": "die_beziehung_die_beziehungen",
+    "german": "die Beziehung, die Beziehungen",
+    "czech": "vztah",
+    "audio": "audio/die_beziehung_die_beziehungen.mp3"
+  },
+  {
+    "id": "stornieren",
+    "german": "stornieren",
+    "czech": "zrušit",
+    "audio": "audio/stornieren.mp3"
+  },
+  {
+    "id": "zuruecktreten",
+    "german": "zurücktreten",
+    "czech": "odstoupit",
+    "audio": "audio/zuruecktreten.mp3"
+  },
+  {
+    "id": "erwarten",
+    "german": "erwarten",
+    "czech": "očekávat",
+    "audio": "audio/erwarten.mp3"
+  },
+  {
+    "id": "der_betrag_die_betraege",
+    "german": "der Betrag, die Beträge",
+    "czech": "částka",
+    "audio": "audio/der_betrag_die_betraege.mp3"
+  },
+  {
+    "id": "die_mango_die_mangos",
+    "german": "die Mango, die Mangos",
+    "czech": "mango",
+    "audio": "audio/die_mango_die_mangos.mp3"
+  },
+  {
+    "id": "das_tattoo_die_tattoos",
+    "german": "das Tattoo, die Tattoos",
+    "czech": "tetování",
+    "audio": "audio/das_tattoo_die_tattoos.mp3"
+  },
+  {
+    "id": "fangen",
+    "german": "fangen",
+    "czech": "chytit",
+    "audio": "audio/fangen.mp3"
+  },
+  {
+    "id": "besichtigen",
+    "german": "besichtigen",
+    "czech": "prohlédnout si",
+    "audio": "audio/besichtigen.mp3"
+  },
+  {
+    "id": "aufbleiben",
+    "german": "aufbleiben",
+    "czech": "zůstat vzhůru",
+    "audio": "audio/aufbleiben.mp3"
+  },
+  {
+    "id": "die_mitternacht",
+    "german": "die Mitternacht",
+    "czech": "půlnoc",
+    "audio": "audio/die_mitternacht.mp3"
+  },
+  {
+    "id": "die_zigarette_die_zigaretten",
+    "german": "die Zigarette, die Zigaretten",
+    "czech": "cigareta",
+    "audio": "audio/die_zigarette_die_zigaretten.mp3"
+  },
+  {
+    "id": "die_spritze_die_spritzen",
+    "german": "die Spritze, die Spritzen",
+    "czech": "injekce",
+    "audio": "audio/die_spritze_die_spritzen.mp3"
+  },
+  {
+    "id": "das_heimweh",
+    "german": "das Heimweh",
+    "czech": "stesk po domově",
+    "audio": "audio/das_heimweh.mp3"
+  },
+  {
+    "id": "das_gewissen",
+    "german": "das Gewissen",
+    "czech": "svědomí",
+    "audio": "audio/das_gewissen.mp3"
+  },
+  {
+    "id": "das_feuer_die_feuer",
+    "german": "das Feuer, die Feuer",
+    "czech": "oheň",
+    "audio": "audio/das_feuer_die_feuer.mp3"
+  },
+  {
+    "id": "der_liebeskummer",
+    "german": "der Liebeskummer",
+    "czech": "zlomené srdce, nešťastná láska",
+    "audio": "audio/der_liebeskummer.mp3"
+  },
+  {
+    "id": "taetowieren",
+    "german": "tätowieren",
+    "czech": "tetovat",
+    "audio": "audio/taetowieren.mp3"
+  },
+  {
+    "id": "die_angel_die_angeln",
+    "german": "die Angel, die Angeln",
+    "czech": "rybářský prut",
+    "audio": "audio/die_angel_die_angeln.mp3"
+  },
+  {
+    "id": "der_bundeskanzler_die_bundeskanzler",
+    "german": "der Bundeskanzler, die Bundeskanzler",
+    "czech": "spolkový kancléř",
+    "audio": "audio/der_bundeskanzler_die_bundeskanzler.mp3"
+  },
+  {
+    "id": "die_bundeskanzlerin_die_bundeskanzlerinnen",
+    "german": "die Bundeskanzlerin, die Bundeskanzlerinnen",
+    "czech": "spolková kancléřka",
+    "audio": "audio/die_bundeskanzlerin_die_bundeskanzlerinnen.mp3"
+  },
+  {
+    "id": "wahr",
+    "german": "wahr",
+    "czech": "pravdivý",
+    "audio": "audio/wahr.mp3"
+  },
+  {
+    "id": "das_pech",
+    "german": "das Pech",
+    "czech": "smůla",
+    "audio": "audio/das_pech.mp3"
+  },
+  {
+    "id": "der_cousin_die_cousins",
+    "german": "der Cousin, die Cousins",
+    "czech": "bratranec",
+    "audio": "audio/der_cousin_die_cousins.mp3"
+  },
+  {
+    "id": "die_cousine_die_cousinen",
+    "german": "die Cousine, die Cousinen",
+    "czech": "sestřenice",
+    "audio": "audio/die_cousine_die_cousinen.mp3"
+  },
+  {
+    "id": "ausser",
+    "german": "außer",
+    "czech": "kromě",
+    "audio": "audio/ausser.mp3"
+  },
+  {
+    "id": "der_tanz_die_taenze",
+    "german": "der Tanz, die Tänze",
+    "czech": "tanec",
+    "audio": "audio/der_tanz_die_taenze.mp3"
+  },
+  {
+    "id": "beantragen",
+    "german": "beantragen",
+    "czech": "požádat, zažádat",
+    "audio": "audio/beantragen.mp3"
+  },
+  {
+    "id": "griechenland",
+    "german": "Griechenland",
+    "czech": "Řecko",
+    "audio": "audio/griechenland.mp3"
+  },
+  {
+    "id": "einen_tanzkurs_machen",
+    "german": "einen Tanzkurs machen",
+    "czech": "chodit na taneční kurz",
+    "audio": "audio/einen_tanzkurs_machen.mp3"
+  },
+  {
+    "id": "ein_sabbatical_machen",
+    "german": "ein Sabbatical machen",
+    "czech": "vzít si sabatikl (rok pracovního volna)",
+    "audio": "audio/ein_sabbatical_machen.mp3"
+  },
+  {
+    "id": "eine_radtour_machen",
+    "german": "eine Radtour machen",
+    "czech": "podniknout cyklovýlet",
+    "audio": "audio/eine_radtour_machen.mp3"
+  },
+  {
+    "id": "geld_spenden",
+    "german": "Geld spenden",
+    "czech": "darovat (peníze / ...)",
+    "audio": "audio/geld_spenden.mp3"
+  },
+  {
+    "id": "sich_in_einer_buergerinitiative_engagieren",
+    "german": "sich in einer Bürgerinitiative engagieren",
+    "czech": "angažovat se v občanském hnutí",
+    "audio": "audio/sich_in_einer_buergerinitiative_engagieren.mp3"
+  },
+  {
+    "id": "die_buergerbewegung_die_buergerbewegungen",
+    "german": "die Bürgerbewegung, die Bürgerbewegungen",
+    "czech": "občanské hnutí",
+    "audio": "audio/die_buergerbewegung_die_buergerbewegungen.mp3"
+  },
+  {
+    "id": "sich_vegan_ernaehren",
+    "german": "sich vegan ernähren",
+    "czech": "být veganem",
+    "audio": "audio/sich_vegan_ernaehren.mp3"
+  },
+  {
+    "id": "an_einem_triathlon_teilnehmen",
+    "german": "an einem Triathlon teilnehmen",
+    "czech": "zúčastnit se triatlonu",
+    "audio": "audio/an_einem_triathlon_teilnehmen.mp3"
+  },
+  {
+    "id": "einen_salto_machen",
+    "german": "einen Salto machen",
+    "czech": "udělat salto",
+    "audio": "audio/einen_salto_machen.mp3"
+  },
+  {
+    "id": "einen_baum_pflanzen",
+    "german": "einen Baum pflanzen",
+    "czech": "vysadit strom",
+    "audio": "audio/einen_baum_pflanzen.mp3"
+  },
+  {
+    "id": "einen_hund_adoptieren",
+    "german": "einen Hund adoptieren",
+    "czech": "adoptovat psa",
+    "audio": "audio/einen_hund_adoptieren.mp3"
+  },
+  {
+    "id": "die_not_die_noete",
+    "german": "die Not, die Nöte",
+    "czech": "nouze",
+    "audio": "audio/die_not_die_noete.mp3"
+  },
+  {
+    "id": "der_imker_die_imker",
+    "german": "der Imker, die Imker",
+    "czech": "včelař",
+    "audio": "audio/der_imker_die_imker.mp3"
+  },
+  {
+    "id": "die_imkerin_die_imkerinnen",
+    "german": "die Imkerin, die Imkerinnen",
+    "czech": "včelařka",
+    "audio": "audio/die_imkerin_die_imkerinnen.mp3"
+  },
+  {
+    "id": "produzieren",
+    "german": "produzieren",
+    "czech": "produkovat",
+    "audio": "audio/produzieren.mp3"
+  },
+  {
+    "id": "stechen",
+    "german": "stechen",
+    "czech": "bodnout",
+    "audio": "audio/stechen.mp3"
+  },
+  {
+    "id": "die_tradition_die_traditionen",
+    "german": "die Tradition, die Traditionen",
+    "czech": "tradice",
+    "audio": "audio/die_tradition_die_traditionen.mp3"
+  },
+  {
+    "id": "stundenlang",
+    "german": "stundenlang",
+    "czech": "po několik hodin",
+    "audio": "audio/stundenlang.mp3"
+  },
+  {
+    "id": "vorbei_an",
+    "german": "vorbei an",
+    "czech": "kolem ...",
+    "audio": "audio/vorbei_an.mp3"
+  },
+  {
+    "id": "die_erde",
+    "german": "die Erde",
+    "czech": "Země",
+    "audio": "audio/die_erde.mp3"
+  },
+  {
+    "id": "der_bauernhof_die_bauernhoefe",
+    "german": "der Bauernhof, die Bauernhöfe",
+    "czech": "statek",
+    "audio": "audio/der_bauernhof_die_bauernhoefe.mp3"
+  },
+  {
+    "id": "das_tor_die_tore",
+    "german": "das Tor, die Tore",
+    "czech": "brána",
+    "audio": "audio/das_tor_die_tore.mp3"
+  },
+  {
+    "id": "besitzen",
+    "german": "besitzen",
+    "czech": "vlastnit",
+    "audio": "audio/besitzen.mp3"
+  },
+  {
+    "id": "der_besitzer_die_besitzer",
+    "german": "der Besitzer, die Besitzer",
+    "czech": "vlastník",
+    "audio": "audio/der_besitzer_die_besitzer.mp3"
+  },
+  {
+    "id": "die_besitzerin_die_besitzerinnen",
+    "german": "die Besitzerin, die Besitzerinnen",
+    "czech": "vlastnice",
+    "audio": "audio/die_besitzerin_die_besitzerinnen.mp3"
+  },
+  {
+    "id": "der_bienenstock_die_bienenstoecke",
+    "german": "der Bienenstock, die Bienenstöcke",
+    "czech": "včelí úl",
+    "audio": "audio/der_bienenstock_die_bienenstoecke.mp3"
+  },
+  {
+    "id": "der_kasten_die_kaesten",
+    "german": "der Kasten, die Kästen",
+    "czech": "schránka, bedna",
+    "audio": "audio/der_kasten_die_kaesten.mp3"
+  },
+  {
+    "id": "die_steuer_die_steuern",
+    "german": "die Steuer, die Steuern",
+    "czech": "daň",
+    "audio": "audio/die_steuer_die_steuern.mp3"
+  },
+  {
+    "id": "ziehen_2",
+    "german": "ziehen",
+    "czech": "přestěhovat se",
+    "audio": "audio/ziehen_2.mp3"
+  },
+  {
+    "id": "kuendigen",
+    "german": "kündigen",
+    "czech": "vypovědět",
+    "audio": "audio/kuendigen.mp3"
+  },
+  {
+    "id": "mutig",
+    "german": "mutig",
+    "czech": "odvážný",
+    "audio": "audio/mutig.mp3"
+  },
+  {
+    "id": "einen_geschaeftsplan_machen",
+    "german": "einen Geschäftsplan machen",
+    "czech": "sestavit byznysplán",
+    "audio": "audio/einen_geschaeftsplan_machen.mp3"
+  },
+  {
+    "id": "kontakte_knuepfen",
+    "german": "Kontakte knüpfen",
+    "czech": "navázat kontakty",
+    "audio": "audio/kontakte_knuepfen.mp3"
+  },
+  {
+    "id": "kuendigen_2",
+    "german": "kündigen",
+    "czech": "podat výpověď",
+    "audio": "audio/kuendigen_2.mp3"
+  },
+  {
+    "id": "unternehmen_beraten",
+    "german": "Unternehmen beraten",
+    "czech": "radit firmám",
+    "audio": "audio/unternehmen_beraten.mp3"
+  },
+  {
+    "id": "vortraege_ueber_etwas_halten",
+    "german": "Vorträge über etwas halten",
+    "czech": "přednášet o ...",
+    "audio": "audio/vortraege_ueber_etwas_halten.mp3"
+  },
+  {
+    "id": "werbung_machen",
+    "german": "Werbung machen",
+    "czech": "dělat reklamu",
+    "audio": "audio/werbung_machen.mp3"
+  },
+  {
+    "id": "workshops_besuchen",
+    "german": "Workshops besuchen",
+    "czech": "navštěvovat workshopy",
+    "audio": "audio/workshops_besuchen.mp3"
+  },
+  {
+    "id": "workshops_geben",
+    "german": "Workshops geben",
+    "czech": "vést workshopy",
+    "audio": "audio/workshops_geben.mp3"
+  },
+  {
+    "id": "irgend",
+    "german": "irgend-",
+    "czech": "nějaký, jakýkoliv",
+    "audio": "audio/irgend.mp3"
+  },
+  {
+    "id": "sich_veraendern",
+    "german": "sich verändern",
+    "czech": "změnit (se)",
+    "audio": "audio/sich_veraendern.mp3"
+  },
+  {
+    "id": "lebendig",
+    "german": "lebendig",
+    "czech": "živý",
+    "audio": "audio/lebendig.mp3"
+  },
+  {
+    "id": "sich_anfuehlen",
+    "german": "sich anfühlen",
+    "czech": "mít pocit",
+    "audio": "audio/sich_anfuehlen.mp3"
+  },
+  {
+    "id": "tagsueber",
+    "german": "tagsüber",
+    "czech": "přes den",
+    "audio": "audio/tagsueber.mp3"
+  },
+  {
+    "id": "demonstrieren",
+    "german": "demonstrieren",
+    "czech": "demonstrovat",
+    "audio": "audio/demonstrieren.mp3"
+  },
+  {
+    "id": "der_klimawandel",
+    "german": "der Klimawandel",
+    "czech": "klimatická změna",
+    "audio": "audio/der_klimawandel.mp3"
+  },
+  {
+    "id": "nachdenken",
+    "german": "nachdenken",
+    "czech": "přemýšlet",
+    "audio": "audio/nachdenken.mp3"
+  },
+  {
+    "id": "der_unsinn",
+    "german": "der Unsinn",
+    "czech": "nesmysl",
+    "audio": "audio/der_unsinn.mp3"
+  },
+  {
+    "id": "vorgestern",
+    "german": "vorgestern",
+    "czech": "předevčírem",
+    "audio": "audio/vorgestern.mp3"
+  },
+  {
+    "id": "der_redakteur_die_redakteure",
+    "german": "der Redakteur, die Redakteure",
+    "czech": "redaktor",
+    "audio": "audio/der_redakteur_die_redakteure.mp3"
+  },
+  {
+    "id": "der_redaktor_die_redaktoren",
+    "german": "der Redaktor, die Redaktoren",
+    "czech": "redaktor",
+    "audio": "audio/der_redaktor_die_redaktoren.mp3"
+  },
+  {
+    "id": "die_redakteurin_die_redakteurinnen",
+    "german": "die Redakteurin, die Redakteurinnen",
+    "czech": "redaktorka",
+    "audio": "audio/die_redakteurin_die_redakteurinnen.mp3"
+  },
+  {
+    "id": "die_redaktion_die_redaktionen",
+    "german": "die Redaktion, die Redaktionen",
+    "czech": "redakce",
+    "audio": "audio/die_redaktion_die_redaktionen.mp3"
+  },
+  {
+    "id": "der_schutz",
+    "german": "der Schutz",
+    "czech": "ochrana",
+    "audio": "audio/der_schutz.mp3"
+  },
+  {
+    "id": "schnell",
+    "german": "schnell",
+    "czech": "rychle",
+    "audio": "audio/schnell.mp3"
+  },
+  {
+    "id": "weitermachen",
+    "german": "weitermachen",
+    "czech": "pokračovat",
+    "audio": "audio/weitermachen.mp3"
+  },
+  {
+    "id": "sich_aendern",
+    "german": "sich ändern",
+    "czech": "změnit (se)",
+    "audio": "audio/sich_aendern.mp3"
+  },
+  {
+    "id": "gerecht",
+    "german": "gerecht",
+    "czech": "spravedlivý",
+    "audio": "audio/gerecht.mp3"
+  },
+  {
+    "id": "verantwortlich",
+    "german": "verantwortlich",
+    "czech": "zodpovědný",
+    "audio": "audio/verantwortlich.mp3"
+  },
+  {
+    "id": "inzwischen",
+    "german": "inzwischen",
+    "czech": "mezitím",
+    "audio": "audio/inzwischen.mp3"
+  },
+  {
+    "id": "der_elektromotor_die_elektromotoren",
+    "german": "der Elektromotor, die Elektromotoren",
+    "czech": "elektromotor",
+    "audio": "audio/der_elektromotor_die_elektromotoren.mp3"
+  },
+  {
+    "id": "fair",
+    "german": "fair",
+    "czech": "fér",
+    "audio": "audio/fair.mp3"
+  },
+  {
+    "id": "jemandem_widersprechen",
+    "german": "jemandem widersprechen",
+    "czech": "odporovat (někomu)",
+    "audio": "audio/jemandem_widersprechen.mp3"
+  },
+  {
+    "id": "begruenden",
+    "german": "begründen",
+    "czech": "odůvodnit",
+    "audio": "audio/begruenden.mp3"
+  },
+  {
+    "id": "blockieren",
+    "german": "blockieren",
+    "czech": "blokovat",
+    "audio": "audio/blockieren.mp3"
+  },
+  {
+    "id": "die_frisur_die_frisuren",
+    "german": "die Frisur, die Frisuren",
+    "czech": "účes",
+    "audio": "audio/die_frisur_die_frisuren.mp3"
+  },
+  {
+    "id": "das_auto_zu_hause_lassen",
+    "german": "das Auto zu Hause lassen",
+    "czech": "nechat auto doma",
+    "audio": "audio/das_auto_zu_hause_lassen.mp3"
+  },
+  {
+    "id": "nicht_fliegen",
+    "german": "nicht fliegen",
+    "czech": "neletět",
+    "audio": "audio/nicht_fliegen.mp3"
+  },
+  {
+    "id": "ein_lastenfahrrad_haben",
+    "german": "ein Lastenfahrrad haben",
+    "czech": "mít nákladní kolo",
+    "audio": "audio/ein_lastenfahrrad_haben.mp3"
+  },
+  {
+    "id": "auf_fleisch_verzichten",
+    "german": "auf Fleisch verzichten",
+    "czech": "vzdát se masa",
+    "audio": "audio/auf_fleisch_verzichten.mp3"
+  },
+  {
+    "id": "sich_fuer_den_tierschutz_engagieren",
+    "german": "sich für den Tierschutz engagieren",
+    "czech": "angažovat se ve prospěch ochrany zvířat",
+    "audio": "audio/sich_fuer_den_tierschutz_engagieren.mp3"
+  },
+  {
+    "id": "secondhandkleidung_kaufen",
+    "german": "Secondhandkleidung kaufen",
+    "czech": "nakupovat oblečení v secondhandu",
+    "audio": "audio/secondhandkleidung_kaufen.mp3"
+  },
+  {
+    "id": "geraete_selbst_reparieren",
+    "german": "Geräte selbst reparieren",
+    "czech": "opravovat si přístroje sám",
+    "audio": "audio/geraete_selbst_reparieren.mp3"
+  },
+  {
+    "id": "heizkosten_sparen",
+    "german": "Heizkosten sparen",
+    "czech": "šetřit náklady na vytápění",
+    "audio": "audio/heizkosten_sparen.mp3"
+  },
+  {
+    "id": "plastik_vermeiden",
+    "german": "Plastik vermeiden",
+    "czech": "snižovat spotřebu plastu",
+    "audio": "audio/plastik_vermeiden.mp3"
+  },
+  {
+    "id": "regionale_lebensmittel_kaufen",
+    "german": "regionale Lebensmittel kaufen",
+    "czech": "kupovat místní potraviny",
+    "audio": "audio/regionale_lebensmittel_kaufen.mp3"
+  },
+  {
+    "id": "kosmetik_selbst_machen",
+    "german": "Kosmetik selbst machen",
+    "czech": "vyrábět si vlastní kosmetiku",
+    "audio": "audio/kosmetik_selbst_machen.mp3"
+  },
+  {
+    "id": "fuer_das_klima_demonstrieren",
+    "german": "für das Klima demonstrieren",
+    "czech": "demonstrovat za klima",
+    "audio": "audio/fuer_das_klima_demonstrieren.mp3"
+  },
+  {
+    "id": "kommunikativ",
+    "german": "kommunikativ",
+    "czech": "komunikativní",
+    "audio": "audio/kommunikativ.mp3"
+  },
+  {
+    "id": "die_staerke_die_staerken",
+    "german": "die Stärke, die Stärken",
+    "czech": "síla",
+    "audio": "audio/die_staerke_die_staerken.mp3"
+  },
+  {
+    "id": "die_faehigkeit_die_faehigkeiten",
+    "german": "die Fähigkeit, die Fähigkeiten",
+    "czech": "schopnost",
+    "audio": "audio/die_faehigkeit_die_faehigkeiten.mp3"
+  },
+  {
+    "id": "die_entwicklung_die_entwicklungen",
+    "german": "die Entwicklung, die Entwicklungen",
+    "czech": "vývoj",
+    "audio": "audio/die_entwicklung_die_entwicklungen.mp3"
+  },
+  {
+    "id": "das_konzept_die_konzepte",
+    "german": "das Konzept, die Konzepte",
+    "czech": "koncept",
+    "audio": "audio/das_konzept_die_konzepte.mp3"
+  },
+  {
+    "id": "kaufmaennisch",
+    "german": "kaufmännisch",
+    "czech": "související s obchodem, byznysem",
+    "audio": "audio/kaufmaennisch.mp3"
+  },
+  {
+    "id": "berechnen",
+    "german": "berechnen",
+    "czech": "spočítat, vypočítat",
+    "audio": "audio/berechnen.mp3"
+  },
+  {
+    "id": "der_bereich_die_bereiche",
+    "german": "der Bereich, die Bereiche",
+    "czech": "oblast, sekce",
+    "audio": "audio/der_bereich_die_bereiche.mp3"
+  },
+  {
+    "id": "sich_weiterentwickeln",
+    "german": "sich weiterentwickeln",
+    "czech": "dále (se) rozvíjet",
+    "audio": "audio/sich_weiterentwickeln.mp3"
+  },
+  {
+    "id": "der_koenig_die_koenige",
+    "german": "der König, die Könige",
+    "czech": "král",
+    "audio": "audio/der_koenig_die_koenige.mp3"
+  },
+  {
+    "id": "die_koenigin_die_koeniginnen",
+    "german": "die Königin, die Königinnen",
+    "czech": "královna",
+    "audio": "audio/die_koenigin_die_koeniginnen.mp3"
+  },
+  {
+    "id": "die_zukunft",
+    "german": "die Zukunft",
+    "czech": "budoucnost",
+    "audio": "audio/die_zukunft.mp3"
+  },
+  {
+    "id": "gluecklich",
+    "german": "glücklich",
+    "czech": "šťastný / radostný",
+    "audio": "audio/gluecklich.mp3"
+  },
+  {
+    "id": "froh",
+    "german": "froh",
+    "czech": "šťastný / radostný",
+    "audio": "audio/froh.mp3"
+  },
+  {
+    "id": "traurig",
+    "german": "traurig",
+    "czech": "smutný",
+    "audio": "audio/traurig.mp3"
+  },
+  {
+    "id": "optimistisch",
+    "german": "optimistisch",
+    "czech": "optimistický",
+    "audio": "audio/optimistisch.mp3"
+  },
+  {
+    "id": "pessimistisch",
+    "german": "pessimistisch",
+    "czech": "pesimistický",
+    "audio": "audio/pessimistisch.mp3"
+  },
+  {
+    "id": "mutig_2",
+    "german": "mutig",
+    "czech": "statečný",
+    "audio": "audio/mutig_2.mp3"
+  },
+  {
+    "id": "aengstlich",
+    "german": "ängstlich",
+    "czech": "bojácný",
+    "audio": "audio/aengstlich.mp3"
+  },
+  {
+    "id": "entspannt",
+    "german": "entspannt",
+    "czech": "uvolněný",
+    "audio": "audio/entspannt.mp3"
+  },
+  {
+    "id": "nervoes",
+    "german": "nervös",
+    "czech": "nervózní",
+    "audio": "audio/nervoes.mp3"
+  },
+  {
+    "id": "stressig_2",
+    "german": "stressig",
+    "czech": "vystresovaný",
+    "audio": "audio/stressig_2.mp3"
+  },
+  {
+    "id": "froehlich",
+    "german": "fröhlich",
+    "czech": "veselý",
+    "audio": "audio/froehlich.mp3"
+  },
+  {
+    "id": "langweilig",
+    "german": "langweilig",
+    "czech": "nudný",
+    "audio": "audio/langweilig.mp3"
+  },
+  {
+    "id": "spannend_2",
+    "german": "spannend",
+    "czech": "napínavý",
+    "audio": "audio/spannend_2.mp3"
+  },
+  {
+    "id": "der_sinn",
+    "german": "der Sinn",
+    "czech": "smysl",
+    "audio": "audio/der_sinn.mp3"
+  },
+  {
+    "id": "sozial",
+    "german": "sozial",
+    "czech": "sociální",
+    "audio": "audio/sozial.mp3"
+  },
+  {
+    "id": "das_engagement_die_engagements",
+    "german": "das Engagement, die Engagements",
+    "czech": "angažovanost",
+    "audio": "audio/das_engagement_die_engagements.mp3"
+  },
+  {
+    "id": "die_religion_die_religionen",
+    "german": "die Religion, die Religionen",
+    "czech": "náboženství",
+    "audio": "audio/die_religion_die_religionen.mp3"
+  },
+  {
+    "id": "der_umweltschutz",
+    "german": "der Umweltschutz",
+    "czech": "ochrana životního prostředí",
+    "audio": "audio/der_umweltschutz.mp3"
+  },
+  {
+    "id": "der_frieden",
+    "german": "der Frieden",
+    "czech": "mír",
+    "audio": "audio/der_frieden.mp3"
+  },
+  {
+    "id": "das_netzwerk_die_netzwerke",
+    "german": "das Netzwerk, die Netzwerke",
+    "czech": "síť",
+    "audio": "audio/das_netzwerk_die_netzwerke.mp3"
+  },
+  {
+    "id": "wahrscheinlich",
+    "german": "wahrscheinlich",
+    "czech": "pravděpodobně",
+    "audio": "audio/wahrscheinlich.mp3"
+  },
+  {
+    "id": "die_rente_die_renten",
+    "german": "die Rente, die Renten",
+    "czech": "důchod",
+    "audio": "audio/die_rente_die_renten.mp3"
+  },
+  {
+    "id": "der_motorroller_die_motorroller",
+    "german": "der Motorroller, die Motorroller",
+    "czech": "skútr",
+    "audio": "audio/der_motorroller_die_motorroller.mp3"
+  },
+  {
+    "id": "die_operation_die_operationen",
+    "german": "die Operation, die Operationen",
+    "czech": "operace",
+    "audio": "audio/die_operation_die_operationen.mp3"
+  },
+  {
+    "id": "sich_bewegen",
+    "german": "sich bewegen",
+    "czech": "pohybovat se",
+    "audio": "audio/sich_bewegen.mp3"
+  },
+  {
+    "id": "die_naehmaschine_die_naehmaschinen",
+    "german": "die Nähmaschine, die Nähmaschinen",
+    "czech": "šicí stroj",
+    "audio": "audio/die_naehmaschine_die_naehmaschinen.mp3"
+  },
+  {
+    "id": "vorne",
+    "german": "vorne",
+    "czech": "vpředu",
+    "audio": "audio/vorne.mp3"
+  },
+  {
+    "id": "der_elefant_die_elefanten",
+    "german": "der Elefant, die Elefanten",
+    "czech": "slon",
+    "audio": "audio/der_elefant_die_elefanten.mp3"
+  },
+  {
+    "id": "das_spielzeug_die_spielzeuge",
+    "german": "das Spielzeug, die Spielzeuge",
+    "czech": "hračka",
+    "audio": "audio/das_spielzeug_die_spielzeuge.mp3"
+  },
+  {
+    "id": "die_nadel_die_nadeln",
+    "german": "die Nadel, die Nadeln",
+    "czech": "jehla",
+    "audio": "audio/die_nadel_die_nadeln.mp3"
+  },
+  {
+    "id": "weich",
+    "german": "weich",
+    "czech": "měkký",
+    "audio": "audio/weich.mp3"
+  },
+  {
+    "id": "der_stoff_die_stoffe",
+    "german": "der Stoff, die Stoffe",
+    "czech": "látka",
+    "audio": "audio/der_stoff_die_stoffe.mp3"
+  },
+  {
+    "id": "der_knopf_die_knoepfe",
+    "german": "der Knopf, die Knöpfe",
+    "czech": "knoflík",
+    "audio": "audio/der_knopf_die_knoepfe.mp3"
+  },
+  {
+    "id": "die_biografie_die_biografien",
+    "german": "die Biografie, die Biografien",
+    "czech": "životopis",
+    "audio": "audio/die_biografie_die_biografien.mp3"
+  },
+  {
+    "id": "die_schule_die_schulen",
+    "german": "die Schule, die Schulen",
+    "czech": "škola",
+    "audio": "audio/die_schule_die_schulen.mp3"
+  },
+  {
+    "id": "der_schueler_die_schueler",
+    "german": "der Schüler, die Schüler",
+    "czech": "školák",
+    "audio": "audio/der_schueler_die_schueler.mp3"
+  },
+  {
+    "id": "die_schuelerin_die_schuelerinnen",
+    "german": "die Schülerin, die Schülerinnen",
+    "czech": "školačka",
+    "audio": "audio/die_schuelerin_die_schuelerinnen.mp3"
+  },
+  {
+    "id": "der_schulabschluss_die_schulabschluesse",
+    "german": "der Schulabschluss, die Schulabschlüsse",
+    "czech": "ukončení školy",
+    "audio": "audio/der_schulabschluss_die_schulabschluesse.mp3"
+  },
+  {
+    "id": "die_ausbildung_die_ausbildungen",
+    "german": "die Ausbildung, die Ausbildungen",
+    "czech": "vyučení, odborná kvalifikace",
+    "audio": "audio/die_ausbildung_die_ausbildungen.mp3"
+  },
+  {
+    "id": "das_unternehmen_die_unternehmen_2",
+    "german": "das Unternehmen, die Unternehmen",
+    "czech": "společnost, firma",
+    "audio": "audio/das_unternehmen_die_unternehmen_2.mp3"
+  },
+  {
+    "id": "die_universitaet_die_universitaeten_2",
+    "german": "die Universität, die Universitäten",
+    "czech": "univerzita",
+    "audio": "audio/die_universitaet_die_universitaeten_2.mp3"
+  },
+  {
+    "id": "der_studierende_die_studierenden",
+    "german": "der Studierende, die Studierenden",
+    "czech": "student",
+    "audio": "audio/der_studierende_die_studierenden.mp3"
+  },
+  {
+    "id": "die_studierende_die_studierenden",
+    "german": "die Studierende, die Studierenden",
+    "czech": "studentka",
+    "audio": "audio/die_studierende_die_studierenden.mp3"
+  },
+  {
+    "id": "das_studium",
+    "german": "das Studium",
+    "czech": "studium",
+    "audio": "audio/das_studium.mp3"
+  },
+  {
+    "id": "der_unternehmer_die_unternehmer",
+    "german": "der Unternehmer, die Unternehmer",
+    "czech": "podnikatel",
+    "audio": "audio/der_unternehmer_die_unternehmer.mp3"
+  },
+  {
+    "id": "die_unternehmerin_die_unternehmerinnen",
+    "german": "die Unternehmerin, die Unternehmerinnen",
+    "czech": "podnikatelka",
+    "audio": "audio/die_unternehmerin_die_unternehmerinnen.mp3"
+  },
+  {
+    "id": "die_azubi_die_azubis_2",
+    "german": "die Azubi, die Azubis",
+    "czech": "učeň (mladý zaměstnanec v odborném výcviku)",
+    "audio": "audio/die_azubi_die_azubis_2.mp3"
+  },
+  {
+    "id": "international",
+    "german": "international",
+    "czech": "mezinárodní",
+    "audio": "audio/international.mp3"
+  },
+  {
+    "id": "die_geburt_die_geburten",
+    "german": "die Geburt, die Geburten",
+    "czech": "narození",
+    "audio": "audio/die_geburt_die_geburten.mp3"
+  },
+  {
+    "id": "die_fuehrung_die_fuehrungen",
+    "german": "die Führung, die Führungen",
+    "czech": "prohlídka",
+    "audio": "audio/die_fuehrung_die_fuehrungen.mp3"
+  },
+  {
+    "id": "erfahren_2",
+    "german": "erfahren",
+    "czech": "zkušený",
+    "audio": "audio/erfahren_2.mp3"
+  },
+  {
+    "id": "der_rollstuhl_die_rollstuehle",
+    "german": "der Rollstuhl, die Rollstühle",
+    "czech": "invalidní vozík",
+    "audio": "audio/der_rollstuhl_die_rollstuehle.mp3"
+  },
+  {
+    "id": "der_wagen_die_waegen",
+    "german": "der Wagen, die Wägen",
+    "czech": "vůz",
+    "audio": "audio/der_wagen_die_waegen.mp3"
+  },
+  {
+    "id": "die_werkstatt_die_werkstaetten_2",
+    "german": "die Werkstatt, die Werkstätten",
+    "czech": "dílna",
+    "audio": "audio/die_werkstatt_die_werkstaetten_2.mp3"
+  },
+  {
+    "id": "einstellen",
+    "german": "einstellen",
+    "czech": "zaměstnat",
+    "audio": "audio/einstellen.mp3"
+  },
+  {
+    "id": "riesig",
+    "german": "riesig",
+    "czech": "obrovský",
+    "audio": "audio/riesig.mp3"
+  },
+  {
+    "id": "der_beginn",
+    "german": "der Beginn",
+    "czech": "začátek",
+    "audio": "audio/der_beginn.mp3"
+  },
+  {
+    "id": "der_baer_die_baeren",
+    "german": "der Bär, die Bären",
+    "czech": "medvěd",
+    "audio": "audio/der_baer_die_baeren.mp3"
+  },
+  {
+    "id": "praesentieren_2",
+    "german": "präsentieren",
+    "czech": "prezentovat",
+    "audio": "audio/praesentieren_2.mp3"
+  },
+  {
+    "id": "der_praesident_die_praesidenten",
+    "german": "der Präsident, die Präsidenten",
+    "czech": "prezident",
+    "audio": "audio/der_praesident_die_praesidenten.mp3"
+  },
+  {
+    "id": "die_praesidentin_die_praesidentinnen",
+    "german": "die Präsidentin, die Präsidentinnen",
+    "czech": "prezidentka",
+    "audio": "audio/die_praesidentin_die_praesidentinnen.mp3"
+  },
+  {
+    "id": "beliebt",
+    "german": "beliebt",
+    "czech": "oblíbený",
+    "audio": "audio/beliebt.mp3"
+  },
+  {
+    "id": "das_baby_die_babys",
+    "german": "das Baby, die Babys",
+    "czech": "miminko",
+    "audio": "audio/das_baby_die_babys.mp3"
+  },
+  {
+    "id": "der_praktikant_die_praktikanten",
+    "german": "der Praktikant, die Praktikanten",
+    "czech": "praktikant",
+    "audio": "audio/der_praktikant_die_praktikanten.mp3"
+  },
+  {
+    "id": "die_praktikantin_die_praktikantinnen",
+    "german": "die Praktikantin, die Praktikantinnen",
+    "czech": "praktikantka",
+    "audio": "audio/die_praktikantin_die_praktikantinnen.mp3"
+  },
+  {
+    "id": "der_grieche_die_griechen",
+    "german": "der Grieche, die Griechen",
+    "czech": "Řek",
+    "audio": "audio/der_grieche_die_griechen.mp3"
+  },
+  {
+    "id": "die_griechin_die_griechinnen",
+    "german": "die Griechin, die Griechinnen",
+    "czech": "Řekyně",
+    "audio": "audio/die_griechin_die_griechinnen.mp3"
+  },
+  {
+    "id": "eroeffnen",
+    "german": "eröffnen",
+    "czech": "otevřít (k užívání), zahájit",
+    "audio": "audio/eroeffnen.mp3"
+  },
+  {
+    "id": "geboren",
+    "german": "geboren",
+    "czech": "narozený",
+    "audio": "audio/geboren.mp3"
+  },
+  {
+    "id": "die_hochschule_die_hochschulen",
+    "german": "die Hochschule, die Hochschulen",
+    "czech": "vysoká škola",
+    "audio": "audio/die_hochschule_die_hochschulen.mp3"
+  },
+  {
+    "id": "der_professor_die_professoren",
+    "german": "der Professor, die Professoren",
+    "czech": "profesor",
+    "audio": "audio/der_professor_die_professoren.mp3"
+  },
+  {
+    "id": "die_professorin_die_professorinnen",
+    "german": "die Professorin, die Professorinnen",
+    "czech": "profesorka",
+    "audio": "audio/die_professorin_die_professorinnen.mp3"
+  },
+  {
+    "id": "die_klinik_die_kliniken",
+    "german": "die Klinik, die Kliniken",
+    "czech": "klinika",
+    "audio": "audio/die_klinik_die_kliniken.mp3"
+  },
+  {
+    "id": "offen",
+    "german": "offen",
+    "czech": "otevřený",
+    "audio": "audio/offen.mp3"
+  },
+  {
+    "id": "der_blumenladen_die_blumenlaeden",
+    "german": "der Blumenladen, die Blumenläden",
+    "czech": "květinářství",
+    "audio": "audio/der_blumenladen_die_blumenlaeden.mp3"
+  },
+  {
+    "id": "die_baeckerei_die_baeckereien_2",
+    "german": "die Bäckerei, die Bäckereien",
+    "czech": "pekárna",
+    "audio": "audio/die_baeckerei_die_baeckereien_2.mp3"
+  },
+  {
+    "id": "die_buchhandlung_die_buchhandlungen_2",
+    "german": "die Buchhandlung, die Buchhandlungen",
+    "czech": "knihkupectví",
+    "audio": "audio/die_buchhandlung_die_buchhandlungen_2.mp3"
+  },
+  {
+    "id": "der_getraenkemarkt_die_getraenkemaerkte",
+    "german": "der Getränkemarkt, die Getränkemärkte",
+    "czech": "obchod s nápoji",
+    "audio": "audio/der_getraenkemarkt_die_getraenkemaerkte.mp3"
+  },
+  {
+    "id": "der_handyladen_die_handylaeden",
+    "german": "der Handyladen, die Handyläden",
+    "czech": "obchod s mobilními telefony",
+    "audio": "audio/der_handyladen_die_handylaeden.mp3"
+  },
+  {
+    "id": "das_juweliergeschaeft_die_juweliergeschaefte",
+    "german": "das Juweliergeschäft, die Juweliergeschäfte",
+    "czech": "klenotnictví",
+    "audio": "audio/das_juweliergeschaeft_die_juweliergeschaefte.mp3"
+  },
+  {
+    "id": "die_kleiderboutique_die_kleiderboutiquen",
+    "german": "die Kleiderboutique, die Kleiderboutiquen",
+    "czech": "butik (s oblečením)",
+    "audio": "audio/die_kleiderboutique_die_kleiderboutiquen.mp3"
+  },
+  {
+    "id": "die_kneipe_die_kneipen",
+    "german": "die Kneipe, die Kneipen",
+    "czech": "hospoda",
+    "audio": "audio/die_kneipe_die_kneipen.mp3"
+  },
+  {
+    "id": "das_optikgeschaeft_die_optikgeschaefte",
+    "german": "das Optikgeschäft, die Optikgeschäfte",
+    "czech": "optika",
+    "audio": "audio/das_optikgeschaeft_die_optikgeschaefte.mp3"
+  },
+  {
+    "id": "die_reinigung_die_reinigungen",
+    "german": "die Reinigung, die Reinigungen",
+    "czech": "čistírna",
+    "audio": "audio/die_reinigung_die_reinigungen.mp3"
+  },
+  {
+    "id": "das_schuhgeschaeft_die_schuhgeschaefte",
+    "german": "das Schuhgeschäft, die Schuhgeschäfte",
+    "czech": "obuvnictví",
+    "audio": "audio/das_schuhgeschaeft_die_schuhgeschaefte.mp3"
+  },
+  {
+    "id": "der_coiffeur_die_coiffeure",
+    "german": "der Coiffeur, die Coiffeure",
+    "czech": "kadeřník",
+    "audio": "audio/der_coiffeur_die_coiffeure.mp3"
+  },
+  {
+    "id": "das_kapitel_die_kapitel",
+    "german": "das Kapitel, die Kapitel",
+    "czech": "kapitola",
+    "audio": "audio/das_kapitel_die_kapitel.mp3"
+  },
+  {
+    "id": "realisieren",
+    "german": "realisieren",
+    "czech": "realizovat",
+    "audio": "audio/realisieren.mp3"
+  },
+  {
+    "id": "europaeisch",
+    "german": "europäisch",
+    "czech": "evropský",
+    "audio": "audio/europaeisch.mp3"
+  },
+  {
+    "id": "fuehren",
+    "german": "führen",
+    "czech": "vést",
+    "audio": "audio/fuehren.mp3"
+  },
+  {
+    "id": "pflegen_2",
+    "german": "pflegen",
+    "czech": "pečovat",
+    "audio": "audio/pflegen_2.mp3"
+  },
+  {
+    "id": "ueberzeugt",
+    "german": "überzeugt",
+    "czech": "přesvědčený",
+    "audio": "audio/ueberzeugt.mp3"
+  },
+  {
+    "id": "die_eroeffnung_die_eroeffnungen",
+    "german": "die Eröffnung, die Eröffnungen",
+    "czech": "zahájení",
+    "audio": "audio/die_eroeffnung_die_eroeffnungen.mp3"
+  },
+  {
+    "id": "der_salon_die_salons",
+    "german": "der Salon, die Salons",
+    "czech": "salon",
+    "audio": "audio/der_salon_die_salons.mp3"
+  },
+  {
+    "id": "dick",
+    "german": "dick",
+    "czech": "tlustý",
+    "audio": "audio/dick.mp3"
+  },
+  {
+    "id": "die_dekoration_die_dekorationen",
+    "german": "die Dekoration, die Dekorationen",
+    "czech": "dekorace",
+    "audio": "audio/die_dekoration_die_dekorationen.mp3"
+  },
+  {
+    "id": "der_schreiner_die_schreiner",
+    "german": "der Schreiner, die Schreiner",
+    "czech": "truhlář",
+    "audio": "audio/der_schreiner_die_schreiner.mp3"
+  },
+  {
+    "id": "die_schreinerin_die_schreinerinnen",
+    "german": "die Schreinerin, die Schreinerinnen",
+    "czech": "truhlářka",
+    "audio": "audio/die_schreinerin_die_schreinerinnen.mp3"
+  },
+  {
+    "id": "der_flohmarkt_die_flohmaerkte",
+    "german": "der Flohmarkt, die Flohmärkte",
+    "czech": "bleší trh",
+    "audio": "audio/der_flohmarkt_die_flohmaerkte.mp3"
+  },
+  {
+    "id": "der_flyer_die_flyer",
+    "german": "der Flyer, die Flyer",
+    "czech": "leták",
+    "audio": "audio/der_flyer_die_flyer.mp3"
+  },
+  {
+    "id": "das_logo_die_logos",
+    "german": "das Logo, die Logos",
+    "czech": "logo",
+    "audio": "audio/das_logo_die_logos.mp3"
+  }
+]

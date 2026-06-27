@@ -1,0 +1,1627 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>German-Czech Flashcards</title>
+  <style>
+    :root {
+      color-scheme: light;
+      --paper: #fff8ea;
+      --paper-deep: #f3dcc0;
+      --ink: #2f3a42;
+      --muted: #6f746d;
+      --line: rgba(87, 72, 48, 0.18);
+      --green: #2f7667;
+      --amber: #bb7a26;
+      --red: #b75142;
+      --blue: #4479a8;
+      --bamboo-main: #c99348;
+      --bamboo-light: #e0b168;
+      --bamboo-dark: #9d6b2d;
+      --shadow: 0 22px 48px rgba(91, 72, 43, 0.22);
+      --steamer-width: 468px;
+      --steamer-height: 276px;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html,
+    body {
+      width: 100%;
+      min-height: 100%;
+      margin: 0;
+    }
+
+    body {
+      overflow-x: hidden;
+      color: var(--ink);
+      font-family: Arial, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+      letter-spacing: 0;
+      background:
+        radial-gradient(circle at 50% 35%, rgba(255, 249, 228, 0.96), rgba(255, 255, 255, 0) 34%),
+        linear-gradient(160deg, #f8fbff 0%, #edf7f2 48%, #fff6e7 100%);
+    }
+
+    button,
+    input {
+      font: inherit;
+    }
+
+    button {
+      cursor: pointer;
+    }
+
+    .scene {
+      position: relative;
+      min-height: 100vh;
+      overflow: hidden;
+      padding: 18px;
+      display: grid;
+      grid-template-rows: 1fr auto;
+      gap: 14px;
+    }
+
+    .background-art {
+      position: fixed;
+      inset: 0;
+      z-index: 0;
+      overflow: hidden;
+      pointer-events: none;
+    }
+
+    .village-art {
+      position: absolute;
+      left: 50%;
+      bottom: 120px;
+      width: min(980px, 112vw);
+      height: auto;
+      transform: translateX(-50%);
+      opacity: 0.38;
+    }
+
+    .bamboo-art {
+      position: absolute;
+      bottom: 58px;
+      width: 180px;
+      height: auto;
+      opacity: 0.48;
+    }
+
+    .bamboo-art.left {
+      left: 8px;
+    }
+
+    .bamboo-art.right {
+      right: -18px;
+      transform: scaleX(-1);
+    }
+
+    .lantern {
+      position: absolute;
+      top: 70px;
+      width: 54px;
+      height: 78px;
+      opacity: 0.55;
+      animation: lanternFloat 3.6s ease-in-out infinite;
+    }
+
+    .lantern.left {
+      left: 10%;
+    }
+
+    .lantern.right {
+      right: 12%;
+      top: 106px;
+      width: 46px;
+      height: 68px;
+      animation-delay: 0.7s;
+    }
+
+    .kite {
+      position: absolute;
+      width: 84px;
+      height: auto;
+      opacity: 0.58;
+      transform-origin: 50% 80%;
+    }
+
+    .kite.one {
+      left: 22%;
+      top: 42px;
+      animation: kiteFloatOne 7.5s ease-in-out infinite;
+    }
+
+    .kite.two {
+      right: 20%;
+      top: 34px;
+      width: 68px;
+      opacity: 0.52;
+      animation: kiteFloatTwo 8.7s ease-in-out infinite;
+    }
+
+    .koi {
+      position: absolute;
+      left: 6%;
+      bottom: 74px;
+      width: 132px;
+      height: auto;
+      opacity: 0.62;
+      animation: koiSwim 12s ease-in-out infinite;
+    }
+
+    @keyframes lanternFloat {
+      0%, 100% {
+        transform: translateY(0) rotate(-1deg);
+      }
+      50% {
+        transform: translateY(8px) rotate(1.5deg);
+      }
+    }
+
+    @keyframes kiteFloatOne {
+      0%, 100% {
+        transform: translate(0, 0) rotate(-8deg);
+      }
+      24% {
+        transform: translate(34px, 16px) rotate(5deg);
+      }
+      53% {
+        transform: translate(-18px, 40px) rotate(-14deg);
+      }
+      78% {
+        transform: translate(42px, -8px) rotate(9deg);
+      }
+    }
+
+    @keyframes kiteFloatTwo {
+      0%, 100% {
+        transform: translate(0, 0) rotate(9deg);
+      }
+      22% {
+        transform: translate(-30px, 22px) rotate(-7deg);
+      }
+      57% {
+        transform: translate(26px, 45px) rotate(15deg);
+      }
+      82% {
+        transform: translate(-46px, -4px) rotate(-11deg);
+      }
+    }
+
+    @keyframes koiSwim {
+      0% {
+        transform: translateX(64vw) translateY(-8px) rotate(-4deg) scaleX(1);
+      }
+      48% {
+        transform: translateX(0) translateY(8px) rotate(-5deg) scaleX(1);
+      }
+      50% {
+        transform: translateX(0) translateY(8px) rotate(5deg) scaleX(-1);
+      }
+      100% {
+        transform: translateX(64vw) translateY(-8px) rotate(4deg) scaleX(-1);
+      }
+    }
+
+    .infobar {
+      position: relative;
+      z-index: 10;
+      width: min(100%, 860px);
+      margin: 0 auto;
+      border: 1px solid rgba(80, 67, 48, 0.16);
+      border-radius: 8px;
+      background: rgba(255, 252, 244, 0.86);
+      box-shadow: 0 10px 26px rgba(82, 67, 42, 0.1);
+      backdrop-filter: blur(10px);
+    }
+
+    .settings {
+      display: flex;
+      align-items: center;
+      justify-content: flex-start;
+      gap: 8px;
+      min-width: 0;
+      min-height: 32px;
+      padding: 5px 8px;
+      border: 1px solid rgba(80, 67, 48, 0.14);
+      border-radius: 8px;
+      background: rgba(255, 255, 255, 0.58);
+    }
+
+    label {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: uppercase;
+      white-space: nowrap;
+    }
+
+    .settings input {
+      width: 72px;
+      min-height: 28px;
+      border: 1px solid var(--line);
+      border-radius: 8px;
+      padding: 4px 7px;
+      text-align: right;
+      color: var(--ink);
+      background: #ffffff;
+    }
+
+    .reset-button {
+      min-height: 38px;
+      border: 1px solid rgba(183, 81, 66, 0.25);
+      border-radius: 8px;
+      padding: 7px 12px;
+      color: #ffffff;
+      background: var(--red);
+      font-weight: 800;
+      line-height: 1.15;
+      box-shadow: 0 8px 18px rgba(183, 81, 66, 0.16);
+    }
+
+    .reset-button:active {
+      transform: translateY(1px);
+    }
+
+    .stage {
+      position: relative;
+      z-index: 20;
+      width: min(100%, 760px);
+      margin: 0 auto;
+      display: grid;
+      place-items: center;
+      min-height: 710px;
+    }
+
+    .card-stage {
+      position: relative;
+      width: min(100%, 620px);
+      min-height: 690px;
+      display: grid;
+      justify-items: center;
+      align-items: start;
+      padding: 20px;
+    }
+
+    .steamer-wrap {
+      position: absolute;
+      left: 50%;
+      bottom: -86px;
+      width: min(var(--steamer-width), calc(100vw - 36px));
+      height: var(--steamer-height);
+      transform: translateX(-50%);
+      z-index: 30;
+      pointer-events: none;
+    }
+
+    .steamer-lid {
+      position: absolute;
+      left: -6px;
+      right: -6px;
+      top: 56px;
+      height: 66px;
+      z-index: 30;
+      border-radius: 50% 50% 42% 42%;
+      background:
+        radial-gradient(ellipse at 50% 8%, #f7d99b 0 16%, transparent 17%),
+        repeating-linear-gradient(90deg, rgba(92, 55, 20, 0.18) 0 8px, rgba(255, 235, 177, 0.22) 8px 18px),
+        linear-gradient(#edc77c 0%, #d39746 68%, #a96a28 100%);
+      border: 6px solid #7f4f22;
+      box-shadow:
+        inset 0 12px 10px rgba(255, 241, 193, 0.42),
+        inset 0 -10px 12px rgba(103, 64, 24, 0.22),
+        0 13px 16px rgba(92, 59, 25, 0.2);
+      transform-origin: 17% 78%;
+      transition: transform 360ms cubic-bezier(.2,.86,.2,1), top 360ms cubic-bezier(.2,.86,.2,1);
+    }
+
+    .steamer-lid::before {
+      content: "";
+      position: absolute;
+      left: 50%;
+      top: -20px;
+      width: 72px;
+      height: 36px;
+      transform: translateX(-50%);
+      border-radius: 50% 50% 42% 42%;
+      background: linear-gradient(#edc782, #b8772d);
+      border: 5px solid var(--bamboo-dark);
+      box-shadow: inset 0 8px 7px rgba(255, 240, 189, 0.38);
+    }
+
+    .steamer-lid::after {
+      content: "";
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      bottom: 10px;
+      height: 16px;
+      border-radius: 50%;
+      background: rgba(90, 55, 19, 0.18);
+    }
+
+    .scene.lid-open .steamer-lid {
+      top: 0;
+      transform: translateX(-50px) rotate(-24deg);
+    }
+
+    .steamer-back {
+      position: absolute;
+      left: 9px;
+      right: 9px;
+      top: 108px;
+      height: 54px;
+      z-index: 9;
+      border-radius: 50%;
+      background:
+        repeating-linear-gradient(90deg, rgba(126, 83, 32, 0.15) 0 10px, rgba(255, 236, 177, 0.14) 10px 22px),
+        linear-gradient(#e5b96d, #c98f40);
+      border: 5px solid var(--bamboo-dark);
+      box-shadow: inset 0 9px 8px rgba(255, 238, 184, 0.35);
+    }
+
+    .steamer-body,
+    .steamer-tier {
+      position: absolute;
+      left: 0;
+      right: 0;
+      height: 118px;
+      z-index: 2;
+      border-radius: 0 0 46px 46px / 0 0 24px 24px;
+      background:
+        repeating-linear-gradient(90deg, rgba(91, 55, 21, 0.24) 0 8px, rgba(255, 232, 166, 0.18) 8px 17px),
+        repeating-linear-gradient(0deg, rgba(100, 61, 22, 0.18) 0 5px, rgba(255, 229, 157, 0.22) 5px 13px),
+        linear-gradient(90deg, #e7b760, #c98c37 50%, #dea252);
+      border: 6px solid #7f4f22;
+      box-shadow:
+        inset 18px 0 14px rgba(255, 230, 174, 0.22),
+        inset -16px 0 14px rgba(104, 66, 27, 0.13),
+        0 22px 28px rgba(112, 79, 40, 0.18);
+    }
+
+    .steamer-body {
+      bottom: 42px;
+      z-index: 3;
+    }
+
+    .steamer-tier.middle {
+      bottom: 36px;
+      left: 10px;
+      right: 10px;
+      z-index: 2;
+      filter: brightness(0.96);
+    }
+
+    .steamer-tier.bottom {
+      bottom: 4px;
+      left: 20px;
+      right: 20px;
+      z-index: 1;
+      filter: brightness(0.9);
+    }
+
+    .steamer-rim,
+    .steamer-tier::before,
+    .steamer-tier::after {
+      position: absolute;
+      border-radius: 50%;
+      background:
+        repeating-linear-gradient(90deg, rgba(97, 57, 19, 0.16) 0 11px, rgba(255, 235, 174, 0.22) 11px 23px),
+        linear-gradient(#eac06d, #b9792e);
+      border: 6px solid #7f4f22;
+      box-shadow:
+        inset 0 9px 7px rgba(255, 237, 186, 0.42),
+        inset 0 -8px 9px rgba(105, 65, 22, 0.18);
+    }
+
+    .steamer-rim {
+      left: -6px;
+      right: -6px;
+      top: 86px;
+      height: 54px;
+      z-index: 10;
+    }
+
+    .steamer-tier::before {
+      content: "";
+      left: -6px;
+      right: -6px;
+      top: -28px;
+      height: 52px;
+      z-index: 3;
+    }
+
+    .steamer-tier::after {
+      content: "";
+      left: 24px;
+      right: 24px;
+      top: -12px;
+      height: 18px;
+      z-index: 9;
+      border: 0;
+      background: rgba(91, 55, 21, 0.18);
+      box-shadow: inset 0 7px 8px rgba(69, 42, 17, 0.14);
+    }
+
+    .steamer-lip {
+      position: absolute;
+      left: 18px;
+      right: 18px;
+      top: 104px;
+      height: 22px;
+      z-index: 9;
+      border-radius: 50%;
+      background: rgba(119, 76, 27, 0.28);
+      box-shadow: inset 0 7px 8px rgba(69, 42, 17, 0.16);
+    }
+
+    .steam {
+      position: absolute;
+      left: 50%;
+      bottom: 104px;
+      z-index: 4;
+      width: 170px;
+      height: 120px;
+      transform: translateX(-50%);
+      pointer-events: none;
+      opacity: 0.55;
+    }
+
+    .steam span {
+      position: absolute;
+      bottom: 0;
+      width: 18px;
+      height: 78px;
+      border-left: 4px solid rgba(255, 255, 255, 0.86);
+      border-radius: 50%;
+      animation: steamRise 2.8s ease-in-out infinite;
+    }
+
+    .steam span:nth-child(1) { left: 34px; animation-delay: 0s; }
+    .steam span:nth-child(2) { left: 78px; height: 98px; animation-delay: 0.45s; }
+    .steam span:nth-child(3) { left: 118px; animation-delay: 0.9s; }
+
+    @keyframes steamRise {
+      0%, 100% {
+        transform: translateY(14px) scale(0.92);
+        opacity: 0;
+      }
+      42% {
+        opacity: 0.75;
+      }
+      72% {
+        transform: translateY(-20px) scale(1.06);
+        opacity: 0.12;
+      }
+    }
+
+    .flashcard {
+      position: relative;
+      z-index: 2;
+      width: min(100%, 460px);
+      min-height: 380px;
+      display: grid;
+      place-items: center;
+      text-align: center;
+      transform: translate3d(0, 0, 0);
+      opacity: 1;
+    }
+
+    .flashcard.enter {
+      animation: fadeIn 180ms ease-out;
+    }
+
+    .flashcard.prepare-pop {
+      opacity: 0;
+      transform: translate3d(0, 245px, 0) scale(0.54);
+      transform-origin: 50% 82%;
+    }
+
+    .flashcard.pop-from-steamer {
+      animation: popFromSteamer 720ms cubic-bezier(.18,.92,.22,1.08) forwards;
+      transform-origin: 50% 82%;
+    }
+
+    .flashcard.exit-left {
+      animation: exitLeft 420ms cubic-bezier(.32,.02,.64,.98) forwards;
+    }
+
+    .flashcard.exit-up {
+      animation: exitUp 420ms cubic-bezier(.32,.02,.64,.98) forwards;
+    }
+
+    .flashcard.exit-right {
+      animation: exitRight 420ms cubic-bezier(.32,.02,.64,.98) forwards;
+    }
+
+    .bun {
+      position: absolute;
+      top: 6px;
+      left: 50%;
+      width: min(100%, 390px);
+      min-height: 245px;
+      transform: translateX(-50%);
+      padding: 60px 48px 62px;
+      display: grid;
+      place-items: center;
+      filter: drop-shadow(0 22px 28px rgba(91, 72, 43, 0.22));
+    }
+
+    .bun-art,
+    .dumpling-art {
+      position: absolute;
+      inset: 0;
+      width: 100%;
+      height: 100%;
+      pointer-events: none;
+    }
+
+    .bun-art {
+      z-index: 0;
+    }
+
+    .dumpling {
+      position: absolute;
+      left: 50%;
+      bottom: 0;
+      width: min(86%, 340px);
+      min-height: 128px;
+      transform: translateX(-50%) translateY(8px) scale(0.96);
+      padding: 34px 42px 24px;
+      display: grid;
+      place-items: center;
+      filter: drop-shadow(0 16px 18px rgba(91, 72, 43, 0.18));
+      opacity: 1;
+      transition: none;
+      z-index: 3;
+    }
+
+    .dumpling-art {
+      z-index: 0;
+    }
+
+    .dumpling.hidden {
+      opacity: 0;
+      visibility: hidden;
+      transform: translateX(-50%) translateY(34px) scale(0.86);
+    }
+
+    .dumpling.prepare-pop {
+      opacity: 0;
+      visibility: visible;
+      transform: translateX(-50%) translateY(238px) scale(0.54);
+    }
+
+    .dumpling.pop-from-steamer {
+      visibility: visible;
+      animation: dumplingPopFromSteamer 620ms cubic-bezier(.18,.92,.22,1.08) forwards;
+    }
+
+    .dumpling.return-to-steamer {
+      visibility: visible;
+      animation: dumplingReturnToSteamer 520ms cubic-bezier(.32,.02,.64,.98) forwards;
+    }
+
+    .german {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      max-height: 120px;
+      font-size: 2rem;
+      font-weight: 900;
+      line-height: 1.1;
+      color: #5f4632;
+      overflow-wrap: anywhere;
+      text-shadow: 0 1px 0 rgba(255, 255, 255, 0.8);
+    }
+
+    .answer {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      max-height: 62px;
+      color: var(--green);
+      font-size: 1.15rem;
+      font-weight: 800;
+      line-height: 1.14;
+      overflow-wrap: anywhere;
+    }
+
+    .answer.hidden {
+      color: transparent;
+    }
+
+    .action-button {
+      min-height: 32px;
+      border: 1px solid rgba(80, 67, 48, 0.16);
+      border-radius: 8px;
+      padding: 6px 9px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.58);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.15;
+      transition: transform 160ms ease, background 160ms ease;
+    }
+
+    .action-button:hover {
+      transform: translateY(-1px);
+      background: #ffffff;
+    }
+
+    .action-button:active {
+      transform: translateY(1px);
+    }
+
+    .known {
+      color: var(--green);
+    }
+
+    .unsure {
+      color: var(--amber);
+    }
+
+    .unknown {
+      color: var(--red);
+    }
+
+    .audio {
+      color: var(--blue);
+    }
+
+    .button-label {
+      position: absolute;
+      width: 1px;
+      height: 1px;
+      overflow: hidden;
+      clip: rect(0 0 0 0);
+    }
+
+    .infobar {
+      padding: 10px;
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 10px;
+    }
+
+    .info-group {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      gap: 8px;
+      min-width: 0;
+    }
+
+    .pill {
+      min-height: 32px;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+      padding: 6px 9px;
+      border: 1px solid rgba(80, 67, 48, 0.14);
+      border-radius: 8px;
+      color: var(--muted);
+      background: rgba(255, 255, 255, 0.58);
+      font-size: 0.82rem;
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .pill strong {
+      color: var(--ink);
+    }
+
+    .legend {
+      justify-content: flex-end;
+    }
+
+    .legend .pill {
+      font-weight: 700;
+    }
+
+    .toggle-answer {
+      min-height: 32px;
+      border: 1px solid rgba(47, 118, 103, 0.26);
+      border-radius: 8px;
+      padding: 6px 10px;
+      color: #ffffff;
+      background: var(--green);
+      font-weight: 800;
+      line-height: 1.15;
+    }
+
+    .complete {
+      position: relative;
+      z-index: 2;
+      display: none;
+      width: min(100%, 430px);
+      border: 1px solid rgba(94, 70, 43, 0.16);
+      border-radius: 8px;
+      padding: 28px 18px;
+      text-align: center;
+      background: rgba(255, 252, 244, 0.92);
+      box-shadow: var(--shadow);
+    }
+
+    .complete h2 {
+      margin: 0 0 10px;
+      font-size: 1.45rem;
+    }
+
+    .complete p {
+      margin: 7px 0;
+      color: var(--muted);
+      font-weight: 700;
+    }
+
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+        transform: translate3d(0, 22px, 0) scale(0.98);
+      }
+      to {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes popFromSteamer {
+      0% {
+        opacity: 0;
+        transform: translate3d(0, 245px, 0) scale(0.54);
+      }
+      62% {
+        opacity: 1;
+        transform: translate3d(0, -18px, 0) scale(1.04);
+      }
+      100% {
+        opacity: 1;
+        transform: translate3d(0, 0, 0) scale(1);
+      }
+    }
+
+    @keyframes dumplingPopFromSteamer {
+      0% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(238px) scale(0.54);
+      }
+      66% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(-10px) scale(1.04);
+      }
+      100% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(8px) scale(0.96);
+      }
+    }
+
+    @keyframes dumplingReturnToSteamer {
+      0% {
+        opacity: 1;
+        transform: translateX(-50%) translateY(8px) scale(0.96);
+      }
+      100% {
+        opacity: 0;
+        transform: translateX(-50%) translateY(238px) scale(0.54);
+      }
+    }
+
+    @keyframes exitLeft {
+      to {
+        opacity: 0;
+        transform: translate3d(-88%, 30px, 0) rotate(-10deg) scale(0.48);
+      }
+    }
+
+    @keyframes exitUp {
+      to {
+        opacity: 0;
+        transform: translate3d(0, -70%, 0) scale(0.48);
+      }
+    }
+
+    @keyframes exitRight {
+      to {
+        opacity: 0;
+        transform: translate3d(88%, 30px, 0) rotate(10deg) scale(0.48);
+      }
+    }
+
+    @media (max-width: 620px) {
+      .scene {
+        padding: 12px;
+        gap: 10px;
+      }
+
+      .infobar {
+        width: 100%;
+      }
+
+      .settings {
+        justify-content: space-between;
+      }
+
+
+      .stage {
+        min-height: 650px;
+      }
+
+      .card-stage {
+        min-height: 630px;
+        padding: 18px 2px 36px;
+      }
+
+      .flashcard {
+        width: min(100%, 370px);
+        min-height: 356px;
+      }
+
+      .bun {
+        width: min(100% - 54px, 320px);
+        min-height: 220px;
+        padding: 52px 34px 56px;
+      }
+
+      .dumpling {
+        width: min(82%, 282px);
+        min-height: 118px;
+        padding: 30px 30px 22px;
+      }
+
+      .steamer-wrap {
+        bottom: -72px;
+        width: min(351px, calc(100vw - 24px));
+        height: 236px;
+      }
+
+      .infobar {
+        grid-template-columns: 1fr;
+      }
+
+      .legend {
+        justify-content: flex-start;
+      }
+
+      .village-art {
+        bottom: 112px;
+        width: 760px;
+      }
+
+      .bamboo-art {
+        width: 116px;
+        bottom: 76px;
+      }
+
+      .lantern {
+        top: 72px;
+        width: 42px;
+        height: 62px;
+      }
+
+      .kite.one {
+        left: 18%;
+        top: 54px;
+        width: 62px;
+      }
+
+      .kite.two {
+        right: 12%;
+        top: 88px;
+        width: 54px;
+      }
+
+      .koi {
+        left: 4%;
+        bottom: 88px;
+        width: 86px;
+      }
+    }
+  </style>
+</head>
+<body>
+  <main class="scene" aria-label="German-Czech flashcard practice">
+    <div class="background-art" aria-hidden="true">
+      <svg class="village-art" viewBox="0 0 980 260" preserveAspectRatio="xMidYMax meet">
+        <path d="M0 216 C118 177 218 184 322 204 C430 226 522 210 615 183 C744 145 858 161 980 204 L980 260 L0 260 Z" fill="#dbe9dc" />
+        <path d="M70 205 L135 160 L200 205 Z" fill="#d0decf" />
+        <path d="M98 205 L98 178 L173 178 L173 205 Z" fill="#e8dcc6" />
+        <path d="M92 178 L136 143 L180 178 Z" fill="#b9c8b5" />
+        <path d="M284 208 L284 168 L358 168 L358 208 Z" fill="#eadfc9" />
+        <path d="M271 168 L321 132 L371 168 Z" fill="#bdc9b2" />
+        <path d="M446 199 L446 151 L542 151 L542 199 Z" fill="#e7dbc3" />
+        <path d="M427 151 L494 102 L561 151 Z" fill="#b5c5ad" />
+        <path d="M650 207 L650 166 L736 166 L736 207 Z" fill="#eadfc8" />
+        <path d="M635 166 L693 124 L751 166 Z" fill="#bdc9b2" />
+        <path d="M806 203 L806 174 L870 174 L870 203 Z" fill="#e7dcc7" />
+        <path d="M798 174 L838 143 L878 174 Z" fill="#b5c5ad" />
+        <path d="M18 219 C158 205 259 211 386 225 C505 238 644 218 770 206 C856 198 919 204 962 218" fill="none" stroke="#b8d0bd" stroke-width="5" stroke-linecap="round" opacity="0.7" />
+      </svg>
+
+      <svg class="kite one" viewBox="0 0 120 150">
+        <path d="M60 8 L104 58 L60 112 L16 58 Z" fill="#f3c06a" stroke="#c8833a" stroke-width="4" />
+        <path d="M60 8 L60 112 M16 58 L104 58" stroke="#d99643" stroke-width="3" opacity="0.72" />
+        <path d="M60 112 C48 126 73 129 60 144" fill="none" stroke="#b36c38" stroke-width="3" stroke-linecap="round" />
+        <path d="M43 122 L32 132 M76 124 L88 134" stroke="#d95d48" stroke-width="3" stroke-linecap="round" />
+      </svg>
+
+      <svg class="kite two" viewBox="0 0 120 150">
+        <path d="M60 8 L103 57 L60 114 L17 57 Z" fill="#8fc0d8" stroke="#4e88a8" stroke-width="4" />
+        <path d="M60 8 L60 114 M17 57 L103 57" stroke="#5d9fbd" stroke-width="3" opacity="0.72" />
+        <path d="M60 114 C77 126 49 132 64 144" fill="none" stroke="#4e88a8" stroke-width="3" stroke-linecap="round" />
+        <path d="M43 122 L31 130 M76 124 L90 132" stroke="#f0a35d" stroke-width="3" stroke-linecap="round" />
+      </svg>
+
+      <svg class="koi" viewBox="0 0 180 90">
+        <path d="M138 45 C158 26 169 22 178 20 C174 35 166 44 151 48 C166 53 174 63 178 77 C164 74 151 66 138 45 Z" fill="#c0392b" />
+        <path d="M20 46 C44 12 102 10 142 45 C104 82 45 82 20 46 Z" fill="#d94b38" stroke="#9f2e24" stroke-width="3" />
+        <path d="M52 22 C66 35 67 56 52 70 C82 64 101 56 128 43 C100 31 82 25 52 22 Z" fill="#f7c4a2" opacity="0.88" />
+        <path d="M39 31 C46 39 47 51 39 60" fill="none" stroke="#8f2a23" stroke-width="4" stroke-linecap="round" />
+        <circle cx="32" cy="39" r="4" fill="#2f2a24" />
+        <path d="M84 20 C90 8 106 6 116 16 C104 21 95 24 84 20 Z" fill="#c0392b" />
+        <path d="M86 70 C96 82 113 80 121 68 C108 67 97 66 86 70 Z" fill="#c0392b" />
+        <path d="M72 42 C89 36 106 36 124 44 M72 52 C90 58 107 58 124 48" fill="none" stroke="#9f2e24" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+      </svg>
+
+      <svg class="bamboo-art left" viewBox="0 0 190 360">
+        <path d="M82 352 C86 266 89 179 91 16" fill="none" stroke="#78ad7a" stroke-width="10" stroke-linecap="round" />
+        <path d="M126 356 C125 276 122 194 115 46" fill="none" stroke="#8bbd83" stroke-width="8" stroke-linecap="round" />
+        <path d="M75 278 L94 278 M76 205 L95 205 M78 132 L96 132 M80 68 L97 68" stroke="#5e9663" stroke-width="4" stroke-linecap="round" />
+        <path d="M119 289 L132 289 M118 221 L129 221 M116 152 L127 152 M114 86 L124 86" stroke="#6aa36c" stroke-width="3" stroke-linecap="round" />
+        <path d="M89 108 C42 82 28 48 20 16 C58 23 86 47 89 108 Z" fill="#9fca87" opacity="0.78" />
+        <path d="M94 142 C47 123 25 96 8 65 C48 62 82 88 94 142 Z" fill="#8fc17e" opacity="0.76" />
+        <path d="M91 184 C43 172 19 150 0 122 C37 113 75 135 91 184 Z" fill="#a6ce8d" opacity="0.72" />
+        <path d="M96 90 C133 55 163 46 188 45 C177 79 143 105 96 90 Z" fill="#95c783" opacity="0.76" />
+        <path d="M99 158 C139 133 166 129 187 133 C171 160 139 177 99 158 Z" fill="#a9cf91" opacity="0.72" />
+        <path d="M99 224 C138 205 164 205 185 212 C166 235 134 246 99 224 Z" fill="#90bf7d" opacity="0.72" />
+      </svg>
+
+      <svg class="bamboo-art right" viewBox="0 0 190 360">
+        <path d="M82 352 C86 266 89 179 91 16" fill="none" stroke="#78ad7a" stroke-width="10" stroke-linecap="round" />
+        <path d="M126 356 C125 276 122 194 115 46" fill="none" stroke="#8bbd83" stroke-width="8" stroke-linecap="round" />
+        <path d="M75 278 L94 278 M76 205 L95 205 M78 132 L96 132 M80 68 L97 68" stroke="#5e9663" stroke-width="4" stroke-linecap="round" />
+        <path d="M119 289 L132 289 M118 221 L129 221 M116 152 L127 152 M114 86 L124 86" stroke="#6aa36c" stroke-width="3" stroke-linecap="round" />
+        <path d="M89 108 C42 82 28 48 20 16 C58 23 86 47 89 108 Z" fill="#9fca87" opacity="0.78" />
+        <path d="M94 142 C47 123 25 96 8 65 C48 62 82 88 94 142 Z" fill="#8fc17e" opacity="0.76" />
+        <path d="M91 184 C43 172 19 150 0 122 C37 113 75 135 91 184 Z" fill="#a6ce8d" opacity="0.72" />
+        <path d="M96 90 C133 55 163 46 188 45 C177 79 143 105 96 90 Z" fill="#95c783" opacity="0.76" />
+        <path d="M99 158 C139 133 166 129 187 133 C171 160 139 177 99 158 Z" fill="#a9cf91" opacity="0.72" />
+        <path d="M99 224 C138 205 164 205 185 212 C166 235 134 246 99 224 Z" fill="#90bf7d" opacity="0.72" />
+      </svg>
+
+      <svg class="lantern left" viewBox="0 0 80 112">
+        <path d="M40 0 L40 16" stroke="#b85a43" stroke-width="3" stroke-linecap="round" />
+        <rect x="24" y="14" width="32" height="8" rx="4" fill="#b85a43" />
+        <path d="M20 54 C20 28 30 18 40 18 C50 18 60 28 60 54 C60 81 50 92 40 92 C30 92 20 81 20 54 Z" fill="#d95d48" />
+        <path d="M29 24 C22 43 22 65 29 86 M51 24 C58 43 58 65 51 86" fill="none" stroke="#f0a35d" stroke-width="4" opacity="0.75" />
+        <rect x="25" y="88" width="30" height="7" rx="3.5" fill="#b85a43" />
+        <path d="M40 95 L40 111" stroke="#b85a43" stroke-width="3" stroke-linecap="round" />
+      </svg>
+
+      <svg class="lantern right" viewBox="0 0 80 112">
+        <path d="M40 0 L40 16" stroke="#b85a43" stroke-width="3" stroke-linecap="round" />
+        <rect x="24" y="14" width="32" height="8" rx="4" fill="#b85a43" />
+        <path d="M20 54 C20 28 30 18 40 18 C50 18 60 28 60 54 C60 81 50 92 40 92 C30 92 20 81 20 54 Z" fill="#d95d48" />
+        <path d="M29 24 C22 43 22 65 29 86 M51 24 C58 43 58 65 51 86" fill="none" stroke="#f0a35d" stroke-width="4" opacity="0.75" />
+        <rect x="25" y="88" width="30" height="7" rx="3.5" fill="#b85a43" />
+        <path d="M40 95 L40 111" stroke="#b85a43" stroke-width="3" stroke-linecap="round" />
+      </svg>
+    </div>
+
+    <section class="stage">
+      <section class="card-stage" id="cardStage" aria-live="polite">
+        <article class="flashcard enter" id="flashcard">
+          <div class="bun" aria-label="German word">
+            <svg class="bun-art" viewBox="0 0 390 250" aria-hidden="true">
+              <defs>
+                <radialGradient id="bunHighlight" cx="36%" cy="22%" r="62%">
+                  <stop offset="0%" stop-color="#fffef8" />
+                  <stop offset="50%" stop-color="#fff1d8" />
+                  <stop offset="100%" stop-color="#e6c398" />
+                </radialGradient>
+                <linearGradient id="bunBase" x1="0%" y1="0%" x2="100%" y2="100%">
+                  <stop offset="0%" stop-color="#fffaf0" />
+                  <stop offset="58%" stop-color="#f5d9b6" />
+                  <stop offset="100%" stop-color="#d7aa78" />
+                </linearGradient>
+              </defs>
+              <ellipse cx="195" cy="220" rx="132" ry="20" fill="rgba(120, 82, 45, 0.16)" />
+              <path d="M52 146 C52 78 111 30 190 28 C274 26 339 77 342 149 C345 209 289 238 196 238 C102 238 49 207 52 146 Z" fill="url(#bunBase)" stroke="rgba(118, 82, 48, 0.18)" stroke-width="2" />
+              <path d="M79 135 C81 77 129 42 194 40 C263 38 314 79 318 140 C322 190 273 218 197 220 C119 222 76 190 79 135 Z" fill="url(#bunHighlight)" opacity="0.88" />
+              <path d="M172 52 C178 32 212 31 219 52 C213 68 180 68 172 52 Z" fill="#efd1a9" stroke="rgba(125, 86, 48, 0.16)" stroke-width="2" />
+              <path d="M196 58 C176 80 165 110 160 156" fill="none" stroke="rgba(130, 88, 47, 0.18)" stroke-width="5" stroke-linecap="round" />
+              <path d="M198 58 C220 81 232 112 238 158" fill="none" stroke="rgba(130, 88, 47, 0.16)" stroke-width="5" stroke-linecap="round" />
+              <path d="M184 60 C156 82 137 112 125 159" fill="none" stroke="rgba(130, 88, 47, 0.14)" stroke-width="5" stroke-linecap="round" />
+              <path d="M210 60 C239 82 259 112 271 158" fill="none" stroke="rgba(130, 88, 47, 0.14)" stroke-width="5" stroke-linecap="round" />
+              <path d="M166 66 C132 92 111 126 104 171" fill="none" stroke="rgba(130, 88, 47, 0.1)" stroke-width="4" stroke-linecap="round" />
+              <path d="M229 66 C263 91 286 126 292 171" fill="none" stroke="rgba(130, 88, 47, 0.1)" stroke-width="4" stroke-linecap="round" />
+              <ellipse cx="136" cy="82" rx="54" ry="27" fill="rgba(255,255,255,0.42)" transform="rotate(-18 136 82)" />
+            </svg>
+            <div class="german" id="germanText">Loading</div>
+          </div>
+          <div class="dumpling hidden" id="dumpling" aria-label="Czech answer">
+            <svg class="dumpling-art" viewBox="0 0 340 150" aria-hidden="true">
+              <defs>
+                <linearGradient id="dumplingSkin" x1="20%" y1="0%" x2="90%" y2="100%">
+                  <stop offset="0%" stop-color="#fffdf6" />
+                  <stop offset="62%" stop-color="#f4dcc0" />
+                  <stop offset="100%" stop-color="#d3a77b" />
+                </linearGradient>
+                <radialGradient id="dumplingGlow" cx="38%" cy="24%" r="70%">
+                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                </radialGradient>
+              </defs>
+              <ellipse cx="170" cy="132" rx="124" ry="12" fill="rgba(95, 63, 34, 0.15)" />
+              <path d="M34 99 C58 43 114 16 173 20 C239 24 287 53 314 100 C279 126 230 138 169 138 C108 138 61 125 34 99 Z" fill="url(#dumplingSkin)" stroke="rgba(108, 73, 42, 0.2)" stroke-width="2" />
+              <path d="M54 94 C78 54 123 34 174 36 C231 38 272 59 296 96 C265 116 222 126 169 126 C116 126 78 115 54 94 Z" fill="url(#dumplingGlow)" />
+              <path d="M59 96 C84 60 126 42 174 44 C226 46 265 64 290 96" fill="none" stroke="rgba(116, 78, 43, 0.24)" stroke-width="4" stroke-linecap="round" />
+              <path d="M83 82 C93 94 101 105 107 121" fill="none" stroke="rgba(120, 79, 42, 0.18)" stroke-width="4" stroke-linecap="round" />
+              <path d="M111 62 C122 82 128 101 131 126" fill="none" stroke="rgba(120, 79, 42, 0.18)" stroke-width="4" stroke-linecap="round" />
+              <path d="M145 49 C153 74 156 99 156 130" fill="none" stroke="rgba(120, 79, 42, 0.17)" stroke-width="4" stroke-linecap="round" />
+              <path d="M181 48 C177 75 176 101 179 130" fill="none" stroke="rgba(120, 79, 42, 0.17)" stroke-width="4" stroke-linecap="round" />
+              <path d="M217 57 C207 81 204 103 205 127" fill="none" stroke="rgba(120, 79, 42, 0.16)" stroke-width="4" stroke-linecap="round" />
+              <path d="M250 74 C237 92 231 108 229 123" fill="none" stroke="rgba(120, 79, 42, 0.16)" stroke-width="4" stroke-linecap="round" />
+              <path d="M68 98 C102 115 136 122 170 122 C208 122 247 115 284 98" fill="none" stroke="rgba(105, 68, 35, 0.12)" stroke-width="5" stroke-linecap="round" />
+            </svg>
+            <div class="answer hidden" id="answerText"></div>
+          </div>
+        </article>
+        <div class="steam" aria-hidden="true">
+          <span></span>
+          <span></span>
+          <span></span>
+        </div>
+        <div class="steamer-wrap" aria-hidden="true">
+          <div class="steamer-lid"></div>
+          <div class="steamer-back"></div>
+          <div class="steamer-lip"></div>
+          <div class="steamer-body"></div>
+          <div class="steamer-tier middle"></div>
+          <div class="steamer-tier bottom"></div>
+          <div class="steamer-rim"></div>
+        </div>
+      </section>
+
+      <section class="complete" id="completeView" aria-live="polite">
+        <h2>Session complete</h2>
+        <p id="completeReviewed">Reviewed today: 0</p>
+        <p id="completeBreakdown">Known: 0 · Unsure: 0 · Unknown: 0</p>
+      </section>
+    </section>
+
+    <footer class="infobar" aria-label="Status and shortcuts">
+      <div class="info-group">
+        <span class="pill"><strong id="loadStatus">Loading</strong></span>
+        <span class="pill" id="sessionProgress">0 reviewed</span>
+        <span class="pill" id="dailyProgress">0 / 30 new words</span>
+        <span class="pill" id="targetNote">Current target: 30</span>
+        <section class="settings" aria-label="Settings">
+          <label for="dailyTargetInput">Daily new words target</label>
+          <input id="dailyTargetInput" type="number" min="30" step="1" value="30">
+        </section>
+        <button class="toggle-answer" id="toggleAnswer" type="button">Pop answer</button>
+        <button class="reset-button" id="resetButton" type="button">Reset progress</button>
+      </div>
+      <div class="info-group legend">
+        <button class="action-button known" id="knownButton" type="button">← Know</button>
+        <button class="action-button unsure" id="unsureButton" type="button">↑ Unsure</button>
+        <button class="action-button unknown" id="unknownButton" type="button">→ Unknown</button>
+        <button class="action-button audio" id="audioButton" type="button">↓ Audio</button>
+        <span class="pill">Space Answer</span>
+      </div>
+    </footer>
+  </main>
+
+  <script>
+    const STORAGE_KEYS = {
+      states: "gcFlashcards.cardStates.v1",
+      target: "gcFlashcards.dailyNewWordsTarget.v1",
+      statsDate: "gcFlashcards.statsDate.v1",
+      stats: "gcFlashcards.todayStats.v1"
+    };
+
+    const MIN_DAILY_TARGET = 30;
+    const DEFAULT_EASE = 2.5;
+    const MIN_EASE = 1.3;
+    const LID_OPEN_DELAY = 80;
+    const LID_CLOSE_AFTER_POP_DELAY = 180;
+    const POP_AFTER_LID_DELAY = 300;
+    const POP_DURATION = 720;
+    const EXIT_DURATION = 420;
+    const DUMPLING_POP_AFTER_LID_DELAY = 260;
+    const DUMPLING_POP_DURATION = 620;
+    const DUMPLING_RETURN_DURATION = 520;
+
+    const elements = {
+      scene: document.querySelector(".scene"),
+      loadStatus: document.getElementById("loadStatus"),
+      sessionProgress: document.getElementById("sessionProgress"),
+      dailyProgress: document.getElementById("dailyProgress"),
+      cardStage: document.getElementById("cardStage"),
+      flashcard: document.getElementById("flashcard"),
+      germanText: document.getElementById("germanText"),
+      dumpling: document.getElementById("dumpling"),
+      answerText: document.getElementById("answerText"),
+      toggleAnswer: document.getElementById("toggleAnswer"),
+      knownButton: document.getElementById("knownButton"),
+      unsureButton: document.getElementById("unsureButton"),
+      unknownButton: document.getElementById("unknownButton"),
+      audioButton: document.getElementById("audioButton"),
+      dailyTargetInput: document.getElementById("dailyTargetInput"),
+      resetButton: document.getElementById("resetButton"),
+      targetNote: document.getElementById("targetNote"),
+      completeView: document.getElementById("completeView"),
+      completeReviewed: document.getElementById("completeReviewed"),
+      completeBreakdown: document.getElementById("completeBreakdown")
+    };
+
+    let cards = [];
+    let cardStates = {};
+    let todayStats = defaultStats();
+    let queue = [];
+    let currentCard = null;
+    let answerVisible = false;
+    let animating = false;
+    let dailyTarget = MIN_DAILY_TARGET;
+    let lidTimer = null;
+    let lidCloseTimer = null;
+    let popTimer = null;
+    let finishPopTimer = null;
+    let dumplingPopTimer = null;
+    let finishDumplingPopTimer = null;
+    let dumplingAnimating = false;
+
+    function todayKey() {
+      return new Date().toISOString().slice(0, 10);
+    }
+
+    function addDays(date, days) {
+      const next = new Date(date);
+      next.setDate(next.getDate() + days);
+      return next;
+    }
+
+    function dateOnly(date) {
+      return date.toISOString().slice(0, 10);
+    }
+
+    function defaultStats() {
+      return {
+        reviewed: 0,
+        known: 0,
+        unsure: 0,
+        unknown: 0,
+        newIntroduced: 0
+      };
+    }
+
+    function loadJson(key, fallback) {
+      try {
+        const raw = localStorage.getItem(key);
+        return raw ? JSON.parse(raw) : fallback;
+      } catch (error) {
+        console.warn(`Could not load ${key}`, error);
+        return fallback;
+      }
+    }
+
+    function saveJson(key, value) {
+      localStorage.setItem(key, JSON.stringify(value));
+    }
+
+    function loadDailyTarget() {
+      const saved = Number(localStorage.getItem(STORAGE_KEYS.target));
+      return Number.isFinite(saved) ? Math.max(MIN_DAILY_TARGET, Math.floor(saved)) : MIN_DAILY_TARGET;
+    }
+
+    function saveDailyTarget(value) {
+      dailyTarget = Math.max(MIN_DAILY_TARGET, Math.floor(Number(value) || MIN_DAILY_TARGET));
+      localStorage.setItem(STORAGE_KEYS.target, String(dailyTarget));
+      elements.dailyTargetInput.value = dailyTarget;
+      elements.targetNote.textContent = `Current target: ${dailyTarget}`;
+      updateProgress();
+    }
+
+    function loadStatsForToday() {
+      const savedDate = localStorage.getItem(STORAGE_KEYS.statsDate);
+      if (savedDate !== todayKey()) {
+        localStorage.setItem(STORAGE_KEYS.statsDate, todayKey());
+        saveJson(STORAGE_KEYS.stats, defaultStats());
+        return defaultStats();
+      }
+      return { ...defaultStats(), ...loadJson(STORAGE_KEYS.stats, defaultStats()) };
+    }
+
+    function saveState() {
+      saveJson(STORAGE_KEYS.states, cardStates);
+      saveJson(STORAGE_KEYS.stats, todayStats);
+    }
+
+    function pulseSteamerLid() {
+      clearTimeout(lidTimer);
+      clearTimeout(lidCloseTimer);
+      lidTimer = window.setTimeout(() => {
+        elements.scene.classList.add("lid-open");
+        lidCloseTimer = window.setTimeout(() => {
+          elements.scene.classList.remove("lid-open");
+        }, LID_CLOSE_AFTER_POP_DELAY);
+      }, LID_OPEN_DELAY);
+    }
+
+    function clearSteamerTimers() {
+      clearTimeout(lidTimer);
+      clearTimeout(lidCloseTimer);
+      clearTimeout(popTimer);
+      clearTimeout(finishPopTimer);
+      clearTimeout(dumplingPopTimer);
+      clearTimeout(finishDumplingPopTimer);
+      elements.dumpling.style.animation = "none";
+      dumplingAnimating = false;
+    }
+
+    function resetProgress() {
+      localStorage.removeItem(STORAGE_KEYS.states);
+      localStorage.removeItem(STORAGE_KEYS.statsDate);
+      localStorage.removeItem(STORAGE_KEYS.stats);
+      cardStates = {};
+      todayStats = defaultStats();
+      localStorage.setItem(STORAGE_KEYS.statsDate, todayKey());
+      saveJson(STORAGE_KEYS.stats, todayStats);
+      currentCard = null;
+      queue = buildSessionQueue();
+      elements.loadStatus.textContent = `${cards.length} cards`;
+      showNextCard();
+    }
+
+    function getState(card) {
+      return cardStates[card.id] || null;
+    }
+
+    function isDue(card) {
+      const state = getState(card);
+      return state && state.dueDate && state.dueDate <= todayKey();
+    }
+
+    function buildSessionQueue() {
+      const isNotCurrent = (card) => !currentCard || card.id !== currentCard.id;
+      const dueCards = cards.filter((card) => isNotCurrent(card) && isDue(card));
+      const newLimitRemaining = Math.max(0, dailyTarget - todayStats.newIntroduced);
+      const newCards = cards.filter((card) => isNotCurrent(card) && !getState(card)).slice(0, newLimitRemaining);
+      return [...dueCards, ...newCards];
+    }
+
+    function updateProgress() {
+      const remaining = queue.length + (currentCard ? 1 : 0);
+      elements.sessionProgress.textContent = `${todayStats.reviewed} reviewed · ${remaining} queued`;
+      elements.dailyProgress.textContent = `${todayStats.newIntroduced} / ${dailyTarget} new words`;
+    }
+
+    function initialFontSize(text, maxPx, longTextAt, minPx) {
+      const cleanLength = text.trim().length;
+      if (cleanLength <= 18) return maxPx;
+      const ratio = Math.min(1, Math.max(0, (cleanLength - 18) / (longTextAt - 18)));
+      return Math.round(maxPx - (maxPx - minPx) * ratio);
+    }
+
+    function fitTextToContainer(element, options) {
+      const { text, maxPx, minPx, longTextAt } = options;
+      element.style.fontSize = `${initialFontSize(text, maxPx, longTextAt, minPx)}px`;
+
+      requestAnimationFrame(() => {
+        let size = Number.parseFloat(element.style.fontSize);
+        while (
+          size > minPx &&
+          (element.scrollWidth > element.clientWidth || element.scrollHeight > element.clientHeight)
+        ) {
+          size -= 1;
+          element.style.fontSize = `${size}px`;
+        }
+      });
+    }
+
+    function renderCard(card) {
+      currentCard = card;
+      answerVisible = false;
+      elements.germanText.textContent = card.german;
+      fitTextToContainer(elements.germanText, {
+        text: card.german,
+        maxPx: 32,
+        minPx: 18,
+        longTextAt: 50
+      });
+      elements.answerText.textContent = "";
+      elements.dumpling.classList.add("hidden");
+      elements.dumpling.classList.remove("prepare-pop", "pop-from-steamer");
+      elements.answerText.classList.add("hidden");
+      elements.toggleAnswer.textContent = "Pop answer";
+      elements.completeView.style.display = "none";
+      elements.cardStage.style.display = "grid";
+      updateProgress();
+    }
+
+    function showCard(card, animatePop = true) {
+      clearSteamerTimers();
+      renderCard(card);
+
+      if (!animatePop) {
+        elements.flashcard.className = "flashcard enter";
+        return;
+      }
+
+      elements.scene.classList.remove("lid-open");
+      elements.flashcard.className = "flashcard prepare-pop";
+
+      lidTimer = window.setTimeout(() => {
+        elements.scene.classList.add("lid-open");
+        popTimer = window.setTimeout(() => {
+          elements.flashcard.className = "flashcard pop-from-steamer";
+          finishPopTimer = window.setTimeout(() => {
+            elements.flashcard.className = "flashcard";
+            lidCloseTimer = window.setTimeout(() => {
+              elements.scene.classList.remove("lid-open");
+            }, LID_CLOSE_AFTER_POP_DELAY);
+          }, POP_DURATION);
+        }, POP_AFTER_LID_DELAY);
+      }, LID_OPEN_DELAY);
+    }
+
+    function showComplete() {
+      currentCard = null;
+      elements.cardStage.style.display = "none";
+      elements.completeView.style.display = "block";
+      elements.completeReviewed.textContent = `Reviewed today: ${todayStats.reviewed}`;
+      elements.completeBreakdown.textContent = `Known: ${todayStats.known} · Unsure: ${todayStats.unsure} · Unknown: ${todayStats.unknown}`;
+      updateProgress();
+    }
+
+    function showNextCard() {
+      const nextCard = queue.shift();
+      if (nextCard) {
+        showCard(nextCard);
+      } else {
+        showComplete();
+      }
+    }
+
+    function toggleAnswerWithSteamer() {
+      if (!currentCard || animating || dumplingAnimating) return;
+      clearTimeout(lidTimer);
+      clearTimeout(lidCloseTimer);
+      clearTimeout(dumplingPopTimer);
+      clearTimeout(finishDumplingPopTimer);
+
+      dumplingAnimating = true;
+      elements.scene.classList.remove("lid-open");
+
+      lidTimer = window.setTimeout(() => {
+        elements.scene.classList.add("lid-open");
+      dumplingPopTimer = window.setTimeout(() => {
+          elements.dumpling.style.animation = "none";
+
+          if (answerVisible) {
+            elements.dumpling.className = "dumpling";
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                elements.dumpling.style.animation = "";
+                elements.dumpling.className = "dumpling return-to-steamer";
+              });
+            });
+          } else {
+            elements.answerText.textContent = currentCard.czech;
+            elements.answerText.classList.remove("hidden");
+            fitTextToContainer(elements.answerText, {
+              text: currentCard.czech,
+              maxPx: 22,
+              minPx: 13,
+              longTextAt: 55
+            });
+            elements.dumpling.className = "dumpling prepare-pop";
+            requestAnimationFrame(() => {
+              requestAnimationFrame(() => {
+                elements.dumpling.style.animation = "";
+                elements.dumpling.className = "dumpling pop-from-steamer";
+              });
+            });
+          }
+
+          const duration = answerVisible ? DUMPLING_RETURN_DURATION : DUMPLING_POP_DURATION;
+          finishDumplingPopTimer = window.setTimeout(() => {
+            if (answerVisible) {
+              answerVisible = false;
+              elements.answerText.textContent = "";
+              elements.answerText.classList.add("hidden");
+              elements.dumpling.style.animation = "";
+              elements.dumpling.className = "dumpling hidden";
+            } else {
+              answerVisible = true;
+              elements.dumpling.style.animation = "";
+              elements.dumpling.className = "dumpling";
+            }
+
+            dumplingAnimating = false;
+            lidCloseTimer = window.setTimeout(() => {
+              elements.scene.classList.remove("lid-open");
+            }, LID_CLOSE_AFTER_POP_DELAY);
+          }, duration);
+        }, DUMPLING_POP_AFTER_LID_DELAY);
+      }, LID_OPEN_DELAY);
+    }
+
+    function nextKnownInterval(reviewCount, previousInterval) {
+      const steps = [1, 3, 7, 14];
+      if (reviewCount <= steps.length) {
+        return steps[reviewCount - 1];
+      }
+      return Math.max(1, Math.round(previousInterval * 2));
+    }
+
+    function updateReviewState(card, result) {
+      const existing = getState(card);
+      const now = new Date();
+      const state = {
+        status: existing?.status || "learning",
+        ease: existing?.ease || DEFAULT_EASE,
+        intervalDays: existing?.intervalDays || 0,
+        dueDate: existing?.dueDate || todayKey(),
+        reviewCount: existing?.reviewCount || 0,
+        wrongCount: existing?.wrongCount || 0,
+        lastReviewed: now.toISOString()
+      };
+
+      const wasNew = !existing;
+      state.reviewCount += 1;
+
+      // MVP spaced repetition rules:
+      // known increases the interval, unsure keeps the card close, and unknown
+      // lowers ease while sending the card back into this session soon.
+      if (result === "known") {
+        state.status = "review";
+        state.ease = Number((state.ease + 0.05).toFixed(2));
+        state.intervalDays = nextKnownInterval(state.reviewCount, state.intervalDays);
+        state.dueDate = dateOnly(addDays(now, state.intervalDays));
+      }
+
+      if (result === "unsure") {
+        state.status = "learning";
+        state.ease = Math.max(MIN_EASE, Number((state.ease - 0.05).toFixed(2)));
+        state.intervalDays = 1;
+        state.dueDate = dateOnly(addDays(now, 1));
+        insertSoon(card, 2);
+      }
+
+      if (result === "unknown") {
+        state.status = "learning";
+        state.ease = Math.max(MIN_EASE, Number((state.ease - 0.2).toFixed(2)));
+        state.intervalDays = 0;
+        state.dueDate = todayKey();
+        state.wrongCount += 1;
+        insertSoon(card, 1);
+      }
+
+      if (wasNew) {
+        todayStats.newIntroduced += 1;
+      }
+
+      todayStats.reviewed += 1;
+      todayStats[result] += 1;
+      cardStates[card.id] = state;
+      saveState();
+    }
+
+    function insertSoon(card, offset) {
+      const withoutCurrentCard = queue.filter((queuedCard) => queuedCard.id !== card.id);
+      queue = withoutCurrentCard;
+      queue.splice(Math.min(offset, queue.length), 0, card);
+    }
+
+    function answer(result, exitClass) {
+      if (!currentCard || animating) return;
+      animating = true;
+      const reviewedCard = currentCard;
+
+      clearSteamerTimers();
+      updateReviewState(reviewedCard, result);
+      updateProgress();
+      elements.flashcard.className = `flashcard ${exitClass}`;
+
+      window.setTimeout(() => {
+        elements.dumpling.className = "dumpling hidden";
+        elements.answerText.classList.add("hidden");
+        animating = false;
+        showNextCard();
+      }, EXIT_DURATION);
+    }
+
+    function playPronunciation() {
+      if (!currentCard) return;
+      const audio = new Audio(currentCard.audio);
+      audio.play().catch((error) => {
+        elements.loadStatus.textContent = "Audio unavailable";
+        console.warn("Audio playback failed", error);
+      });
+    }
+
+    function bindEvents() {
+      elements.toggleAnswer.addEventListener("click", toggleAnswerWithSteamer);
+      elements.flashcard.addEventListener("click", toggleAnswerWithSteamer);
+      elements.knownButton.addEventListener("click", () => answer("known", "exit-left"));
+      elements.unsureButton.addEventListener("click", () => answer("unsure", "exit-up"));
+      elements.unknownButton.addEventListener("click", () => answer("unknown", "exit-right"));
+      elements.audioButton.addEventListener("click", playPronunciation);
+      elements.resetButton.addEventListener("click", resetProgress);
+      elements.dailyTargetInput.addEventListener("change", (event) => {
+        saveDailyTarget(event.target.value);
+        queue = buildSessionQueue();
+        if (!currentCard) {
+          showNextCard();
+        } else {
+          updateProgress();
+        }
+      });
+
+      document.addEventListener("keydown", (event) => {
+        if (event.target === elements.dailyTargetInput) return;
+
+        if (event.code === "Space") {
+          event.preventDefault();
+          toggleAnswerWithSteamer();
+        }
+        if (event.code === "ArrowLeft") {
+          event.preventDefault();
+          answer("known", "exit-left");
+        }
+        if (event.code === "ArrowUp") {
+          event.preventDefault();
+          answer("unsure", "exit-up");
+        }
+        if (event.code === "ArrowRight") {
+          event.preventDefault();
+          answer("unknown", "exit-right");
+        }
+        if (event.code === "ArrowDown") {
+          event.preventDefault();
+          playPronunciation();
+        }
+      });
+    }
+
+    async function init() {
+      dailyTarget = loadDailyTarget();
+      elements.dailyTargetInput.value = dailyTarget;
+      elements.targetNote.textContent = `Current target: ${dailyTarget}`;
+      cardStates = loadJson(STORAGE_KEYS.states, {});
+      todayStats = loadStatsForToday();
+      bindEvents();
+
+      try {
+        const response = await fetch("cards.json", { cache: "no-store" });
+        if (!response.ok) {
+          throw new Error(`HTTP ${response.status}`);
+        }
+        cards = await response.json();
+        queue = buildSessionQueue();
+        elements.loadStatus.textContent = `${cards.length} cards`;
+        showNextCard();
+      } catch (error) {
+        elements.loadStatus.textContent = "Load failed";
+        elements.germanText.textContent = "Could not load cards.json";
+        elements.answerText.textContent = "Start a local server and try again.";
+        elements.dumpling.classList.remove("hidden");
+        elements.answerText.classList.remove("hidden");
+        elements.toggleAnswer.disabled = true;
+        document.querySelectorAll(".action-button").forEach((button) => {
+          button.style.display = "none";
+        });
+        console.error(error);
+      }
+    }
+
+    init();
+  </script>
+</body>
+</html>
