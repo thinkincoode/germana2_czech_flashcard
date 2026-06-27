@@ -300,22 +300,6 @@
       background: #ffffff;
     }
 
-    .reset-button {
-      min-height: 38px;
-      border: 1px solid rgba(183, 81, 66, 0.25);
-      border-radius: 8px;
-      padding: 7px 12px;
-      color: #ffffff;
-      background: var(--red);
-      font-weight: 800;
-      line-height: 1.15;
-      box-shadow: 0 8px 18px rgba(183, 81, 66, 0.16);
-    }
-
-    .reset-button:active {
-      transform: translateY(1px);
-    }
-
     .stage {
       position: relative;
       z-index: 20;
@@ -1268,7 +1252,6 @@
           <input id="dailyTargetInput" type="number" min="1" step="1" value="100">
         </section>
         <button class="toggle-answer" id="toggleAnswer" type="button">Pop answer</button>
-        <button class="reset-button" id="resetButton" type="button">Reset progress</button>
       </div>
       <div class="info-group legend">
         <button class="action-button known" id="knownButton" type="button">← Know</button>
@@ -1440,7 +1423,6 @@
       unknownButton: document.getElementById("unknownButton"),
       audioButton: document.getElementById("audioButton"),
       dailyTargetInput: document.getElementById("dailyTargetInput"),
-      resetButton: document.getElementById("resetButton"),
       targetNote: document.getElementById("targetNote"),
       completeView: document.getElementById("completeView"),
       completeReviewed: document.getElementById("completeReviewed"),
@@ -2045,7 +2027,6 @@
       elements.unsureButton.addEventListener("click", () => answer("unsure", "exit-up"));
       elements.unknownButton.addEventListener("click", () => answer("unknown", "exit-right"));
       elements.audioButton.addEventListener("click", playPronunciation);
-      elements.resetButton.addEventListener("click", resetProgress);
       elements.unknownPanelToggle.addEventListener("click", () => {
         setUnknownPanelOpen(!elements.unknownPanel.classList.contains("open"));
       });
