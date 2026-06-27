@@ -145,12 +145,76 @@
 
     .koi {
       position: absolute;
-      left: 6%;
-      bottom: 74px;
+      left: 0;
+      top: 0;
       width: 132px;
       height: auto;
       opacity: 0.62;
-      animation: koiSwim 12s ease-in-out infinite;
+      transform-origin: 50% 50%;
+      will-change: transform;
+    }
+
+    .koi-bubble {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 55;
+      width: min(430px, calc(100vw - 32px));
+      min-height: 96px;
+      display: grid;
+      place-items: center;
+      border: 1px solid rgba(114, 164, 183, 0.16);
+      border-radius: 999px;
+      padding: 20px 30px;
+      color: rgba(47, 58, 66, 0.8);
+      background: rgba(247, 253, 255, 0.58);
+      box-shadow:
+        inset 0 8px 24px rgba(255, 255, 255, 0.72),
+        0 12px 30px rgba(96, 132, 145, 0.08);
+      font-size: 1rem;
+      font-weight: 800;
+      line-height: 1.25;
+      text-align: center;
+      overflow-wrap: anywhere;
+      opacity: 0;
+      transform: translate3d(0, 0, 0) scale(0.96);
+      transition: opacity 900ms ease, color 900ms ease, background 900ms ease, transform 900ms ease;
+      pointer-events: none;
+    }
+
+    .koi-bubble::before,
+    .koi-bubble::after {
+      content: "";
+      position: absolute;
+      border: 1px solid rgba(114, 164, 183, 0.14);
+      border-radius: 50%;
+      background: rgba(247, 253, 255, 0.42);
+      box-shadow: inset 0 4px 12px rgba(255, 255, 255, 0.72);
+    }
+
+    .koi-bubble::before {
+      left: 26px;
+      bottom: -16px;
+      width: 24px;
+      height: 24px;
+    }
+
+    .koi-bubble::after {
+      left: 58px;
+      bottom: -34px;
+      width: 13px;
+      height: 13px;
+    }
+
+    .koi-bubble.visible {
+      opacity: 1;
+      transform: translate3d(0, 0, 0) scale(1);
+    }
+
+    .koi-bubble.fading {
+      color: rgba(47, 58, 66, 0);
+      background: rgba(247, 253, 255, 0.08);
+      opacity: 0;
     }
 
     @keyframes lanternFloat {
@@ -189,21 +253,6 @@
       }
       82% {
         transform: translate(-46px, -4px) rotate(-11deg);
-      }
-    }
-
-    @keyframes koiSwim {
-      0% {
-        transform: translateX(64vw) translateY(-8px) rotate(-4deg) scaleX(1);
-      }
-      48% {
-        transform: translateX(0) translateY(8px) rotate(-5deg) scaleX(1);
-      }
-      50% {
-        transform: translateX(0) translateY(8px) rotate(5deg) scaleX(-1);
-      }
-      100% {
-        transform: translateX(64vw) translateY(-8px) rotate(4deg) scaleX(-1);
       }
     }
 
@@ -1027,8 +1076,6 @@
       }
 
       .koi {
-        left: 4%;
-        bottom: 88px;
         width: 86px;
       }
 
@@ -1081,7 +1128,6 @@
         <path d="M86 70 C96 82 113 80 121 68 C108 67 97 66 86 70 Z" fill="#c0392b" />
         <path d="M72 42 C89 36 106 36 124 44 M72 52 C90 58 107 58 124 48" fill="none" stroke="#9f2e24" stroke-width="3" stroke-linecap="round" opacity="0.55" />
       </svg>
-
       <svg class="bamboo-art left" viewBox="0 0 190 360">
         <path d="M82 352 C86 266 89 179 91 16" fill="none" stroke="#78ad7a" stroke-width="10" stroke-linecap="round" />
         <path d="M126 356 C125 276 122 194 115 46" fill="none" stroke="#8bbd83" stroke-width="8" stroke-linecap="round" />
@@ -1126,6 +1172,8 @@
         <path d="M40 95 L40 111" stroke="#b85a43" stroke-width="3" stroke-linecap="round" />
       </svg>
     </div>
+
+    <div class="koi-bubble" id="koiBubble" aria-hidden="true"></div>
 
     <section class="stage">
       <section class="card-stage" id="cardStage" aria-live="polite">
@@ -1266,6 +1314,115 @@
     const DUMPLING_POP_AFTER_LID_DELAY = 260;
     const DUMPLING_POP_DURATION = 620;
     const DUMPLING_RETURN_DURATION = 520;
+    const KOI_MAX_SPEED = 18;
+    const KOI_MIN_SPEED = 6;
+    const KOI_BUBBLE_INTERVAL = 10 * 60 * 1000;
+    const KOI_BUBBLE_JITTER = 2 * 60 * 1000;
+    const KOI_BUBBLE_VISIBLE_MS = 4000;
+    const KOI_BUBBLE_FADE_MS = 1000;
+
+    const KOI_MESSAGES = [
+      "Miluju tě.",
+      "Lásko moje.",
+      "Moje miláčku.",
+      "Moje zlato.",
+      "Moje zlatíčko.",
+      "Jsi krásná.",
+      "Jsi nádherná.",
+      "Jsi moje všechno.",
+      "Chybíš mi.",
+      "Myslím na tebe.",
+      "Nemůžu na tebe přestat myslet.",
+      "Těším se na tebe.",
+      "Už se mi stýská.",
+      "S tebou je mi dobře.",
+      "S tebou jsem šťastný.",
+      "Jsem šťastný, že tě mám.",
+      "Jsi pro mě výjimečná.",
+      "Jsi moje radost.",
+      "Jsi moje štěstí.",
+      "Jsi moje sluníčko.",
+      "Máš krásný úsměv.",
+      "Tvůj úsměv mě vždycky potěší.",
+      "Když se směješ, svět je krásnější.",
+      "Máš nádherné oči.",
+      "Tvoje oči jsou kouzelné.",
+      "Jsi ta nejkrásnější žena, jakou znám.",
+      "Jsi krásná uvnitř i navenek.",
+      "Jsi něžná a úžasná.",
+      "Jsi moje princezna.",
+      "Jsi moje královna.",
+      "Chci být s tebou.",
+      "Chci být pořád vedle tebe.",
+      "Chci tě držet za ruku.",
+      "Chci tě obejmout.",
+      "Potřebuju tě obejmout.",
+      "Přál bych si, abys byla tady.",
+      "Bez tebe je mi smutno.",
+      "Bez tebe mi něco chybí.",
+      "Bez tebe to nejsem já.",
+      "Jsi moje doma.",
+      "S tebou se cítím jako doma.",
+      "Vedle tebe jsem klidný.",
+      "S tebou je každý den lepší.",
+      "Děláš můj život krásnější.",
+      "Děláš mě šťastným.",
+      "Jsi důvod, proč se usmívám.",
+      "Jsi moje nejhezčí myšlenka.",
+      "Jsi můj nejkrásnější sen.",
+      "Jsi sen, ze kterého se nechci probudit.",
+      "S tebou má všechno smysl.",
+      "Miluju tvůj smích.",
+      "Miluju tvůj hlas.",
+      "Miluju, jak se na mě díváš.",
+      "Miluju každý okamžik s tebou.",
+      "Miluju tě víc, než dokážu říct.",
+      "Miluju tě čím dál víc.",
+      "Miluju tě každý den víc.",
+      "Miluju tě celým srdcem.",
+      "Patříš do mého srdce.",
+      "Máš moje srdce.",
+      "Moje srdce je tvoje.",
+      "Jsi v mém srdci.",
+      "Jsi ta, na kterou jsem čekal.",
+      "Jsi ta pravá.",
+      "Jsi moje jediná.",
+      "Jsi pro mě jediná.",
+      "Nikdo není jako ty.",
+      "Nikdo mě nerozesměje jako ty.",
+      "Nikdo mi nerozumí jako ty.",
+      "Jsi moje bezpečí.",
+      "Jsi moje opora.",
+      "Děkuju, že jsi.",
+      "Děkuju, že jsi v mém životě.",
+      "Děkuju, že mě miluješ.",
+      "Děkuju, že jsi moje.",
+      "Jsem rád, že tě mám.",
+      "Jsem vděčný za tebe.",
+      "Jsi dar v mém životě.",
+      "Jsi moje největší štěstí.",
+      "Jsi to nejlepší, co mě potkalo.",
+      "Každý den s tebou je krásný.",
+      "Každá chvíle s tebou je vzácná.",
+      "Nechci tě ztratit.",
+      "Chci se o tebe starat.",
+      "Chci tě chránit.",
+      "Budu tu pro tebe.",
+      "Vždycky budu stát při tobě.",
+      "Můžeš se na mě spolehnout.",
+      "Jsi pro mě důležitá.",
+      "Záleží mi na tobě.",
+      "Mám tě moc rád.",
+      "Jsi moje láska.",
+      "Jsi láska mého života.",
+      "Jsi moje holčička.",
+      "Jsi moje kočička.",
+      "Jsi můj andílek.",
+      "Jsi sladká.",
+      "Jsi roztomilá.",
+      "Jsi neodolatelná.",
+      "S tebou je svět krásnější."
+    ];
 
     const elements = {
       scene: document.querySelector(".scene"),
@@ -1288,6 +1445,8 @@
       completeView: document.getElementById("completeView"),
       completeReviewed: document.getElementById("completeReviewed"),
       completeBreakdown: document.getElementById("completeBreakdown"),
+      koi: document.querySelector(".koi"),
+      koiBubble: document.getElementById("koiBubble"),
       unknownPanelToggle: document.getElementById("unknownPanelToggle"),
       unknownPanelClose: document.getElementById("unknownPanelClose"),
       unknownPanel: document.getElementById("unknownPanel"),
@@ -1310,6 +1469,20 @@
     let dumplingPopTimer = null;
     let finishDumplingPopTimer = null;
     let dumplingAnimating = false;
+    let koiMotion = {
+      x: 0,
+      y: 0,
+      targetX: 0,
+      targetY: 0,
+      speed: KOI_MIN_SPEED,
+      facing: 1,
+      paused: false,
+      lastFrame: null,
+      animationFrame: null,
+      bubbleTimer: null,
+      fadeTimer: null,
+      hideTimer: null
+    };
 
     function todayKey() {
       return new Date().toISOString().slice(0, 10);
@@ -1323,6 +1496,14 @@
 
     function dateOnly(date) {
       return date.toISOString().slice(0, 10);
+    }
+
+    function randomBetween(min, max) {
+      return min + Math.random() * (max - min);
+    }
+
+    function clamp(value, min, max) {
+      return Math.min(max, Math.max(min, value));
     }
 
     function defaultStats() {
@@ -1477,6 +1658,137 @@
       elements.unknownPanelToggle.setAttribute("aria-expanded", String(open));
       if (open) {
         renderUnknownList();
+      }
+    }
+
+    function koiBounds() {
+      const width = elements.koi?.getBoundingClientRect().width || 132;
+      const height = elements.koi?.getBoundingClientRect().height || 66;
+      return {
+        maxX: Math.max(0, window.innerWidth - width),
+        maxY: Math.max(0, window.innerHeight - height),
+        width,
+        height
+      };
+    }
+
+    function renderKoi() {
+      elements.koi.style.transform = `translate3d(${koiMotion.x}px, ${koiMotion.y}px, 0) scaleX(${koiMotion.facing})`;
+    }
+
+    function chooseKoiTarget() {
+      const bounds = koiBounds();
+      koiMotion.targetX = randomBetween(0, bounds.maxX);
+      koiMotion.targetY = randomBetween(0, bounds.maxY);
+      koiMotion.speed = randomBetween(KOI_MIN_SPEED, KOI_MAX_SPEED);
+    }
+
+    function positionKoiBubble() {
+      const bubbleWidth = elements.koiBubble.offsetWidth || 430;
+      const bubbleHeight = elements.koiBubble.offsetHeight || 96;
+      const bounds = koiBounds();
+      const preferredX = koiMotion.facing === 1
+        ? koiMotion.x + bounds.width * 0.12
+        : koiMotion.x + bounds.width - bubbleWidth - bounds.width * 0.12;
+      const preferredY = koiMotion.y - bubbleHeight - 24;
+      const x = clamp(preferredX, 16, window.innerWidth - bubbleWidth - 16);
+      const y = clamp(preferredY, 16, window.innerHeight - bubbleHeight - 16);
+      elements.koiBubble.style.transform = `translate3d(${x}px, ${y}px, 0) scale(0.96)`;
+    }
+
+    function randomKoiMessage() {
+      return KOI_MESSAGES[Math.floor(Math.random() * KOI_MESSAGES.length)];
+    }
+
+    function scheduleKoiBubble() {
+      clearTimeout(koiMotion.bubbleTimer);
+      const delay = KOI_BUBBLE_INTERVAL + randomBetween(-KOI_BUBBLE_JITTER, KOI_BUBBLE_JITTER);
+      koiMotion.bubbleTimer = window.setTimeout(showKoiBubble, Math.max(KOI_BUBBLE_VISIBLE_MS, delay));
+    }
+
+    function showKoiBubble() {
+      if (!elements.koi || !elements.koiBubble) return;
+      koiMotion.paused = true;
+      clearTimeout(koiMotion.fadeTimer);
+      clearTimeout(koiMotion.hideTimer);
+
+      elements.koiBubble.textContent = randomKoiMessage();
+      elements.koiBubble.className = "koi-bubble";
+      positionKoiBubble();
+
+      requestAnimationFrame(() => {
+        elements.koiBubble.classList.add("visible");
+        elements.koiBubble.style.transform = elements.koiBubble.style.transform.replace("scale(0.96)", "scale(1)");
+      });
+
+      koiMotion.fadeTimer = window.setTimeout(() => {
+        elements.koiBubble.classList.add("fading");
+      }, KOI_BUBBLE_VISIBLE_MS);
+
+      koiMotion.hideTimer = window.setTimeout(() => {
+        elements.koiBubble.className = "koi-bubble";
+        elements.koiBubble.textContent = "";
+        koiMotion.paused = false;
+        koiMotion.lastFrame = null;
+        chooseKoiTarget();
+        scheduleKoiBubble();
+      }, KOI_BUBBLE_VISIBLE_MS + KOI_BUBBLE_FADE_MS);
+    }
+
+    function moveKoi(timestamp) {
+      if (!elements.koi) return;
+
+      if (koiMotion.lastFrame === null) {
+        koiMotion.lastFrame = timestamp;
+      }
+
+      const elapsedSeconds = Math.min(0.08, (timestamp - koiMotion.lastFrame) / 1000);
+      koiMotion.lastFrame = timestamp;
+
+      if (!koiMotion.paused) {
+        const dx = koiMotion.targetX - koiMotion.x;
+        const dy = koiMotion.targetY - koiMotion.y;
+        const distance = Math.hypot(dx, dy);
+
+        if (distance < 2) {
+          chooseKoiTarget();
+        } else {
+          const step = Math.min(distance, koiMotion.speed * elapsedSeconds);
+          koiMotion.x += (dx / distance) * step;
+          koiMotion.y += (dy / distance) * step;
+          koiMotion.facing = dx > 0 ? -1 : 1;
+        }
+
+        const bounds = koiBounds();
+        koiMotion.x = clamp(koiMotion.x, 0, bounds.maxX);
+        koiMotion.y = clamp(koiMotion.y, 0, bounds.maxY);
+        renderKoi();
+      }
+
+      koiMotion.animationFrame = requestAnimationFrame(moveKoi);
+    }
+
+    function initKoi() {
+      if (!elements.koi || !elements.koiBubble) return;
+      const bounds = koiBounds();
+      koiMotion.x = randomBetween(0, bounds.maxX);
+      koiMotion.y = randomBetween(0, bounds.maxY);
+      chooseKoiTarget();
+      renderKoi();
+      scheduleKoiBubble();
+      koiMotion.animationFrame = requestAnimationFrame(moveKoi);
+    }
+
+    function handleKoiResize() {
+      if (!elements.koi) return;
+      const bounds = koiBounds();
+      koiMotion.x = clamp(koiMotion.x, 0, bounds.maxX);
+      koiMotion.y = clamp(koiMotion.y, 0, bounds.maxY);
+      koiMotion.targetX = clamp(koiMotion.targetX, 0, bounds.maxX);
+      koiMotion.targetY = clamp(koiMotion.targetY, 0, bounds.maxY);
+      renderKoi();
+      if (koiMotion.paused) {
+        positionKoiBubble();
       }
     }
 
@@ -1738,6 +2050,7 @@
         setUnknownPanelOpen(!elements.unknownPanel.classList.contains("open"));
       });
       elements.unknownPanelClose.addEventListener("click", () => setUnknownPanelOpen(false));
+      window.addEventListener("resize", handleKoiResize);
       elements.dailyTargetInput.addEventListener("change", (event) => {
         saveDailyTarget(event.target.value);
         queue = buildSessionQueue();
@@ -1784,6 +2097,7 @@
       cardStates = loadJson(STORAGE_KEYS.states, {});
       todayStats = loadStatsForToday();
       bindEvents();
+      initKoi();
       renderUnknownList();
 
       try {
