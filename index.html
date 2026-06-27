@@ -22,6 +22,7 @@
       --shadow: 0 22px 48px rgba(91, 72, 43, 0.22);
       --steamer-width: 468px;
       --steamer-height: 276px;
+      --footer-height: 96px;
     }
 
     * {
@@ -60,7 +61,7 @@
       overflow: hidden;
       padding: 18px;
       display: grid;
-      grid-template-rows: 1fr auto;
+      grid-template-rows: minmax(0, 1fr) auto;
       gap: 14px;
     }
 
@@ -273,17 +274,127 @@
       margin: 0 auto;
       display: grid;
       place-items: center;
-      min-height: 710px;
+      min-height: clamp(620px, calc(100vh - var(--footer-height) - 46px), 780px);
     }
 
     .card-stage {
       position: relative;
       width: min(100%, 620px);
-      min-height: 690px;
+      min-height: clamp(600px, calc(100vh - var(--footer-height) - 70px), 740px);
       display: grid;
       justify-items: center;
       align-items: start;
       padding: 20px;
+    }
+
+    .unknown-toggle {
+      position: fixed;
+      right: 16px;
+      top: 50%;
+      z-index: 60;
+      min-height: 42px;
+      border: 1px solid rgba(183, 81, 66, 0.28);
+      border-radius: 8px 8px 0 0;
+      padding: 9px 12px;
+      color: #ffffff;
+      background: var(--red);
+      font-size: 0.82rem;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 12px 24px rgba(96, 62, 42, 0.2);
+      transform: translateY(-50%) rotate(-90deg) translateY(-46px);
+      transform-origin: right center;
+    }
+
+    .unknown-panel {
+      position: fixed;
+      top: 0;
+      right: 0;
+      bottom: 0;
+      z-index: 70;
+      width: min(380px, calc(100vw - 42px));
+      display: grid;
+      grid-template-rows: auto minmax(0, 1fr);
+      border-left: 1px solid rgba(80, 67, 48, 0.18);
+      background: rgba(255, 252, 244, 0.97);
+      box-shadow: -22px 0 42px rgba(91, 72, 43, 0.18);
+      transform: translateX(100%);
+      transition: transform 220ms ease;
+    }
+
+    .unknown-panel.open {
+      transform: translateX(0);
+    }
+
+    .unknown-header {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 10px;
+      padding: 16px;
+      border-bottom: 1px solid rgba(80, 67, 48, 0.14);
+    }
+
+    .unknown-header h2 {
+      margin: 0;
+      color: var(--ink);
+      font-size: 1.02rem;
+      line-height: 1.15;
+    }
+
+    .unknown-count {
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+    }
+
+    .close-panel {
+      width: 34px;
+      height: 34px;
+      border: 1px solid rgba(80, 67, 48, 0.16);
+      border-radius: 8px;
+      color: var(--ink);
+      background: rgba(255, 255, 255, 0.7);
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .unknown-list {
+      min-height: 0;
+      margin: 0;
+      padding: 10px 12px 18px;
+      overflow-y: auto;
+      list-style: none;
+    }
+
+    .unknown-item {
+      padding: 11px 8px;
+      border-bottom: 1px solid rgba(80, 67, 48, 0.12);
+    }
+
+    .unknown-german {
+      color: #5f4632;
+      font-size: 0.95rem;
+      font-weight: 900;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .unknown-czech {
+      margin-top: 4px;
+      color: var(--green);
+      font-size: 0.88rem;
+      font-weight: 800;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .unknown-empty {
+      padding: 18px 8px;
+      color: var(--muted);
+      font-size: 0.9rem;
+      font-weight: 800;
+      line-height: 1.35;
     }
 
     .steamer-wrap {
@@ -848,11 +959,11 @@
 
 
       .stage {
-        min-height: 650px;
+        min-height: clamp(590px, calc(100vh - 190px), 650px);
       }
 
       .card-stage {
-        min-height: 630px;
+        min-height: clamp(570px, calc(100vh - 210px), 630px);
         padding: 18px 2px 36px;
       }
 
@@ -919,6 +1030,10 @@
         left: 4%;
         bottom: 88px;
         width: 86px;
+      }
+
+      .unknown-toggle {
+        right: 10px;
       }
     }
   </style>
@@ -1098,11 +1213,11 @@
       <div class="info-group">
         <span class="pill"><strong id="loadStatus">Loading</strong></span>
         <span class="pill" id="sessionProgress">0 reviewed</span>
-        <span class="pill" id="dailyProgress">0 / 30 new words</span>
-        <span class="pill" id="targetNote">Current target: 30</span>
+        <span class="pill" id="dailyProgress">0 / 100 new words</span>
+        <span class="pill" id="targetNote">Current target: 100</span>
         <section class="settings" aria-label="Settings">
           <label for="dailyTargetInput">Daily new words target</label>
-          <input id="dailyTargetInput" type="number" min="30" step="1" value="30">
+          <input id="dailyTargetInput" type="number" min="1" step="1" value="100">
         </section>
         <button class="toggle-answer" id="toggleAnswer" type="button">Pop answer</button>
         <button class="reset-button" id="resetButton" type="button">Reset progress</button>
@@ -1115,17 +1230,32 @@
         <span class="pill">Space Answer</span>
       </div>
     </footer>
+
+    <button class="unknown-toggle" id="unknownPanelToggle" type="button" aria-controls="unknownPanel" aria-expanded="false">
+      Unknown
+    </button>
+    <aside class="unknown-panel" id="unknownPanel" aria-label="Unknown words">
+      <header class="unknown-header">
+        <div>
+          <h2>Unknown words</h2>
+          <div class="unknown-count" id="unknownCount">0 words</div>
+        </div>
+        <button class="close-panel" id="unknownPanelClose" type="button" aria-label="Close unknown words">&times;</button>
+      </header>
+      <ul class="unknown-list" id="unknownList"></ul>
+    </aside>
   </main>
 
   <script>
     const STORAGE_KEYS = {
       states: "gcFlashcards.cardStates.v1",
-      target: "gcFlashcards.dailyNewWordsTarget.v1",
+      target: "gcFlashcards.dailyNewWordsTarget.v2",
       statsDate: "gcFlashcards.statsDate.v1",
       stats: "gcFlashcards.todayStats.v1"
     };
 
-    const MIN_DAILY_TARGET = 30;
+    const MIN_DAILY_TARGET = 1;
+    const DEFAULT_DAILY_TARGET = 100;
     const DEFAULT_EASE = 2.5;
     const MIN_EASE = 1.3;
     const LID_OPEN_DELAY = 80;
@@ -1157,7 +1287,12 @@
       targetNote: document.getElementById("targetNote"),
       completeView: document.getElementById("completeView"),
       completeReviewed: document.getElementById("completeReviewed"),
-      completeBreakdown: document.getElementById("completeBreakdown")
+      completeBreakdown: document.getElementById("completeBreakdown"),
+      unknownPanelToggle: document.getElementById("unknownPanelToggle"),
+      unknownPanelClose: document.getElementById("unknownPanelClose"),
+      unknownPanel: document.getElementById("unknownPanel"),
+      unknownCount: document.getElementById("unknownCount"),
+      unknownList: document.getElementById("unknownList")
     };
 
     let cards = [];
@@ -1167,7 +1302,7 @@
     let currentCard = null;
     let answerVisible = false;
     let animating = false;
-    let dailyTarget = MIN_DAILY_TARGET;
+    let dailyTarget = DEFAULT_DAILY_TARGET;
     let lidTimer = null;
     let lidCloseTimer = null;
     let popTimer = null;
@@ -1215,12 +1350,14 @@
     }
 
     function loadDailyTarget() {
-      const saved = Number(localStorage.getItem(STORAGE_KEYS.target));
-      return Number.isFinite(saved) ? Math.max(MIN_DAILY_TARGET, Math.floor(saved)) : MIN_DAILY_TARGET;
+      const raw = localStorage.getItem(STORAGE_KEYS.target);
+      if (raw === null) return DEFAULT_DAILY_TARGET;
+      const saved = Number(raw);
+      return Number.isFinite(saved) ? Math.max(MIN_DAILY_TARGET, Math.floor(saved)) : DEFAULT_DAILY_TARGET;
     }
 
     function saveDailyTarget(value) {
-      dailyTarget = Math.max(MIN_DAILY_TARGET, Math.floor(Number(value) || MIN_DAILY_TARGET));
+      dailyTarget = Math.max(MIN_DAILY_TARGET, Math.floor(Number(value) || DEFAULT_DAILY_TARGET));
       localStorage.setItem(STORAGE_KEYS.target, String(dailyTarget));
       elements.dailyTargetInput.value = dailyTarget;
       elements.targetNote.textContent = `Current target: ${dailyTarget}`;
@@ -1275,6 +1412,7 @@
       currentCard = null;
       queue = buildSessionQueue();
       elements.loadStatus.textContent = `${cards.length} cards`;
+      renderUnknownList();
       showNextCard();
     }
 
@@ -1299,6 +1437,47 @@
       const remaining = queue.length + (currentCard ? 1 : 0);
       elements.sessionProgress.textContent = `${todayStats.reviewed} reviewed · ${remaining} queued`;
       elements.dailyProgress.textContent = `${todayStats.newIntroduced} / ${dailyTarget} new words`;
+    }
+
+    function unknownCards() {
+      return cards.filter((card) => {
+        const state = getState(card);
+        return state && state.wrongCount > 0;
+      });
+    }
+
+    function renderUnknownList() {
+      const unknown = unknownCards();
+      elements.unknownCount.textContent = `${unknown.length} ${unknown.length === 1 ? "word" : "words"}`;
+
+      if (!unknown.length) {
+        elements.unknownList.innerHTML = '<li class="unknown-empty">No unknown words yet.</li>';
+        return;
+      }
+
+      elements.unknownList.innerHTML = unknown.map((card) => `
+        <li class="unknown-item">
+          <div class="unknown-german">${escapeHtml(card.german)}</div>
+          <div class="unknown-czech">${escapeHtml(card.czech)}</div>
+        </li>
+      `).join("");
+    }
+
+    function escapeHtml(value) {
+      return String(value)
+        .replaceAll("&", "&amp;")
+        .replaceAll("<", "&lt;")
+        .replaceAll(">", "&gt;")
+        .replaceAll('"', "&quot;")
+        .replaceAll("'", "&#039;");
+    }
+
+    function setUnknownPanelOpen(open) {
+      elements.unknownPanel.classList.toggle("open", open);
+      elements.unknownPanelToggle.setAttribute("aria-expanded", String(open));
+      if (open) {
+        renderUnknownList();
+      }
     }
 
     function initialFontSize(text, maxPx, longTextAt, minPx) {
@@ -1511,6 +1690,7 @@
       todayStats[result] += 1;
       cardStates[card.id] = state;
       saveState();
+      renderUnknownList();
     }
 
     function insertSoon(card, offset) {
@@ -1554,6 +1734,10 @@
       elements.unknownButton.addEventListener("click", () => answer("unknown", "exit-right"));
       elements.audioButton.addEventListener("click", playPronunciation);
       elements.resetButton.addEventListener("click", resetProgress);
+      elements.unknownPanelToggle.addEventListener("click", () => {
+        setUnknownPanelOpen(!elements.unknownPanel.classList.contains("open"));
+      });
+      elements.unknownPanelClose.addEventListener("click", () => setUnknownPanelOpen(false));
       elements.dailyTargetInput.addEventListener("change", (event) => {
         saveDailyTarget(event.target.value);
         queue = buildSessionQueue();
@@ -1587,6 +1771,9 @@
           event.preventDefault();
           playPronunciation();
         }
+        if (event.code === "Escape") {
+          setUnknownPanelOpen(false);
+        }
       });
     }
 
@@ -1597,6 +1784,7 @@
       cardStates = loadJson(STORAGE_KEYS.states, {});
       todayStats = loadStatsForToday();
       bindEvents();
+      renderUnknownList();
 
       try {
         const response = await fetch("cards.json", { cache: "no-store" });
@@ -1606,6 +1794,7 @@
         cards = await response.json();
         queue = buildSessionQueue();
         elements.loadStatus.textContent = `${cards.length} cards`;
+        renderUnknownList();
         showNextCard();
       } catch (error) {
         elements.loadStatus.textContent = "Load failed";
