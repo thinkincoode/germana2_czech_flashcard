@@ -22,7 +22,7 @@
       --shadow: 0 22px 48px rgba(91, 72, 43, 0.22);
       --steamer-width: 468px;
       --steamer-height: 276px;
-      --footer-height: 96px;
+      --footer-height: 0px;
     }
 
     * {
@@ -61,7 +61,7 @@
       overflow: hidden;
       padding: 18px;
       display: grid;
-      grid-template-rows: minmax(0, 1fr) auto;
+      grid-template-rows: minmax(0, 1fr);
       gap: 14px;
     }
 
@@ -257,15 +257,27 @@
     }
 
     .infobar {
-      position: relative;
-      z-index: 10;
-      width: min(100%, 860px);
-      margin: 0 auto;
+      position: fixed;
+      left: 50%;
+      bottom: 14px;
+      z-index: 65;
+      width: min(calc(100vw - 36px), 860px);
+      margin: 0;
       border: 1px solid rgba(80, 67, 48, 0.16);
       border-radius: 8px;
       background: rgba(255, 252, 244, 0.86);
       box-shadow: 0 10px 26px rgba(82, 67, 42, 0.1);
       backdrop-filter: blur(10px);
+      opacity: 0.96;
+      transform: translate(-50%, calc(100% + 18px));
+      transition: transform 220ms ease, opacity 220ms ease;
+    }
+
+    .scene.settings-open .infobar,
+    .infobar:hover,
+    .infobar:focus-within {
+      opacity: 1;
+      transform: translate(-50%, 0);
     }
 
     .settings {
@@ -335,6 +347,25 @@
       font-weight: 900;
       line-height: 1;
       box-shadow: 0 12px 24px rgba(96, 62, 42, 0.2);
+      transform: translateY(-50%) rotate(-90deg) translateY(-46px);
+      transform-origin: right center;
+    }
+
+    .settings-toggle {
+      position: fixed;
+      right: 16px;
+      top: calc(50% + 112px);
+      z-index: 60;
+      min-height: 42px;
+      border: 1px solid rgba(47, 118, 103, 0.28);
+      border-radius: 8px 8px 0 0;
+      padding: 9px 12px;
+      color: #ffffff;
+      background: var(--green);
+      font-size: 0.82rem;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 12px 24px rgba(96, 62, 42, 0.18);
       transform: translateY(-50%) rotate(-90deg) translateY(-46px);
       transform-origin: right center;
     }
@@ -433,7 +464,7 @@
     .steamer-wrap {
       position: absolute;
       left: 50%;
-      bottom: -86px;
+      bottom: -66px;
       width: min(var(--steamer-width), calc(100vw - 36px));
       height: var(--steamer-height);
       transform: translateX(-50%);
@@ -1018,7 +1049,7 @@
       }
 
       .steamer-wrap {
-        bottom: -72px;
+        bottom: -52px;
         width: min(351px, calc(100vw - 24px));
         height: 236px;
       }
@@ -1063,7 +1094,8 @@
         width: 86px;
       }
 
-      .unknown-toggle {
+      .unknown-toggle,
+      .settings-toggle {
         right: 10px;
       }
     }
@@ -1241,7 +1273,7 @@
       </section>
     </section>
 
-    <footer class="infobar" aria-label="Status and shortcuts">
+    <footer class="infobar" id="settingsPanel" aria-label="Status and shortcuts">
       <div class="info-group">
         <span class="pill"><strong id="loadStatus">Loading</strong></span>
         <span class="pill" id="sessionProgress">0 reviewed</span>
@@ -1262,6 +1294,9 @@
       </div>
     </footer>
 
+    <button class="settings-toggle" id="settingsPanelToggle" type="button" aria-controls="settingsPanel" aria-expanded="false">
+      Settings
+    </button>
     <button class="unknown-toggle" id="unknownPanelToggle" type="button" aria-controls="unknownPanel" aria-expanded="false">
       Unknown
     </button>
@@ -1429,6 +1464,7 @@
       completeBreakdown: document.getElementById("completeBreakdown"),
       koi: document.querySelector(".koi"),
       koiBubble: document.getElementById("koiBubble"),
+      settingsPanelToggle: document.getElementById("settingsPanelToggle"),
       unknownPanelToggle: document.getElementById("unknownPanelToggle"),
       unknownPanelClose: document.getElementById("unknownPanelClose"),
       unknownPanel: document.getElementById("unknownPanel"),
@@ -1641,6 +1677,11 @@
       if (open) {
         renderUnknownList();
       }
+    }
+
+    function setSettingsPanelOpen(open) {
+      elements.scene.classList.toggle("settings-open", open);
+      elements.settingsPanelToggle.setAttribute("aria-expanded", String(open));
     }
 
     function koiBounds() {
@@ -2031,6 +2072,9 @@
         setUnknownPanelOpen(!elements.unknownPanel.classList.contains("open"));
       });
       elements.unknownPanelClose.addEventListener("click", () => setUnknownPanelOpen(false));
+      elements.settingsPanelToggle.addEventListener("click", () => {
+        setSettingsPanelOpen(!elements.scene.classList.contains("settings-open"));
+      });
       window.addEventListener("resize", handleKoiResize);
       elements.dailyTargetInput.addEventListener("change", (event) => {
         saveDailyTarget(event.target.value);
@@ -2067,6 +2111,7 @@
         }
         if (event.code === "Escape") {
           setUnknownPanelOpen(false);
+          setSettingsPanelOpen(false);
         }
       });
     }
