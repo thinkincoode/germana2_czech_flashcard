@@ -121,28 +121,6 @@
       animation-delay: 0.7s;
     }
 
-    .kite {
-      position: absolute;
-      width: 84px;
-      height: auto;
-      opacity: 0.58;
-      transform-origin: 50% 80%;
-    }
-
-    .kite.one {
-      left: 22%;
-      top: 42px;
-      animation: kiteFloatOne 7.5s ease-in-out infinite;
-    }
-
-    .kite.two {
-      right: 20%;
-      top: 34px;
-      width: 68px;
-      opacity: 0.52;
-      animation: kiteFloatTwo 8.7s ease-in-out infinite;
-    }
-
     .koi {
       position: absolute;
       left: 0;
@@ -223,36 +201,6 @@
       }
       50% {
         transform: translateY(8px) rotate(1.5deg);
-      }
-    }
-
-    @keyframes kiteFloatOne {
-      0%, 100% {
-        transform: translate(0, 0) rotate(-8deg);
-      }
-      24% {
-        transform: translate(34px, 16px) rotate(5deg);
-      }
-      53% {
-        transform: translate(-18px, 40px) rotate(-14deg);
-      }
-      78% {
-        transform: translate(42px, -8px) rotate(9deg);
-      }
-    }
-
-    @keyframes kiteFloatTwo {
-      0%, 100% {
-        transform: translate(0, 0) rotate(9deg);
-      }
-      22% {
-        transform: translate(-30px, 22px) rotate(-7deg);
-      }
-      57% {
-        transform: translate(26px, 45px) rotate(15deg);
-      }
-      82% {
-        transform: translate(-46px, -4px) rotate(-11deg);
       }
     }
 
@@ -1078,18 +1026,6 @@
         height: 62px;
       }
 
-      .kite.one {
-        left: 18%;
-        top: 54px;
-        width: 62px;
-      }
-
-      .kite.two {
-        right: 12%;
-        top: 88px;
-        width: 54px;
-      }
-
       .koi {
         width: 86px;
       }
@@ -1120,29 +1056,15 @@
         <path d="M18 219 C158 205 259 211 386 225 C505 238 644 218 770 206 C856 198 919 204 962 218" fill="none" stroke="#b8d0bd" stroke-width="5" stroke-linecap="round" opacity="0.7" />
       </svg>
 
-      <svg class="kite one" viewBox="0 0 120 150">
-        <path d="M60 8 L104 58 L60 112 L16 58 Z" fill="#f3c06a" stroke="#c8833a" stroke-width="4" />
-        <path d="M60 8 L60 112 M16 58 L104 58" stroke="#d99643" stroke-width="3" opacity="0.72" />
-        <path d="M60 112 C48 126 73 129 60 144" fill="none" stroke="#b36c38" stroke-width="3" stroke-linecap="round" />
-        <path d="M43 122 L32 132 M76 124 L88 134" stroke="#d95d48" stroke-width="3" stroke-linecap="round" />
-      </svg>
-
-      <svg class="kite two" viewBox="0 0 120 150">
-        <path d="M60 8 L103 57 L60 114 L17 57 Z" fill="#8fc0d8" stroke="#4e88a8" stroke-width="4" />
-        <path d="M60 8 L60 114 M17 57 L103 57" stroke="#5d9fbd" stroke-width="3" opacity="0.72" />
-        <path d="M60 114 C77 126 49 132 64 144" fill="none" stroke="#4e88a8" stroke-width="3" stroke-linecap="round" />
-        <path d="M43 122 L31 130 M76 124 L90 132" stroke="#f0a35d" stroke-width="3" stroke-linecap="round" />
-      </svg>
-
       <svg class="koi" viewBox="0 0 180 90">
-        <path d="M138 45 C158 26 169 22 178 20 C174 35 166 44 151 48 C166 53 174 63 178 77 C164 74 151 66 138 45 Z" fill="#c0392b" />
-        <path d="M20 46 C44 12 102 10 142 45 C104 82 45 82 20 46 Z" fill="#d94b38" stroke="#9f2e24" stroke-width="3" />
-        <path d="M52 22 C66 35 67 56 52 70 C82 64 101 56 128 43 C100 31 82 25 52 22 Z" fill="#f7c4a2" opacity="0.88" />
-        <path d="M39 31 C46 39 47 51 39 60" fill="none" stroke="#8f2a23" stroke-width="4" stroke-linecap="round" />
+        <path d="M138 45 C158 26 169 22 178 20 C174 35 166 44 151 48 C166 53 174 63 178 77 C164 74 151 66 138 45 Z" fill="#8bc9cc" />
+        <path d="M20 46 C44 12 102 10 142 45 C104 82 45 82 20 46 Z" fill="#9fd8d1" stroke="#5ba7ad" stroke-width="3" />
+        <path d="M52 22 C66 35 67 56 52 70 C82 64 101 56 128 43 C100 31 82 25 52 22 Z" fill="#d7f0e4" opacity="0.88" />
+        <path d="M39 31 C46 39 47 51 39 60" fill="none" stroke="#4f97a4" stroke-width="4" stroke-linecap="round" />
         <circle cx="32" cy="39" r="4" fill="#2f2a24" />
-        <path d="M84 20 C90 8 106 6 116 16 C104 21 95 24 84 20 Z" fill="#c0392b" />
-        <path d="M86 70 C96 82 113 80 121 68 C108 67 97 66 86 70 Z" fill="#c0392b" />
-        <path d="M72 42 C89 36 106 36 124 44 M72 52 C90 58 107 58 124 48" fill="none" stroke="#9f2e24" stroke-width="3" stroke-linecap="round" opacity="0.55" />
+        <path d="M84 20 C90 8 106 6 116 16 C104 21 95 24 84 20 Z" fill="#8bc9cc" />
+        <path d="M86 70 C96 82 113 80 121 68 C108 67 97 66 86 70 Z" fill="#8bc9cc" />
+        <path d="M72 42 C89 36 106 36 124 44 M72 52 C90 58 107 58 124 48" fill="none" stroke="#5ba7ad" stroke-width="3" stroke-linecap="round" opacity="0.55" />
       </svg>
       <svg class="bamboo-art left" viewBox="0 0 190 360">
         <path d="M82 352 C86 266 89 179 91 16" fill="none" stroke="#78ad7a" stroke-width="10" stroke-linecap="round" />
