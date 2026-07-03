@@ -134,6 +134,12 @@
       will-change: transform;
     }
 
+    .koi-tail {
+      transform-box: fill-box;
+      transform-origin: 6% 50%;
+      animation: koiTailWave 2.8s ease-in-out infinite;
+    }
+
     .koi-bubble {
       position: absolute;
       left: 0;
@@ -197,12 +203,186 @@
       opacity: 0;
     }
 
+    .maltipoo-scene {
+      position: fixed;
+      left: 0;
+      top: 0;
+      z-index: 54;
+      pointer-events: none;
+    }
+
+    .maltipoo {
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 224px;
+      height: auto;
+      opacity: 0;
+      transform: translate3d(-160px, 100vh, 0);
+      transform-origin: 50% 88%;
+      transition: opacity 900ms ease;
+      will-change: transform, opacity;
+    }
+
+    .maltipoo.visible {
+      opacity: 1;
+    }
+
+    .maltipoo.fading {
+      opacity: 0;
+      transition:
+        transform 1800ms ease-in,
+        opacity 1800ms ease-in;
+    }
+
+    .maltipoo .tail {
+      transform-origin: 30px 50px;
+      animation: maltipooTail 1.2s ease-in-out infinite;
+    }
+
+    .maltipoo.walking .front-leg,
+    .maltipoo.walking .rear-leg-far {
+      animation: maltipooRunA 1500ms ease-in-out infinite;
+      transform-origin: center top;
+    }
+
+    .maltipoo.walking .rear-leg-near,
+    .maltipoo.walking .front-leg-far {
+      animation: maltipooRunB 1500ms ease-in-out infinite;
+      transform-origin: center top;
+    }
+
+    .maltipoo.peeing .rear-leg-near {
+      animation: none;
+      transform: rotate(-52deg) translate(-5px, -2px);
+      transform-origin: 56px 75px;
+    }
+
+    .maltipoo.peeing.facing-left .rear-leg-near {
+      transform: rotate(52deg) translate(5px, -2px);
+    }
+
+    .maltipoo .pee-stream {
+      opacity: 0;
+      transform-origin: 58px 83px;
+    }
+
+    .maltipoo.peeing .pee-stream {
+      opacity: 0.65;
+      animation: peePulse 520ms ease-in-out infinite;
+    }
+
+    .dog-poop {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 53;
+      width: var(--poop-width);
+      height: var(--poop-height);
+      border-radius: 999px;
+      background: #b49c61;
+      opacity: 0.95;
+      transform: translate3d(var(--poop-start-x), var(--poop-start-y), 0) rotate(var(--poop-rotate));
+      transition: transform 900ms ease-in, opacity 240ms ease;
+      pointer-events: none;
+    }
+
+    .dog-poop.dropped {
+      transform: translate3d(var(--poop-end-x), var(--poop-end-y), 0) rotate(var(--poop-rotate));
+    }
+
+    .dog-bubble {
+      position: absolute;
+      left: 0;
+      top: 0;
+      z-index: 56;
+      width: min(320px, calc(100vw - 36px));
+      min-height: 82px;
+      padding: 16px 22px;
+      border: 1px solid rgba(94, 142, 92, 0.22);
+      border-radius: 18px;
+      background: rgba(255, 252, 244, 0.9);
+      box-shadow: 0 12px 28px rgba(84, 99, 68, 0.13);
+      color: rgba(47, 58, 66, 0.86);
+      opacity: 0;
+      transform: translate3d(-999px, -999px, 0) scale(0.96);
+      transition: opacity 180ms ease;
+    }
+
+    .dog-bubble.visible {
+      opacity: 1;
+      transform: translate3d(var(--dog-bubble-x), var(--dog-bubble-y), 0) scale(1);
+    }
+
+    .dog-bubble .dog-word {
+      font-size: 0.98rem;
+      font-weight: 800;
+      line-height: 1.2;
+      overflow-wrap: anywhere;
+    }
+
+    .dog-bubble .dog-translation {
+      margin-top: 6px;
+      color: rgba(80, 92, 82, 0.82);
+      font-size: 0.88rem;
+      font-weight: 700;
+      line-height: 1.25;
+      overflow-wrap: anywhere;
+    }
+
     @keyframes lanternFloat {
       0%, 100% {
         transform: translateY(0) rotate(-1deg);
       }
       50% {
         transform: translateY(8px) rotate(1.5deg);
+      }
+    }
+
+    @keyframes koiTailWave {
+      0%, 100% {
+        transform: rotate(-3deg) scaleX(0.98);
+      }
+      50% {
+        transform: rotate(8deg) scaleX(1.02);
+      }
+    }
+
+    @keyframes maltipooTail {
+      0%, 100% {
+        transform: rotate(-8deg);
+      }
+      50% {
+        transform: rotate(16deg);
+      }
+    }
+
+    @keyframes maltipooRunA {
+      0%, 100% {
+        transform: rotate(4deg);
+      }
+      50% {
+        transform: rotate(-5deg);
+      }
+    }
+
+    @keyframes maltipooRunB {
+      0%, 100% {
+        transform: rotate(-4deg);
+      }
+      50% {
+        transform: rotate(5deg);
+      }
+    }
+
+    @keyframes peePulse {
+      0%, 100% {
+        opacity: 0.45;
+        transform: scaleY(0.86);
+      }
+      50% {
+        opacity: 0.78;
+        transform: scaleY(1.04);
       }
     }
 
@@ -1044,6 +1224,34 @@
     <div class="background-art" aria-hidden="true">
       <svg class="village-art" viewBox="0 0 980 260" preserveAspectRatio="xMidYMax meet">
         <path d="M0 216 C118 177 218 184 322 204 C430 226 522 210 615 183 C744 145 858 161 980 204 L980 260 L0 260 Z" fill="#dbe9dc" />
+        <path d="M0 228 C142 206 279 214 408 231 C540 248 650 226 780 216 C878 208 935 216 980 228 L980 260 L0 260 Z" fill="#cfe2c9" opacity="0.74" />
+        <path d="M0 238 C126 226 252 229 380 241 C510 254 612 239 746 230 C858 222 926 228 980 240 L980 260 L0 260 Z" fill="#b9d4ad" opacity="0.62" />
+        <g opacity="0.82">
+          <path d="M34 224 L34 182" stroke="#8a7041" stroke-width="5" stroke-linecap="round" />
+          <circle cx="34" cy="172" r="22" fill="#8cbd7b" />
+          <circle cx="18" cy="184" r="17" fill="#9cca88" />
+          <circle cx="50" cy="185" r="16" fill="#7fb070" />
+          <path d="M128 214 L128 174" stroke="#80673d" stroke-width="5" stroke-linecap="round" />
+          <circle cx="128" cy="163" r="20" fill="#82b876" />
+          <circle cx="112" cy="174" r="15" fill="#9bc987" />
+          <circle cx="145" cy="175" r="16" fill="#78aa6d" />
+          <path d="M238 226 L238 188" stroke="#876b3b" stroke-width="5" stroke-linecap="round" />
+          <circle cx="238" cy="178" r="21" fill="#87b879" />
+          <circle cx="221" cy="189" r="15" fill="#a5ce8e" />
+          <circle cx="254" cy="190" r="15" fill="#76a86c" />
+          <path d="M590 212 L590 168" stroke="#80673d" stroke-width="5" stroke-linecap="round" />
+          <circle cx="590" cy="158" r="22" fill="#86b875" />
+          <circle cx="572" cy="171" r="17" fill="#9fca87" />
+          <circle cx="608" cy="172" r="16" fill="#78a96a" />
+          <path d="M776 220 L776 176" stroke="#876b3b" stroke-width="5" stroke-linecap="round" />
+          <circle cx="776" cy="165" r="24" fill="#82b471" />
+          <circle cx="757" cy="180" r="17" fill="#a3cb8b" />
+          <circle cx="796" cy="181" r="17" fill="#74a465" />
+          <path d="M928 226 L928 184" stroke="#80673d" stroke-width="5" stroke-linecap="round" />
+          <circle cx="928" cy="174" r="22" fill="#88ba78" />
+          <circle cx="910" cy="187" r="16" fill="#9cca88" />
+          <circle cx="946" cy="188" r="16" fill="#77a76a" />
+        </g>
         <path d="M70 205 L135 160 L200 205 Z" fill="#d0decf" />
         <path d="M98 205 L98 178 L173 178 L173 205 Z" fill="#e8dcc6" />
         <path d="M92 178 L136 143 L180 178 Z" fill="#b9c8b5" />
@@ -1055,11 +1263,23 @@
         <path d="M635 166 L693 124 L751 166 Z" fill="#bdc9b2" />
         <path d="M806 203 L806 174 L870 174 L870 203 Z" fill="#e7dcc7" />
         <path d="M798 174 L838 143 L878 174 Z" fill="#b5c5ad" />
+        <g opacity="0.8">
+          <path d="M52 232 C62 218 77 218 88 232 C75 238 63 238 52 232 Z" fill="#7dac67" />
+          <path d="M154 232 C167 214 188 216 202 232 C186 240 168 240 154 232 Z" fill="#84b56c" />
+          <path d="M364 234 C378 216 400 219 413 234 C397 242 380 242 364 234 Z" fill="#78aa65" />
+          <path d="M546 226 C560 209 580 211 594 226 C579 234 561 234 546 226 Z" fill="#86b86f" />
+          <path d="M694 232 C711 211 739 215 754 232 C736 242 713 242 694 232 Z" fill="#7aaa64" />
+          <path d="M846 230 C861 213 884 216 898 230 C881 239 864 239 846 230 Z" fill="#89ba71" />
+          <path d="M24 246 C27 236 32 230 39 222 M48 246 C50 235 57 227 66 220 M78 247 C77 236 82 229 91 222" fill="none" stroke="#6fa45f" stroke-width="3" stroke-linecap="round" />
+          <path d="M226 247 C229 237 235 230 244 222 M258 248 C259 237 266 229 276 221 M296 247 C294 237 300 229 309 222" fill="none" stroke="#76aa63" stroke-width="3" stroke-linecap="round" />
+          <path d="M476 247 C479 237 486 229 494 221 M514 248 C515 237 523 229 532 221 M552 247 C550 236 556 229 565 222" fill="none" stroke="#6da25d" stroke-width="3" stroke-linecap="round" />
+          <path d="M760 248 C763 237 770 229 779 221 M804 248 C805 236 814 229 824 221 M922 247 C919 236 925 228 936 220" fill="none" stroke="#75aa63" stroke-width="3" stroke-linecap="round" />
+        </g>
         <path d="M18 219 C158 205 259 211 386 225 C505 238 644 218 770 206 C856 198 919 204 962 218" fill="none" stroke="#b8d0bd" stroke-width="5" stroke-linecap="round" opacity="0.7" />
       </svg>
 
       <svg class="koi" viewBox="0 0 180 90">
-        <path d="M138 45 C158 26 169 22 178 20 C174 35 166 44 151 48 C166 53 174 63 178 77 C164 74 151 66 138 45 Z" fill="#8bc9cc" />
+        <path class="koi-tail" d="M138 45 C158 26 169 22 178 20 C174 35 166 44 151 48 C166 53 174 63 178 77 C164 74 151 66 138 45 Z" fill="#8bc9cc" />
         <path d="M20 46 C44 12 102 10 142 45 C104 82 45 82 20 46 Z" fill="#9fd8d1" stroke="#5ba7ad" stroke-width="3" />
         <path d="M52 22 C66 35 67 56 52 70 C82 64 101 56 128 43 C100 31 82 25 52 22 Z" fill="#d7f0e4" opacity="0.88" />
         <path d="M39 31 C46 39 47 51 39 60" fill="none" stroke="#4f97a4" stroke-width="4" stroke-linecap="round" />
@@ -1071,11 +1291,17 @@
       <svg class="bamboo-art left" viewBox="0 0 190 360">
         <path d="M82 352 C86 266 89 179 91 16" fill="none" stroke="#78ad7a" stroke-width="10" stroke-linecap="round" />
         <path d="M126 356 C125 276 122 194 115 46" fill="none" stroke="#8bbd83" stroke-width="8" stroke-linecap="round" />
+        <path d="M49 356 C53 278 57 202 62 34" fill="none" stroke="#8cbd83" stroke-width="7" stroke-linecap="round" opacity="0.78" />
+        <path d="M154 358 C151 286 148 214 140 88" fill="none" stroke="#78ad7a" stroke-width="6" stroke-linecap="round" opacity="0.74" />
         <path d="M75 278 L94 278 M76 205 L95 205 M78 132 L96 132 M80 68 L97 68" stroke="#5e9663" stroke-width="4" stroke-linecap="round" />
         <path d="M119 289 L132 289 M118 221 L129 221 M116 152 L127 152 M114 86 L124 86" stroke="#6aa36c" stroke-width="3" stroke-linecap="round" />
+        <path d="M44 294 L56 294 M48 226 L61 226 M52 158 L65 158 M56 92 L68 92" stroke="#6aa36c" stroke-width="3" stroke-linecap="round" opacity="0.75" />
+        <path d="M149 304 L159 304 M146 238 L156 238 M143 174 L153 174 M139 112 L149 112" stroke="#5e9663" stroke-width="3" stroke-linecap="round" opacity="0.72" />
         <path d="M89 108 C42 82 28 48 20 16 C58 23 86 47 89 108 Z" fill="#9fca87" opacity="0.78" />
         <path d="M94 142 C47 123 25 96 8 65 C48 62 82 88 94 142 Z" fill="#8fc17e" opacity="0.76" />
         <path d="M91 184 C43 172 19 150 0 122 C37 113 75 135 91 184 Z" fill="#a6ce8d" opacity="0.72" />
+        <path d="M58 136 C27 120 14 98 5 75 C34 74 55 94 58 136 Z" fill="#9cca86" opacity="0.58" />
+        <path d="M142 184 C169 166 184 164 190 168 C178 190 160 198 142 184 Z" fill="#8fc17e" opacity="0.58" />
         <path d="M96 90 C133 55 163 46 188 45 C177 79 143 105 96 90 Z" fill="#95c783" opacity="0.76" />
         <path d="M99 158 C139 133 166 129 187 133 C171 160 139 177 99 158 Z" fill="#a9cf91" opacity="0.72" />
         <path d="M99 224 C138 205 164 205 185 212 C166 235 134 246 99 224 Z" fill="#90bf7d" opacity="0.72" />
@@ -1084,11 +1310,17 @@
       <svg class="bamboo-art right" viewBox="0 0 190 360">
         <path d="M82 352 C86 266 89 179 91 16" fill="none" stroke="#78ad7a" stroke-width="10" stroke-linecap="round" />
         <path d="M126 356 C125 276 122 194 115 46" fill="none" stroke="#8bbd83" stroke-width="8" stroke-linecap="round" />
+        <path d="M49 356 C53 278 57 202 62 34" fill="none" stroke="#8cbd83" stroke-width="7" stroke-linecap="round" opacity="0.78" />
+        <path d="M154 358 C151 286 148 214 140 88" fill="none" stroke="#78ad7a" stroke-width="6" stroke-linecap="round" opacity="0.74" />
         <path d="M75 278 L94 278 M76 205 L95 205 M78 132 L96 132 M80 68 L97 68" stroke="#5e9663" stroke-width="4" stroke-linecap="round" />
         <path d="M119 289 L132 289 M118 221 L129 221 M116 152 L127 152 M114 86 L124 86" stroke="#6aa36c" stroke-width="3" stroke-linecap="round" />
+        <path d="M44 294 L56 294 M48 226 L61 226 M52 158 L65 158 M56 92 L68 92" stroke="#6aa36c" stroke-width="3" stroke-linecap="round" opacity="0.75" />
+        <path d="M149 304 L159 304 M146 238 L156 238 M143 174 L153 174 M139 112 L149 112" stroke="#5e9663" stroke-width="3" stroke-linecap="round" opacity="0.72" />
         <path d="M89 108 C42 82 28 48 20 16 C58 23 86 47 89 108 Z" fill="#9fca87" opacity="0.78" />
         <path d="M94 142 C47 123 25 96 8 65 C48 62 82 88 94 142 Z" fill="#8fc17e" opacity="0.76" />
         <path d="M91 184 C43 172 19 150 0 122 C37 113 75 135 91 184 Z" fill="#a6ce8d" opacity="0.72" />
+        <path d="M58 136 C27 120 14 98 5 75 C34 74 55 94 58 136 Z" fill="#9cca86" opacity="0.58" />
+        <path d="M142 184 C169 166 184 164 190 168 C178 190 160 198 142 184 Z" fill="#8fc17e" opacity="0.58" />
         <path d="M96 90 C133 55 163 46 188 45 C177 79 143 105 96 90 Z" fill="#95c783" opacity="0.76" />
         <path d="M99 158 C139 133 166 129 187 133 C171 160 139 177 99 158 Z" fill="#a9cf91" opacity="0.72" />
         <path d="M99 224 C138 205 164 205 185 212 C166 235 134 246 99 224 Z" fill="#90bf7d" opacity="0.72" />
@@ -1114,6 +1346,31 @@
     </div>
 
     <div class="koi-bubble" id="koiBubble" aria-hidden="true"></div>
+    <div class="maltipoo-scene" id="maltipooScene" aria-hidden="true">
+      <div class="dog-bubble" id="dogBubble"></div>
+      <svg class="maltipoo" id="maltipoo" viewBox="0 0 130 104">
+        <ellipse cx="67" cy="91" rx="50" ry="8" fill="rgba(78, 74, 58, 0.12)" />
+        <path class="tail" d="M30 52 C22 43 25 32 36 31" fill="none" stroke="#fff7eb" stroke-width="11" stroke-linecap="round" />
+
+        <path class="front-leg-far" d="M84 75 L82 94" stroke="#fff8ec" stroke-width="9" stroke-linecap="round" />
+        <path class="front-leg" d="M94 74 L96 94" stroke="#fff8ec" stroke-width="10" stroke-linecap="round" />
+        <path class="rear-leg-far" d="M45 76 L42 94" stroke="#fff8ec" stroke-width="9" stroke-linecap="round" />
+        <path class="rear-leg-near" d="M56 75 L55 94" stroke="#fff8ec" stroke-width="10" stroke-linecap="round" />
+        <path d="M25 62 C29 45 45 40 66 40 C87 40 100 49 103 62 C106 76 95 84 80 84 L43 84 C29 84 21 76 25 62 Z" fill="#fff8ec" />
+        <path d="M34 55 C38 51 44 52 46 57 M50 50 C54 46 60 47 62 52 M68 50 C72 46 78 47 80 52 M86 56 C91 52 97 54 98 60 M38 71 C43 67 49 69 50 74 M62 75 C67 70 74 72 75 77 M83 70 C88 66 94 68 95 73" fill="none" stroke="#eadfce" stroke-width="2.4" stroke-linecap="round" opacity="0.9" />
+
+        <path class="pee-stream" d="M58 83 C70 88 80 94 88 101" fill="none" stroke="#e6c75e" stroke-width="3" stroke-linecap="round" stroke-dasharray="4 4" />
+
+        <ellipse cx="94" cy="42" rx="13" ry="18" fill="#fff8ec" />
+        <path d="M88 38 C93 21 115 20 123 36 C129 49 119 62 104 62 C93 62 84 52 88 38 Z" fill="#fff8ec" />
+        <circle cx="96" cy="29" r="9" fill="#fff8ec" />
+        <circle cx="110" cy="28" r="10" fill="#fff8ec" />
+        <circle cx="103" cy="40" r="3.3" fill="#2f2a24" />
+        <circle cx="104" cy="39" r="1.1" fill="#ffffff" />
+        <ellipse cx="121" cy="45" rx="2.6" ry="2.2" fill="#37302b" />
+        <path d="M119 50 C114 54 108 54 104 51" fill="none" stroke="#5b5248" stroke-width="2.2" stroke-linecap="round" />
+      </svg>
+    </div>
 
     <section class="stage">
       <section class="card-stage" id="cardStage" aria-live="polite">
@@ -1260,8 +1517,15 @@
     const KOI_MIN_SPEED = 6;
     const KOI_BUBBLE_INTERVAL = 10 * 60 * 1000;
     const KOI_BUBBLE_JITTER = 2 * 60 * 1000;
-    const KOI_BUBBLE_VISIBLE_MS = 4000;
+    const KOI_BUBBLE_VISIBLE_MS = 15000;
     const KOI_BUBBLE_FADE_MS = 1000;
+    const DOG_MAX_SPEED = KOI_MAX_SPEED * 1.5;
+    const DOG_MIN_SPEED = KOI_MIN_SPEED * 1.5;
+    const DOG_INTERVAL = 10 * 1000;
+    const DOG_INTERVAL_JITTER = 0;
+    const DOG_WORD_VISIBLE_MS = 4000;
+    const DOG_PEE_MS = 2300;
+    const DOG_POOP_MS = 2600;
 
     const KOI_MESSAGES = [
       "Miluju tě.",
@@ -1488,6 +1752,8 @@
       completeBreakdown: document.getElementById("completeBreakdown"),
       koi: document.querySelector(".koi"),
       koiBubble: document.getElementById("koiBubble"),
+      maltipoo: document.getElementById("maltipoo"),
+      dogBubble: document.getElementById("dogBubble"),
       settingsPanelToggle: document.getElementById("settingsPanelToggle"),
       unknownPanelToggle: document.getElementById("unknownPanelToggle"),
       unknownPanelClose: document.getElementById("unknownPanelClose"),
@@ -1524,6 +1790,22 @@
       bubbleTimer: null,
       fadeTimer: null,
       hideTimer: null
+    };
+    let dogMotion = {
+      paused: false,
+      acting: false,
+      timer: null,
+      stageTimer: null,
+      bubbleTimer: null,
+      fadeTimer: null,
+      x: 0,
+      y: 0,
+      targetX: 0,
+      targetY: 0,
+      speed: DOG_MIN_SPEED,
+      lastFrame: null,
+      animationFrame: null,
+      facing: 1
     };
 
     function todayKey() {
@@ -1839,6 +2121,233 @@
       }
     }
 
+    function randomUnknownCard() {
+      const unknown = unknownCards();
+      if (!unknown.length) return null;
+      return unknown[Math.floor(Math.random() * unknown.length)];
+    }
+
+    function setDogTransform(x, y, facing = dogMotion.facing) {
+      dogMotion.x = x;
+      dogMotion.y = y;
+      dogMotion.facing = facing;
+      elements.maltipoo.style.transform = `translate3d(${x}px, ${y}px, 0) scaleX(${facing})`;
+      elements.maltipoo.classList.toggle("facing-left", facing === -1);
+    }
+
+    function positionDogBubble() {
+      const bubbleWidth = elements.dogBubble.offsetWidth || 320;
+      const bubbleHeight = elements.dogBubble.offsetHeight || 82;
+      const dogWidth = elements.maltipoo?.getBoundingClientRect().width || 224;
+      const headX = dogMotion.facing === 1 ? dogMotion.x + dogWidth * 0.78 : dogMotion.x + dogWidth * 0.08;
+      const x = clamp(headX - bubbleWidth * 0.5, 18, window.innerWidth - bubbleWidth - 18);
+      const y = clamp(dogMotion.y - bubbleHeight - 12, 18, window.innerHeight - bubbleHeight - 18);
+      elements.dogBubble.style.setProperty("--dog-bubble-x", `${x}px`);
+      elements.dogBubble.style.setProperty("--dog-bubble-y", `${y}px`);
+    }
+
+    function showDogBubbleAtHead(card) {
+      elements.dogBubble.innerHTML = `
+        <div class="dog-word">${escapeHtml(card.german)}</div>
+        <div class="dog-translation">${escapeHtml(card.czech)}</div>
+      `;
+      elements.dogBubble.classList.remove("visible");
+      positionDogBubble();
+      elements.dogBubble.getBoundingClientRect();
+      elements.dogBubble.classList.add("visible");
+    }
+
+    function hideDogBubble() {
+      elements.dogBubble.classList.remove("visible");
+      elements.dogBubble.innerHTML = "";
+    }
+
+    function dropDogPoop(startX, startY, groundY) {
+      const poop = document.createElement("div");
+      const width = randomBetween(18, 34);
+      const height = randomBetween(5, 9);
+      const endX = startX + randomBetween(-2, 2);
+      const endY = groundY - height;
+      poop.className = "dog-poop";
+      poop.style.setProperty("--poop-width", `${width}px`);
+      poop.style.setProperty("--poop-height", `${height}px`);
+      poop.style.setProperty("--poop-start-x", `${startX}px`);
+      poop.style.setProperty("--poop-start-y", `${startY}px`);
+      poop.style.setProperty("--poop-end-x", `${endX}px`);
+      poop.style.setProperty("--poop-end-y", `${endY}px`);
+      poop.style.setProperty("--poop-rotate", `${randomBetween(-12, 12)}deg`);
+      document.body.appendChild(poop);
+      requestAnimationFrame(() => {
+        requestAnimationFrame(() => {
+          poop.classList.add("dropped");
+        });
+      });
+    }
+
+    function scheduleMaltipoo() {
+      clearTimeout(dogMotion.timer);
+      const delay = DOG_INTERVAL + randomBetween(-DOG_INTERVAL_JITTER, DOG_INTERVAL_JITTER);
+      dogMotion.timer = window.setTimeout(showMaltipoo, Math.max(1000, delay));
+    }
+
+    function clearDogTimers() {
+      clearTimeout(dogMotion.stageTimer);
+      clearTimeout(dogMotion.bubbleTimer);
+      clearTimeout(dogMotion.fadeTimer);
+    }
+
+    function dogBounds() {
+      const dogWidth = elements.maltipoo?.getBoundingClientRect().width || 224;
+      const dogHeight = elements.maltipoo?.getBoundingClientRect().height || 180;
+      const minY = 18;
+      const maxY = Math.max(minY, window.innerHeight - dogHeight - 18);
+      return {
+        maxX: Math.max(0, window.innerWidth - dogWidth),
+        minY,
+        maxY,
+        width: dogWidth,
+        height: dogHeight
+      };
+    }
+
+    function dogAvoidsStage(x, y, bounds) {
+      const stage = elements.cardStage?.getBoundingClientRect();
+      if (!stage) return true;
+      const centerX = x + bounds.width / 2;
+      const centerY = y + bounds.height / 2;
+      const marginX = bounds.width * 0.35;
+      const marginY = bounds.height * 0.25;
+      const insideX = centerX > stage.left - marginX && centerX < stage.right + marginX;
+      const insideY = centerY > stage.top - marginY && centerY < stage.bottom + marginY;
+      return !(insideX && insideY);
+    }
+
+    function chooseDogTarget() {
+      const bounds = dogBounds();
+      let x = 0;
+      let y = 0;
+      for (let attempt = 0; attempt < 18; attempt += 1) {
+        x = randomBetween(0, bounds.maxX);
+        y = randomBetween(bounds.minY, bounds.maxY);
+        if (dogAvoidsStage(x, y, bounds)) break;
+      }
+      dogMotion.targetX = x;
+      dogMotion.targetY = y;
+      dogMotion.speed = randomBetween(DOG_MIN_SPEED, DOG_MAX_SPEED);
+    }
+
+    function moveDog(timestamp) {
+      if (!elements.maltipoo) return;
+
+      if (dogMotion.lastFrame === null) {
+        dogMotion.lastFrame = timestamp;
+      }
+
+      const elapsedSeconds = Math.min(0.08, (timestamp - dogMotion.lastFrame) / 1000);
+      dogMotion.lastFrame = timestamp;
+
+      if (!dogMotion.paused && !dogMotion.acting) {
+        const dx = dogMotion.targetX - dogMotion.x;
+        const dy = dogMotion.targetY - dogMotion.y;
+        const distance = Math.hypot(dx, dy);
+
+        if (distance < 2) {
+          elements.maltipoo.classList.remove("walking");
+          chooseDogTarget();
+        } else {
+          elements.maltipoo.classList.add("walking");
+          const step = Math.min(distance, dogMotion.speed * elapsedSeconds);
+          dogMotion.x += (dx / distance) * step;
+          dogMotion.y += (dy / distance) * step;
+          dogMotion.facing = dx >= 0 ? 1 : -1;
+          setDogTransform(dogMotion.x, dogMotion.y, dogMotion.facing);
+        }
+      } else {
+        elements.maltipoo.classList.remove("walking");
+      }
+
+      dogMotion.animationFrame = requestAnimationFrame(moveDog);
+    }
+
+    function showMaltipoo() {
+      if (!elements.maltipoo || !elements.dogBubble || dogMotion.acting) return;
+
+      const card = randomUnknownCard();
+      if (!card) {
+        scheduleMaltipoo();
+        return;
+      }
+
+      dogMotion.acting = true;
+      dogMotion.paused = true;
+      elements.maltipoo.classList.remove("walking");
+      clearDogTimers();
+      hideDogBubble();
+
+      const dogWidth = elements.maltipoo.getBoundingClientRect().width || 112;
+      const headFacing = dogMotion.facing || 1;
+      const actionX = dogMotion.x;
+      const groundY = dogMotion.y;
+      const action = Math.random() < 0.5 ? "pee" : "poop";
+
+      dogMotion.stageTimer = window.setTimeout(() => {
+        showDogBubbleAtHead(card);
+      }, 0);
+
+      dogMotion.bubbleTimer = window.setTimeout(() => {
+        hideDogBubble();
+        setDogTransform(actionX, groundY, headFacing);
+        elements.maltipoo.classList.add(action === "pee" ? "peeing" : "pooping");
+        if (action === "poop") {
+          const anusX = headFacing === 1 ? actionX + dogWidth * 0.24 : actionX + dogWidth * 0.74;
+          const anusY = groundY + dogWidth * 0.4;
+          const shadowGroundY = groundY + dogWidth * (91 / 130);
+          dropDogPoop(anusX, anusY, shadowGroundY);
+        }
+      }, DOG_WORD_VISIBLE_MS);
+
+      const actionDuration = action === "pee" ? DOG_PEE_MS : DOG_POOP_MS;
+      dogMotion.stageTimer = window.setTimeout(() => {
+        elements.maltipoo.classList.remove("peeing", "pooping");
+        dogMotion.acting = false;
+        dogMotion.paused = false;
+        dogMotion.lastFrame = null;
+        chooseDogTarget();
+        scheduleMaltipoo();
+      }, DOG_WORD_VISIBLE_MS + actionDuration);
+    }
+
+    function initMaltipoo() {
+      if (!elements.maltipoo || !elements.dogBubble) return;
+      const bounds = dogBounds();
+      const x = randomBetween(0, bounds.maxX);
+      const y = randomBetween(bounds.minY, bounds.maxY);
+      elements.maltipoo.setAttribute("class", "maltipoo visible");
+      setDogTransform(x, y, Math.random() < 0.5 ? 1 : -1);
+      chooseDogTarget();
+      scheduleMaltipoo();
+      dogMotion.animationFrame = requestAnimationFrame(moveDog);
+    }
+
+    function handleMaltipooResize() {
+      if (!elements.maltipoo) return;
+      const dogWidth = elements.maltipoo.getBoundingClientRect().width || 112;
+      const x = clamp(dogMotion.x, 14, Math.max(14, window.innerWidth - dogWidth - 14));
+      const bounds = dogBounds();
+      const y = clamp(dogMotion.y, bounds.minY, bounds.maxY);
+      setDogTransform(x, y, dogMotion.facing);
+      dogMotion.targetX = clamp(dogMotion.targetX, 0, bounds.maxX);
+      dogMotion.targetY = clamp(dogMotion.targetY, bounds.minY, bounds.maxY);
+      if (elements.dogBubble.classList.contains("visible")) {
+        positionDogBubble();
+      }
+    }
+
+    function handleSceneResize() {
+      handleKoiResize();
+      handleMaltipooResize();
+    }
+
     function initialFontSize(text, maxPx, longTextAt, minPx) {
       const cleanLength = text.trim().length;
       if (cleanLength <= 18) return maxPx;
@@ -2099,7 +2608,7 @@
       elements.settingsPanelToggle.addEventListener("click", () => {
         setSettingsPanelOpen(!elements.scene.classList.contains("settings-open"));
       });
-      window.addEventListener("resize", handleKoiResize);
+      window.addEventListener("resize", handleSceneResize);
       elements.dailyTargetInput.addEventListener("change", (event) => {
         saveDailyTarget(event.target.value);
         queue = buildSessionQueue();
@@ -2148,6 +2657,7 @@
       todayStats = loadStatsForToday();
       bindEvents();
       initKoi();
+      initMaltipoo();
       renderUnknownList();
 
       try {
