@@ -562,8 +562,30 @@
     }
 
     .unknown-item {
+      display: grid;
+      grid-template-columns: minmax(0, 1fr) 30px;
+      gap: 8px;
+      align-items: start;
       padding: 11px 8px;
       border-bottom: 1px solid rgba(80, 67, 48, 0.12);
+    }
+
+    .unknown-remove {
+      width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 6px;
+      color: #c53a2c;
+      background: transparent;
+      font-size: 1.1rem;
+      font-weight: 900;
+      line-height: 1;
+    }
+
+    .unknown-remove:hover,
+    .unknown-remove:focus-visible {
+      background: rgba(197, 58, 44, 0.1);
+      outline: none;
     }
 
     .unknown-german {
@@ -1767,6 +1789,7 @@
     let todayStats = defaultStats();
     let queue = [];
     let currentCard = null;
+    let currentPrompt = null;
     let answerVisible = false;
     let animating = false;
     let dailyTarget = DEFAULT_DAILY_TARGET;
@@ -1915,6 +1938,7 @@
       localStorage.setItem(STORAGE_KEYS.statsDate, todayKey());
       saveJson(STORAGE_KEYS.stats, todayStats);
       currentCard = null;
+      currentPrompt = null;
       queue = buildSessionQueue();
       elements.loadStatus.textContent = `${cards.length} cards`;
       renderUnknownList();
@@ -1962,10 +1986,22 @@
 
       elements.unknownList.innerHTML = unknown.map((card) => `
         <li class="unknown-item">
-          <div class="unknown-german">${escapeHtml(card.german)}</div>
-          <div class="unknown-czech">${escapeHtml(card.czech)}</div>
+          <div>
+            <div class="unknown-german">${escapeHtml(card.german)}</div>
+            <div class="unknown-czech">${escapeHtml(card.czech)}</div>
+          </div>
+          <button class="unknown-remove" type="button" data-card-id="${escapeHtml(card.id)}" aria-label="Remove ${escapeHtml(card.german)} from unknown">×</button>
         </li>
       `).join("");
+    }
+
+    function removeUnknownCard(cardId) {
+      const state = cardStates[cardId];
+      if (!state) return;
+      state.wrongCount = 0;
+      cardStates[cardId] = state;
+      saveState();
+      renderUnknownList();
     }
 
     function escapeHtml(value) {
@@ -2371,12 +2407,21 @@
       });
     }
 
+    function chooseCardPrompt(card) {
+      const czechFirst = Math.random() < 0.5;
+      return {
+        promptText: czechFirst ? card.czech : card.german,
+        answerText: czechFirst ? card.german : card.czech
+      };
+    }
+
     function renderCard(card) {
       currentCard = card;
+      currentPrompt = chooseCardPrompt(card);
       answerVisible = false;
-      elements.germanText.textContent = card.german;
+      elements.germanText.textContent = currentPrompt.promptText;
       fitTextToContainer(elements.germanText, {
-        text: card.german,
+        text: currentPrompt.promptText,
         maxPx: 32,
         minPx: 18,
         longTextAt: 50
@@ -2419,6 +2464,7 @@
 
     function showComplete() {
       currentCard = null;
+      currentPrompt = null;
       elements.cardStage.style.display = "none";
       elements.completeView.style.display = "block";
       elements.completeReviewed.textContent = `Reviewed today: ${todayStats.reviewed}`;
@@ -2459,10 +2505,11 @@
               });
             });
           } else {
-            elements.answerText.textContent = currentCard.czech;
+            const answerText = currentPrompt?.answerText || currentCard.czech;
+            elements.answerText.textContent = answerText;
             elements.answerText.classList.remove("hidden");
             fitTextToContainer(elements.answerText, {
-              text: currentCard.czech,
+              text: answerText,
               maxPx: 22,
               minPx: 13,
               longTextAt: 55
@@ -2605,6 +2652,11 @@
         setUnknownPanelOpen(!elements.unknownPanel.classList.contains("open"));
       });
       elements.unknownPanelClose.addEventListener("click", () => setUnknownPanelOpen(false));
+      elements.unknownList.addEventListener("click", (event) => {
+        const removeButton = event.target.closest(".unknown-remove");
+        if (!removeButton) return;
+        removeUnknownCard(removeButton.dataset.cardId);
+      });
       elements.settingsPanelToggle.addEventListener("click", () => {
         setSettingsPanelOpen(!elements.scene.classList.contains("settings-open"));
       });
