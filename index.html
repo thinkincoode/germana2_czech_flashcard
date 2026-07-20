@@ -588,7 +588,7 @@
       outline: none;
     }
 
-    .unknown-german {
+    .unknown-czech {
       color: #5f4632;
       font-size: 0.95rem;
       font-weight: 900;
@@ -596,7 +596,7 @@
       overflow-wrap: anywhere;
     }
 
-    .unknown-czech {
+    .unknown-german {
       margin-top: 4px;
       color: var(--green);
       font-size: 0.88rem;
@@ -1242,7 +1242,7 @@
   </style>
 </head>
 <body>
-  <main class="scene" aria-label="German-Czech flashcard practice">
+  <main class="scene" aria-label="Czech-German flashcard practice">
     <div class="background-art" aria-hidden="true">
       <svg class="village-art" viewBox="0 0 980 260" preserveAspectRatio="xMidYMax meet">
         <path d="M0 216 C118 177 218 184 322 204 C430 226 522 210 615 183 C744 145 858 161 980 204 L980 260 L0 260 Z" fill="#dbe9dc" />
@@ -1397,7 +1397,7 @@
     <section class="stage">
       <section class="card-stage" id="cardStage" aria-live="polite">
         <article class="flashcard enter" id="flashcard">
-          <div class="bun" aria-label="German word">
+          <div class="bun" aria-label="Czech word">
             <svg class="bun-art" viewBox="0 0 390 250" aria-hidden="true">
               <defs>
                 <radialGradient id="bunHighlight" cx="36%" cy="22%" r="62%">
@@ -1425,7 +1425,7 @@
             </svg>
             <div class="german" id="germanText">Loading</div>
           </div>
-          <div class="dumpling hidden" id="dumpling" aria-label="Czech answer">
+          <div class="dumpling hidden" id="dumpling" aria-label="German answer">
             <svg class="dumpling-art" viewBox="0 0 340 150" aria-hidden="true">
               <defs>
                 <linearGradient id="dumplingSkin" x1="20%" y1="0%" x2="90%" y2="100%">
@@ -1987,8 +1987,8 @@
       elements.unknownList.innerHTML = unknown.map((card) => `
         <li class="unknown-item">
           <div>
-            <div class="unknown-german">${escapeHtml(card.german)}</div>
             <div class="unknown-czech">${escapeHtml(card.czech)}</div>
+            <div class="unknown-german">${escapeHtml(card.german)}</div>
           </div>
           <button class="unknown-remove" type="button" data-card-id="${escapeHtml(card.id)}" aria-label="Remove ${escapeHtml(card.german)} from unknown">×</button>
         </li>
@@ -2184,8 +2184,8 @@
 
     function showDogBubbleAtHead(card) {
       elements.dogBubble.innerHTML = `
-        <div class="dog-word">${escapeHtml(card.german)}</div>
-        <div class="dog-translation">${escapeHtml(card.czech)}</div>
+        <div class="dog-word">${escapeHtml(card.czech)}</div>
+        <div class="dog-translation">${escapeHtml(card.german)}</div>
       `;
       elements.dogBubble.classList.remove("visible");
       positionDogBubble();
@@ -2408,10 +2408,9 @@
     }
 
     function chooseCardPrompt(card) {
-      const czechFirst = Math.random() < 0.5;
       return {
-        promptText: czechFirst ? card.czech : card.german,
-        answerText: czechFirst ? card.german : card.czech
+        promptText: card.czech,
+        answerText: card.german
       };
     }
 
@@ -2505,7 +2504,7 @@
               });
             });
           } else {
-            const answerText = currentPrompt?.answerText || currentCard.czech;
+            const answerText = currentPrompt?.answerText || currentCard.german;
             elements.answerText.textContent = answerText;
             elements.answerText.classList.remove("hidden");
             fitTextToContainer(elements.answerText, {
