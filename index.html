@@ -442,6 +442,26 @@
       background: #ffffff;
     }
 
+    .source-settings {
+      gap: 10px;
+    }
+
+    .source-option {
+      display: inline-flex;
+      align-items: center;
+      gap: 5px;
+      color: var(--muted);
+      font-size: 0.78rem;
+      font-weight: 800;
+      text-transform: none;
+      white-space: nowrap;
+    }
+
+    .source-option input {
+      width: auto;
+      min-height: auto;
+    }
+
     .stage {
       position: relative;
       z-index: 20;
@@ -878,7 +898,8 @@
     }
 
     .bun-art,
-    .dumpling-art {
+    .dumpling-art,
+    .potato-art {
       position: absolute;
       inset: 0;
       width: 100%;
@@ -890,44 +911,70 @@
       z-index: 0;
     }
 
-    .dumpling {
+    .answer-stack {
       position: absolute;
       left: 50%;
       bottom: 0;
       width: min(86%, 340px);
-      min-height: 128px;
+      display: grid;
+      gap: 10px;
+      justify-items: center;
       transform: translateX(-50%) translateY(8px) scale(0.96);
+      opacity: 1;
+      transition: none;
+      z-index: 3;
+    }
+
+    .dumpling {
+      position: relative;
+      width: 100%;
+      min-height: 128px;
       padding: 34px 42px 24px;
       display: grid;
       place-items: center;
       filter: drop-shadow(0 16px 18px rgba(91, 72, 43, 0.18));
-      opacity: 1;
-      transition: none;
-      z-index: 3;
     }
 
     .dumpling-art {
       z-index: 0;
     }
 
-    .dumpling.hidden {
+    .sweet-potato {
+      position: relative;
+      width: 100%;
+      min-height: 74px;
+      padding: 16px 30px;
+      display: none;
+      place-items: center;
+      filter: drop-shadow(0 12px 14px rgba(74, 36, 21, 0.24));
+    }
+
+    .sweet-potato.active {
+      display: grid;
+    }
+
+    .potato-art {
+      z-index: 0;
+    }
+
+    .answer-stack.hidden {
       opacity: 0;
       visibility: hidden;
       transform: translateX(-50%) translateY(34px) scale(0.86);
     }
 
-    .dumpling.prepare-pop {
+    .answer-stack.prepare-pop {
       opacity: 0;
       visibility: visible;
       transform: translateX(-50%) translateY(238px) scale(0.54);
     }
 
-    .dumpling.pop-from-steamer {
+    .answer-stack.pop-from-steamer {
       visibility: visible;
       animation: dumplingPopFromSteamer 620ms cubic-bezier(.18,.92,.22,1.08) forwards;
     }
 
-    .dumpling.return-to-steamer {
+    .answer-stack.return-to-steamer {
       visibility: visible;
       animation: dumplingReturnToSteamer 520ms cubic-bezier(.32,.02,.64,.98) forwards;
     }
@@ -961,6 +1008,21 @@
 
     .answer.hidden {
       color: transparent;
+    }
+
+    .example-text {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 100%;
+      max-height: 54px;
+      color: #fff3e2;
+      font-size: 0.92rem;
+      font-weight: 700;
+      font-style: italic;
+      line-height: 1.22;
+      overflow-wrap: anywhere;
+      text-shadow: 0 1px 2px rgba(40, 18, 8, 0.4);
     }
 
     .action-button {
@@ -1194,10 +1256,18 @@
         padding: 52px 34px 56px;
       }
 
-      .dumpling {
+      .answer-stack {
         width: min(82%, 282px);
+      }
+
+      .dumpling {
         min-height: 118px;
         padding: 30px 30px 22px;
+      }
+
+      .sweet-potato {
+        min-height: 64px;
+        padding: 12px 22px;
       }
 
       .steamer-wrap {
@@ -1425,32 +1495,58 @@
             </svg>
             <div class="german" id="germanText">Loading</div>
           </div>
-          <div class="dumpling hidden" id="dumpling" aria-label="German answer">
-            <svg class="dumpling-art" viewBox="0 0 340 150" aria-hidden="true">
-              <defs>
-                <linearGradient id="dumplingSkin" x1="20%" y1="0%" x2="90%" y2="100%">
-                  <stop offset="0%" stop-color="#fffdf6" />
-                  <stop offset="62%" stop-color="#f4dcc0" />
-                  <stop offset="100%" stop-color="#d3a77b" />
-                </linearGradient>
-                <radialGradient id="dumplingGlow" cx="38%" cy="24%" r="70%">
-                  <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
-                  <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
-                </radialGradient>
-              </defs>
-              <ellipse cx="170" cy="132" rx="124" ry="12" fill="rgba(95, 63, 34, 0.15)" />
-              <path d="M34 99 C58 43 114 16 173 20 C239 24 287 53 314 100 C279 126 230 138 169 138 C108 138 61 125 34 99 Z" fill="url(#dumplingSkin)" stroke="rgba(108, 73, 42, 0.2)" stroke-width="2" />
-              <path d="M54 94 C78 54 123 34 174 36 C231 38 272 59 296 96 C265 116 222 126 169 126 C116 126 78 115 54 94 Z" fill="url(#dumplingGlow)" />
-              <path d="M59 96 C84 60 126 42 174 44 C226 46 265 64 290 96" fill="none" stroke="rgba(116, 78, 43, 0.24)" stroke-width="4" stroke-linecap="round" />
-              <path d="M83 82 C93 94 101 105 107 121" fill="none" stroke="rgba(120, 79, 42, 0.18)" stroke-width="4" stroke-linecap="round" />
-              <path d="M111 62 C122 82 128 101 131 126" fill="none" stroke="rgba(120, 79, 42, 0.18)" stroke-width="4" stroke-linecap="round" />
-              <path d="M145 49 C153 74 156 99 156 130" fill="none" stroke="rgba(120, 79, 42, 0.17)" stroke-width="4" stroke-linecap="round" />
-              <path d="M181 48 C177 75 176 101 179 130" fill="none" stroke="rgba(120, 79, 42, 0.17)" stroke-width="4" stroke-linecap="round" />
-              <path d="M217 57 C207 81 204 103 205 127" fill="none" stroke="rgba(120, 79, 42, 0.16)" stroke-width="4" stroke-linecap="round" />
-              <path d="M250 74 C237 92 231 108 229 123" fill="none" stroke="rgba(120, 79, 42, 0.16)" stroke-width="4" stroke-linecap="round" />
-              <path d="M68 98 C102 115 136 122 170 122 C208 122 247 115 284 98" fill="none" stroke="rgba(105, 68, 35, 0.12)" stroke-width="5" stroke-linecap="round" />
-            </svg>
-            <div class="answer hidden" id="answerText"></div>
+          <div class="answer-stack hidden" id="answerStack" aria-label="German answer">
+            <div class="dumpling" id="dumpling">
+              <svg class="dumpling-art" viewBox="0 0 340 150" aria-hidden="true">
+                <defs>
+                  <linearGradient id="dumplingSkin" x1="20%" y1="0%" x2="90%" y2="100%">
+                    <stop offset="0%" stop-color="#fffdf6" />
+                    <stop offset="62%" stop-color="#f4dcc0" />
+                    <stop offset="100%" stop-color="#d3a77b" />
+                  </linearGradient>
+                  <radialGradient id="dumplingGlow" cx="38%" cy="24%" r="70%">
+                    <stop offset="0%" stop-color="#ffffff" stop-opacity="0.9" />
+                    <stop offset="100%" stop-color="#ffffff" stop-opacity="0" />
+                  </radialGradient>
+                </defs>
+                <ellipse cx="170" cy="132" rx="124" ry="12" fill="rgba(95, 63, 34, 0.15)" />
+                <path d="M34 99 C58 43 114 16 173 20 C239 24 287 53 314 100 C279 126 230 138 169 138 C108 138 61 125 34 99 Z" fill="url(#dumplingSkin)" stroke="rgba(108, 73, 42, 0.2)" stroke-width="2" />
+                <path d="M54 94 C78 54 123 34 174 36 C231 38 272 59 296 96 C265 116 222 126 169 126 C116 126 78 115 54 94 Z" fill="url(#dumplingGlow)" />
+                <path d="M59 96 C84 60 126 42 174 44 C226 46 265 64 290 96" fill="none" stroke="rgba(116, 78, 43, 0.24)" stroke-width="4" stroke-linecap="round" />
+                <path d="M83 82 C93 94 101 105 107 121" fill="none" stroke="rgba(120, 79, 42, 0.18)" stroke-width="4" stroke-linecap="round" />
+                <path d="M111 62 C122 82 128 101 131 126" fill="none" stroke="rgba(120, 79, 42, 0.18)" stroke-width="4" stroke-linecap="round" />
+                <path d="M145 49 C153 74 156 99 156 130" fill="none" stroke="rgba(120, 79, 42, 0.17)" stroke-width="4" stroke-linecap="round" />
+                <path d="M181 48 C177 75 176 101 179 130" fill="none" stroke="rgba(120, 79, 42, 0.17)" stroke-width="4" stroke-linecap="round" />
+                <path d="M217 57 C207 81 204 103 205 127" fill="none" stroke="rgba(120, 79, 42, 0.16)" stroke-width="4" stroke-linecap="round" />
+                <path d="M250 74 C237 92 231 108 229 123" fill="none" stroke="rgba(120, 79, 42, 0.16)" stroke-width="4" stroke-linecap="round" />
+                <path d="M68 98 C102 115 136 122 170 122 C208 122 247 115 284 98" fill="none" stroke="rgba(105, 68, 35, 0.12)" stroke-width="5" stroke-linecap="round" />
+              </svg>
+              <div class="answer hidden" id="answerText"></div>
+            </div>
+            <div class="sweet-potato" id="sweetPotato" aria-label="Example sentence">
+              <svg class="potato-art" viewBox="0 0 340 90" aria-hidden="true">
+                <defs>
+                  <linearGradient id="potatoSkin" x1="8%" y1="10%" x2="95%" y2="95%">
+                    <stop offset="0%" stop-color="#8a4a2b" />
+                    <stop offset="55%" stop-color="#6b3420" />
+                    <stop offset="100%" stop-color="#45210f" />
+                  </linearGradient>
+                  <linearGradient id="potatoFlesh" x1="0%" y1="0%" x2="100%" y2="0%">
+                    <stop offset="0%" stop-color="#f4a341" />
+                    <stop offset="100%" stop-color="#e8862c" />
+                  </linearGradient>
+                </defs>
+                <ellipse cx="170" cy="80" rx="140" ry="8" fill="rgba(50, 24, 12, 0.2)" />
+                <path d="M20 46 C34 16 80 6 170 6 C262 6 308 16 320 46 C308 76 262 86 170 86 C80 86 34 76 20 46 Z" fill="url(#potatoSkin)" stroke="rgba(40, 19, 9, 0.3)" stroke-width="2" />
+                <path d="M38 43 C58 24 100 17 170 17 C234 17 270 25 290 43" fill="none" stroke="rgba(255, 214, 168, 0.3)" stroke-width="5" stroke-linecap="round" />
+                <path d="M150 28 C162 38 162 54 150 64 C170 60 184 51 184 45 C184 39 170 31 150 28 Z" fill="url(#potatoFlesh)" />
+                <circle cx="66" cy="32" r="3" fill="rgba(30, 14, 8, 0.35)" />
+                <circle cx="240" cy="58" r="3.4" fill="rgba(30, 14, 8, 0.32)" />
+                <circle cx="106" cy="66" r="2.6" fill="rgba(30, 14, 8, 0.3)" />
+                <circle cx="272" cy="32" r="2.8" fill="rgba(30, 14, 8, 0.3)" />
+              </svg>
+              <div class="example-text" id="exampleText"></div>
+            </div>
           </div>
         </article>
         <div class="steam" aria-hidden="true">
@@ -1482,6 +1578,11 @@
         <span class="pill" id="sessionProgress">0 reviewed</span>
         <span class="pill" id="dailyProgress">0 / 100 new words</span>
         <span class="pill" id="targetNote">Current target: 100</span>
+        <section class="settings source-settings" role="radiogroup" aria-label="Card source">
+          <label id="sourceLabel">Source</label>
+          <label class="source-option"><input type="radio" name="cardSource" id="sourceA2" value="a2" checked> A2 words</label>
+          <label class="source-option"><input type="radio" name="cardSource" id="sourceVerbPrep" value="verbPrep"> Verb + Prep</label>
+        </section>
         <section class="settings" aria-label="Settings">
           <label for="dailyTargetInput">Daily new words target</label>
           <input id="dailyTargetInput" type="number" min="1" step="1" value="100">
@@ -1520,8 +1621,15 @@
       states: "gcFlashcards.cardStates.v1",
       target: "gcFlashcards.dailyNewWordsTarget.v2",
       statsDate: "gcFlashcards.statsDate.v1",
-      stats: "gcFlashcards.todayStats.v1"
+      stats: "gcFlashcards.todayStats.v1",
+      source: "gcFlashcards.source.v1"
     };
+
+    const SOURCES = {
+      a2: { url: "cards.json", label: "A2 words" },
+      verbPrep: { url: "verben_praeposition.json", label: "Verb + Prep" }
+    };
+    const DEFAULT_SOURCE = "a2";
 
     const MIN_DAILY_TARGET = 1;
     const DEFAULT_DAILY_TARGET = 100;
@@ -1760,8 +1868,11 @@
       cardStage: document.getElementById("cardStage"),
       flashcard: document.getElementById("flashcard"),
       germanText: document.getElementById("germanText"),
-      dumpling: document.getElementById("dumpling"),
+      answerStack: document.getElementById("answerStack"),
+      sweetPotato: document.getElementById("sweetPotato"),
       answerText: document.getElementById("answerText"),
+      exampleText: document.getElementById("exampleText"),
+      sourceRadios: document.querySelectorAll('input[name="cardSource"]'),
       toggleAnswer: document.getElementById("toggleAnswer"),
       knownButton: document.getElementById("knownButton"),
       unsureButton: document.getElementById("unsureButton"),
@@ -1784,6 +1895,7 @@
       unknownList: document.getElementById("unknownList")
     };
 
+    let currentSource = DEFAULT_SOURCE;
     let cards = [];
     let cardStates = {};
     let todayStats = defaultStats();
@@ -1892,19 +2004,40 @@
       updateProgress();
     }
 
+    function loadSource() {
+      const saved = localStorage.getItem(STORAGE_KEYS.source);
+      return SOURCES[saved] ? saved : DEFAULT_SOURCE;
+    }
+
+    function saveSource(source) {
+      localStorage.setItem(STORAGE_KEYS.source, source);
+    }
+
+    function statesKey() {
+      return `${STORAGE_KEYS.states}.${currentSource}`;
+    }
+
+    function statsDateKey() {
+      return `${STORAGE_KEYS.statsDate}.${currentSource}`;
+    }
+
+    function statsKey() {
+      return `${STORAGE_KEYS.stats}.${currentSource}`;
+    }
+
     function loadStatsForToday() {
-      const savedDate = localStorage.getItem(STORAGE_KEYS.statsDate);
+      const savedDate = localStorage.getItem(statsDateKey());
       if (savedDate !== todayKey()) {
-        localStorage.setItem(STORAGE_KEYS.statsDate, todayKey());
-        saveJson(STORAGE_KEYS.stats, defaultStats());
+        localStorage.setItem(statsDateKey(), todayKey());
+        saveJson(statsKey(), defaultStats());
         return defaultStats();
       }
-      return { ...defaultStats(), ...loadJson(STORAGE_KEYS.stats, defaultStats()) };
+      return { ...defaultStats(), ...loadJson(statsKey(), defaultStats()) };
     }
 
     function saveState() {
-      saveJson(STORAGE_KEYS.states, cardStates);
-      saveJson(STORAGE_KEYS.stats, todayStats);
+      saveJson(statesKey(), cardStates);
+      saveJson(statsKey(), todayStats);
     }
 
     function pulseSteamerLid() {
@@ -1925,18 +2058,18 @@
       clearTimeout(finishPopTimer);
       clearTimeout(dumplingPopTimer);
       clearTimeout(finishDumplingPopTimer);
-      elements.dumpling.style.animation = "none";
+      elements.answerStack.style.animation = "none";
       dumplingAnimating = false;
     }
 
     function resetProgress() {
-      localStorage.removeItem(STORAGE_KEYS.states);
-      localStorage.removeItem(STORAGE_KEYS.statsDate);
-      localStorage.removeItem(STORAGE_KEYS.stats);
+      localStorage.removeItem(statesKey());
+      localStorage.removeItem(statsDateKey());
+      localStorage.removeItem(statsKey());
       cardStates = {};
       todayStats = defaultStats();
-      localStorage.setItem(STORAGE_KEYS.statsDate, todayKey());
-      saveJson(STORAGE_KEYS.stats, todayStats);
+      localStorage.setItem(statsDateKey(), todayKey());
+      saveJson(statsKey(), todayStats);
       currentCard = null;
       currentPrompt = null;
       queue = buildSessionQueue();
@@ -2410,7 +2543,8 @@
     function chooseCardPrompt(card) {
       return {
         promptText: card.czech,
-        answerText: card.german
+        answerText: card.german,
+        exampleText: card.example || null
       };
     }
 
@@ -2426,9 +2560,12 @@
         longTextAt: 50
       });
       elements.answerText.textContent = "";
-      elements.dumpling.classList.add("hidden");
-      elements.dumpling.classList.remove("prepare-pop", "pop-from-steamer");
+      elements.exampleText.textContent = "";
+      elements.answerStack.classList.add("hidden");
+      elements.answerStack.classList.remove("prepare-pop", "pop-from-steamer");
       elements.answerText.classList.add("hidden");
+      elements.sweetPotato.classList.toggle("active", Boolean(currentPrompt.exampleText));
+      elements.audioButton.disabled = !card.audio;
       elements.toggleAnswer.textContent = "Pop answer";
       elements.completeView.style.display = "none";
       elements.cardStage.style.display = "grid";
@@ -2493,14 +2630,14 @@
       lidTimer = window.setTimeout(() => {
         elements.scene.classList.add("lid-open");
       dumplingPopTimer = window.setTimeout(() => {
-          elements.dumpling.style.animation = "none";
+          elements.answerStack.style.animation = "none";
 
           if (answerVisible) {
-            elements.dumpling.className = "dumpling";
+            elements.answerStack.className = "answer-stack";
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
-                elements.dumpling.style.animation = "";
-                elements.dumpling.className = "dumpling return-to-steamer";
+                elements.answerStack.style.animation = "";
+                elements.answerStack.className = "answer-stack return-to-steamer";
               });
             });
           } else {
@@ -2513,11 +2650,23 @@
               minPx: 13,
               longTextAt: 55
             });
-            elements.dumpling.className = "dumpling prepare-pop";
+
+            const exampleText = currentPrompt?.exampleText;
+            if (exampleText) {
+              elements.exampleText.textContent = exampleText;
+              fitTextToContainer(elements.exampleText, {
+                text: exampleText,
+                maxPx: 17,
+                minPx: 12,
+                longTextAt: 60
+              });
+            }
+
+            elements.answerStack.className = "answer-stack prepare-pop";
             requestAnimationFrame(() => {
               requestAnimationFrame(() => {
-                elements.dumpling.style.animation = "";
-                elements.dumpling.className = "dumpling pop-from-steamer";
+                elements.answerStack.style.animation = "";
+                elements.answerStack.className = "answer-stack pop-from-steamer";
               });
             });
           }
@@ -2528,12 +2677,13 @@
               answerVisible = false;
               elements.answerText.textContent = "";
               elements.answerText.classList.add("hidden");
-              elements.dumpling.style.animation = "";
-              elements.dumpling.className = "dumpling hidden";
+              elements.exampleText.textContent = "";
+              elements.answerStack.style.animation = "";
+              elements.answerStack.className = "answer-stack hidden";
             } else {
               answerVisible = true;
-              elements.dumpling.style.animation = "";
-              elements.dumpling.className = "dumpling";
+              elements.answerStack.style.animation = "";
+              elements.answerStack.className = "answer-stack";
             }
 
             dumplingAnimating = false;
@@ -2624,15 +2774,16 @@
       elements.flashcard.className = `flashcard ${exitClass}`;
 
       window.setTimeout(() => {
-        elements.dumpling.className = "dumpling hidden";
+        elements.answerStack.className = "answer-stack hidden";
         elements.answerText.classList.add("hidden");
+        elements.exampleText.textContent = "";
         animating = false;
         showNextCard();
       }, EXIT_DURATION);
     }
 
     function playPronunciation() {
-      if (!currentCard) return;
+      if (!currentCard || !currentCard.audio) return;
       const audio = new Audio(currentCard.audio);
       audio.play().catch((error) => {
         elements.loadStatus.textContent = "Audio unavailable";
@@ -2655,6 +2806,12 @@
         const removeButton = event.target.closest(".unknown-remove");
         if (!removeButton) return;
         removeUnknownCard(removeButton.dataset.cardId);
+      });
+      elements.sourceRadios.forEach((radio) => {
+        radio.addEventListener("change", (event) => {
+          if (!event.target.checked) return;
+          switchSource(event.target.value);
+        });
       });
       elements.settingsPanelToggle.addEventListener("click", () => {
         setSettingsPanelOpen(!elements.scene.classList.contains("settings-open"));
@@ -2700,32 +2857,37 @@
       });
     }
 
-    async function init() {
-      dailyTarget = loadDailyTarget();
-      elements.dailyTargetInput.value = dailyTarget;
-      elements.targetNote.textContent = `Current target: ${dailyTarget}`;
-      cardStates = loadJson(STORAGE_KEYS.states, {});
+    async function loadCards(source) {
+      const response = await fetch(SOURCES[source].url, { cache: "no-store" });
+      if (!response.ok) {
+        throw new Error(`HTTP ${response.status}`);
+      }
+      return response.json();
+    }
+
+    async function loadAndStartSource(source) {
+      currentSource = SOURCES[source] ? source : DEFAULT_SOURCE;
+      saveSource(currentSource);
+      elements.sourceRadios.forEach((radio) => {
+        radio.checked = radio.value === currentSource;
+      });
+      cardStates = loadJson(statesKey(), {});
       todayStats = loadStatsForToday();
-      bindEvents();
-      initKoi();
-      initMaltipoo();
-      renderUnknownList();
+      currentCard = null;
+      currentPrompt = null;
+      elements.loadStatus.textContent = "Loading";
 
       try {
-        const response = await fetch("cards.json", { cache: "no-store" });
-        if (!response.ok) {
-          throw new Error(`HTTP ${response.status}`);
-        }
-        cards = await response.json();
+        cards = await loadCards(currentSource);
         queue = buildSessionQueue();
         elements.loadStatus.textContent = `${cards.length} cards`;
         renderUnknownList();
         showNextCard();
       } catch (error) {
         elements.loadStatus.textContent = "Load failed";
-        elements.germanText.textContent = "Could not load cards.json";
+        elements.germanText.textContent = `Could not load ${SOURCES[currentSource].url}`;
         elements.answerText.textContent = "Start a local server and try again.";
-        elements.dumpling.classList.remove("hidden");
+        elements.answerStack.classList.remove("hidden");
         elements.answerText.classList.remove("hidden");
         elements.toggleAnswer.disabled = true;
         document.querySelectorAll(".action-button").forEach((button) => {
@@ -2733,6 +2895,31 @@
         });
         console.error(error);
       }
+    }
+
+    function switchSource(source) {
+      if (source === currentSource || !SOURCES[source]) return;
+      clearSteamerTimers();
+      elements.scene.classList.remove("lid-open");
+      elements.flashcard.className = "flashcard";
+      elements.answerStack.className = "answer-stack hidden";
+      elements.sweetPotato.classList.remove("active");
+      elements.toggleAnswer.disabled = false;
+      document.querySelectorAll(".action-button").forEach((button) => {
+        button.style.display = "";
+      });
+      loadAndStartSource(source);
+    }
+
+    async function init() {
+      dailyTarget = loadDailyTarget();
+      elements.dailyTargetInput.value = dailyTarget;
+      elements.targetNote.textContent = `Current target: ${dailyTarget}`;
+      bindEvents();
+      initKoi();
+      initMaltipoo();
+      renderUnknownList();
+      await loadAndStartSource(loadSource());
     }
 
     init();
