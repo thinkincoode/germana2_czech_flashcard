@@ -222,6 +222,8 @@
       transform-origin: 50% 88%;
       transition: opacity 900ms ease;
       will-change: transform, opacity;
+      pointer-events: auto;
+      cursor: pointer;
     }
 
     .maltipoo.visible {
@@ -250,6 +252,17 @@
     .maltipoo.walking .front-leg-far {
       animation: maltipooRunB 1500ms ease-in-out infinite;
       transform-origin: center top;
+    }
+
+    .maltipoo.sprinting .front-leg,
+    .maltipoo.sprinting .rear-leg-far,
+    .maltipoo.sprinting .rear-leg-near,
+    .maltipoo.sprinting .front-leg-far {
+      animation-duration: 260ms;
+    }
+
+    .maltipoo.sprinting .tail {
+      animation-duration: 320ms;
     }
 
     .maltipoo.peeing .rear-leg-near {
@@ -1657,6 +1670,8 @@
     const DOG_WORD_VISIBLE_MS = 4000;
     const DOG_PEE_MS = 2300;
     const DOG_POOP_MS = 2600;
+    const DOG_SPRINT_MULTIPLIER = 7;
+    const DOG_SPRINT_FALLBACK_DISTANCE = 300;
 
     const KOI_MESSAGES = [
       "Miluju tě.",
@@ -1870,6 +1885,7 @@
       flashcard: document.getElementById("flashcard"),
       germanText: document.getElementById("germanText"),
       answerStack: document.getElementById("answerStack"),
+      dumpling: document.getElementById("dumpling"),
       sweetPotato: document.getElementById("sweetPotato"),
       answerText: document.getElementById("answerText"),
       exampleText: document.getElementById("exampleText"),
@@ -1941,7 +1957,8 @@
       speed: DOG_MIN_SPEED,
       lastFrame: null,
       animationFrame: null,
-      facing: 1
+      facing: 1,
+      sprint: null
     };
 
     function todayKey() {
@@ -2406,6 +2423,70 @@
       dogMotion.speed = randomBetween(DOG_MIN_SPEED, DOG_MAX_SPEED);
     }
 
+    function startDogSprint() {
+      if (!elements.maltipoo || dogMotion.acting || dogMotion.sprint?.active) return;
+
+      let dirX = dogMotion.targetX - dogMotion.x;
+      let dirY = dogMotion.targetY - dogMotion.y;
+      let magnitude = Math.hypot(dirX, dirY);
+      if (magnitude < 1) {
+        dirX = dogMotion.facing >= 0 ? 1 : -1;
+        dirY = 0;
+        magnitude = 1;
+      }
+
+      const sprintDistance = elements.dumpling?.getBoundingClientRect().width || DOG_SPRINT_FALLBACK_DISTANCE;
+
+      dogMotion.sprint = {
+        active: true,
+        remaining: sprintDistance,
+        dirX: dirX / magnitude,
+        dirY: dirY / magnitude,
+        speed: Math.max(dogMotion.speed, DOG_MIN_SPEED) * DOG_SPRINT_MULTIPLIER
+      };
+      dogMotion.paused = false;
+      elements.maltipoo.classList.add("walking", "sprinting");
+    }
+
+    function stepDogSprint(elapsedSeconds) {
+      const sprint = dogMotion.sprint;
+      const bounds = dogBounds();
+      const step = Math.min(sprint.remaining, sprint.speed * elapsedSeconds);
+
+      let nextX = dogMotion.x + sprint.dirX * step;
+      let nextY = dogMotion.y + sprint.dirY * step;
+
+      if (nextX < 0) {
+        nextX = -nextX;
+        sprint.dirX = Math.abs(sprint.dirX);
+      } else if (nextX > bounds.maxX) {
+        nextX = bounds.maxX - (nextX - bounds.maxX);
+        sprint.dirX = -Math.abs(sprint.dirX);
+      }
+
+      if (nextY < bounds.minY) {
+        nextY = bounds.minY + (bounds.minY - nextY);
+        sprint.dirY = Math.abs(sprint.dirY);
+      } else if (nextY > bounds.maxY) {
+        nextY = bounds.maxY - (nextY - bounds.maxY);
+        sprint.dirY = -Math.abs(sprint.dirY);
+      }
+
+      dogMotion.x = clamp(nextX, 0, bounds.maxX);
+      dogMotion.y = clamp(nextY, bounds.minY, bounds.maxY);
+      dogMotion.facing = sprint.dirX >= 0 ? 1 : -1;
+      sprint.remaining -= step;
+
+      elements.maltipoo.classList.add("walking");
+      setDogTransform(dogMotion.x, dogMotion.y, dogMotion.facing);
+
+      if (sprint.remaining <= 0.5) {
+        sprint.active = false;
+        elements.maltipoo.classList.remove("sprinting");
+        chooseDogTarget();
+      }
+    }
+
     function moveDog(timestamp) {
       if (!elements.maltipoo) return;
 
@@ -2416,7 +2497,11 @@
       const elapsedSeconds = Math.min(0.08, (timestamp - dogMotion.lastFrame) / 1000);
       dogMotion.lastFrame = timestamp;
 
-      if (!dogMotion.paused && !dogMotion.acting) {
+      if (dogMotion.acting) {
+        elements.maltipoo.classList.remove("walking");
+      } else if (dogMotion.sprint?.active) {
+        stepDogSprint(elapsedSeconds);
+      } else if (!dogMotion.paused) {
         const dx = dogMotion.targetX - dogMotion.x;
         const dy = dogMotion.targetY - dogMotion.y;
         const distance = Math.hypot(dx, dy);
@@ -2441,6 +2526,10 @@
 
     function showMaltipoo() {
       if (!elements.maltipoo || !elements.dogBubble || dogMotion.acting) return;
+      if (dogMotion.sprint?.active) {
+        scheduleMaltipoo();
+        return;
+      }
 
       const card = randomUnknownCard();
       if (!card) {
@@ -2799,6 +2888,10 @@
       elements.unsureButton.addEventListener("click", () => answer("unsure", "exit-up"));
       elements.unknownButton.addEventListener("click", () => answer("unknown", "exit-right"));
       elements.audioButton.addEventListener("click", playPronunciation);
+      elements.maltipoo.addEventListener("click", (event) => {
+        event.stopPropagation();
+        startDogSprint();
+      });
       elements.unknownPanelToggle.addEventListener("click", () => {
         setUnknownPanelOpen(!elements.unknownPanel.classList.contains("open"));
       });
