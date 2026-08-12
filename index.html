@@ -914,7 +914,7 @@
     .answer-stack {
       position: absolute;
       left: 50%;
-      bottom: 0;
+      bottom: -128px;
       width: min(86%, 340px);
       display: grid;
       gap: 10px;
@@ -941,7 +941,7 @@
 
     .sweet-potato {
       position: relative;
-      width: 100%;
+      width: 200%;
       min-height: 74px;
       padding: 16px 30px;
       display: none;
@@ -1258,6 +1258,7 @@
 
       .answer-stack {
         width: min(82%, 282px);
+        bottom: -118px;
       }
 
       .dumpling {
@@ -1524,7 +1525,7 @@
               <div class="answer hidden" id="answerText"></div>
             </div>
             <div class="sweet-potato" id="sweetPotato" aria-label="Example sentence">
-              <svg class="potato-art" viewBox="0 0 340 90" aria-hidden="true">
+              <svg class="potato-art" viewBox="0 0 340 90" preserveAspectRatio="none" aria-hidden="true">
                 <defs>
                   <linearGradient id="potatoSkin" x1="8%" y1="10%" x2="95%" y2="95%">
                     <stop offset="0%" stop-color="#8a4a2b" />
