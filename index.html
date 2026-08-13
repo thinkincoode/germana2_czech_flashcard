@@ -215,7 +215,7 @@
       position: absolute;
       left: 0;
       top: 0;
-      width: 224px;
+      width: 112px;
       height: auto;
       opacity: 0;
       transform: translate3d(-160px, 100vh, 0);
@@ -858,6 +858,69 @@
       }
     }
 
+    .dpad {
+      display: none;
+      position: absolute;
+      left: 50%;
+      bottom: 30px;
+      transform: translateX(-50%);
+      z-index: 40;
+      grid-template-columns: 50px 58px 50px;
+      grid-template-rows: 50px 58px 50px;
+      grid-template-areas:
+        ".    up     ."
+        "left center right"
+        ".    down   .";
+      gap: 8px;
+      pointer-events: none;
+    }
+
+    .dpad-btn {
+      display: grid;
+      place-items: center;
+      border: none;
+      border-radius: 50%;
+      color: #ffffff;
+      font-size: 1.2rem;
+      font-weight: 900;
+      line-height: 1;
+      box-shadow: 0 10px 18px rgba(46, 32, 15, 0.32);
+      pointer-events: auto;
+    }
+
+    .dpad-up {
+      grid-area: up;
+      background: var(--amber);
+    }
+
+    .dpad-left {
+      grid-area: left;
+      background: var(--green);
+    }
+
+    .dpad-center {
+      grid-area: center;
+      background: var(--green);
+      font-size: 0.78rem;
+      letter-spacing: 0.02em;
+    }
+
+    .dpad-right {
+      grid-area: right;
+      background: var(--red);
+    }
+
+    .dpad-down {
+      grid-area: down;
+      background: var(--blue);
+    }
+
+    @media (max-width: 620px) {
+      .dpad {
+        display: grid;
+      }
+    }
+
     .flashcard {
       position: relative;
       z-index: 2;
@@ -927,7 +990,7 @@
     .answer-stack {
       position: absolute;
       left: 50%;
-      bottom: -128px;
+      bottom: -64px;
       width: min(86%, 340px);
       display: grid;
       gap: 10px;
@@ -1271,7 +1334,7 @@
 
       .answer-stack {
         width: min(82%, 282px);
-        bottom: -118px;
+        bottom: -59px;
       }
 
       .dumpling {
@@ -1577,6 +1640,13 @@
           <div class="steamer-tier bottom"></div>
           <div class="steamer-rim"></div>
         </div>
+        <div class="dpad" id="dpad" role="group" aria-label="Answer controls">
+          <button class="dpad-btn dpad-up" id="dpadUnsure" type="button" aria-label="Unsure">↑</button>
+          <button class="dpad-btn dpad-left" id="dpadKnown" type="button" aria-label="Know">←</button>
+          <button class="dpad-btn dpad-center" id="dpadPop" type="button">POP</button>
+          <button class="dpad-btn dpad-right" id="dpadUnknown" type="button" aria-label="Unknown">→</button>
+          <button class="dpad-btn dpad-down" id="dpadAudio" type="button" aria-label="Audio">↓</button>
+        </div>
       </section>
 
       <section class="complete" id="completeView" aria-live="polite">
@@ -1645,6 +1715,7 @@
     };
     const DEFAULT_SOURCE = "a2";
 
+    const SETTINGS_AUTO_CLOSE_MS = 3000;
     const MIN_DAILY_TARGET = 1;
     const DEFAULT_DAILY_TARGET = 100;
     const DEFAULT_EASE = 2.5;
@@ -1904,8 +1975,14 @@
       koiBubble: document.getElementById("koiBubble"),
       maltipoo: document.getElementById("maltipoo"),
       dogBubble: document.getElementById("dogBubble"),
+      settingsPanel: document.getElementById("settingsPanel"),
       settingsPanelToggle: document.getElementById("settingsPanelToggle"),
       unknownPanelToggle: document.getElementById("unknownPanelToggle"),
+      dpadPop: document.getElementById("dpadPop"),
+      dpadKnown: document.getElementById("dpadKnown"),
+      dpadUnsure: document.getElementById("dpadUnsure"),
+      dpadUnknown: document.getElementById("dpadUnknown"),
+      dpadAudio: document.getElementById("dpadAudio"),
       unknownPanelClose: document.getElementById("unknownPanelClose"),
       unknownPanel: document.getElementById("unknownPanel"),
       unknownCount: document.getElementById("unknownCount"),
@@ -1922,6 +1999,7 @@
     let answerVisible = false;
     let animating = false;
     let dailyTarget = DEFAULT_DAILY_TARGET;
+    let settingsAutoCloseTimer = null;
     let lidTimer = null;
     let lidCloseTimer = null;
     let popTimer = null;
@@ -2175,6 +2253,18 @@
     function setSettingsPanelOpen(open) {
       elements.scene.classList.toggle("settings-open", open);
       elements.settingsPanelToggle.setAttribute("aria-expanded", String(open));
+      clearTimeout(settingsAutoCloseTimer);
+
+      if (open) {
+        settingsAutoCloseTimer = window.setTimeout(() => {
+          elements.scene.classList.remove("settings-open");
+          elements.settingsPanelToggle.setAttribute("aria-expanded", "false");
+          if (document.activeElement && elements.settingsPanel?.contains(document.activeElement)) {
+            document.activeElement.blur();
+          }
+          elements.settingsPanelToggle.blur();
+        }, SETTINGS_AUTO_CLOSE_MS);
+      }
     }
 
     function koiBounds() {
@@ -2325,7 +2415,7 @@
     function positionDogBubble() {
       const bubbleWidth = elements.dogBubble.offsetWidth || 320;
       const bubbleHeight = elements.dogBubble.offsetHeight || 82;
-      const dogWidth = elements.maltipoo?.getBoundingClientRect().width || 224;
+      const dogWidth = elements.maltipoo?.getBoundingClientRect().width || 112;
       const headX = dogMotion.facing === 1 ? dogMotion.x + dogWidth * 0.78 : dogMotion.x + dogWidth * 0.08;
       const x = clamp(headX - bubbleWidth * 0.5, 18, window.innerWidth - bubbleWidth - 18);
       const y = clamp(dogMotion.y - bubbleHeight - 12, 18, window.innerHeight - bubbleHeight - 18);
@@ -2384,7 +2474,7 @@
     }
 
     function dogBounds() {
-      const dogWidth = elements.maltipoo?.getBoundingClientRect().width || 224;
+      const dogWidth = elements.maltipoo?.getBoundingClientRect().width || 112;
       const dogHeight = elements.maltipoo?.getBoundingClientRect().height || 180;
       const minY = 18;
       const maxY = Math.max(minY, window.innerHeight - dogHeight - 18);
@@ -2888,6 +2978,26 @@
       elements.unsureButton.addEventListener("click", () => answer("unsure", "exit-up"));
       elements.unknownButton.addEventListener("click", () => answer("unknown", "exit-right"));
       elements.audioButton.addEventListener("click", playPronunciation);
+      elements.dpadPop.addEventListener("click", (event) => {
+        event.stopPropagation();
+        toggleAnswerWithSteamer();
+      });
+      elements.dpadKnown.addEventListener("click", (event) => {
+        event.stopPropagation();
+        answer("known", "exit-left");
+      });
+      elements.dpadUnsure.addEventListener("click", (event) => {
+        event.stopPropagation();
+        answer("unsure", "exit-up");
+      });
+      elements.dpadUnknown.addEventListener("click", (event) => {
+        event.stopPropagation();
+        answer("unknown", "exit-right");
+      });
+      elements.dpadAudio.addEventListener("click", (event) => {
+        event.stopPropagation();
+        playPronunciation();
+      });
       elements.maltipoo.addEventListener("click", (event) => {
         event.stopPropagation();
         startDogSprint();
