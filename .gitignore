@@ -6,7 +6,7 @@
 ._*
 
 # Custom folder icons
-Icon
+Icon
 
 # Volume root files
 .DocumentRevisions-V100
@@ -18,7 +18,5 @@ Icon
 .com.apple.timemachine.donotpresent
 .idea
 
-# Goethe B1 Wortliste source PDF and extracted vocab (copyrighted, personal use only)
+# Goethe B1 Wortliste source PDF (copyrighted document itself, not for redistribution)
 goetheb1.pdf
-goetheb1_vocab_new.json
-audio_b1/
