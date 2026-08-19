@@ -1668,6 +1668,7 @@
         <section class="settings source-settings" role="radiogroup" aria-label="Card source">
           <label id="sourceLabel">Source</label>
           <label class="source-option"><input type="radio" name="cardSource" id="sourceA2" value="a2" checked> A2 words</label>
+          <label class="source-option"><input type="radio" name="cardSource" id="sourceB1" value="b1"> B1 words</label>
           <label class="source-option"><input type="radio" name="cardSource" id="sourceVerbPrep" value="verbPrep"> Verb + Prep</label>
         </section>
         <section class="settings" aria-label="Settings">
@@ -1714,6 +1715,7 @@
 
     const SOURCES = {
       a2: { url: "cards.json", label: "A2 words" },
+      b1: { url: "goetheb1_vocab_new.json", label: "B1 words" },
       verbPrep: { url: "verben_praeposition.json", label: "Verb + Prep" }
     };
     const DEFAULT_SOURCE = "a2";

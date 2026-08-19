@@ -17,3 +17,8 @@ Icon
 .VolumeIcon.icns
 .com.apple.timemachine.donotpresent
 .idea
+
+# Goethe B1 Wortliste source PDF and extracted vocab (copyrighted, personal use only)
+goetheb1.pdf
+goetheb1_vocab_new.json
+audio_b1/
