@@ -2190,7 +2190,7 @@
       const isNotCurrent = (card) => !currentCard || card.id !== currentCard.id;
       const dueCards = cards.filter((card) => isNotCurrent(card) && isDue(card));
       const newLimitRemaining = Math.max(0, dailyTarget - todayStats.newIntroduced);
-      const newCards = cards.filter((card) => isNotCurrent(card) && !getState(card)).slice(0, newLimitRemaining);
+      const newCards = cards.filter((card) => isNotCurrent(card) && !getState(card)).reverse().slice(0, newLimitRemaining);
       return [...dueCards, ...newCards];
     }
 
