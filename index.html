@@ -1676,6 +1676,7 @@
           <input id="dailyTargetInput" type="number" min="1" step="1" value="100">
         </section>
         <button class="toggle-answer" id="toggleAnswer" type="button">Pop answer</button>
+        <a class="toggle-answer" href="grid.html" style="text-decoration: none; display: inline-flex; align-items: center;">Weak words grid</a>
       </div>
       <div class="info-group legend">
         <button class="action-button known" id="knownButton" type="button">← Know</button>
@@ -2185,7 +2186,7 @@
 
     function isDue(card) {
       const state = getState(card);
-      return state && state.dueDate && state.dueDate <= todayKey();
+      return state && !state.mastered && state.dueDate && state.dueDate <= todayKey();
     }
 
     function buildSessionQueue() {

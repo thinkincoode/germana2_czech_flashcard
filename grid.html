@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Weak Words Grid</title>
+  <style>
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      min-height: 100vh;
+      font-family: system-ui, -apple-system, sans-serif;
+      background: linear-gradient(to bottom, #ffafcc 0%, #a2d2ff 100%) fixed;
+      color: #3a3a3a;
+    }
+    header {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      align-items: center;
+      padding: 12px 16px;
+    }
+    header a { color: inherit; margin-right: auto; }
+    header button {
+      border: 0;
+      border-radius: 999px;
+      padding: 6px 14px;
+      font: inherit;
+      background: rgba(255, 255, 255, 0.6);
+      cursor: pointer;
+    }
+    header button[aria-pressed="true"] { background: #3a3a3a; color: #fff; }
+    #count { width: 100%; font-size: 14px; }
+    #grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(150px, 1fr));
+      gap: 10px;
+      padding: 0 16px 16px;
+    }
+    .tile { aspect-ratio: 1; perspective: 800px; position: relative; }
+    .inner {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      transform-style: preserve-3d;
+      transition: transform 0.5s;
+      cursor: pointer;
+    }
+    .tile.flipped .inner { transform: rotateY(180deg); }
+    .face {
+      position: absolute;
+      inset: 0;
+      border-radius: 1rem;
+      padding: 12px;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: 8px;
+      text-align: center;
+      overflow: auto;
+      hyphens: auto;
+      overflow-wrap: anywhere;
+      backface-visibility: hidden;
+      -webkit-backface-visibility: hidden;
+    }
+    .front { background: #fff; font-size: 18px; font-weight: 600; }
+    .back { background: #3a3a3a; color: #fff; transform: rotateY(180deg); }
+    .czech { font-size: 17px; font-weight: 600; }
+    .example { font-size: 13px; font-style: italic; opacity: 0.85; }
+    .close {
+      position: absolute;
+      top: 4px;
+      right: 4px;
+      z-index: 2;
+      width: 28px;
+      height: 28px;
+      border: 0;
+      border-radius: 50%;
+      background: rgba(0, 0, 0, 0.12);
+      font-size: 18px;
+      line-height: 1;
+      cursor: pointer;
+    }
+    .empty { grid-column: 1 / -1; text-align: center; padding: 40px; }
+  </style>
+</head>
+<body>
+  <header>
+    <a href="index.html">← Flashcards</a>
+    <button type="button" data-source="a2">A2 words</button>
+    <button type="button" data-source="b1">B1 words</button>
+    <button type="button" data-source="verbPrep">Verb + Prep</button>
+    <div id="count"></div>
+  </header>
+  <main id="grid"></main>
+
+  <script>
+    // Shares progress with index.html: same localStorage keys and card files.
+    const SOURCES = {
+      a2: "cards.json",
+      b1: "goetheb1_vocab_new.json",
+      verbPrep: "verben_praeposition.json"
+    };
+    const STATES_KEY = "gcFlashcards.cardStates.v1";
+    const SOURCE_KEY = "gcFlashcards.source.v1";
+    const grid = document.getElementById("grid");
+    const count = document.getElementById("count");
+    let source = SOURCES[localStorage.getItem(SOURCE_KEY)] ? localStorage.getItem(SOURCE_KEY) : "a2";
+    let states = {};
+
+    const statesKey = () => `${STATES_KEY}.${source}`;
+
+    // Weak = answered unknown at some point, or last answered unsure/unknown.
+    function isWeak(state) {
+      return state && !state.mastered && (state.wrongCount > 0 || state.status === "learning");
+    }
+
+    function updateCount() {
+      const n = grid.querySelectorAll(".tile").length;
+      count.textContent = `${n} ${n === 1 ? "word" : "words"} to practise · tap to flip · × = mastered`;
+      if (!n) grid.innerHTML = '<p class="empty">No unknown or unsure words. 🎉</p>';
+    }
+
+    function tile(card) {
+      const el = document.createElement("div");
+      el.className = "tile";
+      el.innerHTML = `
+        <button class="close" type="button" aria-label="Mastered">×</button>
+        <div class="inner">
+          <div class="face front"></div>
+          <div class="face back"><div class="czech"></div><div class="example"></div></div>
+        </div>`;
+      el.querySelector(".front").textContent = card.german;
+      el.querySelector(".czech").textContent = card.czech;
+      el.querySelector(".example").textContent = card.example || "";
+      el.querySelector(".inner").addEventListener("click", () => el.classList.toggle("flipped"));
+      el.querySelector(".close").addEventListener("click", () => {
+        states[card.id] = { ...states[card.id], mastered: true, wrongCount: 0, status: "review" };
+        localStorage.setItem(statesKey(), JSON.stringify(states));
+        el.remove();
+        updateCount();
+      });
+      return el;
+    }
+
+    async function load(next) {
+      source = next;
+      localStorage.setItem(SOURCE_KEY, source);
+      document.querySelectorAll("[data-source]").forEach((b) => {
+        b.setAttribute("aria-pressed", String(b.dataset.source === source));
+      });
+      grid.textContent = "Loading…";
+      try {
+        states = JSON.parse(localStorage.getItem(statesKey())) || {};
+      } catch {
+        states = {};
+      }
+      const cards = await (await fetch(SOURCES[source], { cache: "no-store" })).json();
+      grid.textContent = "";
+      cards.filter((c) => isWeak(states[c.id])).forEach((c) => grid.append(tile(c)));
+      updateCount();
+    }
+
+    document.querySelectorAll("[data-source]").forEach((b) => {
+      b.addEventListener("click", () => load(b.dataset.source));
+    });
+    load(source).catch((e) => { grid.textContent = `Could not load cards: ${e.message}`; });
+  </script>
+</body>
+</html>
