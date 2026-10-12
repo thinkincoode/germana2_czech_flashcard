@@ -3121,6 +3121,7 @@
     }
 
     async function init() {
+      navigator.storage?.persist?.();
       dailyTarget = loadDailyTarget();
       elements.dailyTargetInput.value = dailyTarget;
       elements.targetNote.textContent = `Current target: ${dailyTarget}`;
