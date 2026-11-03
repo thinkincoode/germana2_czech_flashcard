@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
 <meta name="apple-mobile-web-app-capable" content="yes">
 <title>Fruit Words</title>
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&family=Playfair+Display:wght@800&display=swap">
 <style>
 /* Layout: full-screen canvas on a wooden chopping board, HUD pinned to the top corners, German word centred under it */
 :root {
@@ -17,6 +17,14 @@
   --card: rgba(30, 18, 10, .82);
   --display: "Bungee", system-ui, sans-serif;
   --body: system-ui, -apple-system, sans-serif;
+  --edict: "Playfair Display", Georgia, serif;
+  --silk-light: #ffe48f;
+  --silk: #f2c14e;
+  --silk-dark: #d99a1e;
+  --gold: #b07a14;
+  --wood: #8a3a1c;
+  --wood-dark: #3b1408;
+  --ink: #5c1408;
   color-scheme: dark;
 }
 [hidden] { display: none !important; }
@@ -36,10 +44,34 @@ body {
 }
 #score { font-size: clamp(32px, 6vw, 56px); color: var(--accent); text-shadow: 0 3px 0 var(--board-dark); font-variant-numeric: tabular-nums; }
 #left { font-size: clamp(16px, 2.5vw, 24px); opacity: .8; font-variant-numeric: tabular-nums; }
+/* the German word sits on an imperial edict: wooden rollers, dragon panels, yellow silk */
 #word {
-  position: fixed; left: 50%; top: calc(env(safe-area-inset-top, 0px) + 80px); transform: translateX(-50%);
-  max-width: calc(100% - 32px); padding: 10px 24px; border-radius: 16px; background: var(--card);
-  font: 600 clamp(28px, 5vw, 48px) var(--body); text-align: center; pointer-events: none;
+  position: fixed; left: 16px; right: 16px; top: calc(env(safe-area-inset-top, 0px) + 80px);
+  width: fit-content; margin-inline: auto; display: flex; align-items: center; pointer-events: none;
+  filter: drop-shadow(0 8px 12px rgba(0, 0, 0, .55));
+}
+#word .roller {
+  flex: none; align-self: stretch; width: 16px; margin-block: -12px; border-radius: 8px;
+  background: linear-gradient(90deg, var(--wood-dark), var(--wood) 45%, var(--wood-dark));
+  box-shadow: inset 0 8px 0 var(--gold), inset 0 -8px 0 var(--gold);
+}
+#word .silk {
+  display: flex; align-items: stretch; min-width: 0;
+  background:
+    repeating-linear-gradient(0deg, rgba(255, 255, 255, .1) 0 2px, transparent 2px 6px),
+    linear-gradient(180deg, var(--silk-light), var(--silk) 55%, var(--silk-dark));
+  border-block: 5px solid var(--gold);
+}
+#word .dragon {
+  flex: none; width: clamp(44px, 8vw, 72px); display: grid; place-items: center;
+  font-size: clamp(30px, 5.5vw, 50px); background: linear-gradient(180deg, var(--silk), var(--silk-dark));
+  border-inline: 3px double var(--ink);
+}
+#word .dragon span { display: inline-block; filter: sepia(1) saturate(4) hue-rotate(-20deg) brightness(.7) contrast(1.4); }
+#word .dragon:last-child span { transform: scaleX(-1); }
+#word-text {
+  min-width: 0; padding: 16px clamp(14px, 3vw, 32px); overflow-wrap: break-word; text-align: center;
+  font: 800 clamp(26px, 4.6vw, 46px) var(--edict); color: var(--ink);
 }
 .overlay { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; pointer-events: none; }
 .card {
@@ -61,7 +93,15 @@ button:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
 <body>
 <canvas id="c"></canvas>
 <div class="hud"><div id="score">0</div><div id="left"></div></div>
-<div id="word" hidden></div>
+<div id="word" hidden>
+  <div class="roller"></div>
+  <div class="silk">
+    <div class="dragon"><span>🐉</span></div>
+    <div id="word-text"></div>
+    <div class="dragon"><span>🐉</span></div>
+  </div>
+  <div class="roller"></div>
+</div>
 <div class="overlay" id="menu">
   <div class="card">
     <h1 id="title">Fruit Words</h1>
@@ -77,7 +117,7 @@ const SOURCES = { a2: "cards.json", b1: "goetheb1_vocab_new.json", verbPrep: "ve
 const STATES_KEY = "gcFlashcards.cardStates.v1";
 const SOURCE_KEY = "gcFlashcards.source.v1";
 const ROUND_SIZE = 30;
-const SPEED = .5; // game speed: 1 = original, .5 = half speed
+const SPEED = .4; // game speed: 1 = original, .4 = 40% speed
 const BOMB_CHANCE = .3;
 const HITS_TO_MASTER = 2; // a correct word comes back once more before it counts as mastered
 const REPEAT_GAP = 5; // a correctly cut word returns after this many other words
@@ -125,12 +165,11 @@ const DRAWN = {
 };
 
 let W, H, R, G, dpr, sprites = {};
-let items = [], halves = [], parts = [], splats = [], flash = 0;
+let items = [], halves = [], parts = [], flash = 0;
 const pointers = new Map();
 
 let source = 'a2', cards = [], states = {};
 let queue = [], current = null, phase = 'menu', score = 0, wrongs = 0, learned = 0, hits = new Map();
-const audio = new Audio();
 
 function resize() {
   dpr = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
@@ -202,8 +241,7 @@ function nextQuestion() {
   updateHud();
   if (!current) return showMenu('All correct!', `Round complete. ${learned} words learned, ${wrongs} wrong cuts.`, 'Next round');
   phase = 'ask';
-  $('#word').textContent = singular(current.german); $('#word').hidden = false;
-  if (current.audio) { audio.src = current.audio; audio.play().catch(() => {}); }
+  $('#word-text').textContent = singular(current.german); $('#word').hidden = false;
 
   const wrong = [];
   while (wrong.length < 2) {
@@ -228,7 +266,6 @@ function cut(it, a) {
   for (const s of [-1, 1]) halves.push({ e: it.e, x: it.x, y: it.y, a, r0: it.rot, spin: 0, s,
     vx: it.vx * .5 + nx * s * 160, vy: Math.min(it.vy, 0) * .3 + ny * s * 160, vr: s * rand(2, 5) });
   for (let i = 0; i < (it.bomb ? 40 : 16); i++) burst(it, it.c, it.bomb ? 900 : 500);
-  if (!it.bomb) splats.push({ x: it.x, y: it.y, c: it.c, r: R * rand(.8, 1.3), life: 1 });
 }
 function slice(it, a) {
   if (phase !== 'ask') return;
@@ -251,7 +288,7 @@ function slice(it, a) {
   later(() => {
     const right = items.find(i => i.correct);
     if (right) cut(right, rand(-.6, .6));
-    $('#word').textContent = `${singular(current.german)} = ${current.czech}`;
+    $('#word-text').textContent = `${singular(current.german)} = ${current.czech}`;
     later(nextQuestion, 1800);
   }, 600);
 }
@@ -323,15 +360,9 @@ function frame(now) {
   halves = halves.filter(h => h.y < H + R * 2);
   for (const p of parts) { p.vy += G * .6 * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt * 1.5; }
   parts = parts.filter(p => p.life > 0);
-  splats.forEach(s => s.life -= dt / 3); splats = splats.filter(s => s.life > 0);
   flash = Math.max(0, flash - dt * 1.5);
 
   ctx.clearRect(0, 0, W, H);
-  for (const s of splats) {
-    ctx.globalAlpha = s.life * .45; ctx.fillStyle = s.c;
-    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
-  }
-  ctx.globalAlpha = 1;
   for (const it of items) {
     if (it.delay > 0) continue;
     ctx.save(); ctx.translate(it.x, it.y); ctx.rotate(it.rot); drawSprite(it.e); ctx.restore();
