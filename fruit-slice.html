@@ -225,6 +225,7 @@ function showMenu(title, msg, button) {
   $('#title').textContent = title; $('#msg').textContent = msg; $('#go').textContent = button;
   $('#go').disabled = !unmastered().length;
   $('#word').hidden = true; $('#menu').hidden = false;
+  updateHud();
 }
 
 // ---- round flow ----
@@ -238,9 +239,9 @@ function nextQuestion() {
   for (const it of items) for (let i = 0; i < 8; i++) burst(it, '#fff4e2', 250);
   items = [];
   current = queue.shift();
-  updateHud();
   if (!current) return showMenu('All correct!', `Round complete. ${learned} words learned, ${wrongs} wrong cuts.`, 'Next round');
   phase = 'ask';
+  updateHud();
   $('#word-text').textContent = singular(current.german); $('#word').hidden = false;
 
   const wrong = [];
@@ -250,7 +251,7 @@ function nextQuestion() {
   }
   const kinds = shuffle(FRUITS.slice());
   shuffle([current, ...wrong]).forEach((c, i) => launch(kinds[i], c.czech, c === current, (i + .5) / 3));
-  if (Math.random() < BOMB_CHANCE) launch(['💣', '#ffdd55'], '', false, rand(.2, .8), .4);
+  if (Math.random() < BOMB_CHANCE) launch(['💣', '#ffdd55'], '', false, pick([1 / 3, 2 / 3]), .4);
 }
 function launch([e, c, ink], label, correct, lane, delay = 0) {
   const x = W * (.12 + .76 * lane), apex = H * rand(.35, .5);
@@ -265,7 +266,12 @@ function cut(it, a) {
   const nx = -Math.sin(a), ny = Math.cos(a);
   for (const s of [-1, 1]) halves.push({ e: it.e, x: it.x, y: it.y, a, r0: it.rot, spin: 0, s,
     vx: it.vx * .5 + nx * s * 160, vy: Math.min(it.vy, 0) * .3 + ny * s * 160, vr: s * rand(2, 5) });
-  for (let i = 0; i < (it.bomb ? 40 : 16); i++) burst(it, it.c, it.bomb ? 900 : 500);
+  if (it.bomb) for (let i = 0; i < 40; i++) burst(it, it.c, 900);
+  else {
+    // juice: a round splash plus two jets squirting out along the blade
+    for (let i = 0; i < 60; i++) burst(it, it.c, 800);
+    for (let i = 0; i < 40; i++) burst(it, it.c, 1300, a + (i % 2 ? Math.PI : 0) + rand(-.3, .3));
+  }
 }
 function slice(it, a) {
   if (phase !== 'ask') return;
@@ -292,13 +298,13 @@ function slice(it, a) {
     later(nextQuestion, 1800);
   }, 600);
 }
-function burst(it, c, sp) {
-  const a = rand(0, Math.PI * 2), v = rand(.2, 1) * sp;
-  parts.push({ x: it.x, y: it.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, c, life: 1, r: rand(2, 6) });
+function burst(it, c, sp, a = rand(0, Math.PI * 2)) {
+  const v = rand(.2, 1) * sp;
+  parts.push({ x: it.x, y: it.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, c, life: 1, r: rand(3, 10) });
 }
 function updateHud() {
   $('#score').textContent = score;
-  const n = queue.length + (current ? 1 : 0);
+  const n = queue.length + (phase === 'ask' ? 1 : 0);
   $('#left').textContent = n ? `${n} left` : '';
 }
 $('#go').addEventListener('click', startRound);
@@ -358,7 +364,7 @@ function frame(now) {
 
   for (const h of halves) { h.vy += G * dt; h.x += h.vx * dt; h.y += h.vy * dt; h.spin += h.vr * dt; }
   halves = halves.filter(h => h.y < H + R * 2);
-  for (const p of parts) { p.vy += G * .6 * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt * 1.5; }
+  for (const p of parts) { p.vy += G * .6 * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt * 1.1; }
   parts = parts.filter(p => p.life > 0);
   flash = Math.max(0, flash - dt * 1.5);
 
@@ -374,8 +380,9 @@ function frame(now) {
     ctx.rotate(-h.a + h.r0); drawSprite(h.e); ctx.restore();
   }
   for (const p of parts) {
-    ctx.globalAlpha = p.life; ctx.fillStyle = p.c;
-    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+    // drops are drawn as streaks along their flight, so fast juice looks like a spray
+    ctx.globalAlpha = Math.min(1, p.life * 1.5); ctx.strokeStyle = p.c; ctx.lineWidth = p.r; ctx.lineCap = 'round';
+    ctx.beginPath(); ctx.moveTo(p.x, p.y); ctx.lineTo(p.x - p.vx * .04, p.y - p.vy * .04); ctx.stroke();
   }
   ctx.globalAlpha = 1;
 
