@@ -1,0 +1,368 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=no, viewport-fit=cover">
+<meta name="apple-mobile-web-app-capable" content="yes">
+<title>Fruit Words</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Bungee&display=swap">
+<style>
+/* Layout: full-screen canvas on a wooden chopping board, HUD pinned to the top corners, German word centred under it */
+:root {
+  --board: #4a2f1d;
+  --board-dark: #2b1a10;
+  --grain: rgba(0, 0, 0, .12);
+  --fg: #fff4e2;
+  --accent: #ffb627;
+  --card: rgba(30, 18, 10, .82);
+  --display: "Bungee", system-ui, sans-serif;
+  --body: system-ui, -apple-system, sans-serif;
+  color-scheme: dark;
+}
+[hidden] { display: none !important; }
+html, body { height: 100%; margin: 0; overflow: hidden; }
+body {
+  background:
+    repeating-linear-gradient(92deg, var(--grain) 0 2px, transparent 2px 23px),
+    radial-gradient(ellipse at 50% 40%, var(--board), var(--board-dark));
+  color: var(--fg); font-family: var(--body);
+  touch-action: none; -webkit-user-select: none; user-select: none; -webkit-touch-callout: none;
+}
+#c { position: fixed; inset: 0; width: 100%; height: 100%; display: block; }
+.hud {
+  position: fixed; left: 0; right: 0; top: 0; display: flex; justify-content: space-between; align-items: center;
+  padding: calc(env(safe-area-inset-top, 0px) + 12px) max(20px, env(safe-area-inset-right, 0px)) 0 max(20px, env(safe-area-inset-left, 0px));
+  font-family: var(--display); pointer-events: none;
+}
+#score { font-size: clamp(32px, 6vw, 56px); color: var(--accent); text-shadow: 0 3px 0 var(--board-dark); font-variant-numeric: tabular-nums; }
+#left { font-size: clamp(16px, 2.5vw, 24px); opacity: .8; font-variant-numeric: tabular-nums; }
+#word {
+  position: fixed; left: 50%; top: calc(env(safe-area-inset-top, 0px) + 80px); transform: translateX(-50%);
+  max-width: calc(100% - 32px); padding: 10px 24px; border-radius: 16px; background: var(--card);
+  font: 600 clamp(28px, 5vw, 48px) var(--body); text-align: center; pointer-events: none;
+}
+.overlay { position: fixed; inset: 0; display: grid; place-items: center; padding: 16px; pointer-events: none; }
+.card {
+  pointer-events: auto; background: var(--card); border-radius: 20px; padding: 28px 32px; max-width: 440px;
+  text-align: center; display: grid; gap: 14px; justify-items: center; backdrop-filter: blur(4px);
+}
+h1 { margin: 0; font-family: var(--display); font-size: clamp(36px, 7vw, 60px); color: var(--accent); line-height: 1.1; text-wrap: balance; }
+p { margin: 0; font-size: 17px; line-height: 1.6; }
+a { color: var(--fg); }
+button {
+  font: 22px var(--display); padding: 14px 36px; border: 0; border-radius: 999px; cursor: pointer;
+  background: var(--accent); color: var(--board-dark); box-shadow: 0 4px 0 #b37400;
+}
+button:disabled { opacity: .4; cursor: default; }
+button:active { transform: translateY(3px); box-shadow: 0 1px 0 #b37400; }
+button:focus-visible { outline: 3px solid var(--fg); outline-offset: 3px; }
+</style>
+</head>
+<body>
+<canvas id="c"></canvas>
+<div class="hud"><div id="score">0</div><div id="left"></div></div>
+<div id="word" hidden></div>
+<div class="overlay" id="menu">
+  <div class="card">
+    <h1 id="title">Fruit Words</h1>
+    <p id="msg">Loading words…</p>
+    <button id="go" type="button" disabled>Start</button>
+    <a href="grid.html">← Word grid</a>
+  </div>
+</div>
+
+<script>
+// Shares progress with index.html and grid.html: same localStorage keys and card files.
+const SOURCES = { a2: "cards.json", b1: "goetheb1_vocab_new.json", verbPrep: "verben_praeposition.json" };
+const STATES_KEY = "gcFlashcards.cardStates.v1";
+const SOURCE_KEY = "gcFlashcards.source.v1";
+const ROUND_SIZE = 30;
+const SPEED = .5; // game speed: 1 = original, .5 = half speed
+const BOMB_CHANCE = .3;
+const HITS_TO_MASTER = 2; // a correct word comes back once more before it counts as mastered
+const REPEAT_GAP = 5; // a correctly cut word returns after this many other words
+
+const $ = s => document.querySelector(s);
+const cv = $('#c'), ctx = cv.getContext('2d');
+// [emoji or hand-drawn key, juice colour, ink: 'l' = light text for dark fruit, 'd' = dark text for light fruit]
+const FRUITS = [['🍉','#e63946','l'],['🍊','#ff9f1c','d'],['🍎','#d62828','l'],['🍋','#ffd60a','d'],['🥝','#80b918','l'],
+  ['🍑','#ffadad','d'],['🍓','#e5383b','l'],['🥥','#f1f1f1','l'],['🍐','#d4e09b','d'],['🍈','#b5e48c','d'],['🥭','#ffb703','d'],
+  ['🥑','#a7c957','l'],['🍒','#c1121f','l'],['柚','#ff8fa3','d'],['柿','#ff8c1a','d'],['榴','#c9184a','l'],['竹','#f8f0e3','l'],['李','#e9c46a','l']];
+const INK = { l: ['#ffffff', '#1b1020'], d: ['#1b1020', '#fffbe6'] }; // [text, halo]
+// fruits with no emoji are drawn by hand, centred at 0,0 with radius r
+function ball(x, r, light, dark, rx, ry) {
+  const g = x.createRadialGradient(-r * .35, -r * .3, r * .1, 0, 0, r);
+  g.addColorStop(0, light); g.addColorStop(1, dark);
+  x.fillStyle = g; x.beginPath(); x.ellipse(0, 0, r * rx, r * ry, 0, 0, Math.PI * 2); x.fill();
+}
+function calyx(x, r, color, top) {
+  x.fillStyle = color;
+  for (let i = 0; i < 4; i++) {
+    x.save(); x.translate(0, -r * top); x.rotate(i * Math.PI / 2 + Math.PI / 4);
+    x.beginPath(); x.ellipse(r * .2, 0, r * .22, r * .1, 0, 0, Math.PI * 2); x.fill(); x.restore();
+  }
+}
+const DRAWN = {
+  柚: (x, r) => {
+    ball(x, r, '#f4f7a1', '#a9c23f', .92, 1);
+    x.fillStyle = '#4f772d'; x.beginPath(); x.ellipse(r * .25, -r * .95, r * .3, r * .12, -.5, 0, Math.PI * 2); x.fill();
+  },
+  柿: (x, r) => { ball(x, r, '#ffc078', '#e8590c', 1, .85); calyx(x, r, '#5c7f2a', .8); },
+  竹: (x, r) => { ball(x, r * .9, '#8e5a8a', '#3c1f3e', 1, .95); calyx(x, r, '#6a8d3a', .82); },
+  李: (x, r) => {
+    ball(x, r * .85, '#c05299', '#5a1846', .95, 1.05);
+    x.strokeStyle = 'rgba(0,0,0,.25)'; x.lineWidth = r * .05;
+    x.beginPath(); x.moveTo(0, -r * .85); x.quadraticCurveTo(r * .25, 0, 0, r * .85); x.stroke();
+    x.strokeStyle = '#6b4226'; x.lineWidth = r * .07;
+    x.beginPath(); x.moveTo(0, -r * .85); x.lineTo(r * .1, -r * 1.1); x.stroke();
+  },
+  榴: (x, r) => {
+    ball(x, r * .95, '#ff6b6b', '#9d0208', 1, 1);
+    x.fillStyle = '#9d0208'; x.beginPath(); x.moveTo(-r * .25, -r * .85);
+    [[-.3, -1.15], [-.1, -1], [0, -1.2], [.1, -1], [.3, -1.15], [.25, -.85]].forEach(([a, b]) => x.lineTo(r * a, r * b));
+    x.fill();
+  },
+};
+
+let W, H, R, G, dpr, sprites = {};
+let items = [], halves = [], parts = [], splats = [], flash = 0;
+const pointers = new Map();
+
+let source = 'a2', cards = [], states = {};
+let queue = [], current = null, phase = 'menu', score = 0, wrongs = 0, learned = 0, hits = new Map();
+const audio = new Audio();
+
+function resize() {
+  dpr = Math.min(devicePixelRatio || 1, 2); W = innerWidth; H = innerHeight;
+  cv.width = W * dpr | 0; cv.height = H * dpr | 0; ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
+  R = Math.max(40, Math.min(W, H) * .09); G = H * 1.5; sprites = {};
+}
+addEventListener('resize', resize); resize();
+
+// pre-render each fruit once; drawing text every frame is slow on iPad
+function sprite(e) {
+  if (sprites[e]) return sprites[e];
+  const s = Math.ceil(R * 2.4 * dpr), c = document.createElement('canvas'), x = c.getContext('2d');
+  c.width = c.height = s;
+  x.font = `${R * 2 * dpr}px "Apple Color Emoji","Segoe UI Emoji","Noto Color Emoji",sans-serif`;
+  if (DRAWN[e]) { x.translate(s / 2, s / 2); DRAWN[e](x, R * .95 * dpr); return sprites[e] = c; }
+  x.textAlign = 'center'; x.textBaseline = 'middle'; x.fillText(e, s / 2, s / 2 + R * .1 * dpr);
+  return sprites[e] = c;
+}
+const drawSprite = e => ctx.drawImage(sprite(e), -R * 1.2, -R * 1.2, R * 2.4, R * 2.4);
+const rand = (a, b) => a + Math.random() * (b - a);
+const pick = a => a[Math.random() * a.length | 0];
+function shuffle(a) {
+  for (let i = a.length - 1; i > 0; i--) { const j = Math.random() * (i + 1) | 0; [a[i], a[j]] = [a[j], a[i]]; }
+  return a;
+}
+
+// ---- progress, same shape as index.html / grid.html ----
+const statesKey = () => `${STATES_KEY}.${source}`;
+function saveStates() { try { localStorage.setItem(statesKey(), JSON.stringify(states)); } catch {} }
+function markMastered(card) {
+  states[card.id] = { ...states[card.id], mastered: true, wrongCount: 0, status: 'review' };
+  saveStates();
+}
+// same rule as the "unknown" answer in index.html (updateReviewState)
+function markWrong(card) {
+  const s = states[card.id] || {};
+  states[card.id] = { ...s, status: 'learning', ease: Math.max(1.3, +((s.ease || 2.5) - .2).toFixed(2)),
+    intervalDays: 0, dueDate: new Date().toISOString().slice(0, 10), reviewCount: (s.reviewCount || 0) + 1,
+    wrongCount: (s.wrongCount || 0) + 1, lastReviewed: new Date().toISOString() };
+  saveStates();
+}
+const unmastered = () => cards.filter(c => !states[c.id]?.mastered);
+const singular = german => german.split(',')[0].trim();
+
+async function load() {
+  try { const s = localStorage.getItem(SOURCE_KEY); if (SOURCES[s]) source = s; } catch {}
+  try { states = JSON.parse(localStorage.getItem(statesKey())) || {}; } catch { states = {}; }
+  cards = await (await fetch(SOURCES[source], { cache: 'no-store' })).json();
+  showMenu('Fruit Words', `${unmastered().length} words left to learn. Slice the fruit with the right Czech meaning. Cutting a bomb ends the round.`, 'Start');
+}
+function showMenu(title, msg, button) {
+  phase = 'menu';
+  $('#title').textContent = title; $('#msg').textContent = msg; $('#go').textContent = button;
+  $('#go').disabled = !unmastered().length;
+  $('#word').hidden = true; $('#menu').hidden = false;
+}
+
+// ---- round flow ----
+function startRound() {
+  queue = shuffle(unmastered()).slice(0, ROUND_SIZE);
+  score = 0; wrongs = 0; learned = 0; hits = new Map(); items = [];
+  $('#menu').hidden = true;
+  nextQuestion();
+}
+function nextQuestion() {
+  for (const it of items) for (let i = 0; i < 8; i++) burst(it, '#fff4e2', 250);
+  items = [];
+  current = queue.shift();
+  updateHud();
+  if (!current) return showMenu('All correct!', `Round complete. ${learned} words learned, ${wrongs} wrong cuts.`, 'Next round');
+  phase = 'ask';
+  $('#word').textContent = singular(current.german); $('#word').hidden = false;
+  if (current.audio) { audio.src = current.audio; audio.play().catch(() => {}); }
+
+  const wrong = [];
+  while (wrong.length < 2) {
+    const c = pick(cards);
+    if (c.czech !== current.czech && !wrong.some(w => w.czech === c.czech)) wrong.push(c);
+  }
+  const kinds = shuffle(FRUITS.slice());
+  shuffle([current, ...wrong]).forEach((c, i) => launch(kinds[i], c.czech, c === current, (i + .5) / 3));
+  if (Math.random() < BOMB_CHANCE) launch(['💣', '#ffdd55'], '', false, rand(.2, .8), .4);
+}
+function launch([e, c, ink], label, correct, lane, delay = 0) {
+  const x = W * (.12 + .76 * lane), apex = H * rand(.35, .5);
+  const vy = -Math.sqrt(2 * G * (H + R - apex)), t = -2 * vy / G;
+  items.push({ e, c, ink, label, correct, bomb: e === '💣', x, y: H + R, vx: W * rand(-.06, .06) / t, vy,
+    rot: 0, vr: rand(-1.5, 1.5), delay });
+}
+function later(fn, ms) { const p = phase; setTimeout(() => { if (phase === p) fn(); }, ms); }
+
+function cut(it, a) {
+  items.splice(items.indexOf(it), 1);
+  const nx = -Math.sin(a), ny = Math.cos(a);
+  for (const s of [-1, 1]) halves.push({ e: it.e, x: it.x, y: it.y, a, r0: it.rot, spin: 0, s,
+    vx: it.vx * .5 + nx * s * 160, vy: Math.min(it.vy, 0) * .3 + ny * s * 160, vr: s * rand(2, 5) });
+  for (let i = 0; i < (it.bomb ? 40 : 16); i++) burst(it, it.c, it.bomb ? 900 : 500);
+  if (!it.bomb) splats.push({ x: it.x, y: it.y, c: it.c, r: R * rand(.8, 1.3), life: 1 });
+}
+function slice(it, a) {
+  if (phase !== 'ask') return;
+  cut(it, a);
+  if (it.bomb) {
+    flash = 1; phase = 'over';
+    return setTimeout(() => showMenu('Boom!', `Round ended. ${learned} words learned, ${wrongs} wrong cuts.`, 'Play again'), 700);
+  }
+  if (it.correct) {
+    const n = (hits.get(current.id) || 0) + 1;
+    hits.set(current.id, n); score++; phase = 'done';
+    if (n >= HITS_TO_MASTER) { markMastered(current); learned++; }
+    else queue.splice(Math.min(REPEAT_GAP, queue.length), 0, current);
+    updateHud();
+    return later(nextQuestion, 800);
+  }
+  // wrong: freeze, cut the right fruit for the player, then bring the word back after one other word
+  markWrong(current); wrongs++; phase = 'frozen';
+  queue.splice(Math.min(1, queue.length), 0, current);
+  later(() => {
+    const right = items.find(i => i.correct);
+    if (right) cut(right, rand(-.6, .6));
+    $('#word').textContent = `${singular(current.german)} = ${current.czech}`;
+    later(nextQuestion, 1800);
+  }, 600);
+}
+function burst(it, c, sp) {
+  const a = rand(0, Math.PI * 2), v = rand(.2, 1) * sp;
+  parts.push({ x: it.x, y: it.y, vx: Math.cos(a) * v, vy: Math.sin(a) * v, c, life: 1, r: rand(2, 6) });
+}
+function updateHud() {
+  $('#score').textContent = score;
+  const n = queue.length + (current ? 1 : 0);
+  $('#left').textContent = n ? `${n} left` : '';
+}
+$('#go').addEventListener('click', startRound);
+
+// swipe input: one trail per finger, so multi-touch works
+function segDist(px, py, ax, ay, bx, by) {
+  const dx = bx - ax, dy = by - ay, l = dx * dx + dy * dy || 1;
+  const t = Math.max(0, Math.min(1, ((px - ax) * dx + (py - ay) * dy) / l));
+  return Math.hypot(px - ax - t * dx, py - ay - t * dy);
+}
+cv.addEventListener('pointerdown', e => {
+  pointers.set(e.pointerId, { x: e.clientX, y: e.clientY, trail: [{ x: e.clientX, y: e.clientY, t: performance.now() }] });
+});
+cv.addEventListener('pointermove', e => {
+  const p = pointers.get(e.pointerId); if (!p) return;
+  const x = e.clientX, y = e.clientY, a = Math.atan2(y - p.y, x - p.x);
+  for (const it of [...items]) if (it.delay <= 0 && segDist(it.x, it.y, p.x, p.y, x, y) < R * .9) slice(it, a);
+  p.x = x; p.y = y; p.trail.push({ x, y, t: performance.now() });
+});
+['pointerup', 'pointercancel', 'pointerleave'].forEach(t => cv.addEventListener(t, e => pointers.delete(e.pointerId)));
+document.addEventListener('gesturestart', e => e.preventDefault());
+
+// word on the fruit: one or two lines, shrunk to fit, with a halo so it reads on any fruit colour
+function drawLabel(it) {
+  const [fill, halo] = INK[it.ink], max = R * 2.2;
+  let lines = [it.label], size = R * .45;
+  ctx.font = `700 ${size}px system-ui, -apple-system, sans-serif`;
+  if (ctx.measureText(it.label).width > max) {
+    const mid = it.label.length / 2, spaces = [...it.label.matchAll(/ /g)].map(m => m.index);
+    if (spaces.length) {
+      const at = spaces.reduce((b, i) => Math.abs(i - mid) < Math.abs(b - mid) ? i : b);
+      lines = [it.label.slice(0, at), it.label.slice(at + 1)];
+    }
+    const widest = Math.max(...lines.map(l => ctx.measureText(l).width));
+    size = Math.max(R * .28, size * Math.min(1, max / widest));
+    ctx.font = `700 ${size}px system-ui, -apple-system, sans-serif`;
+  }
+  ctx.textAlign = 'center'; ctx.textBaseline = 'middle'; ctx.lineJoin = 'round';
+  ctx.lineWidth = size * .28; ctx.strokeStyle = halo; ctx.fillStyle = fill;
+  lines.forEach((l, i) => {
+    const y = it.y + (i - (lines.length - 1) / 2) * size * 1.1;
+    ctx.strokeText(l, it.x, y, max); ctx.fillText(l, it.x, y, max);
+  });
+}
+
+let last = performance.now();
+function frame(now) {
+  const dt = Math.min(.033, (now - last) / 1000) * SPEED; last = now;
+
+  if (phase !== 'frozen') for (const it of items) {
+    if (it.delay > 0) { it.delay -= dt; continue; }
+    it.vy += G * dt; it.x += it.vx * dt; it.y += it.vy * dt; it.rot += it.vr * dt;
+  }
+  items = items.filter(it => !(it.y > H + R * 2 && it.vy > 0));
+  // all answer fruits fell without a cut: no progress change, word goes to the back of the round
+  if (phase === 'ask' && !items.some(it => it.label)) { queue.push(current); phase = 'done'; later(nextQuestion, 300); }
+
+  for (const h of halves) { h.vy += G * dt; h.x += h.vx * dt; h.y += h.vy * dt; h.spin += h.vr * dt; }
+  halves = halves.filter(h => h.y < H + R * 2);
+  for (const p of parts) { p.vy += G * .6 * dt; p.x += p.vx * dt; p.y += p.vy * dt; p.life -= dt * 1.5; }
+  parts = parts.filter(p => p.life > 0);
+  splats.forEach(s => s.life -= dt / 3); splats = splats.filter(s => s.life > 0);
+  flash = Math.max(0, flash - dt * 1.5);
+
+  ctx.clearRect(0, 0, W, H);
+  for (const s of splats) {
+    ctx.globalAlpha = s.life * .45; ctx.fillStyle = s.c;
+    ctx.beginPath(); ctx.arc(s.x, s.y, s.r, 0, Math.PI * 2); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+  for (const it of items) {
+    if (it.delay > 0) continue;
+    ctx.save(); ctx.translate(it.x, it.y); ctx.rotate(it.rot); drawSprite(it.e); ctx.restore();
+  }
+  for (const it of items) if (it.label && it.delay <= 0) drawLabel(it);
+  for (const h of halves) {
+    ctx.save(); ctx.translate(h.x, h.y); ctx.rotate(h.spin + h.a);
+    ctx.beginPath(); ctx.rect(-R * 1.3, h.s < 0 ? -R * 1.3 : 0, R * 2.6, R * 1.3); ctx.clip();
+    ctx.rotate(-h.a + h.r0); drawSprite(h.e); ctx.restore();
+  }
+  for (const p of parts) {
+    ctx.globalAlpha = p.life; ctx.fillStyle = p.c;
+    ctx.beginPath(); ctx.arc(p.x, p.y, p.r, 0, Math.PI * 2); ctx.fill();
+  }
+  ctx.globalAlpha = 1;
+
+  // blade trails: last 150 ms of each finger, thickening toward the tip
+  ctx.lineCap = 'round'; ctx.strokeStyle = '#fff'; ctx.shadowColor = '#bfe9ff'; ctx.shadowBlur = 12;
+  for (const p of pointers.values()) {
+    p.trail = p.trail.filter(q => now - q.t < 150);
+    for (let i = 1; i < p.trail.length; i++) {
+      ctx.lineWidth = 2 + 8 * i / p.trail.length;
+      ctx.beginPath(); ctx.moveTo(p.trail[i - 1].x, p.trail[i - 1].y); ctx.lineTo(p.trail[i].x, p.trail[i].y); ctx.stroke();
+    }
+  }
+  ctx.shadowBlur = 0;
+  if (flash) { ctx.fillStyle = `rgba(255,255,255,${flash})`; ctx.fillRect(0, 0, W, H); }
+  requestAnimationFrame(frame);
+}
+load().catch(e => { $('#msg').textContent = `Could not load words: ${e.message}. Open this page through the local server, not as a file.`; });
+requestAnimationFrame(frame);
+</script>
+</body>
+</html>
